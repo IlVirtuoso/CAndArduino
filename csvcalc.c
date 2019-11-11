@@ -8,8 +8,6 @@ FILE * csv;
 
 
 
-
-
 int main(int argc, char * argv[]){
     csv = fopen("./PPAY_ListaMovimenti.CSV", "r");
     char matrix[countLines(csv)][countEntries(csv)][200];
@@ -115,7 +113,7 @@ void parse(FILE * buffer){
     }
 }
 
-void print(char *(*(*matrix)),int rows, int columns){
+void print(char * matrix[],int rows, int columns){
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < columns; j++){
             printf("|%s|",matrix[i][j]);
