@@ -16,6 +16,7 @@ int main(int argc, char * argv[]){
         else{
             kill(n,SIGINT);
             buffer[i] = wait(&n);
+            printf("%c",buffer[i]);
         }
     }
     printf("%s",buffer);
