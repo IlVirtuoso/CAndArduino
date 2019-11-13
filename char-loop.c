@@ -24,6 +24,6 @@ int main(int argc, char * argv[]){
 }
 
 void sig_handler(int signum){
-    printf("handle signal #%d, char c = %c",signum,c);
+    printf("handle signal #%d, char c = %c \n",signum,c);
     exit(c);
 }
