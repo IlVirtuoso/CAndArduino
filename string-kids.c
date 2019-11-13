@@ -11,6 +11,7 @@
 
 int main(int argc, char * argv[]){
     int status;
+    //try token
     int processes = atoi(argv[1]);
     char buffer[processes];
     for(int i = 0; i < processes; i++){
