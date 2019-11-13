@@ -11,7 +11,6 @@
 
 int main(int argc, char * argv[]){
     int status;
-    char args[]={"a"};
     int processes = atoi(argv[1]);
     char buffer[processes];
     for(int i = 0; i < processes; i++){
