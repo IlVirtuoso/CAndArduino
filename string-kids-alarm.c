@@ -19,16 +19,18 @@ int process;
 int sum;
 char args[]= {"char-loop a"};
 
+static sigset_t mask;
 int main(int argc, char * argv[]){
     struct sigaction sa;
-    sigset_t mask;
+    bzero(&sa,sizeof(sa));
 
     sigemptyset(&mask);
     sigaddset(&mask,SIGALRM);
     sigprocmask(SIG_BLOCK,&mask,NULL);
-
-    sa.sa_handler = handle_signal;
+    
     sa.sa_mask = mask;
+    sa.sa_handler = handle_signal;
+
     process = atoi(argv[1]);
     childs = (int*)malloc(sizeof(int)*process);
     for(int i = 0; i < process; i++){
