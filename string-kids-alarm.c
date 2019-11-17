@@ -42,7 +42,7 @@ int main(int argc, char * argv[]){
         }
         else{
             //child
-            execve("./char-loop",args,NULL);
+            system("./char-loop"); //check why execve don't work
             printf("Cannot Start Program");
             exit(-1);
         }
@@ -86,7 +86,7 @@ void kill_one(){
         }
         else{
             //child
-            execve("./char-loop",args,NULL);
+            execve("./char-loop",args,"/bin/sh");
             printf("error cannot start program");
             exit(-1);
         }
