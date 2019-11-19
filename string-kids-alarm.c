@@ -55,7 +55,7 @@ int main(int argc, char * argv[]){
     
     alarm(1);
     sum = 0;
-    wait(&status);
+    pause();
 }
 
 
@@ -68,6 +68,7 @@ void handle_signal(int signum){
 void kill_one(){
     int choiced = rand() % process;
     kill(childs[choiced],SIGINT);
+    wait(&status);
     generated[gen] = WEXITSTATUS(status);
     gen++;
     printf("killing child: %d\n", childs[choiced]);
@@ -93,7 +94,6 @@ void kill_one(){
             //parent
             childs[choiced] = n;
             printf("replaced old process with: %d\n",childs[choiced]);
-            alarm(1);
         }
         else{
             //child
@@ -101,9 +101,6 @@ void kill_one(){
             printf("error cannot start program\n");
             exit(-1);
         }
-        
-        alarm(1);
-        wait(&status);
     }
     printf("%s",generated);
 }
