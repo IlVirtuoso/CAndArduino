@@ -13,42 +13,48 @@
 void handle_signal(int signum);
 void kill_one();
 
-int * childs;
+pid_t * childs;
 int status;
 int process;
 int sum;
-char args[]= {"char-loop a"};
+char * generated;
+int gen;
+char * args[]= {{"char-loop"},{"a"}};
 
 static sigset_t mask;
 int main(int argc, char * argv[]){
     struct sigaction sa;
     bzero(&sa,sizeof(sa));
-
     sigemptyset(&mask);
     sigaddset(&mask,SIGALRM);
     sigprocmask(SIG_BLOCK,&mask,NULL);
     
     sa.sa_mask = mask;
     sa.sa_handler = handle_signal;
-
+    sigaction(SIGALRM,&sa,NULL);
+    sigset(SIGALRM,handle_signal);
     process = atoi(argv[1]);
-    childs = (int*)malloc(sizeof(int)*process);
+    childs = (pid_t*)malloc(sizeof(childs));
+    gen = 0;
+    generated = (char*)malloc(sizeof(generated));
+    pid_t pid;
     for(int i = 0; i < process; i++){
-        int n = fork();
-        if(n){
+        if(pid = fork()){
             //parent
-            childs[i] = n;
+            childs[i] = pid;
+            printf("Started Process : %d\n",childs[i]);
 
         }
         else{
             //child
-            system("./char-loop"); //check why execve don't work
+            execve("./char-loop",args,NULL);
             printf("Cannot Start Program");
             exit(-1);
         }
     }
-
+    
     alarm(1);
+    sum = 0;
     wait(&status);
 }
 
@@ -62,33 +68,42 @@ void handle_signal(int signum){
 void kill_one(){
     int choiced = rand() % process;
     kill(childs[choiced],SIGINT);
-    printf("%c",status);
-    sum = sum + status;
+    generated[gen] = WEXITSTATUS(status);
+    gen++;
+    printf("killing child: %d\n", childs[choiced]);
+    printf("exited with status: %d\n",WEXITSTATUS(status));
+    sum = sum + (int)WEXITSTATUS(status);
+    sum = sum % 256;
+    printf("Result: %d\n",sum);
     if(sum == 0){
         for(int i = 0; i < process; i++){
             if(i == choiced){
-
+                //skip
             }
             else{
                 kill(childs[i],SIGINT);
                 wait(&status);
-                printf("%c",status);
+               generated[gen] = WEXITSTATUS(status);
             }
         }
     }
     else{
-        int n = fork();
+        pid_t n = fork();
         if(n){
             //parent
             childs[choiced] = n;
+            printf("replaced old process with: %d\n",childs[choiced]);
             alarm(1);
-            
         }
         else{
             //child
-            execve("./char-loop",args,"/bin/sh");
-            printf("error cannot start program");
+            execve("./char-loop",args,NULL);
+            printf("error cannot start program\n");
             exit(-1);
         }
+        
+        alarm(1);
+        wait(&status);
     }
+    printf("%s",generated);
 }
