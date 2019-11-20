@@ -11,7 +11,7 @@
 #include <signal.h>
 
 void handle_signal(int signum);
-void kill_one();
+void killall();
 
 pid_t * childs;
 int status;
@@ -29,13 +29,15 @@ int main(int argc, char * argv[]){
     args = (char**)malloc(sizeof(args));
     args[0] = "char-loop";
     args[1] = "a";
+    
     bzero(&sa,sizeof(sa));
     sigemptyset(&mask);
     sigaddset(&mask,SIGALRM);
     sigprocmask(SIG_BLOCK,&mask,NULL);
-    
     sa.sa_mask = mask;
     sa.sa_handler = handle_signal;
+    sa.sa_flags = SA_RESTART;
+    sa.sa_flags = SA_NODEFER;
     sigaction(SIGALRM,&sa,NULL);
     sigset(SIGALRM,handle_signal);
     process = atoi(argv[1]);
@@ -58,59 +60,44 @@ int main(int argc, char * argv[]){
         }
     }
     
-    while(1){
-        alarm(1);
-        wait(&status);
+    while (1)
+    {
+    printf("Schedule alarm\n");
+    alarm(1);
+    wait(&status);
+    sum = (sum + WEXITSTATUS(status)%2);
+    printf("Result: %d\n",sum);
+    generated[gen] = WEXITSTATUS(status);
+    gen++;
     }
+    
+    return 0;
 }
+
+int choice;
 
 
 void handle_signal(int signum){
     if(signum == SIGALRM){
-        kill_one();
-        printf("Schedule alarm1\n");
+        if(sum == 0){
+            choice = rand() % process;
+            printf("Killing: %d\n",childs[choice]);
+            kill(childs[choice],SIGINT);
+        }
+        else{
+            killall();
+        }
     }
 }
 
 int q;
-int k;
-void kill_one(){
-
-    int choiced = rand() % process;
-    kill(childs[choiced],SIGINT);
-    wait(&status);
-    generated[gen] = WEXITSTATUS(status);
-    gen++;
-    printf("killing child: %d\n", childs[choiced]);
-    printf("exited with status: %d\n",WEXITSTATUS(status));
-    sum = (sum + (int)WEXITSTATUS(status))%8;
-    printf("Result: %d\n",sum);
-    if(sum == 0){
-        for(k = 0; k < process; k++){
-                kill(childs[k],SIGINT);
-                wait(&status);
-               generated[gen] = WEXITSTATUS(status);
-               gen++;
-        }
-            printf("%s",generated);
-            exit(0);
+void killall(){
+    for(q = 0; q < process; q++){
+        kill(childs[q],SIGINT);
+        wait(&status);
+        generated[gen] = WEXITSTATUS(status);
+        gen++;
     }
-    else{
-        pid_t n = fork();
-        if(n){
-            printf("Actual process: ");
-            for(q = 0; q < process; q++){
-                printf("|%d|",childs[q]);
-            }
-            printf("\n");
-            childs[choiced] = n;
-            printf("replaced old process with: %d\n",childs[choiced]);
-        }
-        else{
-            
-            execve("./char-loop",args,NULL);
-            printf("error cannot start program\n");
-            exit(-1); 
-        }
-    }
+    printf("Generated: %s",generated);
+    exit(0);
 }
