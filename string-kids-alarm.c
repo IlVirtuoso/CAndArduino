@@ -16,6 +16,7 @@ void kill_one();
 pid_t * childs;
 int status;
 int process;
+int i;
 int sum;
 char * generated;
 int gen;
@@ -38,34 +39,38 @@ int main(int argc, char * argv[]){
     gen = 0;
     generated = (char*)malloc(sizeof(generated));
     pid_t pid;
-    for(int i = 0; i < process; i++){
+    for(i = 0; i < process; i++){
         if(pid = fork()){
-            //parent
+            
             childs[i] = pid;
             printf("Started Process : %d\n",childs[i]);
 
         }
         else{
-            //child
+            
             execve("./char-loop",args,NULL);
             printf("Cannot Start Program");
             exit(-1);
         }
     }
     
-    alarm(1);
-    sum = 0;
-    pause();
+    while(1){
+        alarm(1);
+        wait(&status);
+    }
 }
 
 
 void handle_signal(int signum){
     if(signum == SIGALRM){
         kill_one();
+        printf("Schedule alarm1\n");
     }
 }
 
+int k;
 void kill_one(){
+
     int choiced = rand() % process;
     kill(childs[choiced],SIGINT);
     wait(&status);
@@ -73,34 +78,30 @@ void kill_one(){
     gen++;
     printf("killing child: %d\n", childs[choiced]);
     printf("exited with status: %d\n",WEXITSTATUS(status));
-    sum = sum + (int)WEXITSTATUS(status);
-    sum = sum % 256;
+    sum = (sum + (int)WEXITSTATUS(status))%8;
     printf("Result: %d\n",sum);
     if(sum == 0){
-        for(int i = 0; i < process; i++){
-            if(i == choiced){
-                //skip
-            }
-            else{
-                kill(childs[i],SIGINT);
+        for(k = 0; k < process; k++){
+                kill(childs[k],SIGINT);
                 wait(&status);
                generated[gen] = WEXITSTATUS(status);
-            }
+               gen++;
+            printf("%s",generated);
+            exit(0);
         }
     }
     else{
         pid_t n = fork();
         if(n){
-            //parent
+            
             childs[choiced] = n;
             printf("replaced old process with: %d\n",childs[choiced]);
         }
         else{
-            //child
+            
             execve("./char-loop",args,NULL);
             printf("error cannot start program\n");
-            exit(-1);
+            exit(-1); 
         }
     }
-    printf("%s",generated);
 }
