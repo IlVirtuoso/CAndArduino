@@ -20,11 +20,15 @@ int i;
 int sum;
 char * generated;
 int gen;
-char * args[]= {{"char-loop"},{"a"}};
+char ** args;
+struct sigaction sa;
+pid_t pid;
 
 static sigset_t mask;
 int main(int argc, char * argv[]){
-    struct sigaction sa;
+    args = (char**)malloc(sizeof(args));
+    args[0] = "char-loop";
+    args[1] = "a";
     bzero(&sa,sizeof(sa));
     sigemptyset(&mask);
     sigaddset(&mask,SIGALRM);
@@ -38,9 +42,9 @@ int main(int argc, char * argv[]){
     childs = (pid_t*)malloc(sizeof(childs));
     gen = 0;
     generated = (char*)malloc(sizeof(generated));
-    pid_t pid;
     for(i = 0; i < process; i++){
-        if(pid = fork()){
+        pid = fork();
+        if(pid){
             
             childs[i] = pid;
             printf("Started Process : %d\n",childs[i]);
@@ -87,9 +91,9 @@ void kill_one(){
                 wait(&status);
                generated[gen] = WEXITSTATUS(status);
                gen++;
+        }
             printf("%s",generated);
             exit(0);
-        }
     }
     else{
         pid_t n = fork();

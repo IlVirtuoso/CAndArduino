@@ -5,12 +5,12 @@
 #include <ctype.h>
 
 FILE * csv;
-
-
+char *** matrix;
+countEntries(FILE * buffer);
 
 int main(int argc, char * argv[]){
+    matrix = (char***)malloc(sizeof(matrix));
     csv = fopen("./PPAY_ListaMovimenti.CSV", "r");
-    char matrix[countLines(csv)][countEntries(csv)][200];
     int r = 0; //Row
     int c = 0; //Column
     int b = 0; //Buffer
