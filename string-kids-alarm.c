@@ -68,6 +68,7 @@ void handle_signal(int signum){
     }
 }
 
+int q;
 int k;
 void kill_one(){
 
@@ -93,7 +94,11 @@ void kill_one(){
     else{
         pid_t n = fork();
         if(n){
-            
+            printf("Actual process: ");
+            for(q = 0; q < process; q++){
+                printf("|%d|",childs[q]);
+            }
+            printf("\n");
             childs[choiced] = n;
             printf("replaced old process with: %d\n",childs[choiced]);
         }
