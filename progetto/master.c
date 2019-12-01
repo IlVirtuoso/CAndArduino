@@ -12,15 +12,18 @@
 #include "./resources/libs/parameters.h"
 #include "./resources/libs/piece.h"
 #include "./resources/libs/player.h"
+#include <sys/shm.h>
 
 
 void handler(int signum);
 void clean();
 struct sigaction sa;
 
+
 int main(int argc, char * argv[]){
 bzero(&sa,sizeof(sa));
 sa.sa_handler = handler;
+
 
 
 return 0;
@@ -34,8 +37,6 @@ void handler(int signum){
 }
 
 void clean(){
-    /*for every IPC or object opened include there
-    / a close option to restore the default state of the
-    / machine*/
+    
     
 }
