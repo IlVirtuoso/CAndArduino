@@ -21,7 +21,7 @@ struct sigaction sa;
 int main(int argc, char * argv[]){
 bzero(&sa,sizeof(sa));
 sa.sa_handler = handler;
-//change
+
 
 return 0;
 }
