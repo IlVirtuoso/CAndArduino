@@ -16,8 +16,9 @@
 #include <sys/shm.h>
 #include "macro.h"
 
+int isDebug = 0;
 
-/* funzione per mostrare il [debug] su console, attenzione la variabile debug deve essere 1 */
+/* funzione per mostrare il [debug] su console, attenzione la variabile isDebug deve essere 1 */
 int debug(char message []);
 
 /*handler per il segnale di interruzione SIGINT*/
@@ -46,6 +47,9 @@ cell table[SO_BASE][SO_ALTEZZA];
 
 int i;
 int main(int argc, char * argv[]){
+    for(i = 0; i < argc; i++){
+        if(argv[i] == "-d") isDebug = 1;
+    }
     bzero(&sa,sizeof(sa));
     sa.sa_handler = handler;
     
@@ -65,8 +69,13 @@ void clean(){
 }
 
 int debug(char message []){
-    printf("[Debug]: %s", message);
-    return 0;
+    if(isDebug == 1){
+        printf("[Debug]: %s", message);
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 
