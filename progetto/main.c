@@ -82,8 +82,6 @@ int main(){
                             WAIT for INSTRUCTION
                             move() in altra direzione
                             if tutte le celle occupate -> WAIT & try again
-
-
     */
 
 

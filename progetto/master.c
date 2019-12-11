@@ -29,6 +29,8 @@ typedef struct _cell{
 
 
 
+
+
 int main(int argc, char * argv[]){
     bzero(&sa,sizeof(sa));
     sa.sa_handler = handler;
