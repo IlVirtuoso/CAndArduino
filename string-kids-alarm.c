@@ -43,6 +43,7 @@ int main(int argc, char * argv[]){
     process = atoi(argv[1]);
     childs = (pid_t*)malloc(sizeof(childs));
     gen = 0;
+    sum = 0;
     generated = (char*)malloc(sizeof(generated));
     for(i = 0; i < process; i++){
         pid = fork();
@@ -65,7 +66,7 @@ int main(int argc, char * argv[]){
     printf("Schedule alarm\n");
     alarm(1);
     wait(&status);
-    sum = (sum + WEXITSTATUS(status)%2);
+    sum = (sum + WEXITSTATUS(status)%256);
     printf("Result: %d\n",sum);
     generated[gen] = WEXITSTATUS(status);
     gen++;
