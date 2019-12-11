@@ -14,29 +14,41 @@
 #include "./resources/libs/piece.h"
 #include "./resources/libs/player.h"
 #include <sys/shm.h>
-#include "macro.c"
+#include "macro.h"
 
 
+/* funzione per mostrare il [debug] su console, attenzione la variabile debug deve essere 1 */
+int debug(char message []);
 
+/*handler per il segnale di interruzione SIGINT*/
 void handler(int signum);
+
+/*cleaner per SIGINT*/
 void clean();
+
+/*permette di mostrare lo stato della tabella, il metodo è costruito per funzionare a frame */
+void display();
+
+
 struct sigaction sa;
+
+/*definizione della struttura della cella della tabella*/
 typedef struct _cell{
     char flag;
     int isFull;
+
 }cell;
 
 
+cell table[SO_BASE][SO_ALTEZZA];
 
 
 
-
+int i;
 int main(int argc, char * argv[]){
     bzero(&sa,sizeof(sa));
     sa.sa_handler = handler;
-
-
-
+    
     return 0;
 }
 
@@ -55,4 +67,18 @@ void clean(){
 int debug(char message []){
     printf("[Debug]: %s", message);
     return 0;
+}
+
+
+int x; 
+int y;
+void display(){ 
+    
+    system("clear");
+    for(x = 0 ; x < SO_BASE; x++){
+        for(y = 0; y < SO_ALTEZZA; y++){
+            printf("|%c|", 'a');
+        }
+        printf("\n");
+    }
 }
