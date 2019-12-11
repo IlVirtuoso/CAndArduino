@@ -62,7 +62,7 @@
 *
 *#ifndef var
 *[COMMENTO]
-*define var
+*#define var
 *#endif
 *fine tutorial
 */
