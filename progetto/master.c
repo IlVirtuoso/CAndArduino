@@ -21,12 +21,12 @@ struct sigaction sa;
 
 
 int main(int argc, char * argv[]){
-bzero(&sa,sizeof(sa));
-sa.sa_handler = handler;
+    bzero(&sa,sizeof(sa));
+    sa.sa_handler = handler;
 
 
 
-return 0;
+    return 0;
 }
 
 
@@ -39,4 +39,8 @@ void handler(int signum){
 void clean(){
     
     
+}
+
+int debug(char [] message){
+
 }
