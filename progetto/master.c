@@ -14,7 +14,7 @@
 #include "./resources/libs/piece.h"
 #include "./resources/libs/player.h"
 #include <sys/shm.h>
-#include "macro.h"
+#include "./resources/libs/macro.h"
 
 int isDebug = 0;
 
@@ -109,6 +109,17 @@ int main(int argc, char * argv[]){
     }
     /*End-Region*/
 
+    /*Region Phase-1:flag*/
+
+    /*End-Region*/
+
+    /*Region Phase-2:Indication*/
+
+    /*End-Region*/
+
+    /*Region Phase-3:Anarchy*/
+
+    /*End-Region*/
     
     return 0;
 }
