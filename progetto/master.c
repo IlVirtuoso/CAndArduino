@@ -134,9 +134,10 @@ int main(int argc, char * argv[]){
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
-            shared_table[i + i*j].sem.sem_num = 1;
+            
+            (*(shared_table + i*j + j)).sem.sem_num = 0;
             if(j%2 == 0){
-                shared_table[i + i*j].flag = 'c';
+                (*(shared_table + i*j + j)).flag = 'c';
             }
         }
     }
@@ -160,9 +161,17 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player");
             }
+            for(i = 0; i < SO_BASE; i++){
+                for(j = 0; j < SO_ALTEZZA; j++){
+                    if(j%2 != 0){
+                        (*(shared_table + i*j + j)).flag = 'd';
+                    }
+                }
+            }
             exit(1);
         }
     }
+    display();
     /*End-Region*/
 
     /*Region Phase-1:flag*/
@@ -217,7 +226,7 @@ void display(){
     system("clear");
     for(x = 0 ; x < SO_BASE; x++){
         for(y = 0; y < SO_ALTEZZA; y++){
-            printf("|%c|", shared_table[x + x*y].flag);
+            printf("|%c|", (*(shared_table + x*y + y)).flag);
         }
         printf("\n");
     }
