@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "args": ["-std=c89  -Wpedantic -Wall -Werror  -o master master.c  ./resources/libs/piece.c ./resources/libs/player.c"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

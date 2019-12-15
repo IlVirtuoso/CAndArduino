@@ -1,0 +1,346 @@
+Started At: 07:43:56
+[LOG : 1.786000] Impostazione maschere e segnali
+[LOG : 1.805000] Segnali Impostati
+[LOG : 1.807000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 07:51:53
+[LOG : 2.164000] Impostazione maschere e segnali
+[LOG : 2.194000] Segnali Impostati
+[LOG : 2.196000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.219000] Memoria Condivisa Inizializzata
+Started At: 07:51:53
+[LOG : 2.164000] Impostazione maschere e segnali
+[LOG : 2.194000] Segnali Impostati
+[LOG : 2.196000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.219000] Memoria Condivisa Inizializzata
+Started At: 07:51:53
+[LOG : 2.164000] Impostazione maschere e segnali
+[LOG : 2.194000] Segnali Impostati
+[LOG : 2.196000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.219000] Memoria Condivisa Inizializzata
+Started At: 07:51:53
+[LOG : 2.164000] Impostazione maschere e segnali
+[LOG : 2.194000] Segnali Impostati
+[LOG : 2.196000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.219000] Memoria Condivisa Inizializzata
+Started At: 07:57:40
+[LOG : 1.932000] Impostazione maschere e segnali
+[LOG : 1.963000] Segnali Impostati
+[LOG : 1.966000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.010000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 07:57:40
+[LOG : 1.932000] Impostazione maschere e segnali
+[LOG : 1.963000] Segnali Impostati
+[LOG : 1.966000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.010000] Memoria Condivisa Inizializzata
+[LOG : 2.133000] Player: 0 started with pid: 18337
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 07:57:40
+[LOG : 1.932000] Impostazione maschere e segnali
+[LOG : 1.963000] Segnali Impostati
+[LOG : 1.966000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.010000] Memoria Condivisa Inizializzata
+[LOG : 2.133000] Player: 0 started with pid: 18337
+[LOG : 2.230000] Player: 1 started with pid: 18338
+Started At: 07:59:25
+[LOG : 1.870000] Impostazione maschere e segnali
+[LOG : 1.901000] Segnali Impostati
+[LOG : 1.903000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.926000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 07:59:25
+[LOG : 1.870000] Impostazione maschere e segnali
+[LOG : 1.901000] Segnali Impostati
+[LOG : 1.903000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.926000] Memoria Condivisa Inizializzata
+[LOG : 2.041000] Player: 0 started with pid: 18525
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 07:59:25
+[LOG : 1.870000] Impostazione maschere e segnali
+[LOG : 1.901000] Segnali Impostati
+[LOG : 1.903000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.926000] Memoria Condivisa Inizializzata
+[LOG : 2.041000] Player: 0 started with pid: 18525
+[LOG : 2.583000] Player: 1 started with pid: 18526
+Started At: 08:02:31
+[LOG : 1.947000] Impostazione maschere e segnali
+[LOG : 1.983000] Segnali Impostati
+[LOG : 1.986000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.000000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:02:31
+[LOG : 1.947000] Impostazione maschere e segnali
+[LOG : 1.983000] Segnali Impostati
+[LOG : 1.986000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.000000] Memoria Condivisa Inizializzata
+[LOG : 2.116000] Player: 0 started with pid: 18737
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:02:31
+[LOG : 1.947000] Impostazione maschere e segnali
+[LOG : 1.983000] Segnali Impostati
+[LOG : 1.986000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 2.000000] Memoria Condivisa Inizializzata
+[LOG : 2.116000] Player: 0 started with pid: 18737
+[LOG : 2.196000] Player: 1 started with pid: 18738
+Started At: 08:03:32
+[LOG : 1.793000] Impostazione maschere e segnali
+[LOG : 1.812000] Segnali Impostati
+[LOG : 1.814000] Inizializzazione Memoria Condivisa
+[ERROR]: Errore nell'inizializzazione del segmento di memoria
+Started At: 08:04:13
+[LOG : 1.828000] Impostazione maschere e segnali
+[LOG : 1.859000] Segnali Impostati
+[LOG : 1.861000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.894000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:04:13
+[LOG : 1.828000] Impostazione maschere e segnali
+[LOG : 1.859000] Segnali Impostati
+[LOG : 1.861000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.894000] Memoria Condivisa Inizializzata
+[LOG : 1.991000] Player: 0 started with pid: 18946
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:04:13
+[LOG : 1.828000] Impostazione maschere e segnali
+[LOG : 1.859000] Segnali Impostati
+[LOG : 1.861000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.894000] Memoria Condivisa Inizializzata
+[LOG : 1.991000] Player: 0 started with pid: 18946
+[LOG : 2.097000] Player: 1 started with pid: 18947
+Started At: 08:04:36
+[LOG : 1.823000] Impostazione maschere e segnali
+[LOG : 1.866000] Segnali Impostati
+[LOG : 1.868000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.890000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:04:36
+[LOG : 1.823000] Impostazione maschere e segnali
+[LOG : 1.866000] Segnali Impostati
+[LOG : 1.868000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.890000] Memoria Condivisa Inizializzata
+[LOG : 2.001000] Player: 0 started with pid: 19028
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:04:36
+[LOG : 1.823000] Impostazione maschere e segnali
+[LOG : 1.866000] Segnali Impostati
+[LOG : 1.868000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.890000] Memoria Condivisa Inizializzata
+[LOG : 2.001000] Player: 0 started with pid: 19028
+[LOG : 2.094000] Player: 1 started with pid: 19029
+Started At: 08:05:26
+[LOG : 1.899000] Impostazione maschere e segnali
+[LOG : 1.929000] Segnali Impostati
+[LOG : 1.931000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.945000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:05:26
+[LOG : 1.899000] Impostazione maschere e segnali
+[LOG : 1.929000] Segnali Impostati
+[LOG : 1.931000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.945000] Memoria Condivisa Inizializzata
+[LOG : 2.044000] Player: 0 started with pid: 19144
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:05:26
+[LOG : 1.899000] Impostazione maschere e segnali
+[LOG : 1.929000] Segnali Impostati
+[LOG : 1.931000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.945000] Memoria Condivisa Inizializzata
+[LOG : 2.044000] Player: 0 started with pid: 19144
+[LOG : 2.164000] Player: 1 started with pid: 19145
+Started At: 08:07:59
+[LOG : 1.858000] Impostazione maschere e segnali
+[LOG : 1.891000] Segnali Impostati
+[LOG : 1.894000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.919000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:07:59
+[LOG : 1.858000] Impostazione maschere e segnali
+[LOG : 1.891000] Segnali Impostati
+[LOG : 1.894000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.919000] Memoria Condivisa Inizializzata
+[LOG : 2.032000] Player: 0 started with pid: 19305
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:07:59
+[LOG : 1.858000] Impostazione maschere e segnali
+[LOG : 1.891000] Segnali Impostati
+[LOG : 1.894000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.919000] Memoria Condivisa Inizializzata
+[LOG : 2.032000] Player: 0 started with pid: 19305
+[LOG : 2.190000] Player: 1 started with pid: 19306
+Started At: 08:13:07
+[LOG : 1.865000] Impostazione maschere e segnali
+[LOG : 1.887000] Segnali Impostati
+[LOG : 1.889000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.900000] Memoria Condivisa Inizializzata
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:13:07
+[LOG : 1.865000] Impostazione maschere e segnali
+[LOG : 1.887000] Segnali Impostati
+[LOG : 1.889000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.900000] Memoria Condivisa Inizializzata
+[LOG : 1.993000] Player: 0 started with pid: 19590
+[ERROR]: Errore nell'innesto della shared_table
+Started At: 08:13:07
+[LOG : 1.865000] Impostazione maschere e segnali
+[LOG : 1.887000] Segnali Impostati
+[LOG : 1.889000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.900000] Memoria Condivisa Inizializzata
+[LOG : 1.993000] Player: 0 started with pid: 19590
+[LOG : 2.099000] Player: 1 started with pid: 19591
+Started At: 08:25:20
+[LOG : 3.155000] Impostazione maschere e segnali
+[LOG : 3.186000] Segnali Impostati
+[LOG : 3.189000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 3.207000] Memoria Condivisa Inizializzata
+Started At: 08:25:20
+[LOG : 3.155000] Impostazione maschere e segnali
+[LOG : 3.186000] Segnali Impostati
+[LOG : 3.189000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 3.207000] Memoria Condivisa Inizializzata
+[LOG : 3.340000] Player: 0 started with pid: 20262
+Started At: 08:25:20
+[LOG : 3.155000] Impostazione maschere e segnali
+[LOG : 3.186000] Segnali Impostati
+[LOG : 3.189000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 3.207000] Memoria Condivisa Inizializzata
+[LOG : 3.340000] Player: 0 started with pid: 20262
+[LOG : 3.841000] Player: 1 started with pid: 20263
+Started At: 08:25:20
+[LOG : 3.155000] Impostazione maschere e segnali
+[LOG : 3.186000] Segnali Impostati
+[LOG : 3.189000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 3.207000] Memoria Condivisa Inizializzata
+[LOG : 0.211000] Player: 1 started with pid: 20264
+Started At: 08:26:40
+[LOG : 1.777000] Impostazione maschere e segnali
+[LOG : 1.808000] Segnali Impostati
+[LOG : 1.810000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.850000] Memoria Condivisa Inizializzata
+[LOG : 0.169000] Player: 1 started with pid: 20419
+Started At: 08:26:40
+[LOG : 1.777000] Impostazione maschere e segnali
+[LOG : 1.808000] Segnali Impostati
+[LOG : 1.810000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.850000] Memoria Condivisa Inizializzata
+Started At: 08:26:40
+[LOG : 1.777000] Impostazione maschere e segnali
+[LOG : 1.808000] Segnali Impostati
+[LOG : 1.810000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.850000] Memoria Condivisa Inizializzata
+[LOG : 1.964000] Player: 0 started with pid: 20418
+[LOG : 2.067000] Player: 1 started with pid: 20420
+Started At: 08:26:40
+[LOG : 1.777000] Impostazione maschere e segnali
+[LOG : 1.808000] Segnali Impostati
+[LOG : 1.810000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[LOG : 1.850000] Memoria Condivisa Inizializzata
+[LOG : 1.964000] Player: 0 started with pid: 20418
+Started At: 08:28:02
+[LOG : 1.846000] Impostazione maschere e segnali
+[LOG : 1.876000] Segnali Impostati
+[LOG : 1.879000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.923000] Memoria Condivisa Inizializzata
+Started At: 08:28:02
+[LOG : 1.846000] Impostazione maschere e segnali
+[LOG : 1.876000] Segnali Impostati
+[LOG : 1.879000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.923000] Memoria Condivisa Inizializzata
+[LOG : 0.200000] Player: 1 started with pid: 20548
+Started At: 08:28:02
+[LOG : 1.846000] Impostazione maschere e segnali
+[LOG : 1.876000] Segnali Impostati
+[LOG : 1.879000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.923000] Memoria Condivisa Inizializzata
+[LOG : 2.322000] Player: 0 started with pid: 20546
+Started At: 08:28:02
+[LOG : 1.846000] Impostazione maschere e segnali
+[LOG : 1.876000] Segnali Impostati
+[LOG : 1.879000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.923000] Memoria Condivisa Inizializzata
+[LOG : 2.322000] Player: 0 started with pid: 20546
+[LOG : 2.505000] Player: 1 started with pid: 20547
+Started At: 08:28:40
+[LOG : 1.912000] Impostazione maschere e segnali
+[LOG : 1.955000] Segnali Impostati
+[LOG : 1.957000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.002000] Memoria Condivisa Inizializzata
+[LOG : 2.118000] Player: 0 started with pid: 20662
+Started At: 08:28:40
+[LOG : 1.912000] Impostazione maschere e segnali
+[LOG : 1.955000] Segnali Impostati
+[LOG : 1.957000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.002000] Memoria Condivisa Inizializzata
+Started At: 08:29:15
+[LOG : 1.757000] Impostazione maschere e segnali
+[LOG : 1.786000] Segnali Impostati
+[LOG : 1.789000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.820000] Memoria Condivisa Inizializzata
+Started At: 08:29:15
+[LOG : 1.757000] Impostazione maschere e segnali
+[LOG : 1.786000] Segnali Impostati
+[LOG : 1.789000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.820000] Memoria Condivisa Inizializzata
+[LOG : 1.933000] Player: 0 started with pid: 20803
+Started At: 08:29:15
+[LOG : 1.757000] Impostazione maschere e segnali
+[LOG : 1.786000] Segnali Impostati
+[LOG : 1.789000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 1.820000] Memoria Condivisa Inizializzata
+[LOG : 1.933000] Player: 0 started with pid: 20803
+[LOG : 2.050000] Player: 1 started with pid: 20804

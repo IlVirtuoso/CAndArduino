@@ -11,7 +11,13 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-std=c89",
+                  "-Wpedantic",
+                  "-Wall",
+                "-Werror",
+                "${fileDirname}/resources/libs/piece.c",
+                "${fileDirname}/resources/libs/player.c"
             ],
             "options": {
                 "cwd": "/usr/bin"

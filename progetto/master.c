@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <sys/sysinfo.h>
 #include <sys/errno.h>
+#include <sys/ipc.h>
 #include <sys/wait.h>
 #include <sys/sem.h>
 #include <time.h>
@@ -14,10 +15,12 @@
 #include "./resources/libs/piece.h"
 #include "./resources/libs/player.h"
 #include <sys/shm.h>
+
 #include "./resources/libs/macro.h"
 
 int isDebug = 0;
-
+FILE * logger;
+int verbosity = 1;
 /* segnala un errore e ne mostra la causa, poi invoca clean() per prepararsi all'uscita*/
 void error(char message []);
 
@@ -33,40 +36,73 @@ void clean();
 /*permette di mostrare lo stato della tabella, il metodo è costruito per funzionare a frame */
 void display();
 
+/*scrive su console e su un file un messaggio, utile per verificare la corretta esecuzione !!USATA SOLO DAL PROCESSO MASTER*/
+void logg(char message []);
+
+/*uccide tutti i processi inizializzati dal processo master*/
+void killall();
 
 struct sigaction sa;
+
+/*semaforo*/
+struct semaphore * sem;
 
 /*definizione della struttura della cella della tabella*/
 typedef struct _cell{
     char flag;
     int isFull;
-
+    struct semaphore * sem;
+    
 }cell;
 
 
 
-cell table[SO_BASE][SO_ALTEZZA];
-key_t tablekey; /*chiave per l'accesso alla tavola*/
+/*id della scacchiera*/
+int table; 
 
-static sigset_t mask;/*mask per i segnali*/
+/*clock per misurare il tempo di esecuzione*/
+clock_t cl;
 
-struct shmseg * shared_table;/*segmento di memoria condivisa della table*/
+/*mask per i segnali*/
+static sigset_t mask;
 
-int players[SO_NUM_G];/* Array contenente i pids di tutti i processi giocatori creati*/
+/*segmento di memoria condivisa della table*/
+struct shmseg * shared_table;
+
+/* Array contenente i pids di tutti i processi giocatori creati*/
+int players[SO_NUM_G];
+
+/* variabile che dice se i giocatori sono stati creati*/
+int playercreated = 0;
+
+/*variabile che dice se i pezzi sono stati creati*/
+int piececreated = 0;
+
+/*variabile che dice se le bandiere sono state create*/
+int flagcreated = 0;
 
 
 
 int i;
 int pid;
+/*buffer per i messaggi custom*/
+char logbuffer[64];
 int main(int argc, char * argv[]){
 
     /*Region: inizializzazione e rilevamento argomenti*/
     for(i = 0; i < argc; i++){ /*inizializza la variabile di debug se richiesto*/
-        if(argv[i] == "-d") isDebug = 1;
+        if(strcmp(argv[i],"-d")) isDebug = 1;
+        if(strcmp(argv[i],"-v")) verbosity = 2;
+        if(strcmp(argv[i],"-vv")) verbosity = 3;
     }
+    
+    logger = fopen("Master.log","a+");
+    fprintf(logger,"Started At: %s\n",__TIME__);
+    
     /*End-Region*/
 
 
+    logg("Impostazione maschere e segnali");
     /*Region: inizializzazione dei segnali*/
     bzero(&sa,sizeof(sa));
     sa.sa_handler = handler;
@@ -79,32 +115,42 @@ int main(int argc, char * argv[]){
     sigaction(SIGINT,&sa,NULL);
     sigset(SIGINT,handler);
     /*End-Region*/
+    logg("Segnali Impostati");
     
-
+    logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
-    if(tablekey = shmget(IPC_PRIVATE,sizeof(table),IPC_CREAT)){
+    if((table = shmget(IPC_PRIVATE,sizeof(cell) *SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
         debug("Memoria Condivisa Inizializzata");
     }
     else{
         error("Errore nell'inizializzazione del segmento di memoria");
     }
-    shared_table = (struct shmseg *)shmat(tablekey,NULL,0);
-    if((void*)shared_table == -1){
-        error("Errore nell'innesto della shared_table");
+    if((shared_table = (struct shmseg*)shmat(table,NULL,0)) == (void*) - 1){
+        error("Errore nell'attach della shared_table");
+    }
+    else{
+        debug("Shared Table attach completato");
     }
     /*End-Region*/
+    logg("Memoria Condivisa Inizializzata");
 
     /*Region: Process Creation*/
     for(i = 0; i < SO_NUM_G; i++){
-        if(pid = fork()){
+        if((pid = fork())){
             /*padre*/
             players[i] = pid;
+            sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
+            logg(logbuffer);
         }
         else{
             /*figlio*/
+            if((shared_table = (struct shmseg *)shmat(table,NULL,0)) == (void*) - 1){
+                error("Errore nell'innesto della shared_table");
+            }
             if(player() == -1){
                 error("Errore nell'inizializzare il player");
             }
+            exit(1);
         }
     }
     /*End-Region*/
@@ -127,19 +173,25 @@ int main(int argc, char * argv[]){
 
 void handler(int signum){
     if(signum == SIGINT){
+        logg("Ricevuto Segnale SIGINT");
         clean();
     }
 }
 
 void clean(){
     shmdt(shared_table);
-    shmctl(tablekey,IPC_RMID,NULL);
+    shmctl(table,IPC_RMID,NULL);
+    fclose(logger);
+    if(playercreated){
+        killall();
+    }
     
 }
 
 int debug(char message []){
-    if(isDebug == 1){
-        printf("[Debug]: %s", message);
+    if(isDebug){
+        printf("[Debug]: %s\n", message);
+        fprintf(logger,"[DEBUG]: %s\n",message);
         return 1;
     }
     else{
@@ -162,7 +214,23 @@ void display(){
 }
 
 void error(char message[]){
-    printf("[ERROR]: %s",message);
+    printf("[ERROR]: %s\n",message);
+    fprintf(logger,"[ERROR]: %s\n",message);
     clean();
-    exit(99);
+    exit(-1);
+    
+}
+
+void logg(char message[]){
+    double time = (double)clock()/1000;
+    printf("[LOG: %f]%s\n",(double)time,message);
+    fprintf(logger,"[LOG : %f] %s\n",(double)time,message);
+    bzero(logbuffer,sizeof(logbuffer));
+
+}
+
+void killall(){
+    for(i = 0; i < sizeof(players);i++){
+        kill(players[i],SIGINT);
+    }
 }
