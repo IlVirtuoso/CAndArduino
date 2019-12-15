@@ -161,6 +161,8 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player");
             }
+
+            /*Esperimento per far vedere che la shm funziona, rimuovilo quando hai finito*/
             for(i = 0; i < SO_BASE; i++){
                 for(j = 0; j < SO_ALTEZZA; j++){
                     if(j%2 != 0){
