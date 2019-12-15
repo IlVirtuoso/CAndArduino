@@ -51,7 +51,8 @@ struct semaphore * sem;
 typedef struct _cell{
     char flag;
     int isFull;
-    struct semaphore * sem;
+    int semid;
+    struct sembuf sem;
     
 }cell;
 
@@ -67,7 +68,7 @@ clock_t cl;
 static sigset_t mask;
 
 /*segmento di memoria condivisa della table*/
-struct shmseg * shared_table;
+cell * shared_table;
 
 /* Array contenente i pids di tutti i processi giocatori creati*/
 int players[SO_NUM_G];
@@ -81,9 +82,8 @@ int piececreated = 0;
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
-
-
 int i;
+int j;
 int pid;
 /*buffer per i messaggi custom*/
 char logbuffer[64];
@@ -119,18 +119,28 @@ int main(int argc, char * argv[]){
     
     logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
-    if((table = shmget(IPC_PRIVATE,sizeof(cell) *SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
+    if((table = shmget(IPC_PRIVATE,sizeof(cell)*SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
         debug("Memoria Condivisa Inizializzata");
     }
     else{
         error("Errore nell'inizializzazione del segmento di memoria");
     }
-    if((shared_table = (struct shmseg*)shmat(table,NULL,0)) == (void*) - 1){
+    if((shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'attach della shared_table");
     }
     else{
         debug("Shared Table attach completato");
     }
+    logg("Setup dei semafori");
+    for(i = 0; i < SO_BASE; i++){
+        for(j = 0; j < SO_ALTEZZA; j++){
+            shared_table[i + i*j].sem.sem_num = 1;
+            if(j%2 == 0){
+                shared_table[i + i*j].flag = 'c';
+            }
+        }
+    }
+    display();
     /*End-Region*/
     logg("Memoria Condivisa Inizializzata");
 
@@ -144,7 +154,7 @@ int main(int argc, char * argv[]){
         }
         else{
             /*figlio*/
-            if((shared_table = (struct shmseg *)shmat(table,NULL,0)) == (void*) - 1){
+            if((shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table");
             }
             if(player() == -1){
@@ -207,7 +217,7 @@ void display(){
     system("clear");
     for(x = 0 ; x < SO_BASE; x++){
         for(y = 0; y < SO_ALTEZZA; y++){
-            printf("|%c|", 'a');
+            printf("|%c|", shared_table[x + x*y].flag);
         }
         printf("\n");
     }
