@@ -64,6 +64,9 @@ int table;
 /*clock per misurare il tempo di esecuzione*/
 clock_t cl;
 
+/*clock per il round, resettare a fine round*/
+clock_t round_timer;
+
 /*mask per i segnali*/
 static sigset_t mask;
 
@@ -161,7 +164,6 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player");
             }
-
             /*Esperimento per far vedere che la shm funziona, rimuovilo quando hai finito*/
             for(i = 0; i < SO_BASE; i++){
                 for(j = 0; j < SO_ALTEZZA; j++){
