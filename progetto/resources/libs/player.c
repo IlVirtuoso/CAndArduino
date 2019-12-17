@@ -22,13 +22,14 @@ char player_id;
 
 int player(){
     player_id = (rand())%127 + 43;
+    player_pid = getpid();
     return 0;
 }
 
 int i;
 pid_t pid;
 int piecegen(int numpieces){
-    for(i = 0; i < numpieces; i++){
+    for(i = 0; (player_pid == getpid()) && (i < numpieces); i++){
         if((pid = fork())){
             /*player*/
             pieces[i] = pid;
