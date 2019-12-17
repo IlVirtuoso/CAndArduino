@@ -22,12 +22,14 @@ char player_id;
 
 int player(){
     player_id = (rand())%127 + 43;
-    player_pid = getpid();
     return 0;
 }
 
 int i;
+/*typedef pid_t int */
 pid_t pid;
+pid_t player_pid = getpid();
+
 int piecegen(int numpieces){
     for(i = 0; (player_pid == getpid()) && (i < numpieces); i++){
         if((pid = fork())){
