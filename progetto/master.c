@@ -7,6 +7,7 @@
 #include <sys/sysinfo.h>
 #include <sys/errno.h>
 #include <sys/ipc.h>
+#include <sys/msg.h>
 #include <sys/wait.h>
 #include <sys/sem.h>
 #include <time.h>
@@ -33,8 +34,7 @@ void handler(int signum);
 /*cleaner per SIGINT*/
 void clean();
 
-/*permette di mostrare lo stato della tabella, il metodo è costruito per funzionare a frame */
-void display();
+
 
 /*scrive su console e su un file un messaggio, utile per verificare la corretta esecuzione !!USATA SOLO DAL PROCESSO MASTER*/
 void logg(char message []);
@@ -48,18 +48,35 @@ struct sigaction sa;
 struct semaphore * sem;
 
 /*definizione della struttura della cella della tabella*/
-typedef struct _cell{
-    char flag;
+typedef struct{
+    char id;
     int isFull;
     int semid;
     struct sembuf sem;
     
 }cell;
 
+typedef struct{
+    int x;
+    int y;
+    int score;
+}vexillum;
 
+typedef struct {
+    long messageType;
+    char message[1024];
+}message;
+
+/*display debug per il master*/
+void display_master();
+/*metodo per il controllo della shared table*/
+cell * tab(cell * shared_table, int x, int y);
 
 /*id della scacchiera*/
 int table; 
+
+/*id della msgqueue*/
+int msgqueue;
 
 /*clock per misurare il tempo di esecuzione*/
 clock_t cl;
@@ -73,14 +90,28 @@ static sigset_t mask;
 /*segmento di memoria condivisa della table*/
 cell * shared_table;
 
-/* Array contenente i pids di tutti i processi giocatori creati*/
-int players[SO_NUM_G];
-
 /* variabile che dice se i giocatori sono stati creati*/
 int playercreated = 0;
 
 /*variabile che dice se i pezzi sono stati creati*/
 int piececreated = 0;
+
+
+
+/* struttura dati per i punteggi */
+typedef struct{
+    /* Array contenente i pids di tutti i processi giocatori creati*/
+    int pid[SO_NUM_G];
+    /* Array contenente i nomi di tutti i processi giocatori creati*/
+    char name[SO_NUM_G];
+    /* Array contenente il punteggio di tutti i processi giocatori*/
+    int score[SO_NUM_G];
+}score_table;
+
+score_table * st;
+
+/* stampa la tabella del punteggio */
+void stamp_score(score_table * t);
 
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
@@ -91,7 +122,11 @@ int pid;
 /*buffer per i messaggi custom*/
 char logbuffer[64];
 int main(int argc, char * argv[]){
-
+    st =  malloc(sizeof(score_table)); /* Tabella degli score */
+    for(i = 0; i < SO_NUM_G; i++){
+        st -> name[i] = (char)((int)'A' + i);
+        st -> score[i] = 0;
+    }
     /*Region: inizializzazione e rilevamento argomenti*/
     for(i = 0; i < argc; i++){ /*inizializza la variabile di debug se richiesto*/
         if(strcmp(argv[i],"-d")) isDebug = 1;
@@ -122,6 +157,12 @@ int main(int argc, char * argv[]){
     
     logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
+    if((msgqueue = msgget(IPC_PRIVATE,IPC_CREAT | 0600)) == -1){
+        error("Errore nell'inizializzazione della msgqueue");
+    }
+    else {
+        debug("Msgqueque");
+    }
     if((table = shmget(IPC_PRIVATE,sizeof(cell)*SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
         debug("Memoria Condivisa Inizializzata");
     }
@@ -137,22 +178,19 @@ int main(int argc, char * argv[]){
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
-            
-            (*(shared_table + i*j + j)).sem.sem_num = 0;
-            if(j%2 == 0){
-                (*(shared_table + i*j + j)).flag = 'c';
-            }
+            tab(shared_table,i,j)->id ='-';
         }
     }
-    display();
     /*End-Region*/
     logg("Memoria Condivisa Inizializzata");
+
+        
 
     /*Region: Process Creation*/
     for(i = 0; i < SO_NUM_G; i++){
         if((pid = fork())){
             /*padre*/
-            players[i] = pid;
+            st -> pid[i] = pid;
             sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
             logg(logbuffer);
         }
@@ -164,18 +202,18 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player");
             }
+            player_id = st -> name[i]; /* Assegnazione del nome al Player*/
             /*Esperimento per far vedere che la shm funziona, rimuovilo quando hai finito*/
             for(i = 0; i < SO_BASE; i++){
                 for(j = 0; j < SO_ALTEZZA; j++){
                     if(j%2 != 0){
-                        (*(shared_table + i*j + j)).flag = 'd';
+                        tab(shared_table,i,j)->id = 'c';
                     }
                 }
             }
             exit(1);
         }
     }
-    display();
     /*End-Region*/
 
     /*Region Phase-1:flag*/
@@ -190,10 +228,12 @@ int main(int argc, char * argv[]){
 
     /*End-Region*/
     
+
+    logg("End Of Execution");
     return 0;
 }
 
-
+/*Region handler segnali*/
 void handler(int signum){
     if(signum == SIGINT){
         logg("Ricevuto Segnale SIGINT");
@@ -211,26 +251,22 @@ void clean(){
     
 }
 
-int debug(char message []){
-    if(isDebug){
-        printf("[Debug]: %s\n", message);
-        fprintf(logger,"[DEBUG]: %s\n",message);
-        return 1;
-    }
-    else{
-        return 0;
+void killall(){
+    for(i = 0; i < sizeof(st->pid);i++){
+        kill(st->pid[i],SIGINT);
     }
 }
 
+/*End Region*/
 
+/*Regione metodi per il debug*/
 int x; 
 int y;
-void display(){ 
-    
+void display_master(){ 
     system("clear");
     for(x = 0 ; x < SO_BASE; x++){
         for(y = 0; y < SO_ALTEZZA; y++){
-            printf("|%c|", (*(shared_table + x*y + y)).flag);
+            printf("|%c|", tab(shared_table,x,y)->id);
         }
         printf("\n");
     }
@@ -244,6 +280,17 @@ void error(char message[]){
     
 }
 
+int debug(char message []){
+    if(isDebug){
+        printf("[Debug]: %s\n", message);
+        fprintf(logger,"[DEBUG]: %s\n",message);
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
 void logg(char message[]){
     double time = (double)clock()/1000;
     printf("[LOG: %f]%s\n",(double)time,message);
@@ -252,8 +299,21 @@ void logg(char message[]){
 
 }
 
-void killall(){
-    for(i = 0; i < sizeof(players);i++){
-        kill(players[i],SIGINT);
-    }
+void stamp_score(score_table * t){
+	printf("PLAYER         SCORE\n");
+	for(i = 0; i < SO_NUM_G; i++){
+		printf("PLAYER %c   |   %d \n", t -> name[i], t -> score[i]);
+	}
 }
+
+/*End Region*/
+
+
+/*Region metodi per il controllo della scacchiera*/
+
+cell * tab(cell * shared_table, int x, int y){
+
+    return (&(*(shared_table + x*y + y)));
+}
+
+/*End Of Life*/

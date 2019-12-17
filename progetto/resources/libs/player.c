@@ -12,23 +12,19 @@
 #include <string.h>
 #include <sys/shm.h>
 #include "macro.h"
-
-/*array che identifica i pezzi appartenenti a questo giocatore*/
-pid_t pieces[SO_NUM_P];
-
-/*player id*/
-char player_id;
+#include "piece.h"
+#include "player.h"
 
 
 int player(){
-    player_id = (rand())%127 + 43;
+
     return 0;
+
 }
 
 int i;
 /*typedef pid_t int */
-pid_t pid;
-pid_t player_pid = getpid();
+
 
 int piecegen(int numpieces){
     for(i = 0; (player_pid == getpid()) && (i < numpieces); i++){
@@ -44,4 +40,5 @@ int piecegen(int numpieces){
             }
         }
     }
+    return -1;
 }
