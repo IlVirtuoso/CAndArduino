@@ -161,7 +161,7 @@ int main(int argc, char * argv[]){
         error("Errore nell'inizializzazione della msgqueue");
     }
     else {
-        debug("Msgqueque");
+        debug("Msgqueque creata");
     }
     if((table = shmget(IPC_PRIVATE,sizeof(cell)*SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
         debug("Memoria Condivisa Inizializzata");
@@ -175,6 +175,7 @@ int main(int argc, char * argv[]){
     else{
         debug("Shared Table attach completato");
     }
+
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
