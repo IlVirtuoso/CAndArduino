@@ -23,7 +23,7 @@ int isDebug = 0;
 FILE * logger;
 int verbosity = 1;
 /* segnala un errore e ne mostra la causa, poi invoca clean() per prepararsi all'uscita*/
-void error(char message []);
+void error(char message [], int errno);
 
 /* funzione per mostrare il [debug] su console, attenzione la variabile isDebug deve essere 1 */
 int debug(char message []);
@@ -69,7 +69,7 @@ typedef struct {
 
 /*display debug per il master*/
 void display_master();
-/*metodo per il controllo della shared table*/
+/*funzione per il controllo della shared table*/
 cell * tab(cell * shared_table, int x, int y);
 
 /*id della scacchiera*/
@@ -110,6 +110,8 @@ typedef struct{
 
 score_table * st;
 
+vexillum * vex;
+
 /* stampa la tabella del punteggio */
 void stamp_score(score_table * t);
 
@@ -122,11 +124,18 @@ int pid;
 /*buffer per i messaggi custom*/
 char logbuffer[64];
 int main(int argc, char * argv[]){
-    st =  malloc(sizeof(score_table)); /* Tabella degli score */
+    /* Inizializzazione tabella degli score */
+    st =  malloc(sizeof(score_table)); 
     for(i = 0; i < SO_NUM_G; i++){
         st -> name[i] = (char)((int)'A' + i);
         st -> score[i] = 0;
     }
+
+    /* Inizializzazione struttura bandiere */
+    vex = malloc(sizeof(vexillum));
+
+
+
     /*Region: inizializzazione e rilevamento argomenti*/
     for(i = 0; i < argc; i++){ /*inizializza la variabile di debug se richiesto*/
         if(strcmp(argv[i],"-d")) isDebug = 1;
@@ -158,7 +167,7 @@ int main(int argc, char * argv[]){
     logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
     if((msgqueue = msgget(IPC_PRIVATE,IPC_CREAT | 0600)) == -1){
-        error("Errore nell'inizializzazione della msgqueue");
+        error("Errore nell'inizializzazione della msgqueue", EKEYREJECTED);
     }
     else {
         debug("Msgqueque creata");
@@ -167,10 +176,10 @@ int main(int argc, char * argv[]){
         debug("Memoria Condivisa Inizializzata");
     }
     else{
-        error("Errore nell'inizializzazione del segmento di memoria");
+        error("Errore nell'inizializzazione del segmento di memoria",EKEYREJECTED);
     }
     if((shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
-        error("Errore nell'attach della shared_table");
+        error("Errore nell'attach della shared_table",EIO);
     }
     else{
         debug("Shared Table attach completato");
@@ -185,8 +194,6 @@ int main(int argc, char * argv[]){
     /*End-Region*/
     logg("Memoria Condivisa Inizializzata");
 
-        
-
     /*Region: Process Creation*/
     for(i = 0; i < SO_NUM_G; i++){
         if((pid = fork())){
@@ -194,14 +201,16 @@ int main(int argc, char * argv[]){
             st -> pid[i] = pid;
             sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
             logg(logbuffer);
+            /*attesa*/
+
         }
         else{
             /*figlio*/
             if((shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
-                error("Errore nell'innesto della shared_table");
+                error("Errore nell'innesto della shared_table",EIO);
             }
             if(player() == -1){
-                error("Errore nell'inizializzare il player");
+                error("Errore nell'inizializzare il player",ECHILD);
             }
             player_id = st -> name[i]; /* Assegnazione del nome al Player*/
             /*Esperimento per far vedere che la shm funziona, rimuovilo quando hai finito*/
@@ -273,11 +282,13 @@ void display_master(){
     }
 }
 
-void error(char message[]){
+int err;
+void error(char message[], int errno){
+    err = errno;
     printf("[ERROR]: %s\n",message);
     fprintf(logger,"[ERROR]: %s\n",message);
     clean();
-    exit(-1);
+    exit(EXIT_FAILURE);
     
 }
 

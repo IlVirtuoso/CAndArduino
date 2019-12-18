@@ -15,10 +15,15 @@
 #include "piece.h"
 #include "player.h"
 
+FILE * player_logger;
+char player_logbuffer[1024];
+char filename[14];
+
 
 int player(){
-
-    return 0;
+    sprintf(filename,"Player %c.log", player_id);
+    player_logger = fopen(filename,"a+");
+    return -1;
 
 }
 
@@ -32,6 +37,7 @@ int piecegen(int numpieces){
             /*player*/
             pieces[i] = pid;
         }
+        
         else{
             /*pieces*/
             if(piece() == -1){
@@ -41,4 +47,11 @@ int piecegen(int numpieces){
         }
     }
     return -1;
+}
+
+void player_logg(char message []){
+    double time = (double)clock()/1000;
+    printf("[LOG: %f]%s\n",(double)time,message);
+    fprintf(player_logger,"[LOG : %f] %s\n",(double)time,message);
+    bzero(player_logbuffer,sizeof(player_logbuffer));
 }
