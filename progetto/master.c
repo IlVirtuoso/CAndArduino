@@ -15,15 +15,15 @@
 #include "./resources/libs/parameters.h"
 #include "./resources/libs/piece.h"
 #include "./resources/libs/player.h"
+#include "./resources/libs/monitor.h"
 #include <sys/shm.h>
-
 #include "./resources/libs/macro.h"
 
 int isDebug = 0;
 FILE * logger;
 int verbosity = 1;
 /* segnala un errore e ne mostra la causa, poi invoca clean() per prepararsi all'uscita*/
-void error(char message [], int errno);
+void error(char message [], int err);
 
 /* funzione per mostrare il [debug] su console, attenzione la variabile isDebug deve essere 1 */
 int debug(char message []);
@@ -47,14 +47,9 @@ struct sigaction sa;
 /*semaforo*/
 struct semaphore * sem;
 
-/*definizione della struttura della cella della tabella*/
-typedef struct{
-    char id;
-    int isFull;
-    int semid;
-    struct sembuf sem;
-    
-}cell;
+
+
+
 
 typedef struct{
     int x;
@@ -62,15 +57,10 @@ typedef struct{
     int score;
 }vexillum;
 
-typedef struct {
-    long messageType;
-    char message[1024];
-}message;
+
 
 /*display debug per il master*/
 void display_master();
-/*funzione per il controllo della shared table*/
-cell * tab(cell * shared_table, int x, int y);
 
 /*id della scacchiera*/
 int table; 
@@ -110,6 +100,7 @@ typedef struct{
 
 score_table * st;
 
+/*puntatore alla struttura vex*/
 vexillum * vex;
 
 /* stampa la tabella del punteggio */
@@ -118,22 +109,31 @@ void stamp_score(score_table * t);
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
+
+message msg;
+
 int i;
 int j;
 int pid;
+int num_flag;
 /*buffer per i messaggi custom*/
 char logbuffer[64];
 int main(int argc, char * argv[]){
+    srand(clock() + getpid());
+    num_flag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
+    /*@HPF4 il tuo esperimento si trova qui*/
+    vex = (vexillum *) malloc(num_flag * sizeof(vexillum));
+    vex[num_flag].x = 123;
+    printf("%d \n",vex[num_flag].x);
     /* Inizializzazione tabella degli score */
     st =  malloc(sizeof(score_table)); 
     for(i = 0; i < SO_NUM_G; i++){
         st -> name[i] = (char)((int)'A' + i);
         st -> score[i] = 0;
     }
-
     /* Inizializzazione struttura bandiere */
-    vex = malloc(sizeof(vexillum));
 
+    
 
 
     /*Region: inizializzazione e rilevamento argomenti*/
@@ -142,13 +142,12 @@ int main(int argc, char * argv[]){
         if(strcmp(argv[i],"-v")) verbosity = 2;
         if(strcmp(argv[i],"-vv")) verbosity = 3;
     }
-    
     logger = fopen("Master.log","a+");
     fprintf(logger,"Started At: %s\n",__TIME__);
     
     /*End-Region*/
-
-
+    
+    
     logg("Impostazione maschere e segnali");
     /*Region: inizializzazione dei segnali*/
     bzero(&sa,sizeof(sa));
@@ -162,6 +161,7 @@ int main(int argc, char * argv[]){
     sigaction(SIGINT,&sa,NULL);
     sigset(SIGINT,handler);
     /*End-Region*/
+    
     logg("Segnali Impostati");
     
     logg("Inizializzazione Memoria Condivisa");
@@ -202,25 +202,20 @@ int main(int argc, char * argv[]){
             sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
             logg(logbuffer);
             /*attesa*/
-
         }
         else{
             /*figlio*/
-            if((shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
+            sa.sa_handler = player_handler;
+            player_msgqueue = msgqueue;
+            if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table",EIO);
             }
+            player_id = st -> name[i]; /* Assegnazione del nome al Player*/
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
             }
-            player_id = st -> name[i]; /* Assegnazione del nome al Player*/
-            /*Esperimento per far vedere che la shm funziona, rimuovilo quando hai finito*/
-            for(i = 0; i < SO_BASE; i++){
-                for(j = 0; j < SO_ALTEZZA; j++){
-                    if(j%2 != 0){
-                        tab(shared_table,i,j)->id = 'c';
-                    }
-                }
-            }
+
+            shmdt(player_shared_table);
             exit(1);
         }
     }
@@ -254,6 +249,8 @@ void handler(int signum){
 void clean(){
     shmdt(shared_table);
     shmctl(table,IPC_RMID,NULL);
+    free(st);
+    free(vex);
     fclose(logger);
     if(playercreated){
         killall();
@@ -282,13 +279,14 @@ void display_master(){
     }
 }
 
-int err;
-void error(char message[], int errno){
-    err = errno;
-    printf("[ERROR]: %s\n",message);
-    fprintf(logger,"[ERROR]: %s\n",message);
+
+char errore[24];
+void error(char message[], int err){
+    sprintf(errore,"%s",strerror(err));
+    printf("[ERROR]:%s,message:%s\n",errore,message);
+    fprintf(logger,"[ERROR]:%s,message:%s\n",errore,message);
     clean();
-    exit(EXIT_FAILURE);
+    exit(err);
     
 }
 
@@ -321,11 +319,3 @@ void stamp_score(score_table * t){
 /*End Region*/
 
 
-/*Region metodi per il controllo della scacchiera*/
-
-cell * tab(cell * shared_table, int x, int y){
-
-    return (&(*(shared_table + x*y + y)));
-}
-
-/*End Of Life*/

@@ -32,7 +32,7 @@
 
 #ifndef SO_FLAG_MAX
 /*Numero massimo di bandierine posizionate in un round*/
-#define SO_FLAG_MAX 6
+#define SO_FLAG_MAX 5
 #endif
 
 #ifndef SO_ROUND_SCORE

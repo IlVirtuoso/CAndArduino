@@ -15,15 +15,20 @@
 #include "piece.h"
 #include "player.h"
 
-FILE * player_logger;
-char player_logbuffer[1024];
-char filename[14];
 
+/*file di log del player*/
+FILE * player_logger;
+
+/*buffer per log modificati*/
+char player_logbuffer[1024];
+
+/*nome del file di log*/
+char filename[24];
 
 int player(){
     sprintf(filename,"Player %c.log", player_id);
     player_logger = fopen(filename,"a+");
-    return -1;
+    return 0;
 
 }
 
@@ -46,7 +51,7 @@ int piecegen(int numpieces){
             }
         }
     }
-    return -1;
+    return 0;
 }
 
 void player_logg(char message []){
@@ -55,3 +60,21 @@ void player_logg(char message []){
     fprintf(player_logger,"[LOG : %f] %s\n",(double)time,message);
     bzero(player_logbuffer,sizeof(player_logbuffer));
 }
+
+void player_handler(int signum){
+    if(signum == SIGINT){
+        player_clean();
+    }
+}
+
+int i;
+void player_clean(){
+    player_logg("Interruzione esecuzione in corso");
+    for(i = 0; i < sizeof(pieces); i++){
+        kill(pieces[i],SIGINT);
+    }
+    fclose(player_logger);
+    shmdt(player_shared_table);
+    exit(0);
+}
+
