@@ -99,8 +99,8 @@ void display_master();
 /*id della scacchiera*/
 int table; 
 
-/*id della msgqueue*/
-int msgqueue;
+/*master 2 player msgqueue*/
+int master_msgqueue;
 
 /*clock per misurare il tempo di esecuzione*/
 clock_t cl;
@@ -120,6 +120,7 @@ int playercreated = 0;
 /*variabile che dice se i pezzi sono stati creati*/
 int piececreated = 0;
 
+char master_logbuffer[128];
 
 
 /* struttura dati per i punteggi */
@@ -143,6 +144,8 @@ void stamp_score(score_table * t);
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
+/*buffer per i messaggi modificati*/
+char master_logbuffer[128];
 
 message msg;
 
@@ -180,7 +183,7 @@ int main(int argc, char * argv[]){
     
     /*End-Region*/
     
-    
+    logbuffer = master_logbuffer; /*impostazione buffer privato*/
     logg("Impostazione maschere e segnali");
     /*Region: inizializzazione dei segnali*/
     bzero(&sa,sizeof(sa));
@@ -199,7 +202,7 @@ int main(int argc, char * argv[]){
     
     logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
-    message_start();
+    master_msgqueue = message_start(IPC_PRIVATE);
     table_start();
     if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'attach della shared_table",EIO);
@@ -224,12 +227,11 @@ int main(int argc, char * argv[]){
             st -> pid[i] = pid;
             sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
             logg(logbuffer);
+            
             /*attesa*/
         }
         else{
             /*figlio*/
-            sa.sa_handler = player_handler;
-            player_msgqueue = msgqueue;
             player_id = st -> name[i]; /* Assegnazione del nome al Player*/
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
@@ -261,9 +263,19 @@ int main(int argc, char * argv[]){
 
 /*Region handler segnali*/
 void handler(int signum){
-    if(signum == SIGINT){
+    switch (signum)
+    {
+    case SIGINT:
         logg("Ricevuto Segnale SIGINT");
         clean();
+        break;
+
+    case SIGUSR1:
+    logg("Segnale di creazione pezzi inviato al player");
+    break;
+    
+    default:
+        break;
     }
 }
 

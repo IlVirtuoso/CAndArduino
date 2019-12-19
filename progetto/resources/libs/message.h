@@ -26,5 +26,7 @@ typedef struct {
     char message[1024];
 }message;
 
-void message_start();
+key_t message_start(key_t key);
+
+void message_attach(key_t key);
 #endif

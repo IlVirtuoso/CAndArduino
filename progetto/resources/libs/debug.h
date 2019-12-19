@@ -27,7 +27,7 @@
 int isDebug; 
 
 /*buffer per i messaggi modificati*/
-char logbuffer[128];
+char * logbuffer;
 
 /*File da aprire per lo store dei log*/
 FILE * logger;

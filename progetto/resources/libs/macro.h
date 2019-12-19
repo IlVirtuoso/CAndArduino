@@ -53,6 +53,10 @@
 #define SO_MIN_HOLD_NSEC 100000000
 #endif
 
+#ifndef SIGSTART
+#define SIGSTART SIGUSR1
+#endif
+
 
 /*DEV_IEM ho spostato i commenti per farli leggere a intellisense
 *Piccolo Tutorial su intellisense per C/C++:

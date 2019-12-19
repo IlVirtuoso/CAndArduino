@@ -56,17 +56,26 @@
 #ifndef TABLE_H
 #include "table.h"
 #endif
+#ifndef SIGNAL_H
+#include <signal.h>
+#endif
 
 #ifndef PLAYER_H
 #define PLAYER_H
 
+
 /*array che identifica i pezzi appartenenti a questo giocatore*/
 pid_t pieces[SO_NUM_P];
 
+/*struttura dei segnali del player*/
+struct sigaction player_signal;
+
+/*mask per i segnali del player*/
+sigset_t player_mask;
 
 pid_t pid;
 
-/*id della msgqueue*/
+/*player 2 piece msgqueue*/
 int player_msgqueue;
 
 /*pid del player*/
@@ -87,7 +96,15 @@ void player_clean();
 /*handler del player*/
 void player_handler(int signum);
 
+/*ciclo del player*/
+void play();
+
 /*segmento di memoria condivisa della table player*/
 cell * player_shared_table;
+
+/*collegamento alla msgqueue del master con il player*/
+int master_msgqueue;
+
+char player_logbuffer[128];
 
 #endif

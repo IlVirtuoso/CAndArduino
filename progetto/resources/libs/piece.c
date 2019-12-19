@@ -3,5 +3,46 @@
 #endif
 
 int piece(){
+    logger = fopen("Pieces.log","a+");
+    logbuffer = (char *)piece_logbuffer;
+    sprintf(logbuffer,"Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
+    logg(logbuffer);
+    player_msgqueue = msgqueue;
+    cleaner = piece_cleaner;
+    logg("Setup Struttura dei segnali");
+    bzero(&piece_mask,sizeof(piece_mask));
+    piece_signal.sa_handler = piece_handler;
+    sigemptyset(&piece_mask);
+    sigaddset(&piece_mask,SIGINT);
+    /*Questi due segnali serviranno per dare al player dei comandi addizionali*/
+    sigprocmask(SIG_BLOCK,&piece_mask,NULL);
+    piece_signal.sa_mask = piece_mask;
+  /*piece_signal.sa_flags = SA_RESTART;
+    piece_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
+    sigaction(SIGINT,&piece_signal,NULL);
+    if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
+        error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
+    }
+    else{
+        sprintf(logbuffer,"Pezzo %d del player %c attaccato alla table",piece_id,player_id);
+        logg(logbuffer);
+    }
+
     return 0;
+}
+
+void piece_handler(int signum){
+    switch (signum)
+    {
+    case SIGINT:
+        piece_cleaner();
+        break;
+    
+    default:
+        break;
+    }
+}
+
+void piece_cleaner(){
+    shmdt(piece_shared_table);
 }
