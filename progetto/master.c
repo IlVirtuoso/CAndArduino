@@ -1,33 +1,70 @@
 #define _GNU_SOURCE
+#ifndef SIGNAL_H
 #include <signal.h>
+#endif
+#ifndef STDIO_H
 #include <stdio.h>
+#endif
+#ifndef STDLIB_H
 #include <stdlib.h>
+#endif
+#ifndef UNISTD_H
 #include <unistd.h>
+#endif
+#ifndef TYPES_H
 #include <sys/types.h>
+#endif
+#ifndef SYSINFO_H
 #include <sys/sysinfo.h>
+#endif
+#ifndef ERRNO_H
 #include <sys/errno.h>
+#endif
+#ifndef IPC_H
 #include <sys/ipc.h>
+#endif
+#ifndef MSG_H
 #include <sys/msg.h>
+#endif
+#ifndef WAIT_H
 #include <sys/wait.h>
+#endif
+#ifndef SEM_H
 #include <sys/sem.h>
+#endif
+#ifndef TIME_H
 #include <time.h>
+#endif
+#ifndef STRING_H
 #include <string.h>
+#endif
+#ifndef PARAMETERS_H
 #include "./resources/libs/parameters.h"
-#include "./resources/libs/piece.h"
+#endif
+#ifndef PLAYER_H
 #include "./resources/libs/player.h"
+#endif
+#ifndef PIECE_H
+#include "./resources/libs/piece.h"
+#endif
+#ifndef MONITOR_H
 #include "./resources/libs/monitor.h"
+#endif
+#ifndef SHM_H
 #include <sys/shm.h>
+#endif
+#ifndef MACRO_H
 #include "./resources/libs/macro.h"
-
-int isDebug = 0;
-FILE * logger;
-int verbosity = 1;
-/* segnala un errore e ne mostra la causa, poi invoca clean() per prepararsi all'uscita*/
-void error(char message [], int err);
-
-/* funzione per mostrare il [debug] su console, attenzione la variabile isDebug deve essere 1 */
-int debug(char message []);
-
+#endif
+#ifndef DEBUG_H
+#include "./resources/libs/debug.h"
+#endif
+#ifndef TABLE_H
+#include "./resources/libs/table.h"
+#endif
+#ifndef MESSAGE_H
+#include "./resources/libs/message.h"
+#endif
 /*handler per il segnale di interruzione SIGINT*/
 void handler(int signum);
 
@@ -35,9 +72,6 @@ void handler(int signum);
 void clean();
 
 
-
-/*scrive su console e su un file un messaggio, utile per verificare la corretta esecuzione !!USATA SOLO DAL PROCESSO MASTER*/
-void logg(char message []);
 
 /*uccide tutti i processi inizializzati dal processo master*/
 void killall();
@@ -78,7 +112,7 @@ clock_t round_timer;
 static sigset_t mask;
 
 /*segmento di memoria condivisa della table*/
-cell * shared_table;
+cell * master_shared_table;
 
 /* variabile che dice se i giocatori sono stati creati*/
 int playercreated = 0;
@@ -116,9 +150,8 @@ int i;
 int j;
 int pid;
 int num_flag;
-/*buffer per i messaggi custom*/
-char logbuffer[64];
 int main(int argc, char * argv[]){
+    cleaner = clean;
     srand(clock() + getpid());
     num_flag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
     /*@HPF4 il tuo esperimento si trova qui*/
@@ -166,19 +199,9 @@ int main(int argc, char * argv[]){
     
     logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
-    if((msgqueue = msgget(IPC_PRIVATE,IPC_CREAT | 0600)) == -1){
-        error("Errore nell'inizializzazione della msgqueue", EKEYREJECTED);
-    }
-    else {
-        debug("Msgqueque creata");
-    }
-    if((table = shmget(IPC_PRIVATE,sizeof(cell)*SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
-        debug("Memoria Condivisa Inizializzata");
-    }
-    else{
-        error("Errore nell'inizializzazione del segmento di memoria",EKEYREJECTED);
-    }
-    if((shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
+    message_start();
+    table_start();
+    if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'attach della shared_table",EIO);
     }
     else{
@@ -188,7 +211,7 @@ int main(int argc, char * argv[]){
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
-            tab(shared_table,i,j)->id ='-';
+            tab(master_shared_table,i,j)->id ='-';
         }
     }
     /*End-Region*/
@@ -207,9 +230,6 @@ int main(int argc, char * argv[]){
             /*figlio*/
             sa.sa_handler = player_handler;
             player_msgqueue = msgqueue;
-            if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
-                error("Errore nell'innesto della shared_table",EIO);
-            }
             player_id = st -> name[i]; /* Assegnazione del nome al Player*/
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
@@ -235,6 +255,7 @@ int main(int argc, char * argv[]){
     
 
     logg("End Of Execution");
+    cleaner();
     return 0;
 }
 
@@ -247,7 +268,7 @@ void handler(int signum){
 }
 
 void clean(){
-    shmdt(shared_table);
+    shmdt(master_shared_table);
     shmctl(table,IPC_RMID,NULL);
     free(st);
     free(vex);
@@ -273,41 +294,13 @@ void display_master(){
     system("clear");
     for(x = 0 ; x < SO_BASE; x++){
         for(y = 0; y < SO_ALTEZZA; y++){
-            printf("|%c|", tab(shared_table,x,y)->id);
+            printf("|%c|", tab(master_shared_table,x,y)->id);
         }
         printf("\n");
     }
 }
 
 
-char errore[24];
-void error(char message[], int err){
-    sprintf(errore,"%s",strerror(err));
-    printf("[ERROR]:%s,message:%s\n",errore,message);
-    fprintf(logger,"[ERROR]:%s,message:%s\n",errore,message);
-    clean();
-    exit(err);
-    
-}
-
-int debug(char message []){
-    if(isDebug){
-        printf("[Debug]: %s\n", message);
-        fprintf(logger,"[DEBUG]: %s\n",message);
-        return 1;
-    }
-    else{
-        return 0;
-    }
-}
-
-void logg(char message[]){
-    double time = (double)clock()/1000;
-    printf("[LOG: %f]%s\n",(double)time,message);
-    fprintf(logger,"[LOG : %f] %s\n",(double)time,message);
-    bzero(logbuffer,sizeof(logbuffer));
-
-}
 
 void stamp_score(score_table * t){
 	printf("PLAYER         SCORE\n");

@@ -1,39 +1,27 @@
-#define _GNU_SOURCE
-#include <signal.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/sysinfo.h>
-#include <sys/errno.h>
-#include <sys/wait.h>
-#include <sys/sem.h>
-#include <time.h>
-#include <string.h>
-#include <sys/shm.h>
-#include "macro.h"
-#include "piece.h"
+
+#ifndef PLAYER_H
 #include "player.h"
-
-
-/*file di log del player*/
-FILE * player_logger;
-
-/*buffer per log modificati*/
-char player_logbuffer[1024];
-
-/*nome del file di log*/
+#endif
 char filename[24];
 
 int player(){
+    
     sprintf(filename,"Player %c.log", player_id);
-    player_logger = fopen(filename,"a+");
+    logger = fopen(filename,"a+");
+    sprintf(logbuffer,"Player Started At %s",__TIME__);
+    logg(logbuffer);
+    if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
+                error("Errore nell'innesto della shared_table",EIO);
+            }
+    /*puntatore alla funzione player_clean da sfruttare con error()*/
+    cleaner = player_clean;
+    piecegen(SO_NUM_P);
     return 0;
 
 }
 
 int i;
-/*typedef pid_t int */
+
 
 
 int piecegen(int numpieces){
@@ -54,12 +42,7 @@ int piecegen(int numpieces){
     return 0;
 }
 
-void player_logg(char message []){
-    double time = (double)clock()/1000;
-    printf("[LOG: %f]%s\n",(double)time,message);
-    fprintf(player_logger,"[LOG : %f] %s\n",(double)time,message);
-    bzero(player_logbuffer,sizeof(player_logbuffer));
-}
+
 
 void player_handler(int signum){
     if(signum == SIGINT){
@@ -69,11 +52,11 @@ void player_handler(int signum){
 
 int i;
 void player_clean(){
-    player_logg("Interruzione esecuzione in corso");
+    logg("Interruzione esecuzione in corso");
     for(i = 0; i < sizeof(pieces); i++){
         kill(pieces[i],SIGINT);
     }
-    fclose(player_logger);
+    fclose(logger);
     shmdt(player_shared_table);
     exit(0);
 }

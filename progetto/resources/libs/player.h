@@ -1,7 +1,64 @@
-#include "piece.h"
+#define _GNU_SOURCE
+#ifndef SIGNAL_H
+#include <signal.h>
+#endif
+#ifndef STDIO_H
+#include <stdio.h>
+#endif
+#ifndef SHM_H
+#include <sys/shm.h>
+#endif
+#ifndef STDLIB_H
+#include <stdlib.h>
+#endif
+#ifndef UNISTD_H
+#include <unistd.h>
+#endif
+#ifndef TYPES_H
+#include <sys/types.h>
+#endif
+#ifndef SYSINFO_H
+#include <sys/sysinfo.h>
+#endif
+#ifndef ERRNO_H
+#include <sys/errno.h>
+#endif
+#ifndef IPC_H
+#include <sys/ipc.h>
+#endif
+#ifndef MSG_H
+#include <sys/msg.h>
+#endif
+#ifndef WAIT_H
+#include <sys/wait.h>
+#endif
+#ifndef SEM_H
+#include <sys/sem.h>
+#endif
+#ifndef TIME_H
+#include <time.h>
+#endif
+#ifndef STRING_H
+#include <string.h>
+#endif
+#ifndef MACRO_H
 #include "macro.h"
-#include "table.h"
+#endif
+#ifndef PIECE_H
+#include "piece.h"
+#endif
+#ifndef DEBUG_H
+#include "debug.h"
+#endif
+#ifndef MESSAGE_H
 #include "message.h"
+#endif
+#ifndef TABLE_H
+#include "table.h"
+#endif
+
+#ifndef PLAYER_H
+#define PLAYER_H
 
 /*array che identifica i pezzi appartenenti a questo giocatore*/
 pid_t pieces[SO_NUM_P];
@@ -33,3 +90,4 @@ void player_handler(int signum);
 /*segmento di memoria condivisa della table player*/
 cell * player_shared_table;
 
+#endif

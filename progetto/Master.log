@@ -1508,3 +1508,498 @@ Started At: 03:35:17
 [LOG : 2.542000] Setup dei semafori
 [LOG : 2.572000] Memoria Condivisa Inizializzata
 [LOG : 2.714000] Player: 0 started with pid: 10749
+Started At: 14:27:12
+[LOG : 2.387000] Impostazione maschere e segnali
+[LOG : 2.399000] Segnali Impostati
+[LOG : 2.402000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.444000] Setup dei semafori
+[LOG : 2.465000] Memoria Condivisa Inizializzata
+Started At: 14:27:12
+[LOG : 2.387000] Impostazione maschere e segnali
+[LOG : 2.399000] Segnali Impostati
+[LOG : 2.402000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.444000] Setup dei semafori
+[LOG : 2.465000] Memoria Condivisa Inizializzata
+[LOG : 2.605000] Player: 0 started with pid: 4884
+Started At: 14:27:12
+[LOG : 2.387000] Impostazione maschere e segnali
+[LOG : 2.399000] Segnali Impostati
+[LOG : 2.402000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.444000] Setup dei semafori
+[LOG : 2.465000] Memoria Condivisa Inizializzata
+[LOG : 2.605000] Player: 0 started with pid: 4884
+[LOG : 2.766000] Player: 1 started with pid: 4885
+[LOG : 2.858000] End Of Execution
+Started At: 14:43:42
+[LOG : 3.803000] Impostazione maschere e segnali
+[LOG : 3.828000] Segnali Impostati
+[LOG : 3.833000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 3.858000] Setup dei semafori
+[LOG : 3.876000] Memoria Condivisa Inizializzata
+[LOG : 0.154000] inizializzazione del player
+Started At: 14:43:42
+[LOG : 3.803000] Impostazione maschere e segnali
+[LOG : 3.828000] Segnali Impostati
+[LOG : 3.833000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 3.858000] Setup dei semafori
+[LOG : 3.876000] Memoria Condivisa Inizializzata
+[LOG : 4.012000] Player: 0 started with pid: 5873
+[LOG : 4.151000] Player: 1 started with pid: 5874
+[LOG : 4.185000] End Of Execution
+Started At: 14:43:42
+[LOG : 3.803000] Impostazione maschere e segnali
+[LOG : 3.828000] Segnali Impostati
+[LOG : 3.833000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 3.858000] Setup dei semafori
+[LOG : 3.876000] Memoria Condivisa Inizializzata
+[LOG : 4.012000] Player: 0 started with pid: 5873
+[LOG : 0.155000] inizializzazione del player
+Started At: 14:45:07
+[LOG : 2.280000] Impostazione maschere e segnali
+[LOG : 2.291000] Segnali Impostati
+[LOG : 2.294000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.317000] Setup dei semafori
+[LOG : 2.336000] Memoria Condivisa Inizializzata
+Started At: 14:45:07
+[LOG : 2.280000] Impostazione maschere e segnali
+[LOG : 2.291000] Segnali Impostati
+[LOG : 2.294000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.317000] Setup dei semafori
+[LOG : 2.336000] Memoria Condivisa Inizializzata
+[LOG : 2.476000] Player: 0 started with pid: 6098
+Started At: 14:45:07
+[LOG : 2.280000] Impostazione maschere e segnali
+[LOG : 2.291000] Segnali Impostati
+[LOG : 2.294000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.317000] Setup dei semafori
+[LOG : 2.336000] Memoria Condivisa Inizializzata
+[LOG : 2.476000] Player: 0 started with pid: 6098
+[LOG : 2.600000] Player: 1 started with pid: 6099
+[LOG : 2.607000] End Of Execution
+Started At: 14:52:41
+[LOG : 3.525000] Impostazione maschere e segnali
+[LOG : 3.552000] Segnali Impostati
+[LOG : 3.569000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 3.613000] Setup dei semafori
+[LOG : 3.633000] Memoria Condivisa Inizializzata
+Started At: 14:52:41
+[LOG : 3.525000] Impostazione maschere e segnali
+[LOG : 3.552000] Segnali Impostati
+[LOG : 3.569000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 3.613000] Setup dei semafori
+[LOG : 3.633000] Memoria Condivisa Inizializzata
+[LOG : 3.785000] Player: 0 started with pid: 6807
+[LOG : 3.996000] Player: 1 started with pid: 6808
+[LOG : 4.010000] End Of Execution
+Started At: 14:52:41
+[LOG : 3.525000] Impostazione maschere e segnali
+[LOG : 3.552000] Segnali Impostati
+[LOG : 3.569000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 3.613000] Setup dei semafori
+[LOG : 3.633000] Memoria Condivisa Inizializzata
+[LOG : 3.785000] Player: 0 started with pid: 6807
+Started At: 14:54:56
+[LOG : 2.381000] Impostazione maschere e segnali
+[LOG : 2.408000] Segnali Impostati
+[LOG : 2.411000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.436000] Setup dei semafori
+[LOG : 2.455000] Memoria Condivisa Inizializzata
+Started At: 14:54:56
+[LOG : 2.381000] Impostazione maschere e segnali
+[LOG : 2.408000] Segnali Impostati
+[LOG : 2.411000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.436000] Setup dei semafori
+[LOG : 2.455000] Memoria Condivisa Inizializzata
+[LOG : 2.607000] Player: 0 started with pid: 7002
+Started At: 14:54:56
+[LOG : 2.381000] Impostazione maschere e segnali
+[LOG : 2.408000] Segnali Impostati
+[LOG : 2.411000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.436000] Setup dei semafori
+[LOG : 2.455000] Memoria Condivisa Inizializzata
+[LOG : 2.607000] Player: 0 started with pid: 7002
+[LOG : 2.756000] Player: 1 started with pid: 7003
+[LOG : 2.803000] End Of Execution
+Started At: 15:36:19
+[LOG : 2.411000] Impostazione maschere e segnali
+[LOG : 2.437000] Segnali Impostati
+[LOG : 2.442000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.491000] Setup dei semafori
+[LOG : 2.515000] Memoria Condivisa Inizializzata
+Started At: 15:36:19
+[LOG : 2.411000] Impostazione maschere e segnali
+[LOG : 2.437000] Segnali Impostati
+[LOG : 2.442000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.491000] Setup dei semafori
+[LOG : 2.515000] Memoria Condivisa Inizializzata
+[LOG : 2.730000] Player: 0 started with pid: 10757
+[LOG : 2.962000] Player: 1 started with pid: 10758
+[LOG : 2.989000] End Of Execution
+Started At: 15:36:19
+[LOG : 2.411000] Impostazione maschere e segnali
+[LOG : 2.437000] Segnali Impostati
+[LOG : 2.442000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.491000] Setup dei semafori
+[LOG : 2.515000] Memoria Condivisa Inizializzata
+[LOG : 2.730000] Player: 0 started with pid: 10757
+Started At: 15:37:37
+[LOG : 2.292000] Impostazione maschere e segnali
+[LOG : 2.318000] Segnali Impostati
+[LOG : 2.322000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.358000] Setup dei semafori
+[LOG : 2.380000] Memoria Condivisa Inizializzata
+Started At: 15:37:37
+[LOG : 2.292000] Impostazione maschere e segnali
+[LOG : 2.318000] Segnali Impostati
+[LOG : 2.322000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.358000] Setup dei semafori
+[LOG : 2.380000] Memoria Condivisa Inizializzata
+[LOG : 2.553000] Player: 0 started with pid: 11037
+Started At: 15:37:37
+[LOG : 2.292000] Impostazione maschere e segnali
+[LOG : 2.318000] Segnali Impostati
+[LOG : 2.322000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.358000] Setup dei semafori
+[LOG : 2.380000] Memoria Condivisa Inizializzata
+[LOG : 2.553000] Player: 0 started with pid: 11037
+[LOG : 2.780000] Player: 1 started with pid: 11038
+[LOG : 2.801000] End Of Execution
+Started At: 15:38:44
+[LOG : 2.348000] Impostazione maschere e segnali
+[LOG : 2.359000] Segnali Impostati
+[LOG : 2.361000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.388000] Setup dei semafori
+[LOG : 2.407000] Memoria Condivisa Inizializzata
+Started At: 15:38:44
+[LOG : 2.348000] Impostazione maschere e segnali
+[LOG : 2.359000] Segnali Impostati
+[LOG : 2.361000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.388000] Setup dei semafori
+[LOG : 2.407000] Memoria Condivisa Inizializzata
+[LOG : 2.551000] Player: 0 started with pid: 11262
+Started At: 15:38:44
+[LOG : 2.348000] Impostazione maschere e segnali
+[LOG : 2.359000] Segnali Impostati
+[LOG : 2.361000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.388000] Setup dei semafori
+[LOG : 2.407000] Memoria Condivisa Inizializzata
+[LOG : 2.551000] Player: 0 started with pid: 11262
+[LOG : 2.724000] Player: 1 started with pid: 11263
+[LOG : 2.747000] End Of Execution
+Started At: 15:39:53
+[LOG : 2.150000] Impostazione maschere e segnali
+[LOG : 2.178000] Segnali Impostati
+[LOG : 2.180000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.207000] Setup dei semafori
+[LOG : 2.226000] Memoria Condivisa Inizializzata
+Started At: 15:39:53
+[LOG : 2.150000] Impostazione maschere e segnali
+[LOG : 2.178000] Segnali Impostati
+[LOG : 2.180000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.207000] Setup dei semafori
+[LOG : 2.226000] Memoria Condivisa Inizializzata
+[LOG : 2.378000] Player: 0 started with pid: 11576
+Started At: 15:39:53
+[LOG : 2.150000] Impostazione maschere e segnali
+[LOG : 2.178000] Segnali Impostati
+[LOG : 2.180000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.207000] Setup dei semafori
+[LOG : 2.226000] Memoria Condivisa Inizializzata
+[LOG : 2.378000] Player: 0 started with pid: 11576
+[LOG : 2.557000] Player: 1 started with pid: 11577
+[LOG : 2.596000] End Of Execution
+Started At: 15:45:41
+[LOG : 2.223000] Impostazione maschere e segnali
+[LOG : 2.248000] Segnali Impostati
+[LOG : 2.252000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.295000] Setup dei semafori
+[LOG : 2.315000] Memoria Condivisa Inizializzata
+Started At: 15:45:41
+[LOG : 2.223000] Impostazione maschere e segnali
+[LOG : 2.248000] Segnali Impostati
+[LOG : 2.252000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.295000] Setup dei semafori
+[LOG : 2.315000] Memoria Condivisa Inizializzata
+[LOG : 2.464000] Player: 0 started with pid: 12670
+Started At: 15:45:41
+[LOG : 2.223000] Impostazione maschere e segnali
+[LOG : 2.248000] Segnali Impostati
+[LOG : 2.252000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.295000] Setup dei semafori
+[LOG : 2.315000] Memoria Condivisa Inizializzata
+[LOG : 2.464000] Player: 0 started with pid: 12670
+[LOG : 2.608000] Player: 1 started with pid: 12671
+[LOG : 2.631000] End Of Execution
+Started At: 15:48:27
+[LOG : 2.116000] Impostazione maschere e segnali
+[LOG : 2.140000] Segnali Impostati
+[LOG : 2.144000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.207000] Setup dei semafori
+[LOG : 2.227000] Memoria Condivisa Inizializzata
+Started At: 15:48:27
+[LOG : 2.116000] Impostazione maschere e segnali
+[LOG : 2.140000] Segnali Impostati
+[LOG : 2.144000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.207000] Setup dei semafori
+[LOG : 2.227000] Memoria Condivisa Inizializzata
+[LOG : 2.390000] Player: 0 started with pid: 12969
+[LOG : 2.595000] Player: 1 started with pid: 12970
+[LOG : 2.601000] End Of Execution
+Started At: 15:48:27
+[LOG : 2.116000] Impostazione maschere e segnali
+[LOG : 2.140000] Segnali Impostati
+[LOG : 2.144000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.207000] Setup dei semafori
+[LOG : 2.227000] Memoria Condivisa Inizializzata
+[LOG : 2.390000] Player: 0 started with pid: 12969
+Started At: 15:49:29
+[LOG : 2.076000] Impostazione maschere e segnali
+[LOG : 2.099000] Segnali Impostati
+[LOG : 2.109000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.150000] Setup dei semafori
+[LOG : 2.168000] Memoria Condivisa Inizializzata
+Started At: 15:49:29
+[LOG : 2.076000] Impostazione maschere e segnali
+[LOG : 2.099000] Segnali Impostati
+[LOG : 2.109000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.150000] Setup dei semafori
+[LOG : 2.168000] Memoria Condivisa Inizializzata
+[LOG : 2.334000] Player: 0 started with pid: 13177
+Started At: 15:49:29
+[LOG : 2.076000] Impostazione maschere e segnali
+[LOG : 2.099000] Segnali Impostati
+[LOG : 2.109000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.150000] Setup dei semafori
+[LOG : 2.168000] Memoria Condivisa Inizializzata
+[LOG : 2.334000] Player: 0 started with pid: 13177
+[LOG : 2.479000] Player: 1 started with pid: 13178
+[LOG : 2.503000] End Of Execution
+Started At: 15:55:44
+[LOG : 2.046000] Impostazione maschere e segnali
+[LOG : 2.058000] Segnali Impostati
+[LOG : 2.060000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.087000] Setup dei semafori
+[LOG : 2.105000] Memoria Condivisa Inizializzata
+Started At: 15:55:44
+[LOG : 2.046000] Impostazione maschere e segnali
+[LOG : 2.058000] Segnali Impostati
+[LOG : 2.060000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.087000] Setup dei semafori
+[LOG : 2.105000] Memoria Condivisa Inizializzata
+[LOG : 2.224000] Player: 0 started with pid: 13738
+[LOG : 2.374000] Player: 1 started with pid: 13739
+[LOG : 2.401000] End Of Execution
+Started At: 15:55:44
+[LOG : 2.046000] Impostazione maschere e segnali
+[LOG : 2.058000] Segnali Impostati
+[LOG : 2.060000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.087000] Setup dei semafori
+[LOG : 2.105000] Memoria Condivisa Inizializzata
+[LOG : 2.224000] Player: 0 started with pid: 13738
+Started At: 16:01:00
+[LOG : 2.254000] Impostazione maschere e segnali
+[LOG : 2.280000] Segnali Impostati
+[LOG : 2.284000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.335000] Setup dei semafori
+[LOG : 2.359000] Memoria Condivisa Inizializzata
+Started At: 16:01:00
+[LOG : 2.254000] Impostazione maschere e segnali
+[LOG : 2.280000] Segnali Impostati
+[LOG : 2.284000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.335000] Setup dei semafori
+[LOG : 2.359000] Memoria Condivisa Inizializzata
+[LOG : 2.499000] Player: 0 started with pid: 14225
+Started At: 16:01:00
+[LOG : 2.254000] Impostazione maschere e segnali
+[LOG : 2.280000] Segnali Impostati
+[LOG : 2.284000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.335000] Setup dei semafori
+[LOG : 2.359000] Memoria Condivisa Inizializzata
+[LOG : 2.499000] Player: 0 started with pid: 14225
+[LOG : 2.661000] Player: 1 started with pid: 14226
+[LOG : 2.680000] End Of Execution
+Started At: 16:03:39
+[LOG : 2.155000] Impostazione maschere e segnali
+[LOG : 2.169000] Segnali Impostati
+[LOG : 2.181000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.216000] Setup dei semafori
+[LOG : 2.235000] Memoria Condivisa Inizializzata
+Started At: 16:03:39
+[LOG : 2.155000] Impostazione maschere e segnali
+[LOG : 2.169000] Segnali Impostati
+[LOG : 2.181000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.216000] Setup dei semafori
+[LOG : 2.235000] Memoria Condivisa Inizializzata
+[LOG : 2.404000] Player: 0 started with pid: 14483
+Started At: 16:03:39
+[LOG : 2.155000] Impostazione maschere e segnali
+[LOG : 2.169000] Segnali Impostati
+[LOG : 2.181000] Inizializzazione Memoria Condivisa
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.216000] Setup dei semafori
+[LOG : 2.235000] Memoria Condivisa Inizializzata
+[LOG : 2.404000] Player: 0 started with pid: 14483
+[LOG : 2.591000] Player: 1 started with pid: 14484
+[LOG : 2.613000] End Of Execution
+Started At: 16:06:49
+[LOG : 2.188000] Impostazione maschere e segnali
+[LOG : 2.243000] Segnali Impostati
+[LOG : 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.272000] Setup dei semafori
+[LOG : 2.292000] Memoria Condivisa Inizializzata
+Started At: 16:06:49
+[LOG : 2.188000] Impostazione maschere e segnali
+[LOG : 2.243000] Segnali Impostati
+[LOG : 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.272000] Setup dei semafori
+[LOG : 2.292000] Memoria Condivisa Inizializzata
+[LOG : 2.460000] Player: 0 started with pid: 14968
+[LOG : 2.641000] Player: 1 started with pid: 14969
+[LOG : 2.651000] End Of Execution
+Started At: 16:06:49
+[LOG : 2.188000] Impostazione maschere e segnali
+[LOG : 2.243000] Segnali Impostati
+[LOG : 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG]: Msgqueque creata
+[DEBUG]: Memoria Condivisa Inizializzata
+[DEBUG]: Shared Table attach completato
+[LOG : 2.272000] Setup dei semafori
+[LOG : 2.292000] Memoria Condivisa Inizializzata
+[LOG : 2.460000] Player: 0 started with pid: 14968
