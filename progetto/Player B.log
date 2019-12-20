@@ -10236,3 +10236,5 @@
 [LOG : 1.228000] Generato pezzo 7 Attesa
 [LOG : 1.424000] Generato pezzo 8 Attesa
 [LOG : 1.553000] Generato pezzo 9 Attesa
+[LOG : 0.398000] Player Started At 03:47:29
+[LOG : 0.466000] Ricevuto Segnale SIGINT

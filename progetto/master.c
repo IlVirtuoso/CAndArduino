@@ -71,7 +71,11 @@ void handler(int signum);
 /*cleaner per SIGINT*/
 void clean();
 
+/*metodo per la creazione di flag*/
+void placeflag(int x, int y);
 
+/*definisce quante flag sono già state create*/
+int placed;
 
 /*uccide tutti i processi inizializzati dal processo master*/
 void killall();
@@ -81,15 +85,13 @@ struct sigaction sa;
 /*semaforo*/
 struct semaphore * sem;
 
-
-
-
-
+/*struttura che definisce le bandiere, visibile solo al master*/
 typedef struct{
     int x;
     int y;
     int score;
 }vexillum;
+
 
 
 
@@ -135,7 +137,7 @@ typedef struct{
 
 score_table * st;
 
-/*puntatore alla struttura vex*/
+/*puntatore alla struttura vexillum per le bandiere*/
 vexillum * vex;
 
 /* stampa la tabella del punteggio */
@@ -155,12 +157,11 @@ int pid;
 int num_flag;
 int main(int argc, char * argv[]){
     cleaner = clean;
+    placed = 0;
     srand(clock() + getpid());
     num_flag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
     /*@HPF4 il tuo esperimento si trova qui*/
     vex = (vexillum *) malloc(num_flag * sizeof(vexillum));
-    vex[num_flag].x = 123;
-    printf("%d \n",vex[num_flag].x);
     /* Inizializzazione tabella degli score */
     st =  malloc(sizeof(score_table)); 
     for(i = 0; i < SO_NUM_G; i++){
@@ -214,12 +215,16 @@ int main(int argc, char * argv[]){
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
-            tab(master_shared_table,i,j)->id ='-';
+            tab(master_shared_table,i,j)->id = EMPTY;
+            if(j%2 == 0 && placed < num_flag){
+                placeflag(i,j);
+            }
         }
     }
     /*End-Region*/
     logg("Memoria Condivisa Inizializzata");
-
+    display_master();
+    exit(1);
     /*Region: Process Creation*/
     for(i = 0; i < SO_NUM_G; i++){
         if((pid = fork())){
@@ -241,10 +246,10 @@ int main(int argc, char * argv[]){
             exit(1);
         }
     }
+    playercreated = 1;
     /*End-Region*/
 
     /*Region Phase-1:flag*/
-
     /*End-Region*/
 
     /*Region Phase-2:Indication*/
@@ -317,8 +322,15 @@ void display_master(){
 void stamp_score(score_table * t){
 	printf("PLAYER         SCORE\n");
 	for(i = 0; i < SO_NUM_G; i++){
-		printf("PLAYER %c   |   %d \n", t -> name[i], t -> score[i]);
+		printf("PLAYER %c   |   %d  \n", t -> name[i], t -> score[i]);
 	}
+}
+
+void placeflag(int x, int y){
+    vex[placed].x = x;
+    vex[placed].y = y;
+    tab(master_shared_table,x,y)->id = FLAG;
+    placed++;
 }
 
 /*End Region*/

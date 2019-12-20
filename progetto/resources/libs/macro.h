@@ -57,6 +57,14 @@
 #define SIGSTART SIGUSR1
 #endif
 
+#ifndef FLAG
+#define FLAG '!'
+#endif
+
+#ifndef EMPTY
+#define EMPTY ' '
+#endif
+
 
 /*DEV_IEM ho spostato i commenti per farli leggere a intellisense
 *Piccolo Tutorial su intellisense per C/C++:

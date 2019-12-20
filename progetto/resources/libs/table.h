@@ -45,11 +45,13 @@ typedef struct{
 }cell;
 
 
+
 /*metodo per muoversi nella tabella*/
 cell * tab(cell * table, int x, int y);
 
 /*id della table*/
 int table;
+
 
 /*inizializza la scacchiera in memoria condivisa*/
 void table_start();
