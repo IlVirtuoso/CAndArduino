@@ -13,7 +13,7 @@ void error(char message[], int err){
     
 }
 
-int debug(char message []){
+int debug(const char *__restrict__ message, ...){
     if(isDebug){
         printf("[Debug]: %s\n", message);
         fprintf(logger,"[DEBUG]: %s\n",message);
@@ -24,10 +24,9 @@ int debug(char message []){
     }
 }
 
-void logg(char message[]){
+void logg(const char  *__restrict__ message, ...){
     double time = (double)clock()/1000;
     printf("[LOG: %f]%s\n",(double)time,message);
     fprintf(logger,"[LOG : %f] %s\n",(double)time,message);
-    bzero(logbuffer,sizeof(logbuffer));
 
 }

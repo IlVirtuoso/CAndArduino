@@ -36,13 +36,13 @@ FILE * logger;
 int verbosity;
 
 /*scrive su console e su un file un messaggio, utile per verificare la corretta esecuzione !!USATA SOLO DAL PROCESSO MASTER*/
-void logg(char message []);
+void logg( const char *__restrict__ message, ...); 
 
 /* segnala un errore e ne mostra la causa, poi invoca clean() per prepararsi all'uscita*/
 void error(char message [], int err);
 
 /* funzione per mostrare il [debug] su console, attenzione la variabile isDebug deve essere 1 */
-int debug(char message []);
+int debug(const char *__restrict__ message, ...);
 
 /*puntatore alla funzione clean ridichiarata in ogni processo*/
 void (* cleaner) ();
