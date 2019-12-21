@@ -26,8 +26,7 @@ int piece(){
     else{
         sprintf(logbuffer,"Pezzo %d del player %c attaccato alla table",piece_id,player_id);
         logg(logbuffer);
-    }
-
+    } 
     return 0;
 }
 

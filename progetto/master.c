@@ -124,6 +124,7 @@ int piececreated = 0;
 
 char master_logbuffer[128];
 
+int status;
 
 /* struttura dati per i punteggi */
 typedef struct{
@@ -215,16 +216,14 @@ int main(int argc, char * argv[]){
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
+            tab(master_shared_table,i,j)->sem.sem_num = 0;
             tab(master_shared_table,i,j)->id = EMPTY;
-            if(j%2 == 0 && placed < num_flag){
-                placeflag(i,j);
-            }
+            tab(master_shared_table,i,j)->sem.sem_op = 1;
+            
         }
     }
     /*End-Region*/
     logg("Memoria Condivisa Inizializzata");
-    display_master();
-    exit(1);
     /*Region: Process Creation*/
     for(i = 0; i < SO_NUM_G; i++){
         if((pid = fork())){
@@ -232,7 +231,7 @@ int main(int argc, char * argv[]){
             st -> pid[i] = pid;
             sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
             logg(logbuffer);
-            
+            waitpid(pid,&status,0);
             /*attesa*/
         }
         else{
@@ -241,9 +240,6 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
             }
-
-            shmdt(player_shared_table);
-            exit(1);
         }
     }
     playercreated = 1;
@@ -259,10 +255,8 @@ int main(int argc, char * argv[]){
     /*Region Phase-3:Anarchy*/
 
     /*End-Region*/
-    
-
+    pause();
     logg("End Of Execution");
-    cleaner();
     return 0;
 }
 

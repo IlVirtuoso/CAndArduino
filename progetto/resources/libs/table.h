@@ -49,6 +49,9 @@ typedef struct{
 /*metodo per muoversi nella tabella*/
 cell * tab(cell * table, int x, int y);
 
+/*metodo per ritornare una cella*/
+cell pointer(cell * table, int x, int y);
+
 /*id della table*/
 int table;
 
