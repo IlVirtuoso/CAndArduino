@@ -92,7 +92,8 @@ typedef struct{
     int score;
 }vexillum;
 
-
+/*buffer per messaggi*/
+char master_logbuffer[128];
 
 
 /*display debug per il master*/
@@ -181,12 +182,13 @@ int main(int argc, char * argv[]){
         if(strcmp(argv[i],"-vv")) verbosity = 3;
     }
     logger = fopen("Master.log","a+");
-    fprintf(logger,"Started At: %s\n",__TIME__);
+    logg("Started At: %s\n",__TIME__);
     
     /*End-Region*/
     
+    
     logbuffer = master_logbuffer; /*impostazione buffer privato*/
-    logg("Impostazione maschere e segnali");
+    logg("Impostazione maschere e segnali",NULL);
     /*Region: inizializzazione dei segnali*/
     bzero(&sa,sizeof(sa));
     sa.sa_handler = handler;
