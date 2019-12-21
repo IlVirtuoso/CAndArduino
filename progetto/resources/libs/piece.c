@@ -46,3 +46,27 @@ void piece_handler(int signum){
 void piece_cleaner(){
     shmdt(piece_shared_table);
 }
+
+void goto_loc(int x, int y, int method){
+    switch (method)
+    {
+    case PROBABLE_LESS_COSTLY:
+        
+        break;
+    
+    case X_BEFORE_Y:
+
+        break;
+
+    case Y_BEFORE_X:
+
+        break;
+
+    case STRAIGHT_TO:
+
+        break;
+    
+    default:
+        break;
+    }
+}

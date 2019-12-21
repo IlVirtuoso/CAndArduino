@@ -42,8 +42,19 @@ sigset_t piece_mask;
 /*buffer per i messaggi modificati*/
 char piece_logbuffer[128];
 
+/*metodo per dire alla pedina quale punto raggiungere*/
+void goto_loc(int x, int y, int method);
 
 struct sigaction piece_signal;
 
+enum{
+    STRAIGHT_TO,
+    X_BEFORE_Y,
+    Y_BEFORE_X,
+    PROBABLE_LESS_COSTLY
+};
+
 #endif
+
+
 
