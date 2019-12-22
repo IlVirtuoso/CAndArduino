@@ -96,9 +96,6 @@ typedef struct{
 char master_logbuffer[128];
 
 
-/*display debug per il master*/
-void display_master();
-
 /*id della scacchiera*/
 int table; 
 
@@ -212,19 +209,6 @@ int main(int argc, char * argv[]){
         debug("Shared Table attach completato");
     }
     
-    if(fork()){
-        logg("Monitor Partito");
-    }
-    else{
-        if((board = (cell *)shmat(table,NULL,0)) == (void*) - 1){
-        error("Errore nell'attach della shared_table",EIO);
-    }
-    else{
-        debug("Shared Table attach completato");
-    }
-        show();
-        error("Errore nell'inizializzare il monitor",ECHILD);
-    }
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
@@ -266,6 +250,7 @@ int main(int argc, char * argv[]){
     /*End-Region*/
     logg("MASTER:End Of Execution");
     logg("MASTER:Stopped at %s",__TIME__);
+    
     return 0;
 }
 

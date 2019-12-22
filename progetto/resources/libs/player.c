@@ -1,4 +1,3 @@
-
 #ifndef PLAYER_H
 #include "player.h"
 #endif
@@ -7,8 +6,10 @@ char filename[24];
 int status;
 
 
+
+
 int player(){
-    clockd->tv_nsec = 1;
+
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
     logg("Player Started At %s",__TIME__);
@@ -16,6 +17,13 @@ int player(){
                 error("Errore nell'innesto della shared_table",EIO);
             }
     
+
+    /*inizializzazione semaforo*/
+    if((semid = semget(IPC_PRIVATE,1,IPC_CREAT | 0660)) == -1){
+        error("Errore nell'inizializzare il semaforo",ECHILD);
+    }
+    semattr.val = 0;
+    semctl(semid,0,SETVAL,semattr.val);
     /*puntatore alla funzione player_clean da sfruttare con error()*/
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
@@ -62,6 +70,8 @@ int piecegen(int numpieces){
             }
         }
     }
+    play_sem->sem_op = 1;
+    semop(semid,play_sem,1);
     return 0;
 }
 

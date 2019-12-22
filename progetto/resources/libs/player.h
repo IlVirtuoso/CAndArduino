@@ -108,6 +108,20 @@ cell * player_shared_table;
 /*collegamento alla msgqueue del master con il player*/
 int master_msgqueue;
 
+/*semaforo*/
+union semun {
+    int val;
+    struct semid_ds *buf;
+    ushort array[1];
+}semattr;
+
+int semid;
+
+struct sembuf play_sem[1];
+ 
+
+
+
 char player_logbuffer[128];
 
 #endif

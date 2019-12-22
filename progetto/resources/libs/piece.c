@@ -3,6 +3,8 @@
 #endif
 
 int piece(){
+    piece_sem->sem_op = 1;
+    semop(semid,piece_sem,1);
     logger = fopen("Pieces.log","a+");
     logg("Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
     player_msgqueue = msgqueue;

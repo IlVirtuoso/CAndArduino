@@ -47,6 +47,13 @@ void goto_loc(int x, int y, int method);
 
 struct sigaction piece_signal;
 
+/*semaforo*/
+
+
+int semid;
+
+struct sembuf piece_sem[1];
+
 enum{
     STRAIGHT_TO,
     X_BEFORE_Y,
