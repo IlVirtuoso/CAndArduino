@@ -31,14 +31,14 @@ int debug(const char *__restrict__ message, ...){
     }
 }
 
-char logbuffer[128];
+char logformatted[128];
 void logg(const char  *__restrict__ message, ...){
     double time = (double)clock()/1000;
     va_list args;
     va_start(args, message);
-    vsnprintf(logbuffer,sizeof(logbuffer),message,args);
-    fprintf(logger,"[LOG : %f] %s\n",(double)time,logbuffer);
-    printf("[LOG: %f]%s\n",(double)time,logbuffer);
+    vsnprintf(logformatted,sizeof(logformatted),message,args);
+    fprintf(logger,"[LOG : %f] %s\n",(double)time,logformatted);
+    printf("[LOG: %f]%s\n",(double)time,logformatted);
     va_end(args);
-    bzero(logbuffer,sizeof(logbuffer));
+    bzero(logformatted,sizeof(logformatted));
 }

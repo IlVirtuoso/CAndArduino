@@ -29,6 +29,8 @@ int player(){
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
     piecegen(SO_NUM_P);
+    cleaner();
+    exit(0);
     return 0;
 
 }
@@ -45,7 +47,9 @@ int piecegen(int numpieces){
         if((pid = fork())){
             /*player*/
             pieces[i] = pid;
+            waitpid(pid,NULL,WEXITED);
             logg("Generato pezzo %d Attesa",i);
+
         }
         
         else{
@@ -89,7 +93,7 @@ void player_handler(int signum){
 
 int i;
 void player_clean(){
-    logg("Interruzione esecuzione in corso");
+    logg("PLAYER_CLEANER:Interruzione esecuzione in corso");
     for(i = 0; i < sizeof(pieces); i++){
         kill(pieces[i],SIGINT);
     }

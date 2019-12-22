@@ -78,7 +78,7 @@ void placeflag(int x, int y);
 int placed;
 
 /*uccide tutti i processi inizializzati dal processo master*/
-void killall();
+void clean_process();
 
 struct sigaction sa;
 
@@ -229,7 +229,7 @@ int main(int argc, char * argv[]){
             /*padre*/
             st -> pid[i] = pid;
             logg("Player: %d started with pid: %d",i,pid);
-            
+            /*waitpid(pid,NULL,WEXITED);*/
             /*attesa*/
         }
         else{
@@ -238,10 +238,9 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
             }
-            exit(0);
         }
     }
-    playercreated = 1;
+    playercreated = 0;
     /*End-Region*/
 
     /*Region Phase-1:flag*/
@@ -254,8 +253,8 @@ int main(int argc, char * argv[]){
     /*Region Phase-3:Anarchy*/
 
     /*End-Region*/
-    clean();
-    logg("End Of Execution");
+    logg("MASTER:End Of Execution");
+    logg("MASTER:Stopped at %s",__TIME__);
     return 0;
 }
 
@@ -278,21 +277,21 @@ void handler(int signum){
 }
 
 void clean(){
-    logg("detaching");
+    logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
-    logg("removing");
+    
     shmctl(table,IPC_RMID,NULL);
-    logg("frree");
+    
     free(st);
     free(vex);
     fclose(logger);
     if(playercreated){
-        killall();
+        clean_process();
     }
     
 }
 
-void killall(){
+void clean_process(){
     for(i = 0; i < sizeof(st->pid);i++){
         kill(st->pid[i],SIGINT);
     }

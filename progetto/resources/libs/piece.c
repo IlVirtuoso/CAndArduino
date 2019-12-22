@@ -25,6 +25,9 @@ int piece(){
         logg("Pezzo %d del player %c attaccato alla table",piece_id,player_id);
 
     } 
+
+    cleaner();
+    exit(0);
     return 0;
 }
 
