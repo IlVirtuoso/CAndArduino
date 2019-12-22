@@ -13,10 +13,11 @@ void error(char message[], int err){
     
 }
 
+
+va_list args;
 char formatted[128];
 int debug(const char *__restrict__ message, ...){
     if(isDebug){
-    va_list args;
     va_start(args, message);
     vsnprintf(formatted,sizeof(formatted),message,args);
     fprintf(logger,"[DEBUG]: %s\n",formatted);
@@ -31,14 +32,15 @@ int debug(const char *__restrict__ message, ...){
     }
 }
 
+float actime;
+
 char logformatted[128];
 void logg(const char  *__restrict__ message, ...){
-    double time = (double)clock()/1000;
-    va_list args;
+    actime = (double)clock()/1000;
     va_start(args, message);
     vsnprintf(logformatted,sizeof(logformatted),message,args);
-    fprintf(logger,"[LOG : %f] %s\n",(double)time,logformatted);
-    printf("[LOG: %f]%s\n",(double)time,logformatted);
+    fprintf(logger,"[LOG : %f] %s\n",(float)actime,logformatted);
+    printf("[LOG: %f]%s\n",(float)actime,logformatted);
     va_end(args);
     bzero(logformatted,sizeof(logformatted));
 }
