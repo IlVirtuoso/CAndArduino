@@ -123,7 +123,6 @@ int playercreated = 0;
 /*variabile che dice se i pezzi sono stati creati*/
 int piececreated = 0;
 
-char master_logbuffer[128];
 
 int status;
 
@@ -186,9 +185,7 @@ int main(int argc, char * argv[]){
     
     /*End-Region*/
     
-    
-    logbuffer = master_logbuffer; /*impostazione buffer privato*/
-    logg("Impostazione maschere e segnali",NULL);
+    logg("Impostazione maschere e segnali");
     /*Region: inizializzazione dei segnali*/
     bzero(&sa,sizeof(sa));
     sa.sa_handler = handler;
@@ -231,9 +228,8 @@ int main(int argc, char * argv[]){
         if((pid = fork())){
             /*padre*/
             st -> pid[i] = pid;
-            sprintf(logbuffer,"Player: %d started with pid: %d",i,pid);
-            logg(logbuffer);
-            waitpid(pid,&status,0);
+            logg("Player: %d started with pid: %d",i,pid);
+            
             /*attesa*/
         }
         else{
@@ -242,6 +238,7 @@ int main(int argc, char * argv[]){
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
             }
+            exit(0);
         }
     }
     playercreated = 1;
@@ -257,7 +254,7 @@ int main(int argc, char * argv[]){
     /*Region Phase-3:Anarchy*/
 
     /*End-Region*/
-    pause();
+    clean();
     logg("End Of Execution");
     return 0;
 }
@@ -281,8 +278,11 @@ void handler(int signum){
 }
 
 void clean(){
+    logg("detaching");
     shmdt(master_shared_table);
+    logg("removing");
     shmctl(table,IPC_RMID,NULL);
+    logg("frree");
     free(st);
     free(vex);
     fclose(logger);

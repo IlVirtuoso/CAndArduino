@@ -4,9 +4,7 @@
 
 int piece(){
     logger = fopen("Pieces.log","a+");
-    logbuffer = (char *)piece_logbuffer;
-    sprintf(logbuffer,"Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
-    logg(logbuffer);
+    logg("Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
     player_msgqueue = msgqueue;
     cleaner = piece_cleaner;
     logg("Setup Struttura dei segnali");
@@ -24,8 +22,8 @@ int piece(){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
     else{
-        sprintf(logbuffer,"Pezzo %d del player %c attaccato alla table",piece_id,player_id);
-        logg(logbuffer);
+        logg("Pezzo %d del player %c attaccato alla table",piece_id,player_id);
+
     } 
     return 0;
 }

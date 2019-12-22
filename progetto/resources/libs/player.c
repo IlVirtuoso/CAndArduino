@@ -10,9 +10,7 @@ int status;
 int player(){
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
-    logbuffer = player_logbuffer;
-    sprintf(logbuffer,"Player Started At %s",__TIME__);
-    logg(logbuffer);
+    logg("Player Started At %s",__TIME__);
     if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table",EIO);
             }
@@ -47,9 +45,7 @@ int piecegen(int numpieces){
         if((pid = fork())){
             /*player*/
             pieces[i] = pid;
-            sprintf(logbuffer,"Generato pezzo %d Attesa",i);
-            logg(logbuffer);
-            waitpid(pid,&status,0);
+            logg("Generato pezzo %d Attesa",i);
         }
         
         else{

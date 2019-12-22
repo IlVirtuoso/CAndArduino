@@ -20,14 +20,14 @@
 #ifndef TYPES_H
 #include <sys/types.h>
 #endif
+#ifndef STDARG_H
+#include <stdarg.h>
+#endif
 
 #ifndef DEBUG_H
 #define DEBUG_H
 /*identifica se il Debug è o no attivo*/
 int isDebug; 
-
-/*buffer per i messaggi modificati*/
-char * logbuffer;
 
 /*File da aprire per lo store dei log*/
 FILE * logger;
@@ -46,5 +46,7 @@ int debug(const char *__restrict__ message, ...);
 
 /*puntatore alla funzione clean ridichiarata in ogni processo*/
 void (* cleaner) ();
+
+
 
 #endif
