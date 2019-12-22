@@ -84,6 +84,9 @@ pid_t player_pid;
 /*player id*/
 char player_id;
 
+
+struct timespec * clockd;
+
 /*enorme funzione che inizializza il player*/
 int player();
  

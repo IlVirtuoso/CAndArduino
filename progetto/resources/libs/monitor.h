@@ -17,6 +17,12 @@
 #ifndef STRING_H
 #include <string.h>
 #endif
+#ifndef TABLE_H
+#include "table.h"
+#endif
+#ifndef TIME_H
+#include <time.h>
+#endif
 
 #ifndef MONITOR_H
 #define MONITOR_H
@@ -26,5 +32,8 @@ void display();
 
 /*inizia il processo che farà da monitor per il gioco*/
 void show();
+
+/*puntatore alla scacchiera*/
+cell * board;
 
 #endif

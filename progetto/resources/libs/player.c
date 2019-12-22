@@ -8,6 +8,7 @@ int status;
 
 
 int player(){
+    clockd->tv_nsec = 1;
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
     logg("Player Started At %s",__TIME__);

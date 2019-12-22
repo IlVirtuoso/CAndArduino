@@ -211,7 +211,20 @@ int main(int argc, char * argv[]){
     else{
         debug("Shared Table attach completato");
     }
-
+    
+    if(fork()){
+        logg("Monitor Partito");
+    }
+    else{
+        if((board = (cell *)shmat(table,NULL,0)) == (void*) - 1){
+        error("Errore nell'attach della shared_table",EIO);
+    }
+    else{
+        debug("Shared Table attach completato");
+    }
+        show();
+        error("Errore nell'inizializzare il monitor",ECHILD);
+    }
     logg("Setup dei semafori");
     for(i = 0; i < SO_BASE; i++){
         for(j = 0; j < SO_ALTEZZA; j++){
@@ -229,7 +242,7 @@ int main(int argc, char * argv[]){
             /*padre*/
             st -> pid[i] = pid;
             logg("Player: %d started with pid: %d",i,pid);
-            /*waitpid(pid,NULL,WEXITED);*/
+            waitpid(pid,NULL,WEXITED);
             /*attesa*/
         }
         else{
@@ -242,7 +255,6 @@ int main(int argc, char * argv[]){
     }
     playercreated = 0;
     /*End-Region*/
-
     /*Region Phase-1:flag*/
     /*End-Region*/
 
@@ -251,7 +263,6 @@ int main(int argc, char * argv[]){
     /*End-Region*/
 
     /*Region Phase-3:Anarchy*/
-
     /*End-Region*/
     logg("MASTER:End Of Execution");
     logg("MASTER:Stopped at %s",__TIME__);
@@ -299,18 +310,6 @@ void clean_process(){
 
 /*End Region*/
 
-/*Regione metodi per il debug*/
-int x; 
-int y;
-void display_master(){ 
-    system("clear");
-    for(x = 0 ; x < SO_BASE; x++){
-        for(y = 0; y < SO_ALTEZZA; y++){
-            printf("|%c|", tab(master_shared_table,x,y)->id);
-        }
-        printf("\n");
-    }
-}
 
 
 
