@@ -6,8 +6,8 @@
 char errore[24];
 void error(char message[], int err){
     sprintf(errore,"%s",strerror(err));
-    printf("[ERROR]:%s,message:%s\n",errore,message);
     fprintf(logger,"[ERROR]:%s,message:%s\n",errore,message);
+    fprintf(stderr,"[ERROR]:%s,message:%s\n",errore,message);
     cleaner();
     exit(err);
     

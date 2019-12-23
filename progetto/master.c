@@ -248,6 +248,7 @@ int main(int argc, char * argv[]){
 
     /*Region Phase-3:Anarchy*/
     /*End-Region*/
+    
     logg("MASTER:End Of Execution");
     logg("MASTER:Stopped at %s",__TIME__);
     

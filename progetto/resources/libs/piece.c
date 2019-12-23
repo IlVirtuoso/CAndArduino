@@ -3,8 +3,6 @@
 #endif
 
 int piece(){
-    piece_sem->sem_op = 1;
-    semop(semid,piece_sem,1);
     logger = fopen("Pieces.log","a+");
     logg("Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
     player_msgqueue = msgqueue;
@@ -14,11 +12,13 @@ int piece(){
     piece_signal.sa_handler = piece_handler;
     sigemptyset(&piece_mask);
     sigaddset(&piece_mask,SIGINT);
+    sigaddset(&piece_mask,SIGUSR1);
+    sigaddset(&piece_mask,SIGUSR2);
     /*Questi due segnali serviranno per dare al player dei comandi addizionali*/
     sigprocmask(SIG_BLOCK,&piece_mask,NULL);
     piece_signal.sa_mask = piece_mask;
-  /*piece_signal.sa_flags = SA_RESTART;
-    piece_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
+    piece_signal.sa_flags = SA_RESTART;
+    piece_signal.sa_flags = SA_NODEFER;
     sigaction(SIGINT,&piece_signal,NULL);
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
@@ -28,7 +28,7 @@ int piece(){
 
     } 
 
-    cleaner();
+    
     exit(0);
     return 0;
 }
@@ -38,6 +38,15 @@ void piece_handler(int signum){
     {
     case SIGINT:
         piece_cleaner();
+        exit(-1);
+        break;
+
+    case SIGUSR1:
+        logg("Restart Execution");
+        break;
+
+    case SIGUSR2:
+
         break;
     
     default:

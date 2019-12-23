@@ -9,21 +9,20 @@ int status;
 
 
 int player(){
-
+    if((semid = semget(IPC_PRIVATE,1,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+        error("errore nel semaforo",ECONNABORTED);
+    }
+    
+    if(semctl(semid,0,SETVAL,-1) == -1){
+        error("Error in semctl",ECOMM);
+    }
+    
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
     logg("Player Started At %s",__TIME__);
     if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table",EIO);
             }
-    
-
-    /*inizializzazione semaforo*/
-    if((semid = semget(IPC_PRIVATE,1,IPC_CREAT | 0660)) == -1){
-        error("Errore nell'inizializzare il semaforo",ECHILD);
-    }
-    semattr.val = 0;
-    semctl(semid,0,SETVAL,semattr.val);
     /*puntatore alla funzione player_clean da sfruttare con error()*/
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
@@ -38,7 +37,6 @@ int player(){
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
     piecegen(SO_NUM_P);
-    cleaner();
     exit(0);
     return 0;
 
@@ -70,8 +68,7 @@ int piecegen(int numpieces){
             }
         }
     }
-    play_sem->sem_op = 1;
-    semop(semid,play_sem,1);
+
     return 0;
 }
 

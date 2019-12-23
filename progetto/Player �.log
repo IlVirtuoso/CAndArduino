@@ -4294,3 +4294,223 @@
 [LOG : 1.082000] Generato pezzo 8 Attesa
 [LOG : 1.194000] Generato pezzo 9 Attesa
 [LOG : 1.230000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.027000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.520000] Generato pezzo 4 Attesa
+[LOG : 0.577000] Generato pezzo 5 Attesa
+[LOG : 0.641000] Generato pezzo 6 Attesa
+[LOG : 0.719000] Generato pezzo 7 Attesa
+[LOG : 0.805000] Generato pezzo 8 Attesa
+[LOG : 0.015000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.018000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.029000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.023000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.520000] Generato pezzo 4 Attesa
+[LOG : 0.034000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.520000] Generato pezzo 4 Attesa
+[LOG : 0.577000] Generato pezzo 5 Attesa
+[LOG : 0.023000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.520000] Generato pezzo 4 Attesa
+[LOG : 0.577000] Generato pezzo 5 Attesa
+[LOG : 0.641000] Generato pezzo 6 Attesa
+[LOG : 0.719000] Generato pezzo 7 Attesa
+[LOG : 0.048000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.022000] Semaphore value -1
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.520000] Generato pezzo 4 Attesa
+[LOG : 0.577000] Generato pezzo 5 Attesa
+[LOG : 0.641000] Generato pezzo 6 Attesa
+[LOG : 0.719000] Generato pezzo 7 Attesa
+[LOG : 0.805000] Generato pezzo 8 Attesa
+[LOG : 0.867000] Generato pezzo 9 Attesa
+[LOG : 0.890000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : 0.155000] Player Started At 01:38:51
+[LOG : 0.165000] Setup Struttura dei segnali
+[LOG : 0.167000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.241000] Generato pezzo 0 Attesa
+[LOG : 0.321000] Generato pezzo 1 Attesa
+[LOG : 0.385000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.520000] Generato pezzo 4 Attesa
+[LOG : 0.577000] Generato pezzo 5 Attesa
+[LOG : 0.641000] Generato pezzo 6 Attesa
+[LOG : 0.018000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.038000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.029000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.031000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.518000] Generato pezzo 4 Attesa
+[LOG : 0.026000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.518000] Generato pezzo 4 Attesa
+[LOG : 0.576000] Generato pezzo 5 Attesa
+[LOG : 0.020000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.518000] Generato pezzo 4 Attesa
+[LOG : 0.576000] Generato pezzo 5 Attesa
+[LOG : 0.628000] Generato pezzo 6 Attesa
+[LOG : 0.684000] Generato pezzo 7 Attesa
+[LOG : 0.026000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.518000] Generato pezzo 4 Attesa
+[LOG : 0.576000] Generato pezzo 5 Attesa
+[LOG : 0.628000] Generato pezzo 6 Attesa
+[LOG : 0.684000] Generato pezzo 7 Attesa
+[LOG : 0.783000] Generato pezzo 8 Attesa
+[LOG : 0.841000] Generato pezzo 9 Attesa
+[LOG : 0.854000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.518000] Generato pezzo 4 Attesa
+[LOG : 0.576000] Generato pezzo 5 Attesa
+[LOG : 0.628000] Generato pezzo 6 Attesa
+[LOG : 0.027000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.399000] Generato pezzo 2 Attesa
+[LOG : 0.458000] Generato pezzo 3 Attesa
+[LOG : 0.518000] Generato pezzo 4 Attesa
+[LOG : 0.576000] Generato pezzo 5 Attesa
+[LOG : 0.628000] Generato pezzo 6 Attesa
+[LOG : 0.684000] Generato pezzo 7 Attesa
+[LOG : 0.783000] Generato pezzo 8 Attesa
+[LOG : 0.026000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.344000] Generato pezzo 1 Attesa
+[LOG : 0.024000] Semaphore value -1
+[LOG : 0.158000] Player Started At 01:40:12
+[LOG : 0.186000] Setup Struttura dei segnali
+[LOG : 0.202000] Generazione pezzi iniziata
+[DEBUG]: Msgqueque creata
+[LOG : 0.279000] Generato pezzo 0 Attesa
+[LOG : 0.023000] Semaphore value -1
