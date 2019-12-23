@@ -141,6 +141,12 @@ vexillum * vex;
 /* stampa la tabella del punteggio */
 void stamp_score(score_table * t);
 
+/* Genera il numero di bandierine*/
+int getNumflag();
+
+/* crea ed inizializza l'array di bandierine NB: usare prima getNumFlag() e free(target)*/  
+vexillum * getVex(int numFlag);
+
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
@@ -158,8 +164,10 @@ int main(int argc, char * argv[]){
     placed = 0;
     srand(clock() + getpid());
     num_flag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
+    
     /*@HPF4 il tuo esperimento si trova qui*/
     vex = (vexillum *) malloc(num_flag * sizeof(vexillum));
+
     /* Inizializzazione tabella degli score */
     st =  malloc(sizeof(score_table)); 
     for(i = 0; i < SO_NUM_G; i++){
@@ -310,6 +318,44 @@ void placeflag(int x, int y){
     vex[placed].y = y;
     tab(master_shared_table,x,y)->id = FLAG;
     placed++;
+}
+
+int getNumflag(){
+    int ln, i, numFlag;
+    int * collection;
+    srand(clock() + getpid());
+    for(i =SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++){
+        if((SO_ROUND_SCORE % i) == 0) ln++;
+    }
+    if(ln == 0){
+        printf("ASSENZA DI UNA COMBINAZIONE PER CUI SCORE POSSA ESSERE DIVISO \n");
+        numFlag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
+    }else{
+        printf("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n"); 
+        collection = malloc(ln * sizeof(collection));
+        for(i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++){
+            if(SO_ROUND_SCORE % i == 0){
+                collection[ln] = i;
+                ln++;
+            }
+        }
+        numFlag = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
+        numFlag = collection[numFlag];
+        printf("%d \n", numFlag);
+    }
+    return numFlag;
+}
+
+vexillum * getVex(int numFlag){
+    vexillum * p;
+    int i, r = SO_ROUND_SCORE % numFlag;
+    p = (vexillum *)malloc(numFlag * sizeof(vexillum));
+    for(i = 0; i < numFlag; i++){
+        (p[i]).score = SO_ROUND_SCORE/numFlag;
+        if(r != 0){ (p[i]).score = (p[i]).score + 1; r --;}
+        /*... Assegnazione cella di memoria ...*/
+    }
+    return p;
 }
 
 /*End Region*/
