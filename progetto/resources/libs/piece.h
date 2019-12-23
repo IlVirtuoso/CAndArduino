@@ -50,7 +50,8 @@ struct sigaction piece_signal;
 /*semaforo*/
 
 
-int semid;
+int player_semid;
+key_t player_semkey;
 
 struct sembuf piece_sem[1];
 

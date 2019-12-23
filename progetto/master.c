@@ -71,14 +71,18 @@ void handler(int signum);
 /*cleaner per SIGINT*/
 void clean();
 
-/*metodo per la creazione di flag*/
-void placeflag(int x, int y);
-
 /*definisce quante flag sono già state create*/
 int placed;
 
 /*uccide tutti i processi inizializzati dal processo master*/
 void clean_process();
+
+
+/*master methods*/
+void init();
+void sem_init();
+void shared_table_init();
+void playergen(int playernum);
 
 struct sigaction sa;
 
@@ -155,97 +159,40 @@ char master_logbuffer[128];
 
 message msg;
 
-int i;
-int j;
-int pid;
-int num_flag;
+struct sembuf master_sem;
+int master_semid;
+
 int main(int argc, char * argv[]){
-    cleaner = clean;
-    placed = 0;
-    srand(clock() + getpid());
-    num_flag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
-    
-    /*@HPF4 il tuo esperimento si trova qui*/
-    vex = (vexillum *) malloc(num_flag * sizeof(vexillum));
-
-    /* Inizializzazione tabella degli score */
-    st =  malloc(sizeof(score_table)); 
-    for(i = 0; i < SO_NUM_G; i++){
-        st -> name[i] = (char)((int)'A' + i);
-        st -> score[i] = 0;
-    }
-    /* Inizializzazione struttura bandiere */
-
-    
-
-
+    int i;
     /*Region: inizializzazione e rilevamento argomenti*/
     for(i = 0; i < argc; i++){ /*inizializza la variabile di debug se richiesto*/
         if(strcmp(argv[i],"-d")) isDebug = 1;
         if(strcmp(argv[i],"-v")) verbosity = 2;
         if(strcmp(argv[i],"-vv")) verbosity = 3;
     }
+    
+    cleaner = clean;
+    placed = 0;
     logger = fopen("Master.log","a+");
     logg("Started At: %s\n",__TIME__);
-    
-    /*End-Region*/
-    
-    logg("Impostazione maschere e segnali");
-    /*Region: inizializzazione dei segnali*/
-    bzero(&sa,sizeof(sa));
-    sa.sa_handler = handler;
-    sigemptyset(&mask);
-    sigaddset(&mask,SIGINT);
-    sigprocmask(SIG_BLOCK,&mask,NULL);
-    sa.sa_mask = mask;
-    sa.sa_flags = SA_RESTART; /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
-    sa.sa_flags = SA_NODEFER; /*Questa flag permette all'handler di generare altri segnali*/
-    sigaction(SIGINT,&sa,NULL);
-    sigset(SIGINT,handler);
-    /*End-Region*/
-    
-    logg("Segnali Impostati");
+    init();
     
     logg("Inizializzazione Memoria Condivisa");
     /*Region: Shared Memory Set*/
     master_msgqueue = message_start(IPC_PRIVATE);
+    sem_init();
     table_start();
-    if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
-        error("Errore nell'attach della shared_table",EIO);
-    }
-    else{
-        debug("Shared Table attach completato");
-    }
-    
-    logg("Setup dei semafori");
-    for(i = 0; i < SO_BASE; i++){
-        for(j = 0; j < SO_ALTEZZA; j++){
-            tab(master_shared_table,i,j)->sem.sem_num = 0;
-            tab(master_shared_table,i,j)->id = EMPTY;
-            tab(master_shared_table,i,j)->sem.sem_op = 1;
-            
-        }
-    }
-    /*End-Region*/
-    logg("Memoria Condivisa Inizializzata");
-    /*Region: Process Creation*/
-    for(i = 0; i < SO_NUM_G; i++){
-        if((pid = fork())){
-            /*padre*/
-            st -> pid[i] = pid;
-            logg("Player: %d started with pid: %d",i,pid);
-            waitpid(pid,NULL,WEXITED);
-            /*attesa*/
-        }
-        else{
-            /*figlio*/
-            player_id = st -> name[i]; /* Assegnazione del nome al Player*/
-            if(player() == -1){
-                error("Errore nell'inizializzare il player",ECHILD);
-            }
-        }
-    }
-    playercreated = 0;
+    shared_table_init();
+    playergen(SO_NUM_G);
+    master_sem.sem_num = 0;
+    master_sem.sem_op = -1;
+    semop(master_semid,&master_sem,1);
+    /* Inizio operazioni relative al round*/
+    /*while( Condizione alarm ||){
+        numFlag = getNumflag();
+        free(vex);
+    }*/
+
     /*End-Region*/
     /*Region Phase-1:flag*/
     /*End-Region*/
@@ -259,7 +206,7 @@ int main(int argc, char * argv[]){
     
     logg("MASTER:End Of Execution");
     logg("MASTER:Stopped at %s",__TIME__);
-    
+    cleaner();
     return 0;
 }
 
@@ -284,9 +231,9 @@ void handler(int signum){
 void clean(){
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
-    
     shmctl(table,IPC_RMID,NULL);
-    
+    semctl(master_semid,0,IPC_RMID);
+    semctl(player_semid,0,IPC_RMID);
     free(st);
     free(vex);
     fclose(logger);
@@ -297,6 +244,7 @@ void clean(){
 }
 
 void clean_process(){
+    int i;
     for(i = 0; i < sizeof(st->pid);i++){
         kill(st->pid[i],SIGINT);
     }
@@ -304,21 +252,99 @@ void clean_process(){
 
 /*End Region*/
 
-
-
-
 void stamp_score(score_table * t){
+    int i;
 	printf("PLAYER         SCORE\n");
 	for(i = 0; i < SO_NUM_G; i++){
 		printf("PLAYER %c   |   %d  \n", t -> name[i], t -> score[i]);
 	}
 }
 
-void placeflag(int x, int y){
-    vex[placed].x = x;
-    vex[placed].y = y;
-    tab(master_shared_table,x,y)->id = FLAG;
-    placed++;
+/*Master methods*/
+
+void init(){
+    int i;
+    st =  malloc(sizeof(score_table)); 
+    for(i = 0; i < SO_NUM_G; i++){
+        st -> name[i] = (char)((int)'A' + i);
+        st -> score[i] = 0;
+    }
+
+    logg("Impostazione maschere e segnali");
+    /*Region: inizializzazione dei segnali*/
+    bzero(&sa,sizeof(sa));
+    sa.sa_handler = handler;
+    sigemptyset(&mask);
+    sigaddset(&mask,SIGINT);
+    sigprocmask(SIG_BLOCK,&mask,NULL);
+    sa.sa_mask = mask;
+    sa.sa_flags = SA_RESTART; /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
+    sa.sa_flags = SA_NODEFER; /*Questa flag permette all'handler di generare altri segnali*/
+    sigaction(SIGINT,&sa,NULL);
+    sigset(SIGINT,handler);
+    /*End-Region*/
+}
+
+
+key_t master_semkey;
+key_t player_semkey;
+int player_semid;
+void sem_init(){
+    master_semkey = ftok("./master.c",'a');
+    player_semkey = ftok("./player.c",'b');
+    if((master_semid = semget(master_semkey,1,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+        error("errore nel semaforo MASTER",ECONNABORTED);
+    }
+    if((player_semid = semget(player_semkey,1,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+        error("errore nel semaforo PLAYER",ECONNABORTED);
+    }
+    
+    if(semctl(master_semid,0,SETVAL,0) == -1){
+        error("Error in semctl",ECOMM);
+    }
+}
+
+void shared_table_init(){
+    int i, j;
+    if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
+        error("Errore nell'attach della shared_table",EIO);
+    }
+    else{
+        debug("Shared Table attach completato");
+    }
+    
+    logg("Setup dei semafori");
+    for(i = 0; i < SO_BASE; i++){
+        for(j = 0; j < SO_ALTEZZA; j++){
+            tab(master_shared_table,i,j)->sem.sem_num = 0;
+            tab(master_shared_table,i,j)->id = EMPTY;
+            tab(master_shared_table,i,j)->sem.sem_op = 1;
+            
+        }
+    }
+    /*End-Region*/
+    logg("Memoria Condivisa Inizializzata");
+}
+
+void playergen(int playernum){
+    /*Region: Process Creation*/
+    int i, pid;
+    for(i = 0; i < playernum; i++){
+        if((pid = fork())){
+            /*padre*/
+            st -> pid[i] = pid;
+            logg("Player: %d started with pid: %d",i,pid);
+            waitpid(pid,NULL,WEXITED);
+            /*attesa*/
+        }
+        else{
+            /*figlio*/
+            player_id = st -> name[i]; /* Assegnazione del nome al Player*/
+            if(player() == -1){
+                error("Errore nell'inizializzare il player",ECHILD);
+            }
+        }
+    }
 }
 
 int getNumflag(){
@@ -349,12 +375,22 @@ int getNumflag(){
 
 vexillum * getVex(int numFlag){
     vexillum * p;
-    int i, r = SO_ROUND_SCORE % numFlag;
+    char flag;
+    int i, x, y, r = SO_ROUND_SCORE % numFlag;
     p = (vexillum *)malloc(numFlag * sizeof(vexillum));
     for(i = 0; i < numFlag; i++){
         (p[i]).score = SO_ROUND_SCORE/numFlag;
         if(r != 0){ (p[i]).score = (p[i]).score + 1; r --;}
-        /*... Assegnazione cella di memoria ...*/
+        for(flag = 0;flag;){
+            x = (0 + rand()) % (SO_BASE + 1 - 0);
+            y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
+            if(tab(master_shared_table, x, y)->id == EMPTY){
+                p[i].x = x;
+                p[i].y = y;  
+                tab(master_shared_table, x, y)->id = FLAG;     
+                flag = 1;
+            }
+        }
     }
     return p;
 }

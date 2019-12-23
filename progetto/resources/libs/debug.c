@@ -14,9 +14,10 @@ void error(char message[], int err){
 }
 
 
-va_list args;
-char formatted[128];
+
 int debug(const char *__restrict__ message, ...){
+    char formatted[128];
+    va_list args;
     if(isDebug){
     va_start(args, message);
     vsnprintf(formatted,sizeof(formatted),message,args);
@@ -34,8 +35,10 @@ int debug(const char *__restrict__ message, ...){
 
 float actime;
 
-char logformatted[128];
+
 void logg(const char  *__restrict__ message, ...){
+    char logformatted[128];
+    va_list args;
     actime = (double)clock()/1000;
     va_start(args, message);
     vsnprintf(logformatted,sizeof(logformatted),message,args);
