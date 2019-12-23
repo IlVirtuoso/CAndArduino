@@ -16,7 +16,10 @@ int player(){
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
     logg("Player Started At %s",__TIME__);
-    /*semaforo*/
+    /**
+    * semaforo
+    * TODO: controllare le variabili di inizializzazione semaforo
+    */
     if((master_semid = semget(master_semkey,1,IPC_EXCL)) == -1){
         error("errore nel inizializzare il semaforo master",ECONNABORTED);
     }
@@ -32,7 +35,7 @@ int player(){
     if(semop(player_semid,&play_sem,1) == -1){
         error("errore in semop PLAYER",ECOMM);
     }
-    /*^end*/
+    /* end*/
     if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table",EIO);
             }

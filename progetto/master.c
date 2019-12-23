@@ -178,7 +178,10 @@ int main(int argc, char * argv[]){
     init();
     
     logg("Inizializzazione Memoria Condivisa");
-    /*Region: Shared Memory Set*/
+    /**
+     * Region: Shared Memory Set & semaphores
+     * TODO:controllare le var di inizializzazione semafori
+    */
     master_msgqueue = message_start(IPC_PRIVATE);
     sem_init();
     table_start();
