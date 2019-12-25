@@ -74,6 +74,9 @@
 #endif
 
 
+#ifndef PIECE_SEM
+#define PIECE_SEM 2
+#endif
 
 /*DEV_IEM ho spostato i commenti per farli leggere a intellisense
 *Piccolo Tutorial su intellisense per C/C++:

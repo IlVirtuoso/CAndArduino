@@ -32,10 +32,12 @@ int piece(){
     else{
         logg("Pezzo %d del player %c attaccato alla table",piece_id,player_id);
 
-    } 
-    sem.sem_num = PLAYER_SEM;
+    }
+    sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
+    
+    pause();
     exit(0);
     return 0;
 }

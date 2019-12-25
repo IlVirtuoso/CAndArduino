@@ -1,7 +1,4 @@
 #define _GNU_SOURCE
-#ifndef SIGNAL_H
-#include <signal.h>
-#endif
 #ifndef STDIO_H
 #include <stdio.h>
 #endif
@@ -53,6 +50,9 @@
 #ifndef SHM_H
 #include <sys/shm.h>
 #endif
+#ifndef SIGNAL_H
+#include <signal.h>
+#endif
 #ifndef MACRO_H
 #include "./resources/libs/macro.h"
 #endif
@@ -65,6 +65,8 @@
 #ifndef MESSAGE_H
 #include "./resources/libs/message.h"
 #endif
+
+
 /*handler per il segnale di interruzione SIGINT*/
 void handler(int signum);
 
@@ -94,9 +96,6 @@ typedef struct{
     int score;
 }vexillum;
 
-/*buffer per messaggi*/
-char master_logbuffer[128];
-
 
 /*id della scacchiera*/
 int table; 
@@ -122,8 +121,11 @@ int playercreated = 0;
 /*variabile che dice se i pezzi sono stati creati*/
 int piececreated = 0;
 
-
+/*status dell'exit process*/
 int status;
+
+/*numero di semafori da attivare, può cambiare in base alle necessità*/
+int sem_num;
 
 /* struttura dati per i punteggi */
 typedef struct{
@@ -152,8 +154,6 @@ vexillum * getVex(int numFlag);
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
-/*buffer per i messaggi modificati*/
-char master_logbuffer[128];
 
 message msg;
 
@@ -178,7 +178,7 @@ int main(int argc, char * argv[]){
     logg("Inizializzazione Memoria Condivisa");
     /**
      * Region: Shared Memory Set & semaphores
-     * TODO:controllare le var di inizializzazione semafori
+     * TODO:controllare perchè la kill non funziona
     */
     master_msgqueue = message_start(IPC_PRIVATE);
     sem_init();
@@ -187,7 +187,9 @@ int main(int argc, char * argv[]){
     playergen(SO_NUM_G);
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
-    semop(semid,&sem,3);
+    semop(semid,&sem,SO_NUM_G);
+
+    
     
 
     /* Inizio operazioni relative al round*/
@@ -232,13 +234,19 @@ void handler(int signum){
 }
 
 void clean(){
+    int i;
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
     shmctl(table,IPC_RMID,NULL);
-    semctl(semid,0,IPC_RMID);
+    for(i = 0; i < sem_num; i++){
+        semctl(semid,i,IPC_RMID);
+    }
+    msgctl(master_msgqueue,IPC_RMID,NULL);
+    msgctl(player_msgqueue,IPC_RMID,NULL);
     free(st);
     free(vex);
     fclose(logger);
+    
     if(playercreated){
         clean_process();
     }
@@ -247,8 +255,8 @@ void clean(){
 
 void clean_process(){
     int i;
-    for(i = 0; i < sizeof(st->pid);i++){
-        kill(st->pid[i],SIGINT);
+    for(i = 0; i < SO_NUM_G;i++){
+        kill((pid_t)st->pid[i],SIGINT);
     }
 }
 
@@ -291,17 +299,17 @@ void init(){
 
 int semid;
 void sem_init(){
-    if((semid = semget(IPC_PRIVATE,3,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+    int i;
+    sem_num = 3; /*per adesso è di default*/
+    if(sem_num < 3){sem_num = 3;} /*semafori necessari per il minimo funzionamento*/
+
+    if((semid = semget(IPC_PRIVATE,sem_num,IPC_CREAT | IPC_EXCL | 0666)) == -1){
         error("errore nell'inizializzare il semaforo master",ECONNABORTED);
     }
-    if(semctl(semid,MASTER_SEM,SETVAL,0) == -1){
-        error("Error in semctl semaforo master",ECOMM);
-    }
-    if(semctl(semid,PLAYER_SEM,SETVAL,0) == -1){
-        error("Error in semctl semaforo master",ECOMM);
-    }
-    if(semctl(semid,2,SETVAL,0) == -1){
-        error("Error in semctl semaforo master",ECOMM);
+    for(i = 0; i < sem_num; i++){
+            if(semctl(semid,i,SETVAL,0) == -1){
+            error("Error in semctl semaforo master",ECOMM);
+        }
     }
     
 }
@@ -330,14 +338,15 @@ void shared_table_init(){
 
 void playergen(int playernum){
     /*Region: Process Creation*/
-    int i, pid;
+    int i;
+    pid_t pid;
+    playercreated = 1;
     for(i = 0; i < playernum; i++){
         if((pid = fork())){
             /*padre*/
             st -> pid[i] = pid;
             processSign = "Master";
-            logg("Player: %d started with pid: %d",i,pid);
-            waitpid(pid,NULL,WEXITED);
+            logg("Player: %d started with pid: %d",i,st ->pid[i]);
             /*attesa*/
         }
         else{
@@ -346,6 +355,7 @@ void playergen(int playernum){
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
             }
+            exit(0);
         }
     }
 }

@@ -6,9 +6,9 @@ char filename[24];
 int status;
 
 
+struct sembuf sem;
 
 int player(){
-    struct sembuf sem;
     processSign = "Player";
     cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
@@ -21,9 +21,7 @@ int player(){
                 error("Errore nell'innesto della shared_table",EIO);
             }
 
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
+    
     /*puntatore alla funzione player_clean da sfruttare con error()*/
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
@@ -38,10 +36,21 @@ int player(){
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
     piecegen(SO_NUM_P);
-    sem.sem_num = PLAYER_SEM;
+
+    sem.sem_num = PIECE_SEM;
     sem.sem_op = -1;
     semop(semid,&sem,SO_NUM_P);
-    exit(0);
+    
+
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);
+
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);
+    player_clean();
+    pause();
     return 0;
 
 }
@@ -57,7 +66,7 @@ int piecegen(int numpieces){
     for(i = 0; i < numpieces; i++){
         if((pid = fork())){
             /*player*/
-            pieces[i] = pid;
+            pieces[i] = pid; 
             waitpid(pid,NULL,WEXITED);
             logg("Generato pezzo %d Attesa",i);
         
@@ -71,7 +80,6 @@ int piecegen(int numpieces){
             }
         }
     }
-
     return 0;
 }
 

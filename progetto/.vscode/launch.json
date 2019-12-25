@@ -5,6 +5,43 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request":"launch",
+            "program": "${workspaceFolder}/master",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "logging": {"trace": true,"exceptions": true,"programOutput": true, "engineLogging": true},
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                }
+            ],
+            "preLaunchTask": "manual compilation",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+    {
+        "name": "(gdb) Attach",
+        "type": "cppdbg",
+        "request": "attach",
+        "program": " ${workspaceFolder}/master",
+        "processId": "${command:pickProcess}",
+        "MIMode": "gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ]
+    },
+        {
             "name": "gcc build and debug active file",
             "type": "cppdbg",
             "request": "launch",
