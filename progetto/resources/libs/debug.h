@@ -47,6 +47,8 @@ int debug(const char *__restrict__ message, ...);
 /*puntatore alla funzione clean ridichiarata in ogni processo*/
 void (* cleaner) ();
 
+/* firma di riconoscimento del processo*/
+char * processSign;
 
 
 #endif

@@ -86,8 +86,6 @@ void playergen(int playernum);
 
 struct sigaction sa;
 
-/*semaforo*/
-struct semaphore * sem;
 
 /*struttura che definisce le bandiere, visibile solo al master*/
 typedef struct{
@@ -159,8 +157,8 @@ char master_logbuffer[128];
 
 message msg;
 
-struct sembuf master_sem;
-int master_semid;
+struct sembuf sem;
+
 
 int main(int argc, char * argv[]){
     int i;
@@ -187,9 +185,11 @@ int main(int argc, char * argv[]){
     table_start();
     shared_table_init();
     playergen(SO_NUM_G);
-    master_sem.sem_num = 0;
-    master_sem.sem_op = -1;
-    semop(master_semid,&master_sem,1);
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,3);
+    
+
     /* Inizio operazioni relative al round*/
     /*while( Condizione alarm ||){
         numFlag = getNumflag();
@@ -207,8 +207,8 @@ int main(int argc, char * argv[]){
     /*Region Phase-3:Anarchy*/
     /*End-Region*/
     
-    logg("MASTER:End Of Execution");
-    logg("MASTER:Stopped at %s",__TIME__);
+    logg("End Of Execution");
+    logg("Stopped at %s",__TIME__);
     cleaner();
     return 0;
 }
@@ -235,8 +235,7 @@ void clean(){
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
     shmctl(table,IPC_RMID,NULL);
-    semctl(master_semid,0,IPC_RMID);
-    semctl(player_semid,0,IPC_RMID);
+    semctl(semid,0,IPC_RMID);
     free(st);
     free(vex);
     fclose(logger);
@@ -289,22 +288,22 @@ void init(){
 }
 
 
-key_t master_semkey;
-key_t player_semkey;
-int player_semid;
+
+int semid;
 void sem_init(){
-    master_semkey = ftok("./master.c",'a');
-    player_semkey = ftok("./player.c",'b');
-    if((master_semid = semget(master_semkey,1,IPC_CREAT | IPC_EXCL | 0666)) == -1){
-        error("errore nel semaforo MASTER",ECONNABORTED);
+    if((semid = semget(IPC_PRIVATE,3,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+        error("errore nell'inizializzare il semaforo master",ECONNABORTED);
     }
-    if((player_semid = semget(player_semkey,1,IPC_CREAT | IPC_EXCL | 0666)) == -1){
-        error("errore nel semaforo PLAYER",ECONNABORTED);
+    if(semctl(semid,MASTER_SEM,SETVAL,0) == -1){
+        error("Error in semctl semaforo master",ECOMM);
+    }
+    if(semctl(semid,PLAYER_SEM,SETVAL,0) == -1){
+        error("Error in semctl semaforo master",ECOMM);
+    }
+    if(semctl(semid,2,SETVAL,0) == -1){
+        error("Error in semctl semaforo master",ECOMM);
     }
     
-    if(semctl(master_semid,0,SETVAL,0) == -1){
-        error("Error in semctl",ECOMM);
-    }
 }
 
 void shared_table_init(){
@@ -336,6 +335,7 @@ void playergen(int playernum){
         if((pid = fork())){
             /*padre*/
             st -> pid[i] = pid;
+            processSign = "Master";
             logg("Player: %d started with pid: %d",i,pid);
             waitpid(pid,NULL,WEXITED);
             /*attesa*/

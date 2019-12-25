@@ -2,16 +2,12 @@
 #include "piece.h"
 #endif
 
+
 int piece(){
-    struct sembuf piece_sem;
-    player_semkey = ftok("./player.c",'b');
-    if((player_semid = semget(player_semkey,1,IPC_EXCL)) == -1){
+    struct sembuf sem;
+    processSign = "Piece";
+    if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel semaforo",ECONNABORTED);
-    }
-    piece_sem.sem_num = 0;
-    piece_sem.sem_op = -1;
-    if(semop(player_semid,&piece_sem,1) == -1){
-        error("errore in semop",ECOMM);
     }
     logger = fopen("Pieces.log","a+");
     logg("Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
@@ -37,8 +33,9 @@ int piece(){
         logg("Pezzo %d del player %c attaccato alla table",piece_id,player_id);
 
     } 
-
-    
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);
     exit(0);
     return 0;
 }

@@ -50,10 +50,9 @@ struct sigaction piece_signal;
 /*semaforo*/
 
 
-int player_semid;
-key_t player_semkey;
+int semid;
 
-struct sembuf piece_sem[1];
+
 
 enum{
     STRAIGHT_TO,

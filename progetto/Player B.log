@@ -1,1544 +1,1199 @@
-[LOG : 0.183000] Player Started At 03:10:52
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.233000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.258000] Player Started At 03:13:18
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.284000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.145000] Player Started At 03:13:36
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.175000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.185000] Player Started At 03:13:51
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.238000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.432000] Generato pezzo 4 Attesa
-[LOG : 0.493000] Generato pezzo 5 Attesa
-[LOG : 0.549000] Generato pezzo 6 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.432000] Generato pezzo 4 Attesa
-[LOG : 0.493000] Generato pezzo 5 Attesa
-[LOG : 0.549000] Generato pezzo 6 Attesa
-[LOG : 0.603000] Generato pezzo 7 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.432000] Generato pezzo 4 Attesa
-[LOG : 0.493000] Generato pezzo 5 Attesa
-[LOG : 0.549000] Generato pezzo 6 Attesa
-[LOG : 0.603000] Generato pezzo 7 Attesa
-[LOG : 0.678000] Generato pezzo 8 Attesa
-[LOG : 0.768000] Generato pezzo 9 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.432000] Generato pezzo 4 Attesa
-[LOG : 0.493000] Generato pezzo 5 Attesa
-[LOG : 0.549000] Generato pezzo 6 Attesa
-[LOG : 0.603000] Generato pezzo 7 Attesa
-[LOG : 0.678000] Generato pezzo 8 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.432000] Generato pezzo 4 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.107000] Player Started At 03:14:08
-[LOG : 0.128000] Setup Struttura dei segnali
-[LOG : 0.132000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.194000] Generato pezzo 0 Attesa
-[LOG : 0.255000] Generato pezzo 1 Attesa
-[LOG : 0.319000] Generato pezzo 2 Attesa
-[LOG : 0.377000] Generato pezzo 3 Attesa
-[LOG : 0.432000] Generato pezzo 4 Attesa
-[LOG : 0.493000] Generato pezzo 5 Attesa
-[LOG : 0.279000] Player Started At 03:14:18
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.356000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.486000] Generato pezzo 4 Attesa
-[LOG : 0.552000] Generato pezzo 5 Attesa
-[LOG : 0.620000] Generato pezzo 6 Attesa
-[LOG : 0.678000] Generato pezzo 7 Attesa
-[LOG : 0.735000] Generato pezzo 8 Attesa
-[LOG : 0.799000] Generato pezzo 9 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.486000] Generato pezzo 4 Attesa
-[LOG : 0.552000] Generato pezzo 5 Attesa
-[LOG : 0.620000] Generato pezzo 6 Attesa
-[LOG : 0.678000] Generato pezzo 7 Attesa
-[LOG : 0.735000] Generato pezzo 8 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.486000] Generato pezzo 4 Attesa
-[LOG : 0.552000] Generato pezzo 5 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.486000] Generato pezzo 4 Attesa
-[LOG : 0.552000] Generato pezzo 5 Attesa
-[LOG : 0.620000] Generato pezzo 6 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.486000] Generato pezzo 4 Attesa
-[LOG : 0.126000] Player Started At 03:15:58
-[LOG : 0.145000] Setup Struttura dei segnali
-[LOG : 0.149000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.218000] Generato pezzo 0 Attesa
-[LOG : 0.281000] Generato pezzo 1 Attesa
-[LOG : 0.340000] Generato pezzo 2 Attesa
-[LOG : 0.421000] Generato pezzo 3 Attesa
-[LOG : 0.486000] Generato pezzo 4 Attesa
-[LOG : 0.552000] Generato pezzo 5 Attesa
-[LOG : 0.620000] Generato pezzo 6 Attesa
-[LOG : 0.678000] Generato pezzo 7 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.586000] Generato pezzo 4 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.586000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.738000] Generato pezzo 6 Attesa
-[LOG : 0.814000] Generato pezzo 7 Attesa
-[LOG : 0.881000] Generato pezzo 8 Attesa
-[LOG : 0.941000] Generato pezzo 9 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.586000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.738000] Generato pezzo 6 Attesa
-[LOG : 0.814000] Generato pezzo 7 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.586000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.586000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.738000] Generato pezzo 6 Attesa
-[LOG : 0.814000] Generato pezzo 7 Attesa
-[LOG : 0.881000] Generato pezzo 8 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.508000] Generato pezzo 3 Attesa
-[LOG : 0.586000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.738000] Generato pezzo 6 Attesa
-[LOG : 0.118000] Player Started At 03:16:18
-[LOG : 0.163000] Setup Struttura dei segnali
-[LOG : 0.169000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.268000] Generato pezzo 0 Attesa
-[LOG : 0.349000] Generato pezzo 1 Attesa
-[LOG : 0.433000] Generato pezzo 2 Attesa
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[LOG : 0.473000] Generato pezzo 4 Attesa
-[LOG : 0.546000] Generato pezzo 5 Attesa
-[LOG : 0.604000] Generato pezzo 6 Attesa
-[LOG : 0.660000] Generato pezzo 7 Attesa
-[LOG : 0.721000] Generato pezzo 8 Attesa
-[LOG : 0.782000] Generato pezzo 9 Attesa
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[LOG : 0.604000] Generato pezzo 4 Attesa
-[LOG : 0.681000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[LOG : 0.845000] Generato pezzo 7 Attesa
-[LOG : 0.920000] Generato pezzo 8 Attesa
-[LOG : 0.984000] Generato pezzo 9 Attesa
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[LOG : 0.479000] Generato pezzo 4 Attesa
-[LOG : 0.561000] Generato pezzo 5 Attesa
-[LOG : 0.632000] Generato pezzo 6 Attesa
-[LOG : 0.713000] Generato pezzo 7 Attesa
-[LOG : 0.792000] Generato pezzo 8 Attesa
-[LOG : 0.869000] Generato pezzo 9 Attesa
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[LOG : 0.787000] Generato pezzo 4 Attesa
-[LOG : 0.872000] Generato pezzo 5 Attesa
-[LOG : 0.945000] Generato pezzo 6 Attesa
-[LOG : 1.036000] Generato pezzo 7 Attesa
-[LOG : 1.142000] Generato pezzo 8 Attesa
-[LOG : 1.226000] Generato pezzo 9 Attesa
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[LOG : 0.558000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[LOG : 0.872000] Generato pezzo 7 Attesa
-[LOG : 0.993000] Generato pezzo 8 Attesa
-[LOG : 1.078000] Generato pezzo 9 Attesa
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[LOG : 0.859000] Generato pezzo 4 Attesa
-[LOG : 0.941000] Generato pezzo 5 Attesa
-[LOG : 1.044000] Generato pezzo 6 Attesa
-[LOG : 1.126000] Generato pezzo 7 Attesa
-[LOG : 1.207000] Generato pezzo 8 Attesa
-[LOG : 1.264000] Generato pezzo 9 Attesa
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[LOG : 0.537000] Generato pezzo 4 Attesa
-[LOG : 0.607000] Generato pezzo 5 Attesa
-[LOG : 0.689000] Generato pezzo 6 Attesa
-[LOG : 0.751000] Generato pezzo 7 Attesa
-[LOG : 0.820000] Generato pezzo 8 Attesa
-[LOG : 0.877000] Generato pezzo 9 Attesa
-[LOG : 0.125000] Player Started At 03:46:06
-[ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.165000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.336000] Player Started At 03:47:41
-[ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.455000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.143000] Player Started At 03:17:38
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.294000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[LOG : 0.473000] Generato pezzo 4 Attesa
-[LOG : 0.546000] Generato pezzo 5 Attesa
-[LOG : 0.604000] Generato pezzo 6 Attesa
-[LOG : 0.660000] Generato pezzo 7 Attesa
-[LOG : 0.721000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.071000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.061000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.092000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[LOG : 0.473000] Generato pezzo 4 Attesa
-[LOG : 0.546000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.111000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[LOG : 0.604000] Generato pezzo 4 Attesa
-[LOG : 0.681000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[LOG : 0.845000] Generato pezzo 7 Attesa
-[LOG : 0.920000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.084000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.093000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.055000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[LOG : 0.604000] Generato pezzo 4 Attesa
-[LOG : 0.681000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.054000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[LOG : 0.479000] Generato pezzo 4 Attesa
-[LOG : 0.561000] Generato pezzo 5 Attesa
-[LOG : 0.632000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.080000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.065000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.078000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[LOG : 0.479000] Generato pezzo 4 Attesa
-[LOG : 0.561000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.047000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[LOG : 0.604000] Generato pezzo 4 Attesa
-[LOG : 0.681000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.042000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.053000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[LOG : 0.604000] Generato pezzo 4 Attesa
-[LOG : 0.681000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[LOG : 0.845000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.047000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[LOG : 0.473000] Generato pezzo 4 Attesa
-[LOG : 0.546000] Generato pezzo 5 Attesa
-[LOG : 0.604000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.052000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[LOG : 0.479000] Generato pezzo 4 Attesa
-[LOG : 0.561000] Generato pezzo 5 Attesa
-[LOG : 0.632000] Generato pezzo 6 Attesa
-[LOG : 0.713000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.104000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.068000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.108000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.065000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[LOG : 0.558000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[LOG : 0.872000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.062000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[LOG : 0.787000] Generato pezzo 4 Attesa
-[LOG : 0.872000] Generato pezzo 5 Attesa
-[LOG : 0.945000] Generato pezzo 6 Attesa
-[LOG : 1.036000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.122000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[LOG : 0.473000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.108000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[LOG : 0.787000] Generato pezzo 4 Attesa
-[LOG : 0.872000] Generato pezzo 5 Attesa
-[LOG : 0.945000] Generato pezzo 6 Attesa
-[LOG : 1.036000] Generato pezzo 7 Attesa
-[LOG : 1.142000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.056000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.069000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.068000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.091000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.094000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[LOG : 0.558000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[LOG : 0.872000] Generato pezzo 7 Attesa
-[LOG : 0.993000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.065000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.075000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[LOG : 0.859000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.094000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[LOG : 0.859000] Generato pezzo 4 Attesa
-[LOG : 0.941000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.105000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.087000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.060000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[LOG : 0.859000] Generato pezzo 4 Attesa
-[LOG : 0.941000] Generato pezzo 5 Attesa
-[LOG : 1.044000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.081000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.087000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.086000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[LOG : 0.537000] Generato pezzo 4 Attesa
-[LOG : 0.607000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.068000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[LOG : 0.859000] Generato pezzo 4 Attesa
-[LOG : 0.941000] Generato pezzo 5 Attesa
-[LOG : 1.044000] Generato pezzo 6 Attesa
-[LOG : 1.126000] Generato pezzo 7 Attesa
-[LOG : 1.207000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.054000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.077000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[LOG : 0.859000] Generato pezzo 4 Attesa
-[LOG : 0.941000] Generato pezzo 5 Attesa
-[LOG : 1.044000] Generato pezzo 6 Attesa
-[LOG : 1.126000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.092000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[LOG : 0.537000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[LOG : 0.558000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.048000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.067000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[LOG : 0.537000] Generato pezzo 4 Attesa
-[LOG : 0.607000] Generato pezzo 5 Attesa
-[LOG : 0.689000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.075000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.074000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[LOG : 0.558000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.090000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[LOG : 0.537000] Generato pezzo 4 Attesa
-[LOG : 0.607000] Generato pezzo 5 Attesa
-[LOG : 0.689000] Generato pezzo 6 Attesa
-[LOG : 0.751000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.084000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[LOG : 0.479000] Generato pezzo 4 Attesa
-[LOG : 0.561000] Generato pezzo 5 Attesa
-[LOG : 0.632000] Generato pezzo 6 Attesa
-[LOG : 0.713000] Generato pezzo 7 Attesa
-[LOG : 0.792000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.101000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[LOG : 0.537000] Generato pezzo 4 Attesa
-[LOG : 0.607000] Generato pezzo 5 Attesa
-[LOG : 0.689000] Generato pezzo 6 Attesa
-[LOG : 0.751000] Generato pezzo 7 Attesa
-[LOG : 0.820000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.061000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[LOG : 0.787000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.051000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.065000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.232000] Generato pezzo 0 Attesa
-[LOG : 0.300000] Generato pezzo 1 Attesa
-[LOG : 0.386000] Generato pezzo 2 Attesa
-[LOG : 0.464000] Generato pezzo 3 Attesa
-[LOG : 0.558000] Generato pezzo 4 Attesa
-[LOG : 0.663000] Generato pezzo 5 Attesa
-[LOG : 0.783000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.059000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.050000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[LOG : 0.395000] Generato pezzo 3 Attesa
-[LOG : 0.473000] Generato pezzo 4 Attesa
-[LOG : 0.546000] Generato pezzo 5 Attesa
-[LOG : 0.604000] Generato pezzo 6 Attesa
-[LOG : 0.660000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.061000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.064000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[LOG : 0.384000] Generato pezzo 2 Attesa
-[LOG : 0.468000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.117000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.088000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.120000] Player Started At 03:20:48
-[LOG : 0.140000] Setup Struttura dei segnali
-[LOG : 0.148000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.212000] Generato pezzo 0 Attesa
-[LOG : 0.277000] Generato pezzo 1 Attesa
-[LOG : 0.337000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.049000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[LOG : 0.479000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.085000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[LOG : 0.787000] Generato pezzo 4 Attesa
-[LOG : 0.872000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.098000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.157000] Player Started At 03:21:54
-[LOG : 0.202000] Setup Struttura dei segnali
-[LOG : 0.221000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.328000] Generato pezzo 0 Attesa
-[LOG : 0.442000] Generato pezzo 1 Attesa
-[LOG : 0.578000] Generato pezzo 2 Attesa
-[LOG : 0.718000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.098000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.188000] Player Started At 03:21:54
-[LOG : 0.212000] Setup Struttura dei segnali
-[LOG : 0.228000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.289000] Generato pezzo 0 Attesa
-[LOG : 0.369000] Generato pezzo 1 Attesa
-[LOG : 0.451000] Generato pezzo 2 Attesa
-[LOG : 0.534000] Generato pezzo 3 Attesa
-[LOG : 0.604000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.083000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.106000] Player Started At 03:21:54
-[LOG : 0.167000] Setup Struttura dei segnali
-[LOG : 0.197000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.297000] Generato pezzo 0 Attesa
-[LOG : 0.427000] Generato pezzo 1 Attesa
-[LOG : 0.535000] Generato pezzo 2 Attesa
-[LOG : 0.693000] Generato pezzo 3 Attesa
-[LOG : 0.787000] Generato pezzo 4 Attesa
-[LOG : 0.872000] Generato pezzo 5 Attesa
-[LOG : 0.945000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.060000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.072000] Player Started At 03:21:54
-[LOG : 0.104000] Setup Struttura dei segnali
-[LOG : 0.126000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.203000] Generato pezzo 0 Attesa
-[LOG : 0.274000] Generato pezzo 1 Attesa
-[LOG : 0.335000] Generato pezzo 2 Attesa
-[LOG : 0.390000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.071000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.113000] Player Started At 03:21:54
-[LOG : 0.134000] Setup Struttura dei segnali
-[LOG : 0.142000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.200000] Generato pezzo 0 Attesa
-[LOG : 0.308000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.117000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 03:48:10
-[ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.190000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.166000] Player Started At 03:51:36
-[ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.194000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.156000] Player Started At 03:51:36
-[ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.211000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.137000] Player Started At 03:52:03
+[LOG : Master -> 0.171000] Player Started At 08:54:34
 [ERROR]:Software caused connection abort,message:errore nel inizializzare il semaforo master
-[LOG : 0.214000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[LOG : 0.831000] Generato pezzo 4 Attesa
-[LOG : 0.959000] Generato pezzo 5 Attesa
-[LOG : 1.077000] Generato pezzo 6 Attesa
-[LOG : 1.169000] Generato pezzo 7 Attesa
-[LOG : 1.297000] Generato pezzo 8 Attesa
-[LOG : 1.411000] Generato pezzo 9 Attesa
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[LOG : 0.621000] Generato pezzo 4 Attesa
-[LOG : 0.707000] Generato pezzo 5 Attesa
-[LOG : 0.794000] Generato pezzo 6 Attesa
-[LOG : 0.894000] Generato pezzo 7 Attesa
-[LOG : 1.010000] Generato pezzo 8 Attesa
-[LOG : 1.103000] Generato pezzo 9 Attesa
-[LOG : 0.116000] Player Started At 03:57:35
-[LOG : 0.156000] Ricevuto Segnale SIGINT
-[LOG : 0.163000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.090000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.068000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[LOG : 0.831000] Generato pezzo 4 Attesa
-[LOG : 0.959000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.076000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.078000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.081000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[LOG : 0.831000] Generato pezzo 4 Attesa
-[LOG : 0.959000] Generato pezzo 5 Attesa
-[LOG : 1.077000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.094000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[LOG : 0.831000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.104000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[LOG : 0.831000] Generato pezzo 4 Attesa
-[LOG : 0.959000] Generato pezzo 5 Attesa
-[LOG : 1.077000] Generato pezzo 6 Attesa
-[LOG : 1.169000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.112000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.087000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[LOG : 0.831000] Generato pezzo 4 Attesa
-[LOG : 0.959000] Generato pezzo 5 Attesa
-[LOG : 1.077000] Generato pezzo 6 Attesa
-[LOG : 1.169000] Generato pezzo 7 Attesa
-[LOG : 1.297000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.133000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.092000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.131000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.071000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.122000] Player Started At 03:52:31
-[LOG : 0.181000] Setup Struttura dei segnali
-[LOG : 0.219000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.341000] Generato pezzo 0 Attesa
-[LOG : 0.460000] Generato pezzo 1 Attesa
-[LOG : 0.584000] Generato pezzo 2 Attesa
-[LOG : 0.701000] Generato pezzo 3 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.089000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[LOG : 0.621000] Generato pezzo 4 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.086000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[LOG : 0.621000] Generato pezzo 4 Attesa
-[LOG : 0.707000] Generato pezzo 5 Attesa
-[LOG : 0.794000] Generato pezzo 6 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.089000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[LOG : 0.621000] Generato pezzo 4 Attesa
-[LOG : 0.707000] Generato pezzo 5 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[LOG : 0.621000] Generato pezzo 4 Attesa
-[LOG : 0.707000] Generato pezzo 5 Attesa
-[LOG : 0.794000] Generato pezzo 6 Attesa
-[LOG : 0.894000] Generato pezzo 7 Attesa
-[LOG : 1.010000] Generato pezzo 8 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.086000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.085000] Player Started At 03:53:09
-[LOG : 0.110000] Setup Struttura dei segnali
-[LOG : 0.130000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.222000] Generato pezzo 0 Attesa
-[LOG : 0.330000] Generato pezzo 1 Attesa
-[LOG : 0.424000] Generato pezzo 2 Attesa
-[LOG : 0.527000] Generato pezzo 3 Attesa
-[LOG : 0.621000] Generato pezzo 4 Attesa
-[LOG : 0.707000] Generato pezzo 5 Attesa
-[LOG : 0.794000] Generato pezzo 6 Attesa
-[LOG : 0.894000] Generato pezzo 7 Attesa
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.118000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.153000] Player Started At 04:01:13
-[ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.183000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.128000] Player Started At 04:04:27
-[ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.180000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.111000] Player Started At 04:07:20
-[ERROR]:Communication error on send,message:errore in semop PLAYER
-[LOG : 0.187000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.131000] Player Started At 04:09:03
-[ERROR]:Communication error on send,message:errore in semop PLAYER
-[LOG : 0.161000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.169000] Player Started At 04:10:56
+[LOG : Master -> 0.213000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.140000] Player Started At 08:56:34
 [ERROR]:Software caused connection abort,message:errore nel inizializzare il semaforo master
-[LOG : 0.204000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.128000] Player Started At 04:10:56
+[LOG : Player -> 0.178000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.144000] Player Started At 08:57:28
 [ERROR]:Software caused connection abort,message:errore nel inizializzare il semaforo master
-[LOG : 0.154000] MASTER_CLEANER_LAUNCHED
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.175000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.183000] Ricevuto Segnale SIGINT
+[LOG : Player -> 0.202000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.128000] Player Started At 08:59:05
+[ERROR]:Software caused connection abort,message:errore nel inizializzare il semaforo master
+[LOG : Player -> 0.181000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.190000] Ricevuto Segnale SIGINT
+[LOG : Player -> 0.196000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.143000] Player Started At 09:12:39
+[ERROR]:Software caused connection abort,message:errore nel get del semaforo master
+[LOG : Player -> 0.172000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.183000] Ricevuto Segnale SIGINT
+[LOG : Player -> 0.185000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.626000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.689000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.744000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.882000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.942000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
 [ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.076000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
+[LOG : Piece -> 0.072000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.626000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.689000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.744000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.068000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.626000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.689000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.744000] Generato pezzo 6 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.059000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
 [ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.069000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
-[LOG : 0.858000] Generato pezzo 4 Attesa
-[LOG : 0.952000] Generato pezzo 5 Attesa
-[LOG : 1.037000] Generato pezzo 6 Attesa
-[LOG : 1.123000] Generato pezzo 7 Attesa
-[LOG : 1.191000] Generato pezzo 8 Attesa
-[LOG : 1.265000] Generato pezzo 9 Attesa
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
+[LOG : Piece -> 0.080000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.626000] Generato pezzo 4 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.064000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.626000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.689000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.744000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.882000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.074000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
 [ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
+[LOG : Piece -> 0.078000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.047000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 09:13:27
+[LOG : Player -> 0.169000] Setup Struttura dei segnali
+[LOG : Player -> 0.175000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.369000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.549000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.626000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.689000] Generato pezzo 5 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.072000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.718000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.777000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.840000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.905000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.027000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
 [ERROR]:Communication error on send,message:errore in semop
-[LOG : 0.064000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
+[LOG : Piece -> 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.718000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.777000] Generato pezzo 5 Attesa
 [ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
-[LOG : 0.858000] Generato pezzo 4 Attesa
-[LOG : 0.952000] Generato pezzo 5 Attesa
+[LOG : Piece -> 0.052000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.097000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.718000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.777000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.840000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.905000] Generato pezzo 7 Attesa
 [ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
-[LOG : 0.858000] Generato pezzo 4 Attesa
+[LOG : Piece -> 0.046000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.718000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.777000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.840000] Generato pezzo 6 Attesa
 [ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.053000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
-[LOG : 0.858000] Generato pezzo 4 Attesa
-[LOG : 0.952000] Generato pezzo 5 Attesa
-[LOG : 1.037000] Generato pezzo 6 Attesa
+[LOG : Piece -> 0.046000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.088000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.105000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.718000] Generato pezzo 4 Attesa
 [ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.076000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
-[LOG : 0.858000] Generato pezzo 4 Attesa
-[LOG : 0.952000] Generato pezzo 5 Attesa
-[LOG : 1.037000] Generato pezzo 6 Attesa
-[LOG : 1.123000] Generato pezzo 7 Attesa
-[LOG : 1.191000] Generato pezzo 8 Attesa
+[LOG : Piece -> 0.071000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.618000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.718000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.777000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.840000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.905000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 8 Attesa
 [ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.084000] PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : 0.147000] Player Started At 04:11:40
-[LOG : 0.206000] Setup Struttura dei segnali
-[LOG : 0.220000] Generazione pezzi iniziata
-[DEBUG]: Msgqueque creata
-[LOG : 0.344000] Generato pezzo 0 Attesa
-[LOG : 0.484000] Generato pezzo 1 Attesa
-[LOG : 0.656000] Generato pezzo 2 Attesa
-[LOG : 0.763000] Generato pezzo 3 Attesa
-[LOG : 0.858000] Generato pezzo 4 Attesa
-[LOG : 0.952000] Generato pezzo 5 Attesa
-[LOG : 1.037000] Generato pezzo 6 Attesa
-[LOG : 1.123000] Generato pezzo 7 Attesa
+[LOG : Piece -> 0.056000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.175000] Player Started At 09:30:22
+[LOG : Player -> 0.215000] Setup Struttura dei segnali
+[LOG : Player -> 0.222000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.307000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.498000] Generato pezzo 2 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.119000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.109000] Player Started At 09:31:11
+[ERROR]:Software caused connection abort,message:errore nel get del semaforo master
+[LOG : Player -> 0.152000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.166000] Ricevuto Segnale SIGINT
+[LOG : Player -> 0.168000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.161000] Player Started At 09:45:02
+[ERROR]:Software caused connection abort,message:errore nel get del semaforo master
+[LOG : Player -> 0.186000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.197000] Ricevuto Segnale SIGINT
+[LOG : Player -> 0.200000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
 [ERROR]:Software caused connection abort,message:errore nel semaforo
-[LOG : 0.063000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Piece -> 0.056000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.071000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.059000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.046000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.581000] Generato pezzo 4 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.046000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.581000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.655000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.715000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.806000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.874000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.936000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.581000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.655000] Generato pezzo 5 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.043000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.581000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.655000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.715000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.806000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.043000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.074000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.581000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.655000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.715000] Generato pezzo 6 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.068000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.119000] Player Started At 09:46:50
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.188000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.276000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.370000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.581000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.655000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.715000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.806000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.874000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.054000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.082000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.051000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.074000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.574000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.633000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.700000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.823000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.878000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.574000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.633000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.700000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.048000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.574000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.633000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.700000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.823000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.038000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.574000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.633000] Generato pezzo 5 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.044000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.574000] Generato pezzo 4 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.038000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.054000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.141000] Player Started At 09:58:30
+[LOG : Player -> 0.203000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.272000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.355000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.415000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.496000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.574000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.633000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.700000] Generato pezzo 6 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.091000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.062000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.052000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.775000] Generato pezzo 4 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.070000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.052000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.775000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.881000] Generato pezzo 5 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.081000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.775000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.881000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.051000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.775000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.881000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.051000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.210000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.303000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.052000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.043000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.775000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.881000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.051000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.210000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.055000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.163000] Player Started At 10:02:43
+[LOG : Player -> 0.204000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.356000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.473000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.683000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.775000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.881000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.094000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.694000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.755000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.824000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.954000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 4 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.058000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.694000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.755000] Generato pezzo 6 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.064000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.061000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.055000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.694000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.755000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.824000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.060000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.088000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.081000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.067000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.694000] Generato pezzo 5 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.059000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.168000] Player Started At 10:02:55
+[LOG : Player -> 0.207000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.277000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.338000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.694000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.755000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.824000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.060000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.837000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.962000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.028000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.091000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.156000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.119000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.074000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.837000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.962000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.028000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.091000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.041000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.837000] Generato pezzo 4 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.053000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.837000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 5 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.065000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.062000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.067000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.837000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.962000] Generato pezzo 6 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.094000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.079000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.379000] Player Started At 10:05:56
+[LOG : Player -> 0.423000] Setup Struttura dei segnali
+[LOG : Player -> 0.430000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.524000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.611000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.703000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.837000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.892000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.962000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.028000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.067000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.651000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.762000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.851000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.938000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.022000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.077000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.154000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.297000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.651000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.762000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.851000] Generato pezzo 6 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.069000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.069000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.088000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.171000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.651000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.762000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.851000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.938000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.022000] Generato pezzo 8 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.057000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.651000] Generato pezzo 4 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.073000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.651000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.762000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.851000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.938000] Generato pezzo 7 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.078000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.165000] Player Started At 10:06:29
+[LOG : Player -> 0.189000] Setup Struttura dei segnali
+[LOG : Player -> 0.194000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.270000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.345000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.478000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.570000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.651000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.762000] Generato pezzo 5 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.079000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.750000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.884000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.965000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.031000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.096000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.153000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.091000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.750000] Generato pezzo 4 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.082000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.750000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.884000] Generato pezzo 5 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.051000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.047000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.750000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.884000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.965000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.031000] Generato pezzo 7 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.043000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.750000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.884000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.965000] Generato pezzo 6 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.054000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.123000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.080000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[ERROR]:Communication error on send,message:errore in semop
+[LOG : Piece -> 0.094000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.160000] Player Started At 10:06:58
+[LOG : Player -> 0.216000] Setup Struttura dei segnali
+[LOG : Player -> 0.239000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.352000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.454000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.548000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.667000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.750000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.884000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.965000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.031000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.096000] Generato pezzo 8 Attesa
+[ERROR]:Software caused connection abort,message:errore nel semaforo
+[LOG : Piece -> 0.060000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.813000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.813000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.813000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.140000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.813000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.140000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.275000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.400000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata
+[LOG : Player -> 0.309000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.401000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.499000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.596000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.813000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.960000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.140000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.275000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.127000] Player Started At 10:22:11
+[LOG : Player -> 0.179000] Setup Struttura dei segnali
+[LOG : Player -> 0.214000] Generazione pezzi iniziata
+[DEBUG : Player]: Msgqueque creata

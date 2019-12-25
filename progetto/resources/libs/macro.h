@@ -65,6 +65,15 @@
 #define EMPTY ' '
 #endif
 
+#ifndef MASTER_SEM
+#define MASTER_SEM 0
+#endif
+
+#ifndef PLAYER_SEM
+#define PLAYER_SEM 1
+#endif
+
+
 
 /*DEV_IEM ho spostato i commenti per farli leggere a intellisense
 *Piccolo Tutorial su intellisense per C/C++:

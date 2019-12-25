@@ -108,15 +108,7 @@ cell * player_shared_table;
 /*collegamento alla msgqueue del master con il player*/
 int master_msgqueue;
 
-int master_semid;
-key_t master_semkey;
-
-
-int player_semid;
-key_t player_semkey;
-
- 
-
+int semid;
 
 
 char player_logbuffer[128];

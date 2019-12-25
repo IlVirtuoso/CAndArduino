@@ -1,204 +1,138 @@
-[LOG : 0.038000] Piece 1 of player A Started At 03:14:08
-[LOG : 0.071000] Setup Struttura dei segnali
-[LOG : 0.084000] Pezzo 1 del player A attaccato alla table
-[LOG : 0.066000] Piece 3 of player A Started At 03:14:08
-[LOG : 0.115000] Setup Struttura dei segnali
-[LOG : 0.131000] Pezzo 3 del player A attaccato alla table
-[LOG : 0.046000] Piece 0 of player A Started At 03:14:08
-[LOG : 0.065000] Setup Struttura dei segnali
-[LOG : 0.082000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.035000] Piece 1 of player B Started At 03:14:08
-[LOG : 0.050000] Setup Struttura dei segnali
-[LOG : 0.059000] Pezzo 1 del player B attaccato alla table
-[LOG : 0.047000] Piece 6 of player A Started At 03:14:08
-[LOG : 0.066000] Setup Struttura dei segnali
-[LOG : 0.077000] Pezzo 6 del player A attaccato alla table
-[LOG : 0.037000] Piece 4 of player B Started At 03:14:08
-[LOG : 0.053000] Setup Struttura dei segnali
-[LOG : 0.063000] Pezzo 4 del player B attaccato alla table
-[LOG : 0.035000] Piece 7 of player B Started At 03:14:08
-[LOG : 0.050000] Setup Struttura dei segnali
-[LOG : 0.058000] Pezzo 7 del player B attaccato alla table
-[LOG : 0.077000] Piece 8 of player B Started At 03:14:08
-[LOG : 0.096000] Setup Struttura dei segnali
-[LOG : 0.108000] Pezzo 8 del player B attaccato alla table
-[LOG : 0.040000] Piece 7 of player A Started At 03:14:08
-[LOG : 0.053000] Setup Struttura dei segnali
-[LOG : 0.061000] Pezzo 7 del player A attaccato alla table
-[LOG : 0.042000] Piece 9 of player B Started At 03:14:08
-[LOG : 0.060000] Setup Struttura dei segnali
-[LOG : 0.070000] Pezzo 9 del player B attaccato alla table
-[LOG : 0.037000] Piece 3 of player B Started At 03:14:08
-[LOG : 0.052000] Setup Struttura dei segnali
-[LOG : 0.061000] Pezzo 3 del player B attaccato alla table
-[LOG : 0.040000] Piece 5 of player B Started At 03:14:08
-[LOG : 0.057000] Setup Struttura dei segnali
-[LOG : 0.088000] Pezzo 5 del player B attaccato alla table
-[LOG : 0.050000] Piece 4 of player A Started At 03:14:08
-[LOG : 0.070000] Setup Struttura dei segnali
-[LOG : 0.100000] Pezzo 4 del player A attaccato alla table
-[LOG : 0.065000] Piece 2 of player B Started At 03:14:08
-[LOG : 0.085000] Setup Struttura dei segnali
-[LOG : 0.096000] Pezzo 2 del player B attaccato alla table
-[LOG : 0.033000] Piece 0 of player B Started At 03:14:08
-[LOG : 0.047000] Setup Struttura dei segnali
-[LOG : 0.055000] Pezzo 0 del player B attaccato alla table
-[LOG : 0.046000] Piece 6 of player B Started At 03:14:08
-[LOG : 0.065000] Setup Struttura dei segnali
-[LOG : 0.076000] Pezzo 6 del player B attaccato alla table
-[LOG : 0.037000] Piece 5 of player A Started At 03:14:08
-[LOG : 0.053000] Setup Struttura dei segnali
-[LOG : 0.062000] Pezzo 5 del player A attaccato alla table
-[LOG : 0.045000] Piece 9 of player A Started At 03:14:08
-[LOG : 0.065000] Setup Struttura dei segnali
-[LOG : 0.076000] Pezzo 9 del player A attaccato alla table
-[LOG : 0.065000] Piece 2 of player A Started At 03:14:08
-[LOG : 0.085000] Setup Struttura dei segnali
-[LOG : 0.097000] Pezzo 2 del player A attaccato alla table
-[LOG : 0.040000] Piece 8 of player A Started At 03:14:08
-[LOG : 0.080000] Setup Struttura dei segnali
-[LOG : 0.093000] Pezzo 8 del player A attaccato alla table
-[LOG : 0.038000] Piece 0 of player A Started At 03:15:58
-[LOG : 0.056000] Setup Struttura dei segnali
-[LOG : 0.066000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.049000] Piece 2 of player A Started At 03:15:58
-[LOG : 0.067000] Setup Struttura dei segnali
-[LOG : 0.077000] Pezzo 2 del player A attaccato alla table
-[LOG : 0.065000] Piece 1 of player A Started At 03:15:58
-[LOG : 0.093000] Setup Struttura dei segnali
-[LOG : 0.109000] Pezzo 1 del player A attaccato alla table
-[LOG : 0.054000] Piece 5 of player A Started At 03:15:58
-[LOG : 0.072000] Setup Struttura dei segnali
-[LOG : 0.084000] Pezzo 5 del player A attaccato alla table
-[LOG : 0.049000] Piece 3 of player A Started At 03:15:58
-[LOG : 0.066000] Setup Struttura dei segnali
-[LOG : 0.076000] Pezzo 3 del player A attaccato alla table
-[LOG : 0.045000] Piece 0 of player B Started At 03:15:58
-[LOG : 0.060000] Setup Struttura dei segnali
-[LOG : 0.070000] Pezzo 0 del player B attaccato alla table
-[LOG : 0.041000] Piece 4 of player A Started At 03:15:58
-[LOG : 0.059000] Setup Struttura dei segnali
-[LOG : 0.070000] Pezzo 4 del player A attaccato alla table
-[LOG : 0.068000] Piece 3 of player B Started At 03:15:58
-[LOG : 0.086000] Setup Struttura dei segnali
-[LOG : 0.097000] Pezzo 3 del player B attaccato alla table
-[LOG : 0.038000] Piece 7 of player A Started At 03:15:58
-[LOG : 0.055000] Setup Struttura dei segnali
-[LOG : 0.068000] Pezzo 7 del player A attaccato alla table
-[LOG : 0.039000] Piece 9 of player A Started At 03:15:58
-[LOG : 0.055000] Setup Struttura dei segnali
-[LOG : 0.065000] Pezzo 9 del player A attaccato alla table
-[LOG : 0.043000] Piece 6 of player A Started At 03:15:58
-[LOG : 0.061000] Setup Struttura dei segnali
-[LOG : 0.073000] Pezzo 6 del player A attaccato alla table
-[LOG : 0.036000] Piece 1 of player B Started At 03:15:58
-[LOG : 0.051000] Setup Struttura dei segnali
-[LOG : 0.060000] Pezzo 1 del player B attaccato alla table
-[LOG : 0.041000] Piece 8 of player A Started At 03:15:58
-[LOG : 0.059000] Setup Struttura dei segnali
-[LOG : 0.070000] Pezzo 8 del player A attaccato alla table
-[LOG : 0.037000] Piece 4 of player B Started At 03:15:58
-[LOG : 0.054000] Setup Struttura dei segnali
-[LOG : 0.065000] Pezzo 4 del player B attaccato alla table
-[LOG : 0.033000] Piece 2 of player B Started At 03:15:58
-[LOG : 0.050000] Setup Struttura dei segnali
-[LOG : 0.059000] Pezzo 2 del player B attaccato alla table
-[LOG : 0.047000] Piece 9 of player B Started At 03:15:58
-[LOG : 0.065000] Setup Struttura dei segnali
-[LOG : 0.075000] Pezzo 9 del player B attaccato alla table
-[LOG : 0.038000] Piece 6 of player B Started At 03:15:58
-[LOG : 0.076000] Setup Struttura dei segnali
-[LOG : 0.085000] Pezzo 6 del player B attaccato alla table
-[LOG : 0.037000] Piece 7 of player B Started At 03:15:58
-[LOG : 0.056000] Setup Struttura dei segnali
-[LOG : 0.065000] Pezzo 7 del player B attaccato alla table
-[LOG : 0.035000] Piece 5 of player B Started At 03:15:58
-[LOG : 0.049000] Setup Struttura dei segnali
-[LOG : 0.057000] Pezzo 5 del player B attaccato alla table
-[LOG : 0.028000] Piece 8 of player B Started At 03:15:58
-[LOG : 0.044000] Setup Struttura dei segnali
-[LOG : 0.053000] Pezzo 8 del player B attaccato alla table
-[LOG : 0.050000] Piece 1 of player A Started At 03:16:18
-[LOG : 0.084000] Setup Struttura dei segnali
-[LOG : 0.097000] Pezzo 1 del player A attaccato alla table
-[LOG : 0.049000] Piece 0 of player A Started At 03:16:18
-[LOG : 0.069000] Setup Struttura dei segnali
-[LOG : 0.081000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.059000] Piece 3 of player A Started At 03:16:18
-[LOG : 0.095000] Setup Struttura dei segnali
-[LOG : 0.122000] Pezzo 3 del player A attaccato alla table
-[LOG : 0.041000] Piece 2 of player A Started At 03:16:18
-[LOG : 0.065000] Setup Struttura dei segnali
-[LOG : 0.080000] Pezzo 2 del player A attaccato alla table
-[LOG : 0.035000] Piece 4 of player A Started At 03:16:18
-[LOG : 0.051000] Setup Struttura dei segnali
-[LOG : 0.083000] Pezzo 4 del player A attaccato alla table
-[LOG : 0.052000] Piece 5 of player A Started At 03:16:18
-[LOG : 0.075000] Setup Struttura dei segnali
-[LOG : 0.087000] Pezzo 5 del player A attaccato alla table
-[LOG : 0.052000] Piece 1 of player B Started At 03:16:18
-[LOG : 0.073000] Setup Struttura dei segnali
-[LOG : 0.086000] Pezzo 1 del player B attaccato alla table
-[LOG : 0.048000] Piece 4 of player B Started At 03:16:18
-[LOG : 0.066000] Setup Struttura dei segnali
-[LOG : 0.077000] Pezzo 4 del player B attaccato alla table
-[LOG : 0.039000] Piece 8 of player A Started At 03:16:18
-[LOG : 0.056000] Setup Struttura dei segnali
-[LOG : 0.065000] Pezzo 8 del player A attaccato alla table
-[LOG : 0.046000] Piece 5 of player B Started At 03:16:18
-[LOG : 0.064000] Setup Struttura dei segnali
-[LOG : 0.075000] Pezzo 5 del player B attaccato alla table
-[LOG : 0.051000] Piece 6 of player A Started At 03:16:18
-[LOG : 0.070000] Setup Struttura dei segnali
-[LOG : 0.080000] Pezzo 6 del player A attaccato alla table
-[LOG : 0.044000] Piece 8 of player B Started At 03:16:18
-[LOG : 0.061000] Setup Struttura dei segnali
-[LOG : 0.072000] Pezzo 8 del player B attaccato alla table
-[LOG : 0.049000] Piece 0 of player B Started At 03:16:18
-[LOG : 0.069000] Setup Struttura dei segnali
-[LOG : 0.081000] Pezzo 0 del player B attaccato alla table
-[LOG : 0.062000] Piece 6 of player B Started At 03:16:18
-[LOG : 0.081000] Setup Struttura dei segnali
-[LOG : 0.096000] Pezzo 6 del player B attaccato alla table
-[LOG : 0.039000] Piece 9 of player B Started At 03:16:18
-[LOG : 0.058000] Setup Struttura dei segnali
-[LOG : 0.068000] Pezzo 9 del player B attaccato alla table
-[LOG : 0.038000] Piece 2 of player B Started At 03:16:18
-[LOG : 0.083000] Setup Struttura dei segnali
-[LOG : 0.135000] Pezzo 2 del player B attaccato alla table
-[LOG : 0.035000] Piece 7 of player B Started At 03:16:18
-[LOG : 0.050000] Setup Struttura dei segnali
-[LOG : 0.063000] Pezzo 7 del player B attaccato alla table
-[LOG : 0.036000] Piece 3 of player B Started At 03:16:18
-[LOG : 0.068000] Setup Struttura dei segnali
-[LOG : 0.081000] Pezzo 3 del player B attaccato alla table
-[LOG : 0.045000] Piece 7 of player A Started At 03:16:18
-[LOG : 0.075000] Setup Struttura dei segnali
-[LOG : 0.119000] Pezzo 7 del player A attaccato alla table
-[LOG : 0.040000] Piece 9 of player A Started At 03:16:18
-[LOG : 0.058000] Setup Struttura dei segnali
-[LOG : 0.074000] Pezzo 9 del player A attaccato alla table
-[LOG : 0.099000] Piece 0 of player A Started At 04:01:13
-[LOG : 0.146000] Setup Struttura dei segnali
-[LOG : 0.162000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.093000] Piece 0 of player A Started At 04:04:27
-[LOG : 0.113000] Setup Struttura dei segnali
-[LOG : 0.126000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.092000] Piece 0 of player A Started At 04:07:20
-[LOG : 0.114000] Setup Struttura dei segnali
-[LOG : 0.124000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.095000] Piece 0 of player A Started At 04:09:03
-[LOG : 0.119000] Setup Struttura dei segnali
-[LOG : 0.140000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.077000] Piece 0 of player A Started At 04:11:40
-[LOG : 0.106000] Setup Struttura dei segnali
-[LOG : 0.122000] Pezzo 0 del player A attaccato alla table
-[LOG : 0.089000] Piece 1 of player A Started At 04:11:40
-[LOG : 0.136000] Setup Struttura dei segnali
-[LOG : 0.148000] Pezzo 1 del player A attaccato alla table
-[LOG : 0.052000] Piece 2 of player A Started At 04:11:40
-[LOG : 0.069000] Setup Struttura dei segnali
-[LOG : 0.078000] Pezzo 2 del player A attaccato alla table
-[LOG : 0.065000] Piece 3 of player A Started At 04:11:40
-[LOG : 0.086000] Setup Struttura dei segnali
-[LOG : 0.098000] Pezzo 3 del player A attaccato alla table
+[LOG : Piece -> 0.083000] Piece 0 of player A Started At 09:13:27
+[LOG : Piece -> 0.108000] Setup Struttura dei segnali
+[LOG : Piece -> 0.118000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.051000] Piece 1 of player A Started At 09:13:27
+[LOG : Piece -> 0.097000] Setup Struttura dei segnali
+[LOG : Piece -> 0.109000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.056000] Piece 3 of player A Started At 09:13:27
+[LOG : Piece -> 0.075000] Setup Struttura dei segnali
+[LOG : Piece -> 0.085000] Pezzo 3 del player A attaccato alla table
+[LOG : Piece -> 0.085000] Piece 0 of player B Started At 09:13:27
+[LOG : Piece -> 0.102000] Setup Struttura dei segnali
+[LOG : Piece -> 0.112000] Pezzo 0 del player B attaccato alla table
+[LOG : Piece -> 0.066000] Piece 0 of player A Started At 09:30:22
+[LOG : Piece -> 0.099000] Setup Struttura dei segnali
+[LOG : Piece -> 0.108000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.082000] Piece 1 of player A Started At 09:30:22
+[LOG : Piece -> 0.110000] Setup Struttura dei segnali
+[LOG : Piece -> 0.126000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.100000] Piece 2 of player A Started At 09:30:22
+[LOG : Piece -> 0.118000] Setup Struttura dei segnali
+[LOG : Piece -> 0.128000] Pezzo 2 del player A attaccato alla table
+[LOG : Piece -> 0.046000] Piece 0 of player A Started At 09:31:11
+[LOG : Piece -> 0.065000] Setup Struttura dei segnali
+[LOG : Piece -> 0.074000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.125000] Piece 0 of player A Started At 09:45:02
+[LOG : Piece -> 0.177000] Setup Struttura dei segnali
+[LOG : Piece -> 0.196000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.061000] Piece 1 of player A Started At 09:45:02
+[LOG : Piece -> 0.079000] Setup Struttura dei segnali
+[LOG : Piece -> 0.091000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.054000] Piece 2 of player A Started At 09:45:02
+[LOG : Piece -> 0.079000] Setup Struttura dei segnali
+[LOG : Piece -> 0.089000] Pezzo 2 del player A attaccato alla table
+[LOG : Piece -> 0.054000] Piece 0 of player A Started At 09:46:50
+[LOG : Piece -> 0.088000] Setup Struttura dei segnali
+[LOG : Piece -> 0.099000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.048000] Piece 1 of player A Started At 09:46:50
+[LOG : Piece -> 0.084000] Setup Struttura dei segnali
+[LOG : Piece -> 0.095000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.055000] Piece 2 of player A Started At 09:46:50
+[LOG : Piece -> 0.073000] Setup Struttura dei segnali
+[LOG : Piece -> 0.083000] Pezzo 2 del player A attaccato alla table
+[LOG : Piece -> 0.069000] Piece 1 of player A Started At 09:58:30
+[LOG : Piece -> 0.126000] Setup Struttura dei segnali
+[LOG : Piece -> 0.136000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.086000] Piece 0 of player A Started At 09:58:30
+[LOG : Piece -> 0.110000] Setup Struttura dei segnali
+[LOG : Piece -> 0.123000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.089000] Piece 1 of player A Started At 10:02:43
+[LOG : Piece -> 0.119000] Setup Struttura dei segnali
+[LOG : Piece -> 0.134000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.089000] Piece 3 of player A Started At 10:02:43
+[LOG : Piece -> 0.114000] Setup Struttura dei segnali
+[LOG : Piece -> 0.127000] Pezzo 3 del player A attaccato alla table
+[LOG : Piece -> 0.122000] Piece 0 of player A Started At 10:02:55
+[LOG : Piece -> 0.156000] Setup Struttura dei segnali
+[LOG : Piece -> 0.170000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.112000] Piece 1 of player A Started At 10:02:55
+[LOG : Piece -> 0.131000] Setup Struttura dei segnali
+[LOG : Piece -> 0.142000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.300000] Piece 0 of player A Started At 10:05:56
+[LOG : Piece -> 0.330000] Setup Struttura dei segnali
+[LOG : Piece -> 0.339000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.160000] Piece 1 of player A Started At 10:05:56
+[LOG : Piece -> 0.183000] Setup Struttura dei segnali
+[LOG : Piece -> 0.196000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.076000] Piece 0 of player A Started At 10:06:29
+[LOG : Piece -> 0.100000] Setup Struttura dei segnali
+[LOG : Piece -> 0.114000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.084000] Piece 1 of player A Started At 10:06:29
+[LOG : Piece -> 0.103000] Setup Struttura dei segnali
+[LOG : Piece -> 0.116000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.071000] Piece 0 of player A Started At 10:06:58
+[LOG : Piece -> 0.106000] Setup Struttura dei segnali
+[LOG : Piece -> 0.119000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.072000] Piece 1 of player A Started At 10:06:58
+[LOG : Piece -> 0.090000] Setup Struttura dei segnali
+[LOG : Piece -> 0.099000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.099000] Piece 0 of player A Started At 10:22:11
+[LOG : Piece -> 0.143000] Setup Struttura dei segnali
+[LOG : Piece -> 0.159000] Pezzo 0 del player A attaccato alla table
+[LOG : Piece -> 0.080000] Piece 1 of player A Started At 10:22:11
+[LOG : Piece -> 0.123000] Setup Struttura dei segnali
+[LOG : Piece -> 0.156000] Pezzo 1 del player A attaccato alla table
+[LOG : Piece -> 0.053000] Piece 2 of player A Started At 10:22:11
+[LOG : Piece -> 0.076000] Setup Struttura dei segnali
+[LOG : Piece -> 0.159000] Pezzo 2 del player A attaccato alla table
+[LOG : Piece -> 0.057000] Piece 3 of player A Started At 10:22:11
+[LOG : Piece -> 0.076000] Setup Struttura dei segnali
+[LOG : Piece -> 0.087000] Pezzo 3 del player A attaccato alla table
+[LOG : Piece -> 0.082000] Piece 1 of player B Started At 10:22:11
+[LOG : Piece -> 0.103000] Setup Struttura dei segnali
+[LOG : Piece -> 0.114000] Pezzo 1 del player B attaccato alla table
+[LOG : Piece -> 0.099000] Piece 2 of player B Started At 10:22:11
+[LOG : Piece -> 0.151000] Setup Struttura dei segnali
+[LOG : Piece -> 0.170000] Pezzo 2 del player B attaccato alla table
+[LOG : Piece -> 0.044000] Piece 4 of player B Started At 10:22:11
+[LOG : Piece -> 0.077000] Setup Struttura dei segnali
+[LOG : Piece -> 0.086000] Pezzo 4 del player B attaccato alla table
+[LOG : Piece -> 0.082000] Piece 5 of player B Started At 10:22:11
+[LOG : Piece -> 0.105000] Setup Struttura dei segnali
+[LOG : Piece -> 0.115000] Pezzo 5 del player B attaccato alla table
+[LOG : Piece -> 0.048000] Piece 6 of player A Started At 10:22:11
+[LOG : Piece -> 0.064000] Setup Struttura dei segnali
+[LOG : Piece -> 0.076000] Pezzo 6 del player A attaccato alla table
+[LOG : Piece -> 0.048000] Piece 5 of player A Started At 10:22:11
+[LOG : Piece -> 0.065000] Setup Struttura dei segnali
+[LOG : Piece -> 0.075000] Pezzo 5 del player A attaccato alla table
+[LOG : Piece -> 0.046000] Piece 6 of player B Started At 10:22:11
+[LOG : Piece -> 0.066000] Setup Struttura dei segnali
+[LOG : Piece -> 0.077000] Pezzo 6 del player B attaccato alla table
+[LOG : Piece -> 0.050000] Piece 3 of player B Started At 10:22:11
+[LOG : Piece -> 0.069000] Setup Struttura dei segnali
+[LOG : Piece -> 0.079000] Pezzo 3 del player B attaccato alla table
+[LOG : Piece -> 0.053000] Piece 7 of player B Started At 10:22:11
+[LOG : Piece -> 0.089000] Setup Struttura dei segnali
+[LOG : Piece -> 0.101000] Pezzo 7 del player B attaccato alla table
+[LOG : Piece -> 0.049000] Piece 7 of player A Started At 10:22:11
+[LOG : Piece -> 0.147000] Setup Struttura dei segnali
+[LOG : Piece -> 0.158000] Pezzo 7 del player A attaccato alla table
+[LOG : Piece -> 0.048000] Piece 8 of player B Started At 10:22:11
+[LOG : Piece -> 0.067000] Setup Struttura dei segnali
+[LOG : Piece -> 0.075000] Pezzo 8 del player B attaccato alla table
+[LOG : Piece -> 0.046000] Piece 4 of player A Started At 10:22:11
+[LOG : Piece -> 0.062000] Setup Struttura dei segnali
+[LOG : Piece -> 0.070000] Pezzo 4 del player A attaccato alla table
+[LOG : Piece -> 0.074000] Piece 9 of player B Started At 10:22:11
+[LOG : Piece -> 0.107000] Setup Struttura dei segnali
+[LOG : Piece -> 0.118000] Pezzo 9 del player B attaccato alla table
+[LOG : Piece -> 0.089000] Piece 8 of player A Started At 10:22:11
+[LOG : Piece -> 0.113000] Setup Struttura dei segnali
+[LOG : Piece -> 0.122000] Pezzo 8 del player A attaccato alla table
+[LOG : Piece -> 0.038000] Piece 9 of player A Started At 10:22:11
+[LOG : Piece -> 0.057000] Setup Struttura dei segnali
+[LOG : Piece -> 0.064000] Pezzo 9 del player A attaccato alla table
+[LOG : Piece -> 0.051000] Piece 0 of player B Started At 10:22:11
+[LOG : Piece -> 0.077000] Setup Struttura dei segnali
+[LOG : Piece -> 0.089000] Pezzo 0 del player B attaccato alla table

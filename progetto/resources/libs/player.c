@@ -8,37 +8,22 @@ int status;
 
 
 int player(){
-    
-    struct sembuf play_sem;
-    struct sembuf master_sem;
-    master_semkey = ftok("./master.c",'a');
-    player_semkey = ftok("./player.c",'b');
+    struct sembuf sem;
+    processSign = "Player";
+    cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
     logg("Player Started At %s",__TIME__);
-    /**
-    * semaforo
-    * TODO: controllare le variabili di inizializzazione semaforo
-    */
-    if((master_semid = semget(master_semkey,1,IPC_EXCL)) == -1){
-        error("errore nel inizializzare il semaforo master",ECONNABORTED);
+    if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
+        error("errore nel get del semaforo master",ECONNABORTED);
     }
-    if((player_semid = semget(player_semkey,1, IPC_EXCL)) == -1){
-        error("errore nel semaforo player",ECONNABORTED);
-    }
-    
-    if(semctl(player_semid,0,SETVAL,1) == -1){
-        error("Error in semctl PLAYER",ECOMM);
-    }
-    play_sem.sem_op = 0;
-    play_sem.sem_num = 0;
-    if(semop(player_semid,&play_sem,1) == -1){
-        error("errore in semop PLAYER",ECOMM);
-    }
-    /* end*/
     if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table",EIO);
             }
+
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);
     /*puntatore alla funzione player_clean da sfruttare con error()*/
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
@@ -53,9 +38,9 @@ int player(){
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
     piecegen(SO_NUM_P);
-    master_sem.sem_num = 0;
-    master_sem.sem_op = 1;
-    semop(master_semid,&master_sem,1);
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,SO_NUM_P);
     exit(0);
     return 0;
 
