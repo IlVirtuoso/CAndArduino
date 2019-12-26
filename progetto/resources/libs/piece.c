@@ -74,13 +74,18 @@ void setpos(int x, int y){
         if(!tab(table,x,y)->isFull){
             tab(table,x,y)->id = player_id + 65 ; /*set dell'id a un carattere dell'alfabeto stampabile in base al numero del player*/
             tab(table,x,y)->isFull = 1;
+            piece_attr.x = x;
+            piece_attr.y = y;
         }
         else{
             for(dx = -1; dx < 2; dx++){
                 for(dy = -1; dy < 2; dy++){
-                    if(!tab(table,x+dx,y+dy)->isFull){
+                    if(!tab(table,x+dx,y+dy)->isFull){ /*nel caso il pezzo trovi quella cella libera controlla le celle adiacenti per posizionarsi*/
                         tab(table,x,y)->id = player_id + 65 ; /*set dell'id a un carattere dell'alfabeto stampabile in base al numero del player*/
                         tab(table,x,y)->isFull = 1;
+                        piece_attr.x = x+dx;
+                        piece_attr.y = y+dy;
+                        break;
                     }
                 }
             }
