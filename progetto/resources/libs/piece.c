@@ -1,7 +1,7 @@
 #ifndef PIECE_H
 #include "piece.h"
 #endif
-
+int pos_set = 0;
 
 int piece(){
     struct sembuf sem;
@@ -10,7 +10,7 @@ int piece(){
         error("errore nel semaforo",ECONNABORTED);
     }
     logger = fopen("Pieces.log","a+");
-    logg("Piece %d of player %c Started At %s",piece_id,player_id,__TIME__);
+    logg("Piece %d of player %c Started At %s",piece_attr.piece_id,player_id,__TIME__);
     player_msgqueue = msgqueue;
     cleaner = piece_cleaner;
     logg("Setup Struttura dei segnali");
@@ -23,14 +23,12 @@ int piece(){
     /*Questi due segnali serviranno per dare al player dei comandi addizionali*/
     sigprocmask(SIG_BLOCK,&piece_mask,NULL);
     piece_signal.sa_mask = piece_mask;
-    piece_signal.sa_flags = SA_RESTART;
-    piece_signal.sa_flags = SA_NODEFER;
     sigaction(SIGINT,&piece_signal,NULL);
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
     else{
-        logg("Pezzo %d del player %c attaccato alla table",piece_id,player_id);
+        logg("Pezzo %d del player %c attaccato alla table",piece_attr.piece_id,player_id);
 
     }
     sem.sem_num = PIECE_SEM;
@@ -53,7 +51,9 @@ void piece_handler(int signum){
         break;
 
     case SIGUSR2:
-
+    /**
+     * Handler per l'interruzione dell'esecuzione del metodo move, usato per cambiare strategia
+     */
         break;
     
     default:
@@ -64,6 +64,28 @@ void piece_handler(int signum){
 void piece_cleaner(){
     shmdt(piece_shared_table);
     
+}
+
+void setpos(int x, int y){
+    int dx,dy;
+    pos_set = 1;
+    cell * table = piece_shared_table;
+    if(!pos_set){
+        if(!tab(table,x,y)->isFull){
+            tab(table,x,y)->id = player_id + 65 ; /*set dell'id a un carattere dell'alfabeto stampabile in base al numero del player*/
+            tab(table,x,y)->isFull = 1;
+        }
+        else{
+            for(dx = -1; dx < 2; dx++){
+                for(dy = -1; dy < 2; dy++){
+                    if(!tab(table,x+dx,y+dy)->isFull){
+                        tab(table,x,y)->id = player_id + 65 ; /*set dell'id a un carattere dell'alfabeto stampabile in base al numero del player*/
+                        tab(table,x,y)->isFull = 1;
+                    }
+                }
+            }
+        }
+    }
 }
 
 void goto_loc(int x, int y, int method){

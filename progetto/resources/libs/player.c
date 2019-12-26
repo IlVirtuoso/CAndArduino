@@ -45,6 +45,7 @@ int player(){
     sem.sem_op = 1;
     semop(semid,&sem,1);
 
+    
     cleaner();
 
     return 0;
@@ -68,7 +69,7 @@ int piecegen(int numpieces){
         }
         else{
             /*pieces*/
-            piece_id = i;
+            piece_attr.piece_id = i;
             if(piece() == -1){
                 return -1;
                 exit(1);
