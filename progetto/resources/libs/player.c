@@ -40,17 +40,13 @@ int player(){
     sem.sem_num = PIECE_SEM;
     sem.sem_op = -1;
     semop(semid,&sem,SO_NUM_P);
-    
-
-    sem.sem_num = PLAYER_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
-    player_clean();
-    pause();
+
+    cleaner();
+
     return 0;
 
 }
@@ -67,7 +63,6 @@ int piecegen(int numpieces){
         if((pid = fork())){
             /*player*/
             pieces[i] = pid; 
-            waitpid(pid,NULL,WEXITED);
             logg("Generato pezzo %d Attesa",i);
         
         }
@@ -115,6 +110,7 @@ void player_clean(){
     logg("PLAYER_CLEANER:Interruzione esecuzione in corso");
     for(i = 0; i < sizeof(pieces); i++){
         kill(pieces[i],SIGINT);
+        wait(NULL);
     }
     fclose(logger);
     shmdt(player_shared_table);

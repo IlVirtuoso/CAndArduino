@@ -36,8 +36,6 @@ int piece(){
     sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
-    
-    pause();
     exit(0);
     return 0;
 }

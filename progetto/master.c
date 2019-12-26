@@ -178,7 +178,7 @@ int main(int argc, char * argv[]){
     logg("Inizializzazione Memoria Condivisa");
     /**
      * Region: Shared Memory Set & semaphores
-     * TODO:controllare perchè la kill non funziona
+     * TODO: c'è un problema con segmenti di shared memory che rimangono attivi, bisogna capire perchè
     */
     master_msgqueue = message_start(IPC_PRIVATE);
     sem_init();
