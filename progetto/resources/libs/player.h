@@ -105,11 +105,7 @@ cell * player_shared_table;
 
 int semid;
 
-/*file desc della masterpipe*/
-int masterpipe[2];
 
-/*file desc della playerpipe*/
-int playerpipe[2];
 
 char player_logbuffer[128];
 

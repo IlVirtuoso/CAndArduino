@@ -8,17 +8,10 @@ int status;
 
 struct sembuf sem;
 
-char msg[128];
-
 
 int player(){
-    /**
-     * TODO: bisogna capire come far funzionare la pipe tra i player e i loro pezzi
-     * */
+
     processSign = "Player";
-    pipe(playerpipe);
-    sprintf(msg,"pezzi siete del giocatore %c",player_id);
-    write(playerpipe[0],msg,sizeof(msg));
     cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
@@ -44,10 +37,6 @@ int player(){
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
     piecegen(SO_NUM_P);
-
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,SO_NUM_P);
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;

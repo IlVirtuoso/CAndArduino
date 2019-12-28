@@ -6,11 +6,12 @@ int pos_set = 0;
 
 
 int piece(){
-    char msg[128];
     struct sembuf sem;
     processSign = "Piece";
-    read(playerpipe[0],msg,sizeof(msg));
-    printf("%s",msg);
+
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel semaforo",ECONNABORTED);
     }
@@ -35,9 +36,7 @@ int piece(){
         logg("Pezzo %d del player %c attaccato alla table",piece_attr.piece_id,player_id);
 
     }
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
+    
     exit(0);
     return 0;
 }
@@ -71,33 +70,41 @@ void piece_cleaner(){
 }
 
 void setpos(int x, int y){
-    int dx,dy;
+    int dx,dy,pointx,pointy;
     cell * table = piece_shared_table;
     if(!pos_set){
-        if(!tab(table,x,y)->isFull){
-            tab(table,x,y)->id = player_id + 65 ; /*set dell'id a un carattere dell'alfabeto stampabile in base al numero del player*/
-            tab(table,x,y)->isFull = 1;
+        if(isfree(table,x,y)){
+            ac(table,x,y);
+            tab(table,x,y)->id = player_id - 65;
             piece_attr.x = x;
             piece_attr.y = y;
             pos_set = 1;
         }
         else{
-            for(dx = -1; dx < 2; dx++){
-                for(dy = -1; dy < 2; dy++){ /*cerca nelle celle adiacenti se c'è una posizione libera*/
-                    if(!tab(table,x+dx,y+dy)->isFull){ /*nel caso il pezzo trovi quella cella libera la occupa*/
-                        tab(table,x,y)->id = player_id + 65 ; /*set dell'id a un carattere dell'alfabeto stampabile in base al numero del player*/
-                        tab(table,x,y)->isFull = 1;
-                        piece_attr.x = x+dx;
-                        piece_attr.y = y+dy;
+            for(dx = -1; dx <= 1; dx++){
+                for(dy = -1; dy <= 1; dy++){
+                    pointx = x + dx;
+                    pointy = y + dy;
+                    if(pointx == -1) pointx = SO_ALTEZZA;
+                    if(pointy == -1) pointy = SO_BASE;
+                    else{
+                        pointx = pointx % SO_ALTEZZA;
+                        pointy = pointy % SO_BASE;
+                    }
+                    if(isfree(table,pointx,pointy)){
+                        ac(table,x,y);
+                        tab(table,x,y)->id = player_id - 65;
+                        piece_attr.x = x;
+                        piece_attr.y = y;
                         pos_set = 1;
                         break;
                     }
                 }
             }
-            if(!pos_set){
-                setpos(x+3,y);/*se non trova una posizione libera prova ricorsivamente sulla stessa riga*/
-            }        
         }
+    }
+    else{
+        error("Cannot set pos more times",EACCES);
     }
 }
 
@@ -122,5 +129,21 @@ void goto_loc(int x, int y, int method){
     
     default:
         break;
+    }
+}
+
+void move(int x, int y){
+    int isvalid;
+    cell * table = piece_shared_table;
+    isvalid = ((piece_attr.x + x) == -1 || (piece_attr.x + x) == 1 || ((piece_attr.x + x)) == 0) && (((piece_attr.y + y) == -1) || ((piece_attr.y + y)) == 1 || ((piece_attr.y + y)) == 0);
+    if(isvalid){
+        rel(table,piece_attr.x,piece_attr.y);
+        ac(table,x,y);
+        tab(table,x,y)->id = player_id - 65;
+        piece_attr.x = x;
+        piece_attr.y = y;
+    }
+    else{
+        error("Non puoi muoverti di più celle in una volta",EACCES);
     }
 }

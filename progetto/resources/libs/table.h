@@ -39,9 +39,7 @@
 typedef struct{
     char id;
     int isFull;
-    int semid;
-    struct sembuf sem;
-    
+    int hasaccess;
 }cell;
 
 
@@ -49,13 +47,33 @@ typedef struct{
 /*metodo per muoversi nella tabella*/
 cell * tab(cell * table, int x, int y);
 
-/*metodo per ritornare una cella*/
-cell pointer(cell * table, int x, int y);
 
 /*id della table*/
 int table;
 
+/*id della tabella semaforica*/
+int sem_table;
 
 /*inizializza la scacchiera in memoria condivisa*/
 void table_start();
+
+/*metodo per il controllo degli accessi alla cella*/
+int ac(cell * shared_table, int x, int y);
+
+/*metodo per il rilascio dell'accesso alla cella*/
+int rel(cell * shared_table, int x, int y);
+
+/*metodo usato per leggere le flag di una cella*/
+char getflag(cell * shared_table, int x, int y);
+
+/*metodo usato dal master per piazzare le bandiere*/
+void placeflag(cell * shared_table, int x, int y);
+
+/*metodo usato dal master per rimuovere le bandiere*/
+void removeflag(cell * shared_table, int x, int y);
+
+/*metodo per sapere se una cella è o meno libera*/
+int isfree(cell * shared_table, int x, int y);
+
+struct sembuf sem_t;
 #endif

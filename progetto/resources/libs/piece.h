@@ -36,6 +36,8 @@ void piece_handler(int signum);
 
 void piece_cleaner();
 
+/*variabile di controllo, dice se ha o meno accesso a una cella della tabella*/
+int hasaccess;
 
 /*segmento di memoria condivisa della table*/
 cell * piece_shared_table;
@@ -56,8 +58,6 @@ struct sigaction piece_signal;
 
 int semid;
 
-/*file desc della playerpipe*/
-int playerpipe[2];
 
 enum{
     STRAIGHT_TO,

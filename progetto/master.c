@@ -155,9 +155,6 @@ int flagcreated = 0;
 
 struct sembuf sem;
 
-/*file desc della pipe tra master e players*/
-int masterpipe[2];
-
 int main(int argc, char * argv[]){
     int i;
     /*Region: inizializzazione e rilevamento argomenti*/
@@ -166,7 +163,7 @@ int main(int argc, char * argv[]){
         if(strcmp(argv[i],"-v")) verbosity = 2;
         if(strcmp(argv[i],"-vv")) verbosity = 3;
     }
-    pipe(masterpipe);
+    
     cleaner = clean;
     placed = 0;
     logger = fopen("Master.log","a+");
@@ -312,23 +309,13 @@ void sem_init(){
 }
 
 void shared_table_init(){
-    int i, j;
     if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'attach della shared_table",EIO);
     }
     else{
         debug("Shared Table attach completato");
     }
-    
-    logg("Setup dei semafori");
-    for(i = 0; i < SO_BASE; i++){
-        for(j = 0; j < SO_ALTEZZA; j++){
-            tab(master_shared_table,i,j)->sem.sem_num = 0;
-            tab(master_shared_table,i,j)->id = EMPTY;
-            tab(master_shared_table,i,j)->sem.sem_op = 1;
-            
-        }
-    }
+
     /*End-Region*/
     logg("Memoria Condivisa Inizializzata");
 }
@@ -394,10 +381,10 @@ vexillum * getVex(int numFlag){
         for(flag = 0;flag;){
             x = (0 + rand()) % (SO_BASE + 1 - 0);
             y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
-            if(tab(master_shared_table, x, y)->id == EMPTY){
+            if((getflag(master_shared_table, x, y)) == EMPTY){
                 p[i].x = x;
                 p[i].y = y;  
-                tab(master_shared_table, x, y)->id = FLAG;     
+                placeflag(master_shared_table, x, y);     
                 flag = 1;
             }
         }
