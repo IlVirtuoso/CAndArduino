@@ -5,10 +5,10 @@
 
 char errore[24];
 void error(char message[], int err){
-    sprintf(errore,"%s",strerror(err));
-    fprintf(logger,"[ERROR]:%s,message:%s\n",errore,message);
-    fprintf(stderr,"[ERROR]:%s,message:%s\n",errore,message);
+    sprintf(errore,"[ERROR]:%s,message:%s\n",strerror(err),message);
+    fprintf(logger,"%s",errore);
     cleaner();
+    perror(errore);
     exit(err);
     
 }

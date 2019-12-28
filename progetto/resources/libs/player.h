@@ -50,9 +50,6 @@
 #ifndef DEBUG_H
 #include "debug.h"
 #endif
-#ifndef MESSAGE_H
-#include "message.h"
-#endif
 #ifndef TABLE_H
 #include "table.h"
 #endif
@@ -105,11 +102,14 @@ void play();
 /*segmento di memoria condivisa della table player*/
 cell * player_shared_table;
 
-/*collegamento alla msgqueue del master con il player*/
-int master_msgqueue;
 
 int semid;
 
+/*file desc della masterpipe*/
+int masterpipe[2];
+
+/*file desc della playerpipe*/
+int playerpipe[2];
 
 char player_logbuffer[128];
 

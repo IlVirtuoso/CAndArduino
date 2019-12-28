@@ -2,9 +2,6 @@
 #ifndef DEBUG_H
 #include "debug.h"
 #endif
-#ifndef MESSAGE_H
-#include "message.h"
-#endif
 #ifndef SHM_H
 #include <sys/shm.h>
 #endif
@@ -59,7 +56,8 @@ struct sigaction piece_signal;
 
 int semid;
 
-
+/*file desc della playerpipe*/
+int playerpipe[2];
 
 enum{
     STRAIGHT_TO,
@@ -67,6 +65,7 @@ enum{
     Y_BEFORE_X,
     PROBABLE_LESS_COSTLY
 };
+
 
 #endif
 

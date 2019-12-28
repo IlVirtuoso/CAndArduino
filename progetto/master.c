@@ -62,9 +62,7 @@
 #ifndef TABLE_H
 #include "./resources/libs/table.h"
 #endif
-#ifndef MESSAGE_H
-#include "./resources/libs/message.h"
-#endif
+
 
 
 /*handler per il segnale di interruzione SIGINT*/
@@ -155,10 +153,10 @@ vexillum * getVex(int numFlag);
 int flagcreated = 0;
 
 
-message msg;
-
 struct sembuf sem;
 
+/*file desc della pipe tra master e players*/
+int masterpipe[2];
 
 int main(int argc, char * argv[]){
     int i;
@@ -168,7 +166,7 @@ int main(int argc, char * argv[]){
         if(strcmp(argv[i],"-v")) verbosity = 2;
         if(strcmp(argv[i],"-vv")) verbosity = 3;
     }
-    
+    pipe(masterpipe);
     cleaner = clean;
     placed = 0;
     logger = fopen("Master.log","a+");
@@ -180,7 +178,6 @@ int main(int argc, char * argv[]){
      * Region: Shared Memory Set & semaphores
      * TODO: c'è un problema con segmenti di shared memory che rimangono attivi, bisogna capire perchè
     */
-    master_msgqueue = message_start(IPC_PRIVATE);
     sem_init();
     table_start();
     shared_table_init();

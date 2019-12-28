@@ -8,8 +8,17 @@ int status;
 
 struct sembuf sem;
 
+char msg[128];
+
+
 int player(){
+    /**
+     * TODO: bisogna capire come far funzionare la pipe tra i player e i loro pezzi
+     * */
     processSign = "Player";
+    pipe(playerpipe);
+    sprintf(msg,"pezzi siete del giocatore %c",player_id);
+    write(playerpipe[0],msg,sizeof(msg));
     cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
@@ -31,7 +40,6 @@ int player(){
     sigaddset(&player_mask,SIGINT);
     sigprocmask(SIG_BLOCK,&player_mask,NULL);
     player_signal.sa_mask = player_mask;
-    master_msgqueue = msgqueue;
   /*player_signal.sa_flags = SA_RESTART;
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
@@ -58,7 +66,6 @@ int i;
 
 int piecegen(int numpieces){
     logg("Generazione pezzi iniziata");
-    player_msgqueue = message_start(IPC_PRIVATE);
     player_pid = getpid();
     for(i = 0; i < numpieces; i++){
         if((pid = fork())){
