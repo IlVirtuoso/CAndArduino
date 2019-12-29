@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #include "player.h"
 #endif
+
 char filename[24];
 
 int status;
@@ -10,7 +11,6 @@ struct sembuf sem;
 
 
 int player(){
-
     processSign = "Player";
     cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
@@ -53,13 +53,10 @@ int player(){
 
 }
 
-int i;
-
-
-
 int piecegen(int numpieces){
-    logg("Generazione pezzi iniziata");
+    int i;
     player_pid = getpid();
+    logg("Generazione pezzi iniziata");
     for(i = 0; i < numpieces; i++){
         if((pid = fork())){
             /*player*/
@@ -106,8 +103,8 @@ void player_handler(int signum){
     }
 }
 
-int i;
 void player_clean(){
+    int i;
     logg("PLAYER_CLEANER:Interruzione esecuzione in corso");
     for(i = 0; i < sizeof(pieces); i++){
         kill(pieces[i],SIGINT);
@@ -117,4 +114,5 @@ void player_clean(){
     shmdt(player_shared_table);
     exit(0);
 }
+
 

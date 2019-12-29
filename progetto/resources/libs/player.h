@@ -60,6 +60,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+/* Lunghezza dei messaggi per controllo pedine*/
+#define CONTROL_SIZE 10
 
 /*array che identifica i pezzi appartenenti a questo giocatore*/
 pid_t pieces[SO_NUM_P];
@@ -105,7 +107,11 @@ cell * player_shared_table;
 
 int semid;
 
-
+/* struct per message queue*/ 
+typedef struct msg_cnt{
+    long type;
+    char msg[CONTROL_SIZE];
+}msg_cnt
 
 char player_logbuffer[128];
 
