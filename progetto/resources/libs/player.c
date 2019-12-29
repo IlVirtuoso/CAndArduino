@@ -23,7 +23,9 @@ int player(){
                 error("Errore nell'innesto della shared_table",EIO);
             }
 
-    
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);    
     /*puntatore alla funzione player_clean da sfruttare con error()*/
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
@@ -42,11 +44,7 @@ int player(){
     sem.sem_op = 1;
     semop(semid,&sem,SO_NUM_P);
 
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
-
-    
+    pause();
     cleaner();
 
     return 0;
