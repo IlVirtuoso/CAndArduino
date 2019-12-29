@@ -7,8 +7,8 @@
 int x;
 int y;
 void display(){
-    for(x = 0 ; x < SO_BASE; x++){
-        for(y = 0; y < SO_ALTEZZA; y++){
+    for(x = 0 ; x < SO_ALTEZZA; x++){
+        for(y = 0; y < SO_BASE; y++){
             printf("|%c|", getid(board,x,y));
         }
         printf("\n");
@@ -18,5 +18,15 @@ void display(){
 void show(){
     while(1){
         display();
+    }
+}
+
+void display_sem(){
+    int x,y;
+    for(x = 0; x < SO_ALTEZZA; x++){
+        for (y = 0; y < SO_BASE; y++){
+            printf("|%d|", semctl(sem_table,x*y + y, GETVAL));
+        }
+        printf("\n");
     }
 }

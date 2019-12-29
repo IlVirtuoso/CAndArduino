@@ -8,9 +8,16 @@ int pos_set = 0;
 int piece(){
     struct sembuf sem;
     processSign = "Piece";
- 
+
+    srand(time(NULL));
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel semaforo",ECONNABORTED);
+    }
+    if((sem_table = semget(sem_table_key,SO_BASE*SO_ALTEZZA,IPC_EXCL)) == -1){
+        error("Error nella creazione della tabella dei semafori",EACCES);
+    }
+    else{
+        logg("Tabella semafori iniziata");
     }
     logger = fopen("Pieces.log","a+");
     logg("Piece %d of player %c Started At %s",piece_attr.piece_id,player_id,__TIME__);
@@ -33,7 +40,7 @@ int piece(){
         logg("Pezzo %d del player %c attaccato alla table",piece_attr.piece_id,player_id);
 
     }
-    setpos(rand()%SO_BASE,rand()%SO_ALTEZZA);
+    setpos(rand()%SO_ALTEZZA,rand()%SO_BASE);
     logg("position set x:%d y:%d",piece_attr.x,piece_attr.y);
     sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
@@ -69,13 +76,16 @@ void piece_cleaner(){
     
 }
 
+
 void setpos(int x, int y){
+    
    if(setid(piece_shared_table,x,y,player_id) == 0){
-       logg("Position occupied, retrying");
-       setpos(rand()%SO_BASE,rand()%SO_ALTEZZA);
+       debug("Posizione Occupata");
    }
-   piece_attr.x = x;
-   piece_attr.y = y;
+   else{
+       piece_attr.x = x;
+       piece_attr.y = y;
+   }
 }
 
 void goto_loc(int x, int y, int method){

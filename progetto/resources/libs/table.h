@@ -60,6 +60,8 @@ int table;
 /*id della tabella semaforica*/
 int sem_table;
 
+key_t sem_table_key;
+
 /*inizializza la scacchiera in memoria condivisa*/
 void table_start();
 

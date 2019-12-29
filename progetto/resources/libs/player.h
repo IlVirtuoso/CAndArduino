@@ -47,6 +47,9 @@
 #ifndef PIECE_H
 #include "piece.h"
 #endif
+#ifndef MONITOR_H
+#include "monitor.h"
+#endif
 #ifndef DEBUG_H
 #include "debug.h"
 #endif
@@ -111,7 +114,7 @@ int semid;
 typedef struct msg_cnt{
     long type;
     char msg[CONTROL_SIZE];
-}msg_cnt
+}msg_cnt;
 
 char player_logbuffer[128];
 

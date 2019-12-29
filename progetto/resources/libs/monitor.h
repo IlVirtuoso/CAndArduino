@@ -33,6 +33,9 @@ void display();
 /*inizia il processo che farà da monitor per il gioco*/
 void show();
 
+/*metodo per vedere la tabella dei semafori*/
+void display_sem();
+
 /*puntatore alla scacchiera*/
 cell * board;
 
