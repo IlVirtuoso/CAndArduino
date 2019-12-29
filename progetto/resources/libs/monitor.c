@@ -9,7 +9,7 @@ int y;
 void display(){
     for(x = 0 ; x < SO_BASE; x++){
         for(y = 0; y < SO_ALTEZZA; y++){
-            printf("|%c|", tab(board,x,y)->id);
+            printf("|%c|", getid(board,x,y));
         }
         printf("\n");
     }

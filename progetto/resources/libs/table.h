@@ -7,6 +7,12 @@
 #ifndef DEBUG_H
 #include "debug.h"
 #endif
+#ifndef STDIO_H
+#include <stdio.h>
+#endif
+#ifndef STDLIB_H
+#include <stdlib.h>
+#endif
 #ifndef TYPES_H
 #include <sys/types.h>
 #endif
@@ -39,7 +45,7 @@
 typedef struct{
     char id;
     int isFull;
-    int hasaccess;
+    int flag;
 }cell;
 
 
@@ -57,23 +63,17 @@ int sem_table;
 /*inizializza la scacchiera in memoria condivisa*/
 void table_start();
 
-/*metodo per il controllo degli accessi alla cella*/
-int ac(cell * shared_table, int x, int y);
+/*metodo usato per leggere l'id' di una cella*/
+char getid(cell * shared_table, int x, int y);
 
-/*metodo per il rilascio dell'accesso alla cella*/
-int rel(cell * shared_table, int x, int y);
-
-/*metodo usato per leggere le flag di una cella*/
-char getflag(cell * shared_table, int x, int y);
+/*metodo usato per settare l'id di una cella, ritorna 1 in caso di successo */
+int setid(cell * shared_table,int x, int y, char id);
 
 /*metodo usato dal master per piazzare le bandiere*/
 void placeflag(cell * shared_table, int x, int y);
 
 /*metodo usato dal master per rimuovere le bandiere*/
 void removeflag(cell * shared_table, int x, int y);
-
-/*metodo per sapere se una cella è o meno libera*/
-int isfree(cell * shared_table, int x, int y);
 
 struct sembuf sem_t;
 #endif

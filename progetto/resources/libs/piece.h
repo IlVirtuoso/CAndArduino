@@ -55,6 +55,7 @@ struct sigaction piece_signal;
 
 /*semaforo*/
 
+void setpos(int x, int y);
 
 int semid;
 

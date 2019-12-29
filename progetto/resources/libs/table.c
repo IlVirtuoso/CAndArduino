@@ -1,62 +1,31 @@
 #ifndef TABLE_H
 #include "table.h"
 #endif
-/*fatto per evitare un ciclo di inclusioni*/
-#ifndef PIECE_H
-#include "piece.h"
-#endif
-
-/*metodo locale per l'accesso alla tabella, nessuno può usarlo all'infuori dei metodi dichiarati qui*/
-cell * ruler(cell * shareded_table,int x, int y);
-
-/*Region metodi per il controllo della scacchiera*/
 
 
-int ac(cell * shared_table,int x, int y){
-    if(hasaccess){
-        error("non puoi accedere ad un altra cella senza rilasciarne una",EACCES);
+int setid(cell * shared_table,int x, int y, char id){
+    if((&(*(shared_table + x*y + y)))->id == EMPTY ||(&(*(shared_table + x*y + y)))->id == FLAG ){
+    sem_t.sem_num = x*y + y;
+    sem_t.sem_op = -1;
+    semop(sem_table,&sem_t,1);
+    (&(*(shared_table + x*y + y)))->id = id;
+    sem_t.sem_num = x*y + y;
+    sem_t.sem_op = 1;
+    semop(sem_table,&sem_t,1);
+    return 1;
     }
     else{
-        sem_t.sem_num = x*y + y;
-        sem_t.sem_op = -1;
-        semop(sem_table,&sem_t,1);
-        hasaccess = 1;
-        (&(*(shared_table + x*y + y)))->isFull = 1;
-        
+        return 0;
     }
-    return 0;
 }
 
-int rel(cell * shared_table,int x, int y){
-    if(hasaccess){
-        sem_t.sem_num = x*y + y;
-        sem_t.sem_op = 1;
-        semop(sem_table,&sem_t,1);
-        hasaccess = 0;
-        (&(*(shared_table + x*y + y)))->isFull = 0;
-    }
-    else{
-        error("Non puoi rilasciare una cella se non hai accesso a nessuna",EACCES);
-    }
-    return 0;
-}
-
-int isfree(cell * shared_table, int x, int y){
-    return (&(*(shared_table + x*y + y)))->isFull;
+char getid(cell * shared_table, int x, int y){
+   return (&(*(shared_table + x*y + y)))->id;
 }
 
 cell * tab(cell * shared_table, int x, int y){
-    if(semctl(sem_table,x*y + y,GETVAL) == 0 && hasaccess){
     return (&(*(shared_table + x*y + y)));
     }
-    else if(semctl(sem_table,x*y + y,GETVAL) == -1){
-        error("semctl fallita",EACCES);
-    }
-    else{
-        error("non hai accesso a questo semaforo",EACCES);
-    }
-    return 0;
-}
 
 char getflag(cell * shared_table, int x, int y){
     return (&(*(shared_table + x*y + y)))->id;

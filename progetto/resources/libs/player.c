@@ -38,6 +38,10 @@ int player(){
     sigaction(SIGINT,&player_signal,NULL);
     piecegen(SO_NUM_P);
 
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,SO_NUM_P);
+
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);

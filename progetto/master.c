@@ -202,7 +202,7 @@ int main(int argc, char * argv[]){
 
     /*Region Phase-3:Anarchy*/
     /*End-Region*/
-    
+    display();
     logg("End Of Execution");
     logg("Stopped at %s",__TIME__);
     cleaner();
@@ -316,7 +316,7 @@ void shared_table_init(){
         debug("Shared Table attach completato");
     }
 
-    /*End-Region*/
+    board = master_shared_table;
     logg("Memoria Condivisa Inizializzata");
 }
 
@@ -381,7 +381,7 @@ vexillum * getVex(int numFlag){
         for(flag = 0;flag;){
             x = (0 + rand()) % (SO_BASE + 1 - 0);
             y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
-            if((getflag(master_shared_table, x, y)) == EMPTY){
+            if((getid(master_shared_table, x, y)) == EMPTY){
                 p[i].x = x;
                 p[i].y = y;  
                 placeflag(master_shared_table, x, y);     

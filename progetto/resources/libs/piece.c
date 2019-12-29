@@ -8,10 +8,7 @@ int pos_set = 0;
 int piece(){
     struct sembuf sem;
     processSign = "Piece";
-
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
+ 
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel semaforo",ECONNABORTED);
     }
@@ -36,7 +33,11 @@ int piece(){
         logg("Pezzo %d del player %c attaccato alla table",piece_attr.piece_id,player_id);
 
     }
-    
+    tab(piece_shared_table,rand()%SO_BASE,rand()%SO_ALTEZZA)->id = FLAG;
+    logg("position set x:%d y:%d",piece_attr.x,piece_attr.y);
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);
     exit(0);
     return 0;
 }
@@ -70,42 +71,7 @@ void piece_cleaner(){
 }
 
 void setpos(int x, int y){
-    int dx,dy,pointx,pointy;
-    cell * table = piece_shared_table;
-    if(!pos_set){
-        if(isfree(table,x,y)){
-            ac(table,x,y);
-            tab(table,x,y)->id = player_id - 65;
-            piece_attr.x = x;
-            piece_attr.y = y;
-            pos_set = 1;
-        }
-        else{
-            for(dx = -1; dx <= 1; dx++){
-                for(dy = -1; dy <= 1; dy++){
-                    pointx = x + dx;
-                    pointy = y + dy;
-                    if(pointx == -1) pointx = SO_ALTEZZA;
-                    if(pointy == -1) pointy = SO_BASE;
-                    else{
-                        pointx = pointx % SO_ALTEZZA;
-                        pointy = pointy % SO_BASE;
-                    }
-                    if(isfree(table,pointx,pointy)){
-                        ac(table,x,y);
-                        tab(table,x,y)->id = player_id - 65;
-                        piece_attr.x = x;
-                        piece_attr.y = y;
-                        pos_set = 1;
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    else{
-        error("Cannot set pos more times",EACCES);
-    }
+   setid(piece_shared_table,x,y,player_id);
 }
 
 void goto_loc(int x, int y, int method){
@@ -133,17 +99,5 @@ void goto_loc(int x, int y, int method){
 }
 
 void move(int x, int y){
-    int isvalid;
-    cell * table = piece_shared_table;
-    isvalid = ((piece_attr.x + x) == -1 || (piece_attr.x + x) == 1 || ((piece_attr.x + x)) == 0) && (((piece_attr.y + y) == -1) || ((piece_attr.y + y)) == 1 || ((piece_attr.y + y)) == 0);
-    if(isvalid){
-        rel(table,piece_attr.x,piece_attr.y);
-        ac(table,x,y);
-        tab(table,x,y)->id = player_id - 65;
-        piece_attr.x = x;
-        piece_attr.y = y;
-    }
-    else{
-        error("Non puoi muoverti di più celle in una volta",EACCES);
-    }
+    
 }

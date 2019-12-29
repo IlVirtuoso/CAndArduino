@@ -11400,3 +11400,1427 @@
 [LOG : Player -> 0.154000] Player Started At 18:22:15
 [LOG : Player -> 0.208000] Ricevuto Segnale SIGINT
 [LOG : Player -> 0.224000] MASTER_CLEANER_LAUNCHED
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.627000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.690000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.627000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.690000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.627000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.690000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.874000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.627000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.627000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.690000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.193000] Player Started At 19:48:24
+[LOG : Player -> 0.248000] Setup Struttura dei segnali
+[LOG : Player -> 0.270000] Generazione pezzi iniziata
+[LOG : Player -> 0.344000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.443000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.502000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.572000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.627000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.690000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.874000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.930000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.946000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.556000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.614000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.556000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.614000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.691000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.556000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.556000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.614000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.691000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.756000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.556000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.614000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.691000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.756000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.091000] Player Started At 19:49:07
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.220000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.312000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.400000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.480000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.556000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.614000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.691000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.756000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.816000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.880000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.895000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.664000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.664000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.812000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.664000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.812000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.952000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.664000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.812000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.952000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.120000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.134000] Player Started At 19:53:27
+[LOG : Player -> 0.167000] Setup Struttura dei segnali
+[LOG : Player -> 0.172000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.281000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.366000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.439000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.664000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.812000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.952000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.120000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.209000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.239000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.612000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.612000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.772000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.612000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.772000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.846000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.921000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.984000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.612000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.772000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.846000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.921000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.612000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.772000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.846000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.138000] Player Started At 19:54:18
+[LOG : Player -> 0.183000] Setup Struttura dei segnali
+[LOG : Player -> 0.196000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.405000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.477000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.550000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.612000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.772000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.846000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.921000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.984000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.074000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.089000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.676000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.676000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.739000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.804000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.676000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.739000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.132000] Player Started At 20:00:47
+[LOG : Player -> 0.159000] Setup Struttura dei segnali
+[LOG : Player -> 0.166000] Generazione pezzi iniziata
+[LOG : Player -> 0.250000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.325000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.402000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.485000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.676000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.739000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.804000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.982000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.011000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 1.085000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 1.085000] Generato pezzo 4 Attesa
+[LOG : Player -> 1.299000] Generato pezzo 5 Attesa
+[LOG : Player -> 1.490000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.666000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 1.085000] Generato pezzo 4 Attesa
+[LOG : Player -> 1.299000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 1.085000] Generato pezzo 4 Attesa
+[LOG : Player -> 1.299000] Generato pezzo 5 Attesa
+[LOG : Player -> 1.490000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 1.085000] Generato pezzo 4 Attesa
+[LOG : Player -> 1.299000] Generato pezzo 5 Attesa
+[LOG : Player -> 1.490000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.666000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.845000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.198000] Player Started At 11:16:20
+[LOG : Player -> 0.223000] Setup Struttura dei segnali
+[LOG : Player -> 0.228000] Generazione pezzi iniziata
+[LOG : Player -> 0.331000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.537000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.712000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.925000] Generato pezzo 3 Attesa
+[LOG : Player -> 1.085000] Generato pezzo 4 Attesa
+[LOG : Player -> 1.299000] Generato pezzo 5 Attesa
+[LOG : Player -> 1.490000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.666000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.845000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.988000] Generato pezzo 9 Attesa
+[LOG : Player -> 2.112000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.645000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.706000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.645000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.645000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.706000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.774000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.645000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.706000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.774000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.863000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.127000] Player Started At 11:17:04
+[LOG : Player -> 0.166000] Setup Struttura dei segnali
+[LOG : Player -> 0.195000] Generazione pezzi iniziata
+[LOG : Player -> 0.255000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.329000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.483000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.553000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.645000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.706000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.774000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.863000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.917000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.931000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.518000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.518000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.518000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.896000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.518000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.896000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.068000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.186000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.518000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.896000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.068000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.147000] Player Started At 11:20:03
+[LOG : Player -> 0.168000] Setup Struttura dei segnali
+[LOG : Player -> 0.187000] Generazione pezzi iniziata
+[LOG : Player -> 0.263000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.334000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.394000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.457000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.518000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.896000] Generato pezzo 6 Attesa
+[LOG : Player -> 1.068000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.186000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.248000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.302000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.696000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.696000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.906000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.696000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.906000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.102000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.120000] Player Started At 15:42:30
+[LOG : Player -> 0.140000] Setup Struttura dei segnali
+[LOG : Player -> 0.145000] Generazione pezzi iniziata
+[LOG : Player -> 0.207000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.263000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.313000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.365000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.436000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.522000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.696000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.906000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.102000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.334000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.522000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.648000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.648000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.648000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.799000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.887000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.648000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.799000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.887000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.969000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.648000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.799000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.184000] Player Started At 15:43:08
+[LOG : Player -> 0.221000] Setup Struttura dei segnali
+[LOG : Player -> 0.241000] Generazione pezzi iniziata
+[LOG : Player -> 0.317000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.425000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.509000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.591000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.648000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.721000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.799000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.887000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.969000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.112000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.223000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.494000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.625000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.494000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.625000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.784000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.494000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.625000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.784000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.931000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.494000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.625000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.784000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.931000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.059000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.494000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.080000] Player Started At 16:06:15
+[LOG : Player -> 0.118000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.193000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.249000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.327000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.399000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.494000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.625000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.784000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.931000] Generato pezzo 7 Attesa
+[LOG : Player -> 1.059000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.204000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.250000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.524000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.524000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.641000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.524000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.524000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.641000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.707000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.524000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.641000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.707000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.159000] Player Started At 16:07:44
+[LOG : Player -> 0.192000] Setup Struttura dei segnali
+[LOG : Player -> 0.197000] Generazione pezzi iniziata
+[LOG : Player -> 0.280000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.346000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.411000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.469000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.524000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.584000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.641000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.707000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.764000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.826000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.887000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.686000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.686000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.770000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.686000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.770000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.848000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.686000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.770000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.848000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.913000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.125000] Player Started At 16:09:35
+[LOG : Player -> 0.170000] Setup Struttura dei segnali
+[LOG : Player -> 0.191000] Generazione pezzi iniziata
+[LOG : Player -> 0.286000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.382000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.526000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.621000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.686000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.770000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.848000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.913000] Generato pezzo 8 Attesa
+[LOG : Player -> 1.044000] Generato pezzo 9 Attesa
+[LOG : Player -> 1.074000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.598000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.672000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.598000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.672000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.730000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.598000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.672000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.730000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.821000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.898000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.598000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.598000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.672000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.730000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.821000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.144000] Player Started At 16:10:51
+[LOG : Player -> 0.186000] Setup Struttura dei segnali
+[LOG : Player -> 0.208000] Generazione pezzi iniziata
+[LOG : Player -> 0.288000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.357000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.448000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.516000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.598000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.672000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.730000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.821000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.898000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.946000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.959000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.571000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.571000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.644000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.571000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.644000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.571000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.644000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.098000] Player Started At 16:12:54
+[LOG : Player -> 0.137000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.201000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.256000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.354000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.424000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.500000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.571000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.644000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.708000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.778000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.847000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.864000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.525000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.525000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.588000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.649000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.525000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.588000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.649000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.724000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.525000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.588000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.112000] Player Started At 16:16:02
+[LOG : Player -> 0.143000] Setup Struttura dei segnali
+[LOG : Player -> 0.156000] Generazione pezzi iniziata
+[LOG : Player -> 0.204000] Generato pezzo 0 Attesa
+[LOG : Player -> 0.258000] Generato pezzo 1 Attesa
+[LOG : Player -> 0.323000] Generato pezzo 2 Attesa
+[LOG : Player -> 0.393000] Generato pezzo 3 Attesa
+[LOG : Player -> 0.470000] Generato pezzo 4 Attesa
+[LOG : Player -> 0.525000] Generato pezzo 5 Attesa
+[LOG : Player -> 0.588000] Generato pezzo 6 Attesa
+[LOG : Player -> 0.649000] Generato pezzo 7 Attesa
+[LOG : Player -> 0.724000] Generato pezzo 8 Attesa
+[LOG : Player -> 0.815000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.830000] PLAYER_CLEANER:Interruzione esecuzione in corso
