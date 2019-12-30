@@ -43,11 +43,15 @@ int player(){
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel get del semaforo master",ECONNABORTED);
     }
+    if((sem_table = semget(sem_table_key,SO_BASE*SO_ALTEZZA,IPC_EXCL)) == -1){
+        error("Error nella creazione della tabella dei semafori",EACCES);
+    }
+    else{
+        logg("Tabella semafori iniziata");
+    }
     if((player_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
                 error("Errore nell'innesto della shared_table",EIO);
             }
-
-    
     /*puntatore alla funzione player_clean da sfruttare con error()*/
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
@@ -79,7 +83,11 @@ int player(){
     sem.sem_op = 1;
     semop(semid,&sem,1);
 
-    
+    sem.sem_num = 4;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);   
+
+    pause();
     cleaner();
 
     return 0;
@@ -98,6 +106,7 @@ int piecegen(int numpieces){
         
         }
         else{
+            sleep(1);
             /*pieces*/
             piece_attr.piece_id = i;
             if(piece() == -1){

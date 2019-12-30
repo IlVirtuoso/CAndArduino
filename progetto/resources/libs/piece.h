@@ -11,6 +11,9 @@
 #ifndef SIGNAL_H
 #include <signal.h>
 #endif
+#ifndef MONITOR_H
+#include "monitor.h"
+#endif
 
 #ifndef PIECE_H
 #define PIECE_H
