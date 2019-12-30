@@ -7,6 +7,8 @@ int pos_set = 0;
 
 int piece(){
     struct sembuf sem;
+    /* Struttura adibita a ricevere i comandi tramite MQ */
+    msg_cnt order;
     processSign = "Piece";
  
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){

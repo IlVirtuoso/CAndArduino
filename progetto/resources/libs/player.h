@@ -107,12 +107,6 @@ cell * player_shared_table;
 
 int semid;
 
-/* struct per message queue*/ 
-typedef struct msg_cnt{
-    long type;
-    char msg[CONTROL_SIZE];
-}msg_cnt
-
 char player_logbuffer[128];
 
 #endif
