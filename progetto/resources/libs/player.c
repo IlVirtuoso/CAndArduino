@@ -68,11 +68,7 @@ int player(){
        8 sarà utilizzato da qualcun altro o per errore) */
     cnt.type = 8;
 
-    /* Impostazioni tattica di gioco */
-
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,SO_NUM_P);
+    /* Impostazioni tattica di gioco */;
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;
@@ -80,13 +76,14 @@ int player(){
    
 
     /* Esperimento per debug sul'invio di un messaggio*/
-    cnt.strategy = '0'; 
+    /*cnt.strategy = '0'; 
     cnt.x = '1';
     cnt.y = '2';
     cnt.ask = '3';
     printf("%c \n %c \n %c \n %c \n", cnt.strategy, cnt.x, cnt.y, cnt.ask);
-    msgsnd(key_MO, &cnt, sizeof(msg_cnt) - sizeof(long), IPC_NOWAIT);
-
+    msgsnd(key_MO, &cnt, sizeof(msg_cnt) - sizeof(long), IPC_NOWAIT);*/
+    display_sem();
+    display();
     pause();
     cleaner();
 
@@ -101,12 +98,20 @@ int piecegen(int numpieces){
     for(i = 0; i < numpieces; i++){
         if((pid = fork())){
             /*player*/
+            cnt.x = rand()%SO_ALTEZZA;
+            cnt.y = rand()%SO_BASE;
+            cnt.pednum = i;
+            cnt.strategy = 0;
+            cnt.type = 8;
+            msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
             pieces[i] = pid; 
             logg("Generato pezzo %d Attesa",i);
+            sem.sem_num = PIECE_SEM;
+            sem.sem_op = -1;
+            semop(semid,&sem,1);
         
         }
         else{
-            sleep(1);
             /*pieces*/
             piece_attr.piece_id = i;
             if(piece() == -1){

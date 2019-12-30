@@ -57,11 +57,19 @@
 /* struct per message queue; default su MQ = 1 */ 
 typedef struct{
     long type;
+    int pednum; /*così si può selezionare la pedina a cui inviare il messaggio*/
     char strategy;
     char x;
     char y;
     char ask;
 }msg_cnt;
+
+typedef struct{
+    long type;
+    int pednum;
+    int posx;
+    int posy;
+}msg_pos;
 
 /*chiave message queue*/
 int key_MO;

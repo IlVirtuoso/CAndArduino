@@ -25,13 +25,13 @@ int piece();
 
 
 
-struct {
+struct{
 
     int piece_id; /*id del pezzo, tipicamente è la sua posizione nell'array dei pezzi*/
     int x;
     int y; /*posizione della pedina*/ 
 
-} piece_attr;
+}piece_attr;
 
 char player_id;
 

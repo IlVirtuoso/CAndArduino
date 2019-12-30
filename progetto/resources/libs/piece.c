@@ -6,17 +6,19 @@ int pos_set = 0;
 
 
 int piece(){
+    
     struct sembuf sem;
     /* Struttura adibita a ricevere i comandi tramite MQ */
     msg_cnt order;
-
-    /* Esperimento sul funzionamento della coda di controllo*/
-    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), 8, IPC_NOWAIT);
-    printf("%c \n %c \n %c \n %c \n", order.strategy, order.x, order.y, order.ask);
-
-
-
     processSign = "Piece";
+    /* Esperimento sul funzionamento della coda di controllo*/
+    /*msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), 8, IPC_NOWAIT);
+    printf("%c \n %c \n %c \n %c \n", order.strategy, order.x, order.y, order.ask);*/
+
+    
+
+    msgrcv(key_MO, &order, sizeof(msg_cnt),8,MSG_INFO);
+    
 
     srand(time(NULL));
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
@@ -45,13 +47,14 @@ int piece(){
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
-    else{
-        logg("Pezzo %d del player %c attaccato alla table",piece_attr.piece_id,player_id);
-
-    }
+    
+    setpos(order.x,order.y);
+    logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
     sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
+
+    
     return 0;
 }
 
