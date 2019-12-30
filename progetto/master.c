@@ -181,7 +181,7 @@ int main(int argc, char * argv[]){
     playergen(SO_NUM_G);
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
-    semop(semid,&sem,SO_NUM_G);
+    semop(semid,&sem,1);
 
     
     
@@ -203,6 +203,9 @@ int main(int argc, char * argv[]){
     /*Region Phase-3:Anarchy*/
     /*End-Region*/
     display();
+    sem.sem_num = 4;
+    sem.sem_op = 1;
+    semop(semid,&sem,SO_NUM_G);  
     logg("End Of Execution");
     logg("Stopped at %s",__TIME__);
     cleaner();
@@ -294,7 +297,7 @@ void init(){
 int semid;
 void sem_init(){
     int i;
-    sem_num = 3; /*per adesso è di default*/
+    sem_num = 4; /*per adesso è di default*/
     if(sem_num < 3){sem_num = 3;} /*semafori necessari per il minimo funzionamento*/
 
     if((semid = semget(IPC_PRIVATE,sem_num,IPC_CREAT | IPC_EXCL | 0666)) == -1){
@@ -309,13 +312,18 @@ void sem_init(){
 }
 
 void shared_table_init(){
+    int x,y;
     if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'attach della shared_table",EIO);
     }
     else{
         debug("Shared Table attach completato");
     }
-
+    for(x = 0; x < SO_ALTEZZA;x++){
+        for(y = 0; y < SO_BASE; y++){
+            tab(master_shared_table,x,y)->id = EMPTY;
+        }
+    }
     board = master_shared_table;
     logg("Memoria Condivisa Inizializzata");
 }

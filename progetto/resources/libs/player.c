@@ -68,10 +68,12 @@ int player(){
 
     /* Generazione chiave della coda per il controllo dei pezzi
        ereditata da ciascun pezzo (una coda per Player) */
-    key_MO = msgget(getpid(), IPC_CREAT | 0600)
+    if(key_MO = msgget(getpid(), IPC_CREAT | 0600) == -1){
+                error("Errore nella creazione della coda di controllo", errno);
+    }
     /* Tipo di canale utilizzato per la coda (difficilmente 
        8 sarà utilizzato da qualcun altro o per errore) */
-    msg_cnt.type = 8;
+    cnt.type = 8;
 
     /* Impostazioni tattica di gioco */
 
@@ -86,6 +88,14 @@ int player(){
     sem.sem_num = 4;
     sem.sem_op = -1;
     semop(semid,&sem,1);   
+
+    /* Esperimento per debug sul'invio di un messaggio*/
+    cnt.strategy = '0'; 
+    cnt.x = '1';
+    cnt.y = '2';
+    cnt.ask = '3';
+    printf("%c \n %c \n %c \n %c \n", cnt.strategy, cnt.x, cnt.y, cnt.ask);
+    msgsnd(key_MO, &(msg_cnt), sizeof(msg_cnt) - sizeof(long), IPC_NOWAIT);
 
     pause();
     cleaner();

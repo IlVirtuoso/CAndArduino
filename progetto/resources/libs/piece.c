@@ -9,6 +9,13 @@ int piece(){
     struct sembuf sem;
     /* Struttura adibita a ricevere i comandi tramite MQ */
     msg_cnt order;
+
+    /* Esperimento sul funzionamento della coda di controllo*/
+    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), 8, IPC_NOWAIT);
+    printf("%c \n %c \n %c \n %c \n", order.strategy, order.x, order.y, order.ask);
+
+
+
     processSign = "Piece";
 
     srand(time(NULL));
