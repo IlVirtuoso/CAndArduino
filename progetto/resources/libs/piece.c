@@ -49,8 +49,6 @@ int piece(){
         logg("Pezzo %d del player %c attaccato alla table",piece_attr.piece_id,player_id);
 
     }
-    setpos(rand()%SO_ALTEZZA,rand()%SO_BASE);
-    logg("position set x:%d y:%d",piece_attr.x,piece_attr.y);
     sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);

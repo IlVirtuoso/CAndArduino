@@ -14,6 +14,9 @@
 #ifndef MONITOR_H
 #include "monitor.h"
 #endif
+#ifndef MESSAGE_H
+#include "message.h"
+#endif
 
 #ifndef PIECE_H
 #define PIECE_H

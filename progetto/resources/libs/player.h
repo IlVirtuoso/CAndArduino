@@ -53,6 +53,9 @@
 #ifndef DEBUG_H
 #include "debug.h"
 #endif
+#ifndef MESSAGE_H
+#include "message.h"
+#endif
 #ifndef TABLE_H
 #include "table.h"
 #endif
@@ -110,15 +113,7 @@ cell * player_shared_table;
 
 int semid;
 
-<<<<<<< HEAD
-=======
-/* struct per message queue*/ 
-typedef struct msg_cnt{
-    long type;
-    char msg[CONTROL_SIZE];
-}msg_cnt;
 
->>>>>>> 1c89f54c0c03f8b091b21a1bb9948341665bdbcc
 char player_logbuffer[128];
 
 #endif
