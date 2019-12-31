@@ -48,11 +48,21 @@ typedef struct{
     int flag;
 }cell;
 
-
+typedef struct{
+    int x;
+    int y;
+}position;
 
 /*metodo per muoversi nella tabella*/
 cell * tab(cell * table, int x, int y);
 
+/**
+ * metodo che cerca la posizione di un target all'interno di una tabella
+ * @param: cell * shared_table: indirizzo alla table condivisa
+ * @param: int b, h, base e altezza da cui partire
+ * @param: char taget, target cercato sulla tabella
+ * */
+position search(cell * shared_table, int b, int h, char target);
 
 /*id della table*/
 int table;

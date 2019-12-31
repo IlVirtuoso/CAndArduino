@@ -10,6 +10,9 @@ int piece(){
     struct sembuf sem;
     /* Struttura adibita a ricevere i comandi tramite MQ */
     msg_cnt order;
+    /* Struttura adibita a memorizzare le coordinate della cella target */
+    position target;
+
     processSign = "Piece";
     /* Esperimento sul funzionamento della coda di controllo*/
     /*msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), 8, IPC_NOWAIT);
@@ -17,8 +20,9 @@ int piece(){
 
     
 
-    msgrcv(key_MO, &order, sizeof(msg_cnt),8,MSG_INFO);
-    
+    msgrcv(key_MO, &order, sizeof(msg_cnt),8,MSG_COPY | MSG_INFO);
+
+
 
     srand(time(NULL));
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
@@ -50,9 +54,23 @@ int piece(){
     
     setpos(order.x,order.y);
     logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
+    piece_attr.n_moves = SO_N_MOVES;
     sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
+
+     /* Attesa della tattica */
+    target = search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
+
+     while(piece_attr.n_moves <= SO_N_MOVES){
+         if(getid(piece_shared_table, target.x, target.y) != FLAG){
+             switch(order.ask){
+                 case 0: /* search new target */ break;
+                 case 1: /* invia signal a player per nuovo target */ break;
+             }
+         }
+         goto_loc(target.x, target.y, order.strategy);
+     }
 
     
     return 0;
@@ -92,13 +110,13 @@ void setpos(int x, int y){
    if(setid(piece_shared_table,x,y,player_id) == 0){
        debug("Posizione Occupata");
    }
-   else{
-       piece_attr.x = x;
+  else{
+       piece_attr.x = x; 
        piece_attr.y = y;
    }
 }
 
-void goto_loc(int x, int y, int method){
+void goto_loc(int x, int y, char method){
     switch (method)
     {
     case PROBABLE_LESS_COSTLY:

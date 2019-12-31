@@ -179,10 +179,6 @@ int main(int argc, char * argv[]){
     table_start();
     shared_table_init();
     playergen(SO_NUM_G);
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
-
     
     
 
@@ -201,8 +197,7 @@ int main(int argc, char * argv[]){
     /*End-Region*/
 
     /*Region Phase-3:Anarchy*/
-    /*End-Region*/
-    display();
+    /*End-Region*/;
     sem.sem_num = 4;
     sem.sem_op = 1;
     semop(semid,&sem,SO_NUM_G);  
@@ -339,6 +334,9 @@ void playergen(int playernum){
             st -> pid[i] = pid;
             processSign = "Master";
             logg("Player: %d started with pid: %d",i,st ->pid[i]);
+            sem.sem_num = MASTER_SEM;
+            sem.sem_op = -1;
+            semop(semid,&sem,1);
             /*attesa*/
         }
         else{

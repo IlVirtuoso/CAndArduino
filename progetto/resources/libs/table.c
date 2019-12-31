@@ -79,6 +79,38 @@ void table_start(){
     }
     logg("tabella semafori configurata");
 }
+
+
+
+position search(cell * shared_table,int b, int h, char target){
+    int x = 1, y = 0, n = 0;
+    char flag = 1, z = 0, sign = 1;
+    position pos;
+    pos.x = -1;
+    pos.y = -1;
+    while(flag && n < (SO_BASE * SO_ALTEZZA)){
+        if(z == 0 && sign){ b++; y++; }        /* +x */
+        else if(z == 1 && sign){ h++; y++; }   /* +y */
+        else if(z == 0 && sign){ b--; y++; }   /* -x */
+        else if(z == 1 && !sign){ h--; y++; }  /* -y */
+        
+        if(y == x){ z++; y = 0; }
+
+        if(z == 2){ sign = !sign; z = 0; x++; y = 0; } 
+
+        if( b >= 0 && b < SO_BASE){
+            if( h >= 0 && h < SO_ALTEZZA){
+                if( getid(shared_table , b , h) == target){
+                    pos.x = b;
+                    pos.y = h;
+                    return pos;
+                }
+                n++;
+            }
+        }
+    }
+    return pos;
+}
 /*End Of Life*/
 
 

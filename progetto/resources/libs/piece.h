@@ -26,11 +26,10 @@ int piece();
 
 
 struct{
-
     int piece_id; /*id del pezzo, tipicamente è la sua posizione nell'array dei pezzi*/
     int x;
     int y; /*posizione della pedina*/ 
-
+    int n_moves; /* numero mosse disponibili*/
 }piece_attr;
 
 char player_id;
@@ -54,8 +53,13 @@ sigset_t piece_mask;
 /*buffer per i messaggi modificati*/
 char piece_logbuffer[128];
 
-/*metodo per dire alla pedina quale punto raggiungere*/
-void goto_loc(int x, int y, int method);
+/**
+ * dice alla pedina che punto raggiungere
+ * @param x  intero che indica la riga
+ * @param y  intero che indica la colonna
+ * @param method intero che indica che metodo usare nello switch per raggiungere quel punto
+ */
+void goto_loc(int x, int y, char method);
 
 struct sigaction piece_signal;
 

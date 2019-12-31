@@ -80,9 +80,6 @@ int player(){
     cnt.ask = '3';
     printf("%c \n %c \n %c \n %c \n", cnt.strategy, cnt.x, cnt.y, cnt.ask);
     msgsnd(key_MO, &cnt, sizeof(msg_cnt) - sizeof(long), IPC_NOWAIT);*/
-    display_sem();
-    display();
-    pause();
     cleaner();
 
     return 0;
@@ -162,30 +159,3 @@ void player_clean(){
 }
 
 
-void search(int b, int h, char target){
-    int x = 1, y = 0, n = 0;
-    char flag = 1, z = 0, sign = 1;
-    cell * t;
-    while(flag && n < (SO_BASE * SO_ALTEZZA)){
-        if(z == 0 && sign){ b++,; y++; }        //+x
-        else if(z == 1 && sign){ h++,; y++; }   //+y
-        else if(z == 0 && sign){ b--,; y++; }   //-x
-        else if(z == 1 && !sign){ h--,; y++; }  //-y
-        
-        if(y == x){ z++; y = 0; }
-
-        if(z == 2){ sign = !sign; z = 0; x++; y = 0; } 
-
-        if( x >= 0 && x < SO_BASE){
-            if( y >= 0 && y < SO_ALTEZZA){
-                t = tab( , x, y);
-                if( t -> id == FLAG)   
-                
-                n++;
-            }
-        }
-
-
-    } 
-
-}

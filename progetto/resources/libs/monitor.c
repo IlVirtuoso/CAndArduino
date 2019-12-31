@@ -17,6 +17,7 @@ void display(){
 
 void show(){
     while(1){
+        sleep(1);
         display();
     }
 }

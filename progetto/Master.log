@@ -68787,3 +68787,41 @@
 [DEBUG : (null)]: Memoria Condivisa Inizializzata
 [ERROR]:Permission denied,message:Error nella creazione della tabella dei semafori
 [LOG : (null) -> 3.103000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.243000] Started At: 16:46:08
+
+[LOG : (null) -> 2.297000] Impostazione maschere e segnali
+[ERROR]:Permission denied,message:Errore nell'acceso alla tabella
+[LOG : (null) -> 0.314000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.243000] Started At: 16:46:08
+
+[LOG : (null) -> 2.297000] Impostazione maschere e segnali
+[LOG : (null) -> 2.425000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.504000] Tabella semafori iniziata
+[LOG : (null) -> 12.736000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.805000] Memoria Condivisa Inizializzata
+[LOG : Master -> 12.942000] Player: 0 started with pid: 11474
+[LOG : Master -> 13.051000] Player: 1 started with pid: 11475
+[LOG : Master -> 13.181000] End Of Execution
+[LOG : Master -> 13.206000] Stopped at 16:46:08
+[LOG : Master -> 13.211000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.381000] Started At: 16:47:54
+
+[LOG : (null) -> 2.436000] Impostazione maschere e segnali
+[ERROR]:Permission denied,message:Errore nell'acceso alla tabella
+[LOG : Monitor -> 0.335000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.381000] Started At: 16:47:54
+
+[LOG : (null) -> 2.436000] Impostazione maschere e segnali
+[LOG : (null) -> 2.625000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.730000] Tabella semafori iniziata
+[LOG : (null) -> 13.040000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 13.140000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.282000] Player: 0 started with pid: 13795
+[LOG : Master -> 13.409000] Player: 1 started with pid: 13796
+[LOG : Master -> 13.468000] End Of Execution
+[LOG : Master -> 13.490000] Stopped at 16:47:54
+[LOG : Master -> 13.494000] MASTER_CLEANER_LAUNCHED

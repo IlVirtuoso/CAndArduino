@@ -23,6 +23,9 @@
 #ifndef TIME_H
 #include <time.h>
 #endif
+#ifndef TABLE_H
+#include "table.h"
+#endif
 
 #ifndef MONITOR_H
 #define MONITOR_H
@@ -36,7 +39,11 @@ void show();
 /*metodo per vedere la tabella dei semafori*/
 void display_sem();
 
+/*metodo per startare il processo monitor*/
+int start_monitor();
+
 /*puntatore alla scacchiera*/
 cell * board;
+
 
 #endif
