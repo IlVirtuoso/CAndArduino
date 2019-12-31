@@ -25,8 +25,6 @@ struct sembuf sem;
 
 msg_cnt cnt;
 
-
-
 int player(){
     processSign = "Player";
     cleaner = player_clean;
@@ -161,4 +159,33 @@ void player_clean(){
     shmdt(player_shared_table);
     msgctl(key_MO, IPC_RMID, NULL);
     exit(0);
+}
+
+
+void search(int b, int h, char target){
+    int x = 1, y = 0, n = 0;
+    char flag = 1, z = 0, sign = 1;
+    cell * t;
+    while(flag && n < (SO_BASE * SO_ALTEZZA)){
+        if(z == 0 && sign){ b++,; y++; }        //+x
+        else if(z == 1 && sign){ h++,; y++; }   //+y
+        else if(z == 0 && sign){ b--,; y++; }   //-x
+        else if(z == 1 && !sign){ h--,; y++; }  //-y
+        
+        if(y == x){ z++; y = 0; }
+
+        if(z == 2){ sign = !sign; z = 0; x++; y = 0; } 
+
+        if( x >= 0 && x < SO_BASE){
+            if( y >= 0 && y < SO_ALTEZZA){
+                t = tab( , x, y);
+                if( t -> id == FLAG)   
+                
+                n++;
+            }
+        }
+
+
+    } 
+
 }
