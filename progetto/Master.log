@@ -68825,3 +68825,185 @@
 [LOG : Master -> 13.468000] End Of Execution
 [LOG : Master -> 13.490000] Stopped at 16:47:54
 [LOG : Master -> 13.494000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.286000] Started At: 11:55:05
+
+[LOG : (null) -> 2.328000] Impostazione maschere e segnali
+[LOG : (null) -> 2.332000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.392000] Tabella semafori iniziata
+[LOG : (null) -> 12.628000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.710000] Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.286000] Started At: 11:55:05
+
+[LOG : (null) -> 2.328000] Impostazione maschere e segnali
+[LOG : (null) -> 2.332000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.392000] Tabella semafori iniziata
+[LOG : (null) -> 12.628000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.710000] Memoria Condivisa Inizializzata
+[LOG : Master -> 12.874000] Player: 0 started with pid: 6856
+[LOG : (null) -> 2.286000] Started At: 11:55:05
+
+[LOG : (null) -> 2.328000] Impostazione maschere e segnali
+[LOG : (null) -> 2.332000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.392000] Tabella semafori iniziata
+[LOG : (null) -> 12.628000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.710000] Memoria Condivisa Inizializzata
+[LOG : Master -> 12.874000] Player: 0 started with pid: 6856
+[LOG : Master -> 13.111000] Player: 1 started with pid: 6867
+[LOG : Master -> 13.190000] End Of Execution
+[LOG : Master -> 13.199000] Stopped at 11:55:05
+[LOG : Master -> 13.203000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.119000] Started At: 11:57:15
+
+[LOG : (null) -> 2.241000] Impostazione maschere e segnali
+[LOG : (null) -> 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.294000] Tabella semafori iniziata
+[LOG : (null) -> 13.007000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 13.237000] Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.119000] Started At: 11:57:15
+
+[LOG : (null) -> 2.241000] Impostazione maschere e segnali
+[LOG : (null) -> 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.294000] Tabella semafori iniziata
+[LOG : (null) -> 13.007000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 13.237000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.401000] Player: 0 started with pid: 7085
+[LOG : (null) -> 2.119000] Started At: 11:57:15
+
+[LOG : (null) -> 2.241000] Impostazione maschere e segnali
+[LOG : (null) -> 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.294000] Tabella semafori iniziata
+[LOG : (null) -> 13.007000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 13.237000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.401000] Player: 0 started with pid: 7085
+[LOG : Master -> 13.600000] Player: 1 started with pid: 7106
+[LOG : (null) -> 2.119000] Started At: 11:57:15
+
+[LOG : (null) -> 2.241000] Impostazione maschere e segnali
+[LOG : (null) -> 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.294000] Tabella semafori iniziata
+[LOG : (null) -> 13.007000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 13.237000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.401000] Player: 0 started with pid: 7085
+[LOG : Master -> 13.600000] Player: 1 started with pid: 7106
+[LOG : Master -> 13.817000] Player: 2 started with pid: 7127
+[LOG : (null) -> 2.119000] Started At: 11:57:15
+
+[LOG : (null) -> 2.241000] Impostazione maschere e segnali
+[LOG : (null) -> 2.246000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.294000] Tabella semafori iniziata
+[LOG : (null) -> 13.007000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 13.237000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.401000] Player: 0 started with pid: 7085
+[LOG : Master -> 13.600000] Player: 1 started with pid: 7106
+[LOG : Master -> 13.817000] Player: 2 started with pid: 7127
+[LOG : Master -> 14.128000] Player: 3 started with pid: 7148
+[LOG : Master -> 14.224000] End Of Execution
+[LOG : Master -> 14.237000] Stopped at 11:57:15
+[LOG : Master -> 14.242000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 3.665000] Started At: 11:59:49
+
+[LOG : (null) -> 3.709000] Impostazione maschere e segnali
+[LOG : (null) -> 3.714000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 3.774000] Tabella semafori iniziata
+[LOG : (null) -> 14.074000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 14.163000] Memoria Condivisa Inizializzata
+[LOG : (null) -> 3.665000] Started At: 11:59:49
+
+[LOG : (null) -> 3.709000] Impostazione maschere e segnali
+[LOG : (null) -> 3.714000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 3.774000] Tabella semafori iniziata
+[LOG : (null) -> 14.074000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 14.163000] Memoria Condivisa Inizializzata
+[LOG : Master -> 14.603000] Player: 0 started with pid: 7441
+[LOG : (null) -> 3.665000] Started At: 11:59:49
+
+[LOG : (null) -> 3.709000] Impostazione maschere e segnali
+[LOG : (null) -> 3.714000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 3.774000] Tabella semafori iniziata
+[LOG : (null) -> 14.074000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 14.163000] Memoria Condivisa Inizializzata
+[LOG : Master -> 14.603000] Player: 0 started with pid: 7441
+[LOG : Master -> 14.834000] Player: 1 started with pid: 7462
+[LOG : (null) -> 3.665000] Started At: 11:59:49
+
+[LOG : (null) -> 3.709000] Impostazione maschere e segnali
+[LOG : (null) -> 3.714000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 3.774000] Tabella semafori iniziata
+[LOG : (null) -> 14.074000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 14.163000] Memoria Condivisa Inizializzata
+[LOG : Master -> 14.603000] Player: 0 started with pid: 7441
+[LOG : Master -> 14.834000] Player: 1 started with pid: 7462
+[LOG : Master -> 15.023000] Player: 2 started with pid: 7483
+[LOG : (null) -> 3.665000] Started At: 11:59:49
+
+[LOG : (null) -> 3.709000] Impostazione maschere e segnali
+[LOG : (null) -> 3.714000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 3.774000] Tabella semafori iniziata
+[LOG : (null) -> 14.074000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 14.163000] Memoria Condivisa Inizializzata
+[LOG : Master -> 14.603000] Player: 0 started with pid: 7441
+[LOG : Master -> 14.834000] Player: 1 started with pid: 7462
+[LOG : Master -> 15.023000] Player: 2 started with pid: 7483
+[LOG : Master -> 15.233000] Player: 3 started with pid: 7504
+[LOG : Master -> 15.294000] End Of Execution
+[LOG : Master -> 15.307000] Stopped at 11:59:49
+[LOG : Master -> 15.312000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.227000] Started At: 12:00:28
+
+[LOG : (null) -> 2.272000] Impostazione maschere e segnali
+[LOG : (null) -> 2.276000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.323000] Tabella semafori iniziata
+[LOG : (null) -> 12.694000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.764000] Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.227000] Started At: 12:00:28
+
+[LOG : (null) -> 2.272000] Impostazione maschere e segnali
+[LOG : (null) -> 2.276000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.323000] Tabella semafori iniziata
+[LOG : (null) -> 12.694000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.764000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.046000] Player: 0 started with pid: 7646
+[LOG : (null) -> 2.227000] Started At: 12:00:28
+
+[LOG : (null) -> 2.272000] Impostazione maschere e segnali
+[LOG : (null) -> 2.276000] Inizializzazione Memoria Condivisa
+[DEBUG : (null)]: Memoria Condivisa Inizializzata
+[LOG : (null) -> 2.323000] Tabella semafori iniziata
+[LOG : (null) -> 12.694000] tabella semafori configurata
+[DEBUG : (null)]: Shared Table attach completato
+[LOG : (null) -> 12.764000] Memoria Condivisa Inizializzata
+[LOG : Master -> 13.046000] Player: 0 started with pid: 7646
+[LOG : Master -> 13.240000] Player: 1 started with pid: 7657
+[LOG : Master -> 13.271000] End Of Execution
+[LOG : Master -> 13.300000] Stopped at 12:00:28
+[LOG : Master -> 13.323000] MASTER_CLEANER_LAUNCHED

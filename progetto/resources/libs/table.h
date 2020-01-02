@@ -58,9 +58,9 @@ cell * tab(cell * table, int x, int y);
 
 /**
  * metodo che cerca la posizione di un target all'interno di una tabella
- * @param: cell * shared_table: indirizzo alla table condivisa
- * @param: int b, h, base e altezza da cui partire
- * @param: char taget, target cercato sulla tabella
+ * @param shared_table: indirizzo alla table condivisa
+ * @param  b, h, base e altezza da cui partire
+ * @param target target cercato sulla tabella
  * */
 position search(cell * shared_table, int b, int h, char target);
 
@@ -78,8 +78,19 @@ void table_start();
 /*metodo usato per leggere l'id' di una cella*/
 char getid(cell * shared_table, int x, int y);
 
-/*metodo usato per settare l'id di una cella, ritorna 1 in caso di successo */
-int setid(cell * shared_table,int x, int y, char id);
+/**
+ * Metodo usato dalle pedine per controllare lo stato di una cella, utile per il metodo move() 
+ * [!!!]rilascia automaticamente il semaforo di una cella prima di settare quella successiva
+ * [!!!] se previous_x e previous_y sono impostati a -1 il metodo non rilascia nessun semaforo
+ * @return  1: successo, 0:errore
+ * @param shared_table: Puntatore alla tabella condivisa
+ * @param x: Riga della tabella a cui puntare
+ * @param y: colonna della tabella a cui puntare
+ * @param id: id da scrivere nella cella al campo cell->id
+ * @param previous_x: riga della cella da rilasciare prima di spostarsi[tipicamente: piece_attr.x]
+ * @param previous_y : colonna della cella da rilasciare prima di spostarsi[tipicamente: piece_attr.y]
+ */
+int setid(cell * shared_table,int x, int y, char id, int previous_x, int previous_y);
 
 /*metodo usato dal master per piazzare le bandiere*/
 void placeflag(cell * shared_table, int x, int y);

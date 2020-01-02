@@ -55,7 +55,6 @@ int player(){
   /*player_signal.sa_flags = SA_RESTART;
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
-    piecegen(SO_NUM_P);
 
     /* Generazione chiave della coda per il controllo dei pezzi
        ereditata da ciascun pezzo (una coda per Player) */
@@ -65,14 +64,12 @@ int player(){
     /* Tipo di canale utilizzato per la coda (difficilmente 
        8 sarà utilizzato da qualcun altro o per errore) */
     cnt.type = 8;
-
+    piecegen(SO_NUM_P);
     /* Impostazioni tattica di gioco */;
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
-   
-
     /* Esperimento per debug sul'invio di un messaggio*/
     /*cnt.strategy = '0'; 
     cnt.x = '1';
@@ -80,8 +77,7 @@ int player(){
     cnt.ask = '3';
     printf("%c \n %c \n %c \n %c \n", cnt.strategy, cnt.x, cnt.y, cnt.ask);
     msgsnd(key_MO, &cnt, sizeof(msg_cnt) - sizeof(long), IPC_NOWAIT);*/
-    cleaner();
-
+    
     return 0;
 
 }
@@ -93,17 +89,18 @@ int piecegen(int numpieces){
     for(i = 0; i < numpieces; i++){
         if((pid = fork())){
             /*player*/
+            srand(i*128*player_id);
             cnt.x = rand()%SO_ALTEZZA;
             cnt.y = rand()%SO_BASE;
             cnt.pednum = i;
             cnt.strategy = 0;
             cnt.type = 8;
             msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
+            sem.sem_num = PIECE_SEM;
+            sem.sem_op = 1;
+            semop(semid,&sem,1);
             pieces[i] = pid; 
             logg("Generato pezzo %d Attesa",i);
-            sem.sem_num = PIECE_SEM;
-            sem.sem_op = -1;
-            semop(semid,&sem,1);
         
         }
         else{

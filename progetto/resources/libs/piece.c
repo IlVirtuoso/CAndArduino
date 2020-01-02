@@ -18,12 +18,6 @@ int piece(){
     /*msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), 8, IPC_NOWAIT);
     printf("%c \n %c \n %c \n %c \n", order.strategy, order.x, order.y, order.ask);*/
 
-    
-
-    msgrcv(key_MO, &order, sizeof(msg_cnt),8,MSG_COPY | MSG_INFO);
-
-
-
     srand(time(NULL));
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel semaforo",ECONNABORTED);
@@ -51,13 +45,16 @@ int piece(){
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
+
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);
     
+    msgrcv(key_MO, &order, sizeof(msg_cnt),8, MSG_INFO);
+    logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d",order.pednum,order.x,order.y);
     setpos(order.x,order.y);
     logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
     piece_attr.n_moves = SO_N_MOVES;
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
 
      /* Attesa della tattica */
     target = search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
@@ -89,9 +86,7 @@ void piece_handler(int signum){
         break;
 
     case SIGUSR2:
-    /**
-     * Handler per l'interruzione dell'esecuzione del metodo move, usato per cambiare strategia
-     */
+
         break;
     
     default:
@@ -107,7 +102,7 @@ void piece_cleaner(){
 
 void setpos(int x, int y){
     
-   if(setid(piece_shared_table,x,y,player_id) == 0){
+   if(setid(piece_shared_table,x,y,player_id,-1,-1) == 0){
        debug("Posizione Occupata");
    }
   else{
@@ -120,7 +115,7 @@ void goto_loc(int x, int y, char method){
     switch (method)
     {
     case PROBABLE_LESS_COSTLY:
-        
+
         break;
     
     case X_BEFORE_Y:
@@ -141,5 +136,19 @@ void goto_loc(int x, int y, char method){
 }
 
 void move(int x, int y){
+    int isValid = 0;
+    isValid = ((piece_attr.x + x) <= 1 && ((piece_attr.x + x) >=-1) && ((piece_attr.y + y) <= 1 && (piece_attr.y + y) >= -1));
+    if(isValid){
+        if(pos_set){
+            setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
+        }
+        else{
+            error("Posizione iniziale della pedina non settata",EBADR);
+        }
+    }
+    else
+    {
+        error("Non ti puoi muovere di due celle nella stessa manovra",EBADR);
+    }
     
 }

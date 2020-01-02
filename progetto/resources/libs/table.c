@@ -3,8 +3,25 @@
 #endif
 
 
-int setid(cell * shared_table,int x, int y, char id){
-    if(((&(*(shared_table + x*y + y)))->id == EMPTY ||(&(*(shared_table + x*y + y)))->id == FLAG) && (semctl(sem_table,x*y + y,GETVAL) == 1)){
+
+int setid(cell * shared_table,int x, int y, char id, int previous_x, int previous_y){
+    if((tab(shared_table,x,y)->id == EMPTY ||tab(shared_table,x,y)->id == FLAG) && (semctl(sem_table,x*y + y,GETVAL) == 1)){
+        if(previous_x >= 0 && previous_y >= 0){
+                sem_t.sem_num = previous_x * previous_y + previous_y;
+                sem_t.sem_op = 1;
+            if((semop(sem_table,&sem_t,1)) == 0){
+                debug("Rilascio eseguito");   
+                }
+            else{
+                error("Errore nella semop durante la fase di rilascio",EACCES);
+                }
+    }
+    else if(previous_x == -1 && previous_y == -1){
+        debug("Set della posizione, ignora i semafori");
+    }
+    else{
+            error("Errore nei parametri precedenti, sono a zero", ERANGE);
+    }
     debug("Accesso alla cella X:%d Y:%d",x,y);
     sem_t.sem_num = x*y + y;
     sem_t.sem_op = -1;
@@ -15,15 +32,7 @@ int setid(cell * shared_table,int x, int y, char id){
     else{
         error("Errore nella semop",EACCES);
     }
-    (&(*(shared_table + x*y + y)))->id = id;
-    sem_t.sem_num = x*y + y;
-    sem_t.sem_op = 1;
-    if((semop(sem_table,&sem_t,1)) == 0){
-     debug("Rilascio eseguito");   
-    }
-    else{
-        error("Errore nella semop",EACCES);
-    }
+    tab(shared_table,x,y)->id = id;
     return 1;
     }
     else{
@@ -31,27 +40,25 @@ int setid(cell * shared_table,int x, int y, char id){
     }
 }
 
+
 char getid(cell * shared_table, int x, int y){
-   return (&(*(shared_table + x*y + y)))->id;
+   return tab(shared_table,x,y)->id;
 }
 
 cell * tab(cell * shared_table, int x, int y){
     return (&(*(shared_table + x*y + y)));
     }
 
-char getflag(cell * shared_table, int x, int y){
-    return (&(*(shared_table + x*y + y)))->id;
-}
 
 void placeflag(cell * shared_table, int x, int y){
     if(strcmp(processSign,"Master")){
-        (&(*(shared_table + x*y + y)))->id = FLAG;
+        tab(shared_table,x,y)->id = FLAG;
     }
 }
 
 void removeflag(cell * shared_table, int x, int y){
     if(strcmp(processSign,"Master")){
-        (&(*(shared_table + x*y + y)))->id = EMPTY;
+        tab(shared_table,x,y)->id = EMPTY;
     }
 }
 
