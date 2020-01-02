@@ -88,7 +88,6 @@ void table_start(){
 }
 
 
-
 position search(cell * shared_table,int b, int h, char target){
     int x = 1, y = 0, n = 0;
     char flag = 1, z = 0, sign = 1;
@@ -117,6 +116,16 @@ position search(cell * shared_table,int b, int h, char target){
         }
     }
     return pos;
+}
+
+int getDistance(int x, int y, int x_targ, int y_targ){
+    return ABSOLUTE(x - x_targ) + ABSOLUTE(y - y_targ);
+}
+
+int reachable(int moves, int x, int y, int x_targ, int y_targ){
+    int res;
+    if((res = getDistance(x, y, x_targ, y_targ)) <= moves){ return res;
+    }else{ return -1; }
 }
 /*End Of Life*/
 

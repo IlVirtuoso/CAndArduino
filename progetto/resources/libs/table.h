@@ -40,6 +40,8 @@
 #ifndef TABLE_H
 #define TABLE_H
 
+/* Valore assoluto di x */
+#define ABSOLUTE(x) ((x) >= 0 ? (x) : (x)*(-1))	
 
 /*definizione della struttura della cella della tabella*/
 typedef struct{
@@ -63,6 +65,12 @@ cell * tab(cell * table, int x, int y);
  * @param target target cercato sulla tabella
  * */
 position search(cell * shared_table, int b, int h, char target);
+
+/* Ritorna la distanza tra il punto (x,y) ed il punto (x_targ, y_targ)*/
+int getDistance(int x, int y, int x_targ, int y_targ);
+
+/* Ritorna -1 se il punto (x_targ, y_targ) non è raggiungibile dal punto (x, y), la distanza altrimenti*/
+int reachable(int x, int y, int x_targ, int y_targ);
 
 /*id della table*/
 int table;
