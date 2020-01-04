@@ -155,7 +155,7 @@ void goto_loc(int x, int y, char method){
 
 void move(int x, int y){
     int isValid = 0;
-    isValid = ((piece_attr.x + x) <= 1 && ((piece_attr.x + x) >=-1) && ((piece_attr.y + y) <= 1 && (piece_attr.y + y) >= -1));
+    isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
     if(isValid){
         if(pos_set){
             setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
