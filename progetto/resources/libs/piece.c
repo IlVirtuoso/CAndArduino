@@ -112,24 +112,42 @@ void setpos(int x, int y){
 }
 
 void goto_loc(int x, int y, char method){
+    int random;
     switch (method)
     {
     case PROBABLE_LESS_COSTLY:
-
+        /* Effettua la ricerca e seleziona una nuova tattica? */
         break;
     
     case X_BEFORE_Y:
-
+        if(y != piece_attr.y){
+            if(piece_attr.y > y) move(piece_attr.x, piece_attr.y - 1);
+            else move(piece_attr.x, piece_att.y + 1);
+        }else if(x != piece_attr.x){
+            if(piece_attr.x > x) move(piece_attr.x - 1, piece_attr.y);
+            else move(piece_attr.x + 1, piece_att.y);
+        }
         break;
 
     case Y_BEFORE_X:
-
+        if(x != piece_attr.x){
+            if(piece_attr.x > x) move(piece_attr.x - 1, piece_attr.y);
+            else move(piece_attr.x + 1, piece_att.y);
+        }else if(y != piece_attr.y){
+            if(piece_attr.y > y) move(piece_attr.x, piece_attr.y - 1);
+            else move(piece_attr.x, piece_att.y + 1);
+        }
         break;
 
     case STRAIGHT_TO:
-
         break;
     
+    case CAOS_POWER:
+        random = (0 + rand()) % ((1 - 1)+ 1 - 0) + 0;
+        switch(random){
+            case 0:  goto_loc(x, y, Y_BEFORE_X); break;
+            case 1:  goto_loc(x, y, X_BEFORE_Y); break;
+        }
     default:
         break;
     }
