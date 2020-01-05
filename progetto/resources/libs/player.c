@@ -67,6 +67,10 @@ int player(){
     piecegen(SO_NUM_P);
     /* Impostazioni tattica di gioco */;
 
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,SO_NUM_P);
+
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
@@ -96,9 +100,6 @@ int piecegen(int numpieces){
             cnt.strategy = 0;
             cnt.type = 8;
             msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
-            sem.sem_num = PIECE_SEM;
-            sem.sem_op = 1;
-            semop(semid,&sem,1);
             pieces[i] = pid; 
             logg("Generato pezzo %d Attesa",i);
         

@@ -46,9 +46,7 @@ int piece(){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
 
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
+
     
     msgrcv(key_MO, &order, sizeof(msg_cnt),8, MSG_INFO);
     logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d",order.pednum,order.x,order.y);
@@ -69,7 +67,10 @@ int piece(){
          goto_loc(target.x, target.y, order.strategy, 1);
      }
 
-    
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);
+
     return 0;
 }
 
@@ -117,7 +118,7 @@ int goto_loc(int x, int y, char method, char evasion){
      *  0: cella bloccata
      *  1: successo
      */ 
-    int random, check, new_x, new_y;
+    int random, check;
     switch (method)
     {
     case PROBABLE_LESS_COSTLY:
@@ -170,28 +171,28 @@ int goto_loc(int x, int y, char method, char evasion){
     
     /* Gestione dell'evasione in caso di casella occupata vericalmente*/
     case EVASION_Y:
-        if((x - x_attr) >= 0){ 
-            check = goto_loc(x_attr + 1, y_attr + 1, X_BEFORE_Y, 0);
+        if((x - piece_attr.x) >= 0){ 
+            check = goto_loc(piece_attr.x + 1, piece_attr.y + 1, X_BEFORE_Y, 0);
             if(check == 0){ 
-                if((goto_loc(x_attr - 1, y_attr -1, X_BEFORE_Y, 0)) == 0) return 0;}
+                if((goto_loc(piece_attr.x - 1, piece_attr.y -1, X_BEFORE_Y, 0)) == 0) return 0;}
         } else{
-             check = goto_loc(x_attr - 1, y_attr - 1, X_BEFORE_Y, == 0);
+             check = ((goto_loc(piece_attr.x - 1, piece_attr.y - 1, X_BEFORE_Y,0)) == 0);
              if(check == 0){ 
-                 if((goto_loc(x_attr + 1, y_attr + 1, X_BEFORE_Y, 0)) == 0) return 0;}
+                 if((goto_loc(piece_attr.x + 1, piece_attr.y + 1, X_BEFORE_Y, 0)) == 0) return 0;}
         }
         break;
 
     /* Gestione dell'evasione in caso di casella occupata orizzontalmente*/
     case EVASION_X:
-        if((y - y_attr) >= 0){ 
-            check = goto_loc(x_attr + 1, y_attr + 1, Y_BEFORE_X, 0);
+        if((y - piece_attr.y) >= 0){ 
+            check = goto_loc(piece_attr.x + 1, piece_attr.y + 1, Y_BEFORE_X, 0);
             if(check == 0){ 
-                if((goto_loc(x_attr - 1, y_attr -1, Y_BEFORE_X, 0)) == 0) return 0;
+                if((goto_loc(piece_attr.x - 1, piece_attr.y -1, Y_BEFORE_X, 0)) == 0) return 0;
             }
         } else{ 
-            check = goto_loc(x_attr - 1, y_attr - 1, Y_BEFORE_X, 0);
+            check = goto_loc(piece_attr.x - 1, piece_attr.y - 1, Y_BEFORE_X, 0);
             if(check == 0){ 
-                if((goto_loc(x_attr + 1, y_attr + 1, Y_BEFORE_X, 0)) == 0) return 0; }
+                if((goto_loc(piece_attr.x + 1, piece_attr.y + 1, Y_BEFORE_X, 0)) == 0) return 0; }
         }
         break;
 
@@ -201,20 +202,25 @@ int goto_loc(int x, int y, char method, char evasion){
     return 1;
 }
 
-void move(int x, int y){
+int move(int x, int y){
     int isValid = 0;
     isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
     if(isValid){
         if(pos_set){
             setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
+            piece_attr.x = x;
+            piece_attr.y = y;
+            return 1;
         }
         else{
             error("Posizione iniziale della pedina non settata",EBADR);
+            return 0;
         }
     }
     else
     {
         error("Non ti puoi muovere di due celle nella stessa manovra",EBADR);
+        return 0;
     }
     
 }

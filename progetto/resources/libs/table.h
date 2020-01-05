@@ -69,8 +69,14 @@ position search(cell * shared_table, int b, int h, char target);
 /* Ritorna la distanza tra il punto (x,y) ed il punto (x_targ, y_targ)*/
 int getDistance(int x, int y, int x_targ, int y_targ);
 
-/* Ritorna -1 se il punto (x_targ, y_targ) non è raggiungibile dal punto (x, y), la distanza altrimenti*/
-int reachable(int x, int y, int x_targ, int y_targ);
+/**
+ * @param moves: numero di mosse rimaneneti, tipicamente piece_attr.moves
+ * @param x,y: coordinate attuali della pedina
+ * @param x_targ,y_targ: coordinate obiettivo della pedina
+ * @return -1: se il numero di mosse non è sufficiente a raggiungere la cella target
+ * @return 0: se il numero di mosse è sufficiente a raggiungere target
+ */
+int reachable(int moves,int x, int y, int x_targ, int y_targ);
 
 /*id della table*/
 int table;

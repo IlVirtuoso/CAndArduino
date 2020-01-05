@@ -63,6 +63,9 @@ char piece_logbuffer[128];
  */
 int goto_loc(int x, int y, char method, char evasion);
 
+
+int move(int x, int y);
+
 struct sigaction piece_signal;
 
 /*semaforo*/
@@ -77,9 +80,9 @@ enum{
     X_BEFORE_Y,
     Y_BEFORE_X,
     PROBABLE_LESS_COSTLY,
-    EVASIO_Y,
+    EVASION_Y,
     EVASION_X,
-    CAOS_POWER,
+    CAOS_POWER
 };
 
 
