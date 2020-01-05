@@ -57,9 +57,11 @@ char piece_logbuffer[128];
  * dice alla pedina che punto raggiungere
  * @param x  intero che indica la riga
  * @param y  intero che indica la colonna
- * @param method intero che indica che metodo usare nello switch per raggiungere quel punto
+ * @param method char che indica che metodo usare nello switch per raggiungere quel punto
+ * @param evasion char che indica se schivare una cella occupata o meno 
+ * ritorna 1 = successo, 0 = cella occupata, -1 = ERRORE
  */
-void goto_loc(int x, int y, char method);
+int goto_loc(int x, int y, char method, char evasion);
 
 struct sigaction piece_signal;
 
@@ -74,7 +76,10 @@ enum{
     STRAIGHT_TO,
     X_BEFORE_Y,
     Y_BEFORE_X,
-    PROBABLE_LESS_COSTLY
+    PROBABLE_LESS_COSTLY,
+    EVASIO_Y,
+    EVASION_X,
+    CAOS_POWER,
 };
 
 

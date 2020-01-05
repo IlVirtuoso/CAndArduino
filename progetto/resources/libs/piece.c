@@ -66,7 +66,7 @@ int piece(){
                  case 1: /* invia signal a player per nuovo target */ break;
              }
          }
-         goto_loc(target.x, target.y, order.strategy);
+         goto_loc(target.x, target.y, order.strategy, 1);
      }
 
     
@@ -111,46 +111,94 @@ void setpos(int x, int y){
    }
 }
 
-void goto_loc(int x, int y, char method){
-    int random;
+int goto_loc(int x, int y, char method, char evasion){
+    /* Variabile check: successo dello spostamento
+     * -1: insuccesso
+     *  0: cella bloccata
+     *  1: successo
+     */ 
+    int random, check, new_x, new_y;
     switch (method)
     {
     case PROBABLE_LESS_COSTLY:
         /* Effettua la ricerca e seleziona una nuova tattica? */
         break;
     
-    case X_BEFORE_Y:
+    /* Precedenza al movimento verticale */
+    case Y_BEFORE_X:
         if(y != piece_attr.y){
-            if(piece_attr.y > y) move(piece_attr.x, piece_attr.y - 1);
-            else move(piece_attr.x, piece_att.y + 1);
+            if(piece_attr.y > y) check = move(piece_attr.x, piece_attr.y - 1);
+            else check = move(piece_attr.x, piece_attr.y + 1);
         }else if(x != piece_attr.x){
-            if(piece_attr.x > x) move(piece_attr.x - 1, piece_attr.y);
-            else move(piece_attr.x + 1, piece_att.y);
+            check = goto_loc(x, y, X_BEFORE_Y, 1);
         }
+
+        if(check == 0 && evasion) goto_loc(x,y, EVASION_Y, 1);
+        else if(check == 0 && !evasion) return 0;
+
+        /* Gestione dell'evasione alla macro EVASION_Y */ 
+
         break;
 
-    case Y_BEFORE_X:
+    /* Precedenza al movimento orizzontale */
+    case X_BEFORE_Y:
         if(x != piece_attr.x){
-            if(piece_attr.x > x) move(piece_attr.x - 1, piece_attr.y);
-            else move(piece_attr.x + 1, piece_att.y);
+            if(piece_attr.x > x) check = move(piece_attr.x - 1, piece_attr.y);
+            else check = move(piece_attr.x + 1, piece_attr.y);
         }else if(y != piece_attr.y){
-            if(piece_attr.y > y) move(piece_attr.x, piece_attr.y - 1);
-            else move(piece_attr.x, piece_att.y + 1);
+            check = goto_loc(x, y, Y_BEFORE_X, 1);
         }
+
+        if(check == 0 && evasion) goto_loc(x,y,EVASION_X, 1);
+        else if(check == 0 && !evasion) return 0;
+
+        /* Gestione dell'evasione alla macro EVASION_X */
+
         break;
 
     case STRAIGHT_TO:
         break;
     
+    /* Estrazione casuale tra movimento orizzontale e verticale*/
     case CAOS_POWER:
         random = (0 + rand()) % ((1 - 1)+ 1 - 0) + 0;
         switch(random){
-            case 0:  goto_loc(x, y, Y_BEFORE_X); break;
-            case 1:  goto_loc(x, y, X_BEFORE_Y); break;
+            case 0:  goto_loc(x, y, Y_BEFORE_X, 1); break;
+            case 1:  goto_loc(x, y, X_BEFORE_Y, 1); break;
         }
+        break;
+    
+    /* Gestione dell'evasione in caso di casella occupata vericalmente*/
+    case EVASION_Y:
+        if((x - x_attr) >= 0){ 
+            check = goto_loc(x_attr + 1, y_attr + 1, X_BEFORE_Y, 0);
+            if(check == 0){ 
+                if((goto_loc(x_attr - 1, y_attr -1, X_BEFORE_Y, 0)) == 0) return 0;}
+        } else{
+             check = goto_loc(x_attr - 1, y_attr - 1, X_BEFORE_Y, == 0);
+             if(check == 0){ 
+                 if((goto_loc(x_attr + 1, y_attr + 1, X_BEFORE_Y, 0)) == 0) return 0;}
+        }
+        break;
+
+    /* Gestione dell'evasione in caso di casella occupata orizzontalmente*/
+    case EVASION_X:
+        if((y - y_attr) >= 0){ 
+            check = goto_loc(x_attr + 1, y_attr + 1, Y_BEFORE_X, 0);
+            if(check == 0){ 
+                if((goto_loc(x_attr - 1, y_attr -1, Y_BEFORE_X, 0)) == 0) return 0;
+            }
+        } else{ 
+            check = goto_loc(x_attr - 1, y_attr - 1, Y_BEFORE_X, 0);
+            if(check == 0){ 
+                if((goto_loc(x_attr + 1, y_attr + 1, Y_BEFORE_X, 0)) == 0) return 0; }
+        }
+        break;
+
     default:
         break;
     }
+    return 1;
 }
 
 void move(int x, int y){
