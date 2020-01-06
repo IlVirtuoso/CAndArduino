@@ -83,6 +83,7 @@ void init();
 void sem_init();
 void shared_table_init();
 void playergen(int playernum);
+void manual();
 
 struct sigaction sa;
 
@@ -116,8 +117,6 @@ cell * master_shared_table;
 /* variabile che dice se i giocatori sono stati creati*/
 int playercreated = 0;
 
-/*variabile che dice se i pezzi sono stati creati*/
-int piececreated = 0;
 
 /*status dell'exit process*/
 int status;
@@ -137,6 +136,8 @@ typedef struct{
 
 score_table * st;
 
+
+
 /*puntatore alla struttura vexillum per le bandiere*/
 vexillum * vex;
 
@@ -152,16 +153,31 @@ vexillum * getVex(int numFlag);
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
+msg_master msg;
 
 struct sembuf sem;
 
+/*specifica i round da fare*/
+int rounds;
+
+int actual_round;
+
 int main(int argc, char * argv[]){
     int i;
+    verbosity = 0;
+    isDebug = 0;
+    rounds = 1;
+
     /*Region: inizializzazione e rilevamento argomenti*/
     for(i = 0; i < argc; i++){ /*inizializza la variabile di debug se richiesto*/
+        if(strcmp(argv[i],"-h")){
+            manual();
+            exit(EXIT_SUCCESS);
+        }
         if(strcmp(argv[i],"-d")) isDebug = 1;
         if(strcmp(argv[i],"-v")) verbosity = 2;
         if(strcmp(argv[i],"-vv")) verbosity = 3;
+        if(strcmp(argv[i],"-r")) rounds = atoi(argv[i + 1]);
     }
     
     cleaner = clean;
@@ -179,9 +195,8 @@ int main(int argc, char * argv[]){
     table_start();
     shared_table_init();
     playergen(SO_NUM_G);
-    
-    
 
+    
     /* Inizio operazioni relative al round*/
     /*while( Condizione alarm ||){
         numFlag = getNumflag();
@@ -190,6 +205,8 @@ int main(int argc, char * argv[]){
 
     /*End-Region*/
     /*Region Phase-1:flag*/
+    while(actual_round < rounds){
+
     /*End-Region*/
 
     /*Region Phase-2:Indication*/
@@ -197,10 +214,8 @@ int main(int argc, char * argv[]){
     /*End-Region*/
 
     /*Region Phase-3:Anarchy*/
-    /*End-Region*/;
-    sem.sem_num = 4;
-    sem.sem_op = 1;
-    semop(semid,&sem,SO_NUM_G);  
+    /*End-Region*/
+    }
     logg("End Of Execution");
     logg("Stopped at %s",__TIME__);
     cleaner();
@@ -306,6 +321,8 @@ void sem_init(){
     
 }
 
+int master_msgqueue;
+
 void shared_table_init(){
     int x,y;
     if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
@@ -320,6 +337,10 @@ void shared_table_init(){
         }
     }
     board = master_shared_table;
+    if((master_msgqueue = msgget(getpid(),IPC_CREAT | 0600)) == -1){
+        error("Errore nella creazione della msgqueue master",EACCES);
+    }
+
     logg("Memoria Condivisa Inizializzata");
 }
 
@@ -396,6 +417,10 @@ vexillum * getVex(int numFlag){
         }
     }
     return p;
+}
+
+void manual(){
+    printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master <command> -c <config.sc>\ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n-r int round, specifica quanti round si vuole che il gioco faccia\n");
 }
 
 /*End Region*/

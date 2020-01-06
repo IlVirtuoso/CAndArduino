@@ -37,13 +37,16 @@ float actime;
 
 
 void logg(const char  *__restrict__ message, ...){
+    
     char logformatted[128];
     va_list args;
     actime = (double)clock()/1000;
     va_start(args, message);
     vsnprintf(logformatted,sizeof(logformatted),message,args);
     fprintf(logger,"[LOG : %s -> %f] %s\n",processSign,(float)actime,logformatted);
+    if(verbosity > 0){
     printf("[LOG : %s -> %f]%s\n",processSign,(float)actime,logformatted);
+    }
     va_end(args);
     bzero(logformatted,sizeof(logformatted));
 }

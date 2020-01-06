@@ -71,6 +71,12 @@ typedef struct{
     int posy;
 }msg_pos;
 
+typedef struct{
+    long type;
+    char round;
+    char phase;
+}msg_master;
+
 /*chiave message queue*/
 int key_MO;
 

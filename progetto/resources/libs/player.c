@@ -20,11 +20,12 @@ char filename[24];
 
 int status;
 
+int piececreated = 0;
 
 struct sembuf sem;
 
 msg_cnt cnt;
-
+msg_master master;
 int player(){
     processSign = "Player";
     cleaner = player_clean;
@@ -61,9 +62,11 @@ int player(){
     if((key_MO = msgget(getpid(), IPC_CREAT | 0600)) == -1){
                 error("Errore nella creazione della coda di controllo", errno);
     }
+    
     /* Tipo di canale utilizzato per la coda (difficilmente 
        8 sarà utilizzato da qualcun altro o per errore) */
     cnt.type = 8;
+    master.type = 1;/*canale 1 per la comunicazione con il master*/
     piecegen(SO_NUM_P);
     /* Impostazioni tattica di gioco */;
 
@@ -71,19 +74,40 @@ int player(){
     sem.sem_op = 1;
     semop(semid,&sem,SO_NUM_P);
 
+    piececreated = 1;
+
     sem.sem_num = MASTER_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,1);
-    /* Esperimento per debug sul'invio di un messaggio*/
-    /*cnt.strategy = '0'; 
-    cnt.x = '1';
-    cnt.y = '2';
-    cnt.ask = '3';
-    printf("%c \n %c \n %c \n %c \n", cnt.strategy, cnt.x, cnt.y, cnt.ask);
-    msgsnd(key_MO, &cnt, sizeof(msg_cnt) - sizeof(long), IPC_NOWAIT);*/
-    
+
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);
+
+    msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_COPY);
+    phase(master.phase);
+
     return 0;
 
+}
+
+void phase(int phase){
+    switch (phase)
+    {
+    case 1:
+        /* code */
+        break;
+
+    case 2:
+
+        break;
+
+    case 3:
+
+        break;
+    default:
+        break;
+    }
 }
 
 int piecegen(int numpieces){
@@ -146,9 +170,11 @@ void player_handler(int signum){
 void player_clean(){
     int i;
     logg("PLAYER_CLEANER:Interruzione esecuzione in corso");
+    if(piececreated){
     for(i = 0; i < sizeof(pieces); i++){
-        kill(pieces[i],SIGINT);
-        wait(NULL);
+            kill(pieces[i],SIGINT);
+            wait(NULL);
+        }
     }
     fclose(logger);
     shmdt(player_shared_table);

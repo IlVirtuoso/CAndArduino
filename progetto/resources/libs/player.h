@@ -101,6 +101,12 @@ int piecegen(int piecenum);
 /*cleaner del player*/
 void player_clean();
 
+/**
+ * Metodo che da inizio alle danze
+ * @param phase: indica il numero di fase, tipicamente lo si prende dalla message queue
+ */
+void phase(int phase);
+
 /*handler del player*/
 void player_handler(int signum);
 
@@ -110,6 +116,7 @@ void play();
 /*segmento di memoria condivisa della table player*/
 cell * player_shared_table;
 
+int master_msgqueue;
 
 
 int semid;
