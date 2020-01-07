@@ -82,7 +82,8 @@ enum{
     PROBABLE_LESS_COSTLY,
     EVASION_Y,
     EVASION_X,
-    CAOS_POWER
+    CAOS_POWER,
+    STAND
 };
 
 

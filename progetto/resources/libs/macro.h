@@ -78,6 +78,18 @@
 #define PIECE_SEM 2
 #endif
 
+#ifndef ROUND_STOP
+#define ROUND_STOP 42 /*la risposta a tutto quanto*/
+#endif
+
+#ifndef SIGROUND
+#define SIGROUND SIGUSR1 /*questo segnale dice al player che il round è stato interrotto*/
+#endif
+
+#ifndef SIGTACTIC
+#define SIGTACTIC SIGUSR2 /*se la pedina necessità di nuove istruzioni può richiederle con questo segnale*/
+#endif
+
 /*DEV_IEM ho spostato i commenti per farli leggere a intellisense
 *Piccolo Tutorial su intellisense per C/C++:
 *Definizione commenti per FUNZIONI (vanno dichiarate inizialmente):

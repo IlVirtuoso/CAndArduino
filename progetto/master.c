@@ -84,6 +84,7 @@ void sem_init();
 void shared_table_init();
 void playergen(int playernum);
 void manual();
+void restart();
 
 struct sigaction sa;
 
@@ -136,7 +137,8 @@ typedef struct{
 
 score_table * st;
 
-
+/*metodo del round*/
+void round();
 
 /*puntatore alla struttura vexillum per le bandiere*/
 vexillum * vex;
@@ -204,18 +206,7 @@ int main(int argc, char * argv[]){
     }*/
 
     /*End-Region*/
-    /*Region Phase-1:flag*/
-    while(actual_round < rounds){
-
-    /*End-Region*/
-
-    /*Region Phase-2:Indication*/
-
-    /*End-Region*/
-
-    /*Region Phase-3:Anarchy*/
-    /*End-Region*/
-    }
+    
     logg("End Of Execution");
     logg("Stopped at %s",__TIME__);
     cleaner();
@@ -234,11 +225,16 @@ void handler(int signum){
     case SIGUSR1:
     logg("Segnale di creazione pezzi inviato al player");
     break;
+
+    case SIGALRM:
+    restart();
+    break;
     
     default:
         break;
     }
 }
+
 
 void clean(){
     int i;
@@ -264,6 +260,7 @@ void clean_process(){
     int i;
     for(i = 0; i < SO_NUM_G;i++){
         kill((pid_t)st->pid[i],SIGINT);
+        wait(NULL);
     }
 }
 
@@ -271,9 +268,9 @@ void clean_process(){
 
 void stamp_score(score_table * t){
     int i;
-	printf("PLAYER         SCORE\n");
+	logg("PLAYER         SCORE\n");
 	for(i = 0; i < SO_NUM_G; i++){
-		printf("PLAYER %c   |   %d  \n", t -> name[i], t -> score[i]);
+		logg("PLAYER %c   |   %d  \n", t -> name[i], t -> score[i]);
 	}
 }
 
@@ -290,15 +287,17 @@ void init(){
     logg("Impostazione maschere e segnali");
     /*Region: inizializzazione dei segnali*/
     bzero(&sa,sizeof(sa));
-    sa.sa_handler = handler;
     sigemptyset(&mask);
     sigaddset(&mask,SIGINT);
+    sigaddset(&mask,SIGALRM);
     sigprocmask(SIG_BLOCK,&mask,NULL);
     sa.sa_mask = mask;
-    sa.sa_flags = SA_RESTART; /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
+    /*sa.sa_flags = SA_RESTART;*/ /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
     sa.sa_flags = SA_NODEFER; /*Questa flag permette all'handler di generare altri segnali*/
     sigaction(SIGINT,&sa,NULL);
+    sigaction(SIGALRM,&sa,NULL);
     sigset(SIGINT,handler);
+    sa.sa_handler = handler;
     /*End-Region*/
 }
 
@@ -418,6 +417,42 @@ vexillum * getVex(int numFlag){
     }
     return p;
 }
+
+void round(){
+        /*Region Phase-1:flag*/
+        alarm(3);
+        rounds++;
+        semctl(semid,PLAYER_SEM,0);
+        semctl(semid,PIECE_SEM,0);
+        semctl(semid,MASTER_SEM,0);
+        msg.round = 1;
+        msg.phase = 1;
+
+        sem.sem_num = PLAYER_SEM;
+        sem.sem_op = 1;
+        semop(semid,&sem,SO_NUM_G);
+    /*End-Region*/
+
+    /*Region Phase-2:Indication*/
+
+    /*End-Region*/
+
+    /*Region Phase-3:Anarchy*/
+    /*End-Region*/
+    
+}
+
+void restart(){
+    int i;
+    for(i = 0; i < SO_NUM_G; i++){
+        kill(st->pid[i] , SIGROUND);
+    }
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,SO_NUM_G);
+    round();
+}
+
 
 void manual(){
     printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master <command> -c <config.sc>\ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n-r int round, specifica quanti round si vuole che il gioco faccia\n");

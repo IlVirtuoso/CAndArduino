@@ -3,20 +3,26 @@
 #endif
 int pos_set = 0;
 
+/*metodo per gestire il round*/
+void getplay();
 
+/*aspetta una tattica dal player e la esegue*/
+void tactic();
+
+/*variabile per l'Override del movimento, utilizzabile per esempio per l'interruzione di un round*/
+int override;
+
+struct sembuf sem;
+    /* Struttura adibita a ricevere i comandi tramite MQ */
+msg_cnt order;
+    /* Struttura adibita a memorizzare le coordinate della cella target */
+position target;
 
 int piece(){
     
-    struct sembuf sem;
-    /* Struttura adibita a ricevere i comandi tramite MQ */
-    msg_cnt order;
-    /* Struttura adibita a memorizzare le coordinate della cella target */
-    position target;
+
 
     processSign = "Piece";
-    /* Esperimento sul funzionamento della coda di controllo*/
-    /*msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), 8, IPC_NOWAIT);
-    printf("%c \n %c \n %c \n %c \n", order.strategy, order.x, order.y, order.ask);*/
 
     srand(time(NULL));
     if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
@@ -36,42 +42,56 @@ int piece(){
     piece_signal.sa_handler = piece_handler;
     sigemptyset(&piece_mask);
     sigaddset(&piece_mask,SIGINT);
-    sigaddset(&piece_mask,SIGUSR1);
+    sigaddset(&piece_mask,SIGROUND);
     sigaddset(&piece_mask,SIGUSR2);
     /*Questi due segnali serviranno per dare al player dei comandi addizionali*/
     sigprocmask(SIG_BLOCK,&piece_mask,NULL);
     piece_signal.sa_mask = piece_mask;
     sigaction(SIGINT,&piece_signal,NULL);
+    sigaction(SIGROUND,&piece_signal,NULL);
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
+    getplay();
+    return 0;
+}
 
 
-    
-    msgrcv(key_MO, &order, sizeof(msg_cnt),8, MSG_INFO);
-    logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d",order.pednum,order.x,order.y);
-    setpos(order.x,order.y);
-    logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
-    piece_attr.n_moves = SO_N_MOVES;
-
-     /* Attesa della tattica */
-    target = search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
-
-     while(piece_attr.n_moves <= SO_N_MOVES){
-         if(getid(piece_shared_table, target.x, target.y) != FLAG){
-             switch(order.ask){
-                 case 0: /* search new target */ break;
-                 case 1: /* invia signal a player per nuovo target */ break;
-             }
-         }
-         goto_loc(target.x, target.y, order.strategy, 1);
-     }
-
+void getplay(){
     sem.sem_num = PIECE_SEM;
     sem.sem_op = -1;
     semop(semid,&sem,1);
+    msgrcv(key_MO, &order, sizeof(msg_cnt),8, MSG_INFO);
+    logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d",order.pednum,order.x,order.y);
+    if(!override)setpos(order.x,order.y);
+    else move(order.x,order.y);
+    logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
+    piece_attr.n_moves = SO_N_MOVES;
+    tactic();
+}
 
-    return 0;
+void tactic(){
+    int interrupt = 0;
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);
+    target = search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
+     while(piece_attr.n_moves <= SO_N_MOVES){
+         if(getid(piece_shared_table, target.x, target.y) != FLAG){
+             switch(order.ask){
+                 case 0: 
+                 search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
+                  break;
+                 case 1: 
+                 kill(getppid(),SIGTACTIC);
+                 /*decidere la strategia*/
+                 interrupt = 1;
+                 break;
+             }
+         }
+         if(interrupt) break; 
+         goto_loc(target.x, target.y, order.strategy, 1);
+     }
 }
 
 void piece_handler(int signum){
@@ -82,8 +102,10 @@ void piece_handler(int signum){
         exit(-1);
         break;
 
-    case SIGUSR1:
+    case SIGROUND:
         logg("Restart Execution");
+        override = 1;
+        getplay();
         break;
 
     case SIGUSR2:
@@ -119,6 +141,7 @@ int goto_loc(int x, int y, char method, char evasion){
      *  1: successo
      */ 
     int random, check;
+
     switch (method)
     {
     case PROBABLE_LESS_COSTLY:
@@ -196,6 +219,10 @@ int goto_loc(int x, int y, char method, char evasion){
         }
         break;
 
+    /*non ti muovere fino a nuovo ordine*/
+    case STAND:
+    break;
+
     default:
         break;
     }
@@ -204,12 +231,14 @@ int goto_loc(int x, int y, char method, char evasion){
 
 int move(int x, int y){
     int isValid = 0;
-    isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
-    if(isValid){
+    if(override){ isValid = 1; override = 0;}
+    else isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
+    if(isValid && piece_attr.n_moves <= SO_N_MOVES){
         if(pos_set){
             setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
             piece_attr.x = x;
             piece_attr.y = y;
+            piece_attr.n_moves ++;
             return 1;
         }
         else{
@@ -217,6 +246,7 @@ int move(int x, int y){
             return 0;
         }
     }
+    else if(piece_attr.n_moves > SO_N_MOVES) logg("Questa pedina ha finito le mosse");
     else
     {
         error("Non ti puoi muovere di due celle nella stessa manovra",EBADR);

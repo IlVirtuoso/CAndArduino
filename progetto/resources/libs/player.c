@@ -15,6 +15,8 @@
  * La struct deve essere disponibile anche al Player
  */
 
+/*metodo per gestire un round*/
+void stand();
 
 char filename[24];
 
@@ -51,12 +53,14 @@ int player(){
     player_signal.sa_handler = player_handler;
     sigemptyset(&player_mask);
     sigaddset(&player_mask,SIGINT);
+    sigaddset(&player_mask,SIGROUND);
     sigprocmask(SIG_BLOCK,&player_mask,NULL);
     player_signal.sa_mask = player_mask;
   /*player_signal.sa_flags = SA_RESTART;
     player_signal.sa_flags = SA_NODEFER; da usare solo se servono*/
     sigaction(SIGINT,&player_signal,NULL);
-
+    sigaction(SIGUSR1,&player_signal,NULL);
+    sigaction(SIGUSR2,&player_signal,NULL);
     /* Generazione chiave della coda per il controllo dei pezzi
        ereditata da ciascun pezzo (una coda per Player) */
     if((key_MO = msgget(getpid(), IPC_CREAT | 0600)) == -1){
@@ -76,26 +80,33 @@ int player(){
 
     piececreated = 1;
 
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
+    while(master.phase != 0){ /*la fase 0 determina l'interruzione del processo*/
+        stand();
+    }
 
-    sem.sem_num = PLAYER_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
-
-    msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_COPY);
-    phase(master.phase);
-
+    player_clean();
     return 0;
 
 }
 
 void phase(int phase){
+    int i;
     switch (phase)
     {
-    case 1:
-        /* code */
+    case 1:/*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
+    for(i = 0; i < SO_NUM_P; i++){
+        sem.sem_num = PIECE_SEM;
+        sem.sem_op = 1;
+        srand(i*128*player_id);
+        cnt.x = rand()%SO_ALTEZZA;
+        cnt.y = rand()%SO_BASE;
+        cnt.pednum = i;
+        cnt.strategy = 0;
+        cnt.type = 8;
+        semop(semid,&sem,1);
+        msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
+    }
+    stand();
         break;
 
     case 2:
@@ -105,10 +116,36 @@ void phase(int phase){
     case 3:
 
         break;
+
+    case ROUND_STOP:
+    for(i = 0; i < SO_NUM_P; i++){
+        kill(pieces[i], SIGROUND);
+
+    }
+
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = 1;
+    semop(semid,&sem,1);
+
+    stand();
+    break;
     default:
         break;
     }
 }
+
+
+void stand(){
+    /*decrementa il semaforo così che vada automaticamente in pausa prima di cominciare*/
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = -1;
+    semop(semid,&sem,1);
+
+    msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_COPY);
+    phase(master.phase);
+
+}
+
 
 int piecegen(int numpieces){
     int i;
@@ -117,15 +154,8 @@ int piecegen(int numpieces){
     for(i = 0; i < numpieces; i++){
         if((pid = fork())){
             /*player*/
-            srand(i*128*player_id);
-            cnt.x = rand()%SO_ALTEZZA;
-            cnt.y = rand()%SO_BASE;
-            cnt.pednum = i;
-            cnt.strategy = 0;
-            cnt.type = 8;
-            msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
             pieces[i] = pid; 
-            logg("Generato pezzo %d Attesa",i);
+            logg("Generato pezzo %d",i);
         
         }
         else{
@@ -154,12 +184,12 @@ void player_handler(int signum){
         player_clean();
         break;
     
-    case SIGUSR1:
-
+    case SIGROUND:
+    phase(ROUND_STOP);
     break;
 
-    case SIGUSR2:
-
+    case SIGTACTIC:
+    /*dare tattica alla pedina che la richiede*/
     break;
     
     default:
