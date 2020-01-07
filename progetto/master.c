@@ -419,17 +419,20 @@ vexillum * getVex(int numFlag){
 }
 
 void round(){
+    int i;
         /*Region Phase-1:flag*/
         alarm(3);
         rounds++;
-        semctl(semid,PLAYER_SEM,0);
-        semctl(semid,PIECE_SEM,0);
-        semctl(semid,MASTER_SEM,0);
         msg.round = 1;
         msg.phase = 1;
-
+        getVex(getNumflag());/*inizializza le bandiere*/
+        msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
         sem.sem_num = PLAYER_SEM;
         sem.sem_op = 1;
+        semop(semid,&sem,SO_NUM_G);
+
+        sem.sem_num = MASTER_SEM;
+        sem.sem_op = -1;
         semop(semid,&sem,SO_NUM_G);
     /*End-Region*/
 
@@ -447,6 +450,10 @@ void restart(){
     for(i = 0; i < SO_NUM_G; i++){
         kill(st->pid[i] , SIGROUND);
     }
+    semctl(semid,PLAYER_SEM,0);
+    semctl(semid,PIECE_SEM,0);
+    semctl(semid,MASTER_SEM,0);
+
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
     semop(semid,&sem,SO_NUM_G);
