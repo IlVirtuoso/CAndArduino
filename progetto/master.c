@@ -177,7 +177,7 @@ int main(int argc, char * argv[]){
         switch (opt)
         {
         case 'c':
-            parseFile(optarg);
+            ParseFile(fopen(optarg,"r"));
             break;
 
         case 'v':

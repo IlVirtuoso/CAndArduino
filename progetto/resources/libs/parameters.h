@@ -44,6 +44,4 @@ int SO_ROUND_SCORE;
 void ParseFile(FILE * file);
 
 
-
-
 #endif
