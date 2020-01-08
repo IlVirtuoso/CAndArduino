@@ -128,11 +128,11 @@ int sem_num;
 /* struttura dati per i punteggi */
 typedef struct{
     /* Array contenente i pids di tutti i processi giocatori creati*/
-    int pid[SO_NUM_G];
+    int * pid;
     /* Array contenente i nomi di tutti i processi giocatori creati*/
-    char name[SO_NUM_G];
+    char * name;
     /* Array contenente il punteggio di tutti i processi giocatori*/
-    int score[SO_NUM_G];
+    int * score;
 }score_table;
 
 score_table * st;
@@ -166,25 +166,39 @@ int actual_round;
 
 int main(int argc, char * argv[]){
     int i;
+    int opt;
     verbosity = 0;
     isDebug = 0;
     rounds = 1;
 
     /*Region: inizializzazione e rilevamento argomenti*/
-    for(i = 0; i < argc; i++){ /*inizializza la variabile di debug se richiesto*/
-        if(strcmp(argv[i],"-h")){
-            manual();
-            exit(EXIT_SUCCESS);
+    while ((opt = getopt(argc,argv,":if:cvdr")) != -1)
+    {
+        switch (opt)
+        {
+        case 'c':
+            parseFile(optarg);
+            break;
+
+        case 'v':
+        verbosity = 1;
+        break;
+
+        case 'd':
+        isDebug = 1;
+        break;
+
+        case 'r':
+        rounds = optarg;
+        default:
+            break;
         }
-        if(strcmp(argv[i],"-d")) isDebug = 1;
-        if(strcmp(argv[i],"-v")) verbosity = 2;
-        if(strcmp(argv[i],"-vv")) verbosity = 3;
-        if(strcmp(argv[i],"-r")) rounds = atoi(argv[i + 1]);
     }
+    
     
     cleaner = clean;
     placed = 0;
-    logger = fopen("Master.log","a+");
+    logger = fopen("Master.log","a+");    
     logg("Started At: %s\n",__TIME__);
     init();
     
@@ -227,7 +241,8 @@ void handler(int signum){
     break;
 
     case SIGALRM:
-    restart();
+    logg("Fine del round, Sospensione");
+    clean();
     break;
     
     default:
@@ -238,6 +253,9 @@ void handler(int signum){
 
 void clean(){
     int i;
+    if(playercreated){
+        clean_process();
+    }
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
     shmctl(table,IPC_RMID,NULL);
@@ -250,17 +268,22 @@ void clean(){
     free(vex);
     fclose(logger);
     
-    if(playercreated){
-        clean_process();
-    }
+    
     
 }
 
 void clean_process(){
     int i;
+    msg_cnt msg;
     for(i = 0; i < SO_NUM_G;i++){
         kill((pid_t)st->pid[i],SIGINT);
-        wait(NULL);
+        msgrcv(master_msgqueue,&msg,sizeof(msg_cnt),0,MSG_INFO);
+        if(msg.ask == 42){
+            logg("Closed Player %d",i);
+        }
+        else{
+            wait(NULL);
+        }
     }
 }
 
@@ -278,7 +301,10 @@ void stamp_score(score_table * t){
 
 void init(){
     int i;
-    st =  malloc(sizeof(score_table)); 
+    st =  malloc(sizeof(score_table));
+    st->name = (char)malloc(sizeof(char) * SO_NUM_G);
+    st->pid = (int)malloc(sizeof(int)*SO_NUM_G);
+    st->score = (int)malloc(sizeof(int)*SO_NUM_G);
     for(i = 0; i < SO_NUM_G; i++){
         st -> name[i] = (char)((int)'A' + i);
         st -> score[i] = 0;
@@ -419,7 +445,6 @@ vexillum * getVex(int numFlag){
 }
 
 void round(){
-    int i;
         /*Region Phase-1:flag*/
         alarm(3);
         rounds++;

@@ -25,6 +25,9 @@
 #ifndef IPC_H
 #include <sys/ipc.h>
 #endif
+#ifndef PARAMETERS_H
+#include "parameters.h"
+#endif
 #ifndef MSG_H
 #include <sys/msg.h>
 #endif

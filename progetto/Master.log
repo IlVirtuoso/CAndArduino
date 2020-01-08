@@ -69172,3 +69172,9 @@
 [DEBUG : (null)]: Memoria Condivisa Inizializzata
 [ERROR]:Permission denied,message:Error nella creazione della tabella dei semafori
 [LOG : (null) -> 2419.000000] MASTER_CLEANER_LAUNCHED
+[LOG : (null) -> 2.178000] Started At: 19:50:17
+
+[LOG : (null) -> 2.197000] Impostazione maschere e segnali
+[LOG : (null) -> 2.200000] Inizializzazione Memoria Condivisa
+[ERROR]:Permission denied,message:Error nella creazione della tabella dei semafori
+[LOG : (null) -> 2.221000] MASTER_CLEANER_LAUNCHED

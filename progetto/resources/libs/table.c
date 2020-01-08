@@ -46,7 +46,7 @@ char getid(cell * shared_table, int x, int y){
 }
 
 cell * tab(cell * shared_table, int x, int y){
-    return (&(*(shared_table + x*y + y)));
+    return (&(*(shared_table + x*SO_BASE + y)));
     }
 
 
@@ -79,7 +79,7 @@ void table_start(){
     }
     for(i = 0; i < SO_ALTEZZA; i++){
         for(j = 0; j < SO_BASE; j++){
-            if(semctl(sem_table,i*j + j, SETVAL, 1) == -1){
+            if(semctl(sem_table,i*SO_BASE + j, SETVAL, 1) == -1){
                 error("error nel controllo della sem table",EACCES);
             }
         }

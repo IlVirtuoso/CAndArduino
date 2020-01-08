@@ -119,7 +119,10 @@ void piece_handler(int signum){
 
 void piece_cleaner(){
     shmdt(piece_shared_table);
-    
+    order.ask = 42;
+    order.type = 8;
+    msgsnd(key_MO,&order,sizeof(msg_cnt),MSG_INFO);
+    exit(EXIT_SUCCESS);
 }
 
 
@@ -252,5 +255,5 @@ int move(int x, int y){
         error("Non ti puoi muovere di due celle nella stessa manovra",EBADR);
         return 0;
     }
-    
+    return 0;
 }

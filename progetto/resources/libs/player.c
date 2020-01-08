@@ -203,9 +203,18 @@ void player_clean(){
     if(piececreated){
     for(i = 0; i < sizeof(pieces); i++){
             kill(pieces[i],SIGINT);
-            wait(NULL);
+            msgrcv(key_MO,&cnt,sizeof(msg_cnt),8,MSG_INFO);
+            if(cnt.ask == 42){
+                logg("Closed ped %d",i);
+            }
+            else{
+                wait(NULL);
+            }
         }
     }
+    cnt.ask = 42;
+    cnt.type = 0;
+    msgsnd(master_msgqueue,&cnt,sizeof(msg_cnt),MSG_INFO);
     fclose(logger);
     shmdt(player_shared_table);
     msgctl(key_MO, IPC_RMID, NULL);
