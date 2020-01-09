@@ -1,4 +1,4 @@
 CC=gcc
 
-master: master.c ./resources/libs/macro.h ./resources/libs/parameters.h  ./resources/libs/piece.h ./resources/libs/piece.c ./resources/libs/player.h ./resources/libs/player.c ./resources/libs/table.h ./resources/libs/parameters.h ./resources/libs/parameters.c ./resources/libs/table.c ./resources/libs/debug.c ./resources/libs/debug.h ./resources/libs/monitor.h ./resources/libs/monitor.c ./resources/libs/message.h 
+master: master.c ./resources/libs/macro.h  ./resources/libs/piece.h ./resources/libs/piece.c ./resources/libs/player.h ./resources/libs/player.c ./resources/libs/table.h ./resources/libs/parameters.h ./resources/libs/parameters.c ./resources/libs/table.c ./resources/libs/debug.c ./resources/libs/debug.h ./resources/libs/monitor.h ./resources/libs/monitor.c ./resources/libs/message.h 
 	gcc -g -std=c89  -Wpedantic -Wall -Werror  -o master master.c  ./resources/libs/piece.c ./resources/libs/player.c ./resources/libs/table.c ./resources/libs/debug.c ./resources/libs/monitor.c ./resources/libs/parameters.c

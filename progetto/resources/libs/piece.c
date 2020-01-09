@@ -49,6 +49,8 @@ int piece(){
     piece_signal.sa_mask = piece_mask;
     sigaction(SIGINT,&piece_signal,NULL);
     sigaction(SIGROUND,&piece_signal,NULL);
+    sigset(SIGINT,piece_handler);
+    sigset(SIGROUND,piece_handler);
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
@@ -75,7 +77,6 @@ void getplay(){
     
 
 void tactic(){
-    int interrupt = 0;
      while(piece_attr.n_moves != 0){
          if(getid(piece_shared_table, target.x, target.y) != FLAG){
              switch(order.ask){
@@ -105,7 +106,6 @@ void piece_handler(int signum){
     {
     case SIGINT:
         piece_cleaner();
-        exit(-1);
         break;
 
     case SIGROUND:
@@ -124,10 +124,10 @@ void piece_handler(int signum){
 }
 
 void piece_cleaner(){
+    logg("cleaning and go");
     shmdt(piece_shared_table);
-    order.ask = 42;
-    order.type = 8;
-    msgsnd(key_MO,&order,sizeof(msg_cnt),MSG_INFO);
+    semctl(semid,0,IPC_RMID);
+    msgctl(key_MO,IPC_RMID,0);
     exit(EXIT_SUCCESS);
 }
 

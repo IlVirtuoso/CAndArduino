@@ -21766,3 +21766,2857 @@
 [LOG : Player -> 0.844000] Generato pezzo 7 Attesa
 [LOG : Player -> 0.916000] Generato pezzo 8 Attesa
 [LOG : Player -> 0.965000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Piece -> 0.067000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Piece -> 0.060000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Piece -> 0.063000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Piece -> 0.068000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Piece -> 0.070000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Piece -> 0.043000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Piece -> 0.062000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Piece -> 0.034000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Piece -> 0.035000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Piece -> 0.058000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Piece -> 0.054000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Player -> 1.309000] Generato pezzo 14
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Player -> 1.309000] Generato pezzo 14
+[LOG : Player -> 1.373000] Generato pezzo 15
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Player -> 1.309000] Generato pezzo 14
+[LOG : Player -> 1.373000] Generato pezzo 15
+[LOG : Player -> 1.450000] Generato pezzo 16
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Player -> 1.309000] Generato pezzo 14
+[LOG : Player -> 1.373000] Generato pezzo 15
+[LOG : Player -> 1.450000] Generato pezzo 16
+[LOG : Player -> 1.524000] Generato pezzo 17
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Player -> 1.309000] Generato pezzo 14
+[LOG : Player -> 1.373000] Generato pezzo 15
+[LOG : Player -> 1.450000] Generato pezzo 16
+[LOG : Player -> 1.524000] Generato pezzo 17
+[LOG : Player -> 1.672000] Generato pezzo 18
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.104000] Player Started At 23:54:36
+[LOG : Player -> 0.150000] Tabella semafori iniziata
+[LOG : Player -> 0.165000] Setup Struttura dei segnali
+[LOG : Player -> 0.179000] Generazione pezzi iniziata
+[LOG : Player -> 0.283000] Generato pezzo 0
+[LOG : Player -> 0.366000] Generato pezzo 1
+[LOG : Player -> 0.450000] Generato pezzo 2
+[LOG : Player -> 0.530000] Generato pezzo 3
+[LOG : Player -> 0.600000] Generato pezzo 4
+[LOG : Player -> 0.681000] Generato pezzo 5
+[LOG : Player -> 0.756000] Generato pezzo 6
+[LOG : Player -> 0.829000] Generato pezzo 7
+[LOG : Player -> 0.904000] Generato pezzo 8
+[LOG : Player -> 0.978000] Generato pezzo 9
+[LOG : Player -> 1.042000] Generato pezzo 10
+[LOG : Player -> 1.098000] Generato pezzo 11
+[LOG : Player -> 1.168000] Generato pezzo 12
+[LOG : Player -> 1.244000] Generato pezzo 13
+[LOG : Player -> 1.309000] Generato pezzo 14
+[LOG : Player -> 1.373000] Generato pezzo 15
+[LOG : Player -> 1.450000] Generato pezzo 16
+[LOG : Player -> 1.524000] Generato pezzo 17
+[LOG : Player -> 1.672000] Generato pezzo 18
+[LOG : Player -> 1.767000] Generato pezzo 19
+[LOG : Player -> 1.796000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Piece -> 0.052000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Piece -> 0.091000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Piece -> 0.061000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Piece -> 0.050000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Piece -> 0.043000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Piece -> 0.036000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Piece -> 0.047000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Piece -> 0.061000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Piece -> 0.048000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Piece -> 0.023000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Piece -> 0.062000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Piece -> 0.031000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Piece -> 0.061000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Player -> 1.295000] Generato pezzo 14
+[LOG : Piece -> 0.041000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Player -> 1.295000] Generato pezzo 14
+[LOG : Player -> 1.370000] Generato pezzo 15
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Player -> 1.295000] Generato pezzo 14
+[LOG : Player -> 1.370000] Generato pezzo 15
+[LOG : Player -> 1.437000] Generato pezzo 16
+[LOG : Piece -> 0.063000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Player -> 1.295000] Generato pezzo 14
+[LOG : Player -> 1.370000] Generato pezzo 15
+[LOG : Player -> 1.437000] Generato pezzo 16
+[LOG : Player -> 1.510000] Generato pezzo 17
+[LOG : Piece -> 0.065000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Player -> 1.295000] Generato pezzo 14
+[LOG : Player -> 1.370000] Generato pezzo 15
+[LOG : Player -> 1.437000] Generato pezzo 16
+[LOG : Player -> 1.510000] Generato pezzo 17
+[LOG : Player -> 1.602000] Generato pezzo 18
+[LOG : Piece -> 0.058000] Tabella semafori iniziata
+[LOG : Player -> 0.089000] Player Started At 23:56:03
+[LOG : Player -> 0.125000] Tabella semafori iniziata
+[LOG : Player -> 0.134000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.208000] Generato pezzo 0
+[LOG : Player -> 0.287000] Generato pezzo 1
+[LOG : Player -> 0.379000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.526000] Generato pezzo 4
+[LOG : Player -> 0.592000] Generato pezzo 5
+[LOG : Player -> 0.683000] Generato pezzo 6
+[LOG : Player -> 0.767000] Generato pezzo 7
+[LOG : Player -> 0.850000] Generato pezzo 8
+[LOG : Player -> 0.931000] Generato pezzo 9
+[LOG : Player -> 0.998000] Generato pezzo 10
+[LOG : Player -> 1.071000] Generato pezzo 11
+[LOG : Player -> 1.141000] Generato pezzo 12
+[LOG : Player -> 1.207000] Generato pezzo 13
+[LOG : Player -> 1.295000] Generato pezzo 14
+[LOG : Player -> 1.370000] Generato pezzo 15
+[LOG : Player -> 1.437000] Generato pezzo 16
+[LOG : Player -> 1.510000] Generato pezzo 17
+[LOG : Player -> 1.602000] Generato pezzo 18
+[LOG : Player -> 1.682000] Generato pezzo 19
+[LOG : Player -> 1.700000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Piece -> 0.052000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Piece -> 0.040000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Piece -> 0.063000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Piece -> 0.093000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Piece -> 0.064000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Piece -> 0.035000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Piece -> 0.073000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Piece -> 0.070000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Piece -> 0.051000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Piece -> 0.085000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Piece -> 0.049000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Piece -> 0.048000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Piece -> 0.023000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Piece -> 0.024000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.265000] Generato pezzo 14
+[LOG : Piece -> 0.049000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.265000] Generato pezzo 14
+[LOG : Player -> 1.337000] Generato pezzo 15
+[LOG : Piece -> 0.052000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.265000] Generato pezzo 14
+[LOG : Player -> 1.337000] Generato pezzo 15
+[LOG : Player -> 1.427000] Generato pezzo 16
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.265000] Generato pezzo 14
+[LOG : Player -> 1.337000] Generato pezzo 15
+[LOG : Player -> 1.427000] Generato pezzo 16
+[LOG : Player -> 1.486000] Generato pezzo 17
+[LOG : Piece -> 0.048000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.265000] Generato pezzo 14
+[LOG : Player -> 1.337000] Generato pezzo 15
+[LOG : Player -> 1.427000] Generato pezzo 16
+[LOG : Player -> 1.486000] Generato pezzo 17
+[LOG : Player -> 1.559000] Generato pezzo 18
+[LOG : Piece -> 0.023000] Tabella semafori iniziata
+[LOG : Player -> 0.077000] Player Started At 23:56:03
+[LOG : Player -> 0.112000] Tabella semafori iniziata
+[LOG : Player -> 0.122000] Setup Struttura dei segnali
+[LOG : Player -> 0.132000] Generazione pezzi iniziata
+[LOG : Player -> 0.216000] Generato pezzo 0
+[LOG : Player -> 0.295000] Generato pezzo 1
+[LOG : Player -> 0.370000] Generato pezzo 2
+[LOG : Player -> 0.466000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.615000] Generato pezzo 5
+[LOG : Player -> 0.690000] Generato pezzo 6
+[LOG : Player -> 0.762000] Generato pezzo 7
+[LOG : Player -> 0.844000] Generato pezzo 8
+[LOG : Player -> 0.910000] Generato pezzo 9
+[LOG : Player -> 0.982000] Generato pezzo 10
+[LOG : Player -> 1.054000] Generato pezzo 11
+[LOG : Player -> 1.131000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.265000] Generato pezzo 14
+[LOG : Player -> 1.337000] Generato pezzo 15
+[LOG : Player -> 1.427000] Generato pezzo 16
+[LOG : Player -> 1.486000] Generato pezzo 17
+[LOG : Player -> 1.559000] Generato pezzo 18
+[LOG : Player -> 1.628000] Generato pezzo 19
+[LOG : Player -> 1.660000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Piece -> 0.052000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Piece -> 0.064000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Piece -> 0.031000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Piece -> 0.073000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Piece -> 0.035000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Piece -> 0.032000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Piece -> 0.047000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Piece -> 0.052000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Piece -> 0.067000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Piece -> 0.066000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Piece -> 0.025000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Piece -> 0.067000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Piece -> 0.054000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Piece -> 0.060000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Piece -> 0.080000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.280000] Generato pezzo 14
+[LOG : Piece -> 0.058000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.280000] Generato pezzo 14
+[LOG : Player -> 1.368000] Generato pezzo 15
+[LOG : Piece -> 0.059000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.280000] Generato pezzo 14
+[LOG : Player -> 1.368000] Generato pezzo 15
+[LOG : Player -> 1.456000] Generato pezzo 16
+[LOG : Piece -> 0.027000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.280000] Generato pezzo 14
+[LOG : Player -> 1.368000] Generato pezzo 15
+[LOG : Player -> 1.456000] Generato pezzo 16
+[LOG : Player -> 1.539000] Generato pezzo 17
+[LOG : Piece -> 0.064000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.280000] Generato pezzo 14
+[LOG : Player -> 1.368000] Generato pezzo 15
+[LOG : Player -> 1.456000] Generato pezzo 16
+[LOG : Player -> 1.539000] Generato pezzo 17
+[LOG : Player -> 1.607000] Generato pezzo 18
+[LOG : Piece -> 0.032000] Tabella semafori iniziata
+[LOG : Player -> 0.080000] Player Started At 23:58:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.135000] Setup Struttura dei segnali
+[LOG : Player -> 0.143000] Generazione pezzi iniziata
+[LOG : Player -> 0.224000] Generato pezzo 0
+[LOG : Player -> 0.306000] Generato pezzo 1
+[LOG : Player -> 0.394000] Generato pezzo 2
+[LOG : Player -> 0.469000] Generato pezzo 3
+[LOG : Player -> 0.539000] Generato pezzo 4
+[LOG : Player -> 0.598000] Generato pezzo 5
+[LOG : Player -> 0.654000] Generato pezzo 6
+[LOG : Player -> 0.741000] Generato pezzo 7
+[LOG : Player -> 0.821000] Generato pezzo 8
+[LOG : Player -> 0.903000] Generato pezzo 9
+[LOG : Player -> 0.976000] Generato pezzo 10
+[LOG : Player -> 1.044000] Generato pezzo 11
+[LOG : Player -> 1.116000] Generato pezzo 12
+[LOG : Player -> 1.191000] Generato pezzo 13
+[LOG : Player -> 1.280000] Generato pezzo 14
+[LOG : Player -> 1.368000] Generato pezzo 15
+[LOG : Player -> 1.456000] Generato pezzo 16
+[LOG : Player -> 1.539000] Generato pezzo 17
+[LOG : Player -> 1.607000] Generato pezzo 18
+[LOG : Player -> 1.680000] Generato pezzo 19
+[LOG : Player -> 1.695000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Piece -> 0.061000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Piece -> 0.062000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Piece -> 0.030000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Piece -> 0.026000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Piece -> 0.035000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Piece -> 0.044000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Piece -> 0.042000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Piece -> 0.044000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Piece -> 0.026000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Piece -> 0.043000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Piece -> 0.060000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Piece -> 0.028000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Piece -> 0.031000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Player -> 1.131000] Generato pezzo 14
+[LOG : Piece -> 0.026000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Player -> 1.131000] Generato pezzo 14
+[LOG : Player -> 1.218000] Generato pezzo 15
+[LOG : Piece -> 0.044000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Player -> 1.131000] Generato pezzo 14
+[LOG : Player -> 1.218000] Generato pezzo 15
+[LOG : Player -> 1.284000] Generato pezzo 16
+[LOG : Piece -> 0.020000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Player -> 1.131000] Generato pezzo 14
+[LOG : Player -> 1.218000] Generato pezzo 15
+[LOG : Player -> 1.284000] Generato pezzo 16
+[LOG : Player -> 1.340000] Generato pezzo 17
+[LOG : Piece -> 0.052000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Player -> 1.131000] Generato pezzo 14
+[LOG : Player -> 1.218000] Generato pezzo 15
+[LOG : Player -> 1.284000] Generato pezzo 16
+[LOG : Player -> 1.340000] Generato pezzo 17
+[LOG : Player -> 1.421000] Generato pezzo 18
+[LOG : Piece -> 0.020000] Tabella semafori iniziata
+[LOG : Player -> 0.130000] Player Started At 23:59:14
+[LOG : Player -> 0.149000] Tabella semafori iniziata
+[LOG : Player -> 0.175000] Setup Struttura dei segnali
+[LOG : Player -> 0.184000] Generazione pezzi iniziata
+[LOG : Player -> 0.298000] Generato pezzo 0
+[LOG : Player -> 0.382000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.500000] Generato pezzo 3
+[LOG : Player -> 0.560000] Generato pezzo 4
+[LOG : Player -> 0.612000] Generato pezzo 5
+[LOG : Player -> 0.663000] Generato pezzo 6
+[LOG : Player -> 0.729000] Generato pezzo 7
+[LOG : Player -> 0.792000] Generato pezzo 8
+[LOG : Player -> 0.845000] Generato pezzo 9
+[LOG : Player -> 0.906000] Generato pezzo 10
+[LOG : Player -> 0.971000] Generato pezzo 11
+[LOG : Player -> 1.021000] Generato pezzo 12
+[LOG : Player -> 1.076000] Generato pezzo 13
+[LOG : Player -> 1.131000] Generato pezzo 14
+[LOG : Player -> 1.218000] Generato pezzo 15
+[LOG : Player -> 1.284000] Generato pezzo 16
+[LOG : Player -> 1.340000] Generato pezzo 17
+[LOG : Player -> 1.421000] Generato pezzo 18
+[LOG : Player -> 1.491000] Generato pezzo 19
+[LOG : Player -> 1.499000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Piece -> 0.054000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Piece -> 0.086000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Piece -> 0.063000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Piece -> 0.072000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Piece -> 0.053000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Piece -> 0.034000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Piece -> 0.051000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Piece -> 0.029000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Piece -> 0.059000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Piece -> 0.050000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Piece -> 0.035000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Piece -> 0.029000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Piece -> 0.066000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Piece -> 0.030000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Piece -> 0.024000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Player -> 1.238000] Generato pezzo 14
+[LOG : Piece -> 0.025000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Player -> 1.238000] Generato pezzo 14
+[LOG : Player -> 1.313000] Generato pezzo 15
+[LOG : Piece -> 0.028000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Player -> 1.238000] Generato pezzo 14
+[LOG : Player -> 1.313000] Generato pezzo 15
+[LOG : Player -> 1.384000] Generato pezzo 16
+[LOG : Piece -> 0.024000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Player -> 1.238000] Generato pezzo 14
+[LOG : Player -> 1.313000] Generato pezzo 15
+[LOG : Player -> 1.384000] Generato pezzo 16
+[LOG : Player -> 1.453000] Generato pezzo 17
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Player -> 1.238000] Generato pezzo 14
+[LOG : Player -> 1.313000] Generato pezzo 15
+[LOG : Player -> 1.384000] Generato pezzo 16
+[LOG : Player -> 1.453000] Generato pezzo 17
+[LOG : Player -> 1.517000] Generato pezzo 18
+[LOG : Piece -> 0.021000] Tabella semafori iniziata
+[LOG : Player -> 0.087000] Player Started At 00:02:44
+[LOG : Player -> 0.121000] Tabella semafori iniziata
+[LOG : Player -> 0.129000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.217000] Generato pezzo 0
+[LOG : Player -> 0.301000] Generato pezzo 1
+[LOG : Player -> 0.381000] Generato pezzo 2
+[LOG : Player -> 0.464000] Generato pezzo 3
+[LOG : Player -> 0.576000] Generato pezzo 4
+[LOG : Player -> 0.641000] Generato pezzo 5
+[LOG : Player -> 0.700000] Generato pezzo 6
+[LOG : Player -> 0.754000] Generato pezzo 7
+[LOG : Player -> 0.838000] Generato pezzo 8
+[LOG : Player -> 0.909000] Generato pezzo 9
+[LOG : Player -> 0.967000] Generato pezzo 10
+[LOG : Player -> 1.029000] Generato pezzo 11
+[LOG : Player -> 1.105000] Generato pezzo 12
+[LOG : Player -> 1.181000] Generato pezzo 13
+[LOG : Player -> 1.238000] Generato pezzo 14
+[LOG : Player -> 1.313000] Generato pezzo 15
+[LOG : Player -> 1.384000] Generato pezzo 16
+[LOG : Player -> 1.453000] Generato pezzo 17
+[LOG : Player -> 1.517000] Generato pezzo 18
+[LOG : Player -> 1.593000] Generato pezzo 19
+[LOG : Player -> 1.623000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Piece -> 0.070000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Piece -> 0.062000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Piece -> 0.049000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Piece -> 0.085000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Piece -> 0.038000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Piece -> 0.032000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Piece -> 0.031000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Piece -> 0.064000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Piece -> 0.024000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Player -> 1.465000] Generato pezzo 14
+[LOG : Piece -> 0.026000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Player -> 1.465000] Generato pezzo 14
+[LOG : Player -> 1.518000] Generato pezzo 15
+[LOG : Piece -> 0.045000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Player -> 1.465000] Generato pezzo 14
+[LOG : Player -> 1.518000] Generato pezzo 15
+[LOG : Player -> 1.610000] Generato pezzo 16
+[LOG : Piece -> 0.023000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Player -> 1.465000] Generato pezzo 14
+[LOG : Player -> 1.518000] Generato pezzo 15
+[LOG : Player -> 1.610000] Generato pezzo 16
+[LOG : Player -> 1.697000] Generato pezzo 17
+[LOG : Piece -> 0.022000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Player -> 1.465000] Generato pezzo 14
+[LOG : Player -> 1.518000] Generato pezzo 15
+[LOG : Player -> 1.610000] Generato pezzo 16
+[LOG : Player -> 1.697000] Generato pezzo 17
+[LOG : Player -> 1.770000] Generato pezzo 18
+[LOG : Piece -> 0.022000] Tabella semafori iniziata
+[LOG : Player -> 0.115000] Player Started At 00:02:44
+[LOG : Player -> 0.164000] Tabella semafori iniziata
+[LOG : Player -> 0.191000] Setup Struttura dei segnali
+[LOG : Player -> 0.216000] Generazione pezzi iniziata
+[LOG : Player -> 0.327000] Generato pezzo 0
+[LOG : Player -> 0.418000] Generato pezzo 1
+[LOG : Player -> 0.507000] Generato pezzo 2
+[LOG : Player -> 0.574000] Generato pezzo 3
+[LOG : Player -> 0.650000] Generato pezzo 4
+[LOG : Player -> 0.743000] Generato pezzo 5
+[LOG : Player -> 0.843000] Generato pezzo 6
+[LOG : Player -> 0.926000] Generato pezzo 7
+[LOG : Player -> 1.004000] Generato pezzo 8
+[LOG : Player -> 1.090000] Generato pezzo 9
+[LOG : Player -> 1.158000] Generato pezzo 10
+[LOG : Player -> 1.226000] Generato pezzo 11
+[LOG : Player -> 1.311000] Generato pezzo 12
+[LOG : Player -> 1.402000] Generato pezzo 13
+[LOG : Player -> 1.465000] Generato pezzo 14
+[LOG : Player -> 1.518000] Generato pezzo 15
+[LOG : Player -> 1.610000] Generato pezzo 16
+[LOG : Player -> 1.697000] Generato pezzo 17
+[LOG : Player -> 1.770000] Generato pezzo 18
+[LOG : Player -> 1.846000] Generato pezzo 19
+[LOG : Player -> 1.874000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Piece -> 0.051000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Piece -> 0.043000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Piece -> 0.049000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Piece -> 0.067000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Piece -> 0.040000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Piece -> 0.039000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Piece -> 0.071000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Piece -> 0.037000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Piece -> 0.087000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Piece -> 0.057000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Piece -> 0.025000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Piece -> 0.060000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Piece -> 0.061000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Piece -> 0.065000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Player -> 1.403000] Generato pezzo 14
+[LOG : Piece -> 0.035000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Player -> 1.403000] Generato pezzo 14
+[LOG : Player -> 1.466000] Generato pezzo 15
+[LOG : Piece -> 0.062000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Player -> 1.403000] Generato pezzo 14
+[LOG : Player -> 1.466000] Generato pezzo 15
+[LOG : Player -> 1.548000] Generato pezzo 16
+[LOG : Piece -> 0.071000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Player -> 1.403000] Generato pezzo 14
+[LOG : Player -> 1.466000] Generato pezzo 15
+[LOG : Player -> 1.548000] Generato pezzo 16
+[LOG : Player -> 1.644000] Generato pezzo 17
+[LOG : Piece -> 0.060000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Player -> 1.403000] Generato pezzo 14
+[LOG : Player -> 1.466000] Generato pezzo 15
+[LOG : Player -> 1.548000] Generato pezzo 16
+[LOG : Player -> 1.644000] Generato pezzo 17
+[LOG : Player -> 1.738000] Generato pezzo 18
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.085000] Player Started At 00:02:44
+[LOG : Player -> 0.135000] Tabella semafori iniziata
+[LOG : Player -> 0.150000] Setup Struttura dei segnali
+[LOG : Player -> 0.162000] Generazione pezzi iniziata
+[LOG : Player -> 0.282000] Generato pezzo 0
+[LOG : Player -> 0.364000] Generato pezzo 1
+[LOG : Player -> 0.441000] Generato pezzo 2
+[LOG : Player -> 0.527000] Generato pezzo 3
+[LOG : Player -> 0.610000] Generato pezzo 4
+[LOG : Player -> 0.675000] Generato pezzo 5
+[LOG : Player -> 0.748000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.895000] Generato pezzo 8
+[LOG : Player -> 1.018000] Generato pezzo 9
+[LOG : Player -> 1.095000] Generato pezzo 10
+[LOG : Player -> 1.157000] Generato pezzo 11
+[LOG : Player -> 1.236000] Generato pezzo 12
+[LOG : Player -> 1.327000] Generato pezzo 13
+[LOG : Player -> 1.403000] Generato pezzo 14
+[LOG : Player -> 1.466000] Generato pezzo 15
+[LOG : Player -> 1.548000] Generato pezzo 16
+[LOG : Player -> 1.644000] Generato pezzo 17
+[LOG : Player -> 1.738000] Generato pezzo 18
+[LOG : Player -> 1.815000] Generato pezzo 19
+[LOG : Player -> 1.834000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Piece -> 0.036000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Piece -> 0.099000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Piece -> 0.055000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Piece -> 0.042000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Piece -> 0.115000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Piece -> 0.036000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Piece -> 0.036000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Piece -> 0.033000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Piece -> 0.059000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Piece -> 0.060000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Piece -> 0.026000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Piece -> 0.073000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Piece -> 0.051000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Piece -> 0.025000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Piece -> 0.032000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Player -> 1.396000] Generato pezzo 14
+[LOG : Piece -> 0.047000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Player -> 1.396000] Generato pezzo 14
+[LOG : Player -> 1.485000] Generato pezzo 15
+[LOG : Piece -> 0.029000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Player -> 1.396000] Generato pezzo 14
+[LOG : Player -> 1.485000] Generato pezzo 15
+[LOG : Player -> 1.560000] Generato pezzo 16
+[LOG : Piece -> 0.043000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Player -> 1.396000] Generato pezzo 14
+[LOG : Player -> 1.485000] Generato pezzo 15
+[LOG : Player -> 1.560000] Generato pezzo 16
+[LOG : Player -> 1.621000] Generato pezzo 17
+[LOG : Piece -> 0.032000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Player -> 1.396000] Generato pezzo 14
+[LOG : Player -> 1.485000] Generato pezzo 15
+[LOG : Player -> 1.560000] Generato pezzo 16
+[LOG : Player -> 1.621000] Generato pezzo 17
+[LOG : Player -> 1.690000] Generato pezzo 18
+[LOG : Piece -> 0.030000] Tabella semafori iniziata
+[LOG : Player -> 0.093000] Player Started At 00:02:44
+[LOG : Player -> 0.128000] Tabella semafori iniziata
+[LOG : Player -> 0.138000] Setup Struttura dei segnali
+[LOG : Player -> 0.147000] Generazione pezzi iniziata
+[LOG : Player -> 0.251000] Generato pezzo 0
+[LOG : Player -> 0.342000] Generato pezzo 1
+[LOG : Player -> 0.430000] Generato pezzo 2
+[LOG : Player -> 0.505000] Generato pezzo 3
+[LOG : Player -> 0.578000] Generato pezzo 4
+[LOG : Player -> 0.656000] Generato pezzo 5
+[LOG : Player -> 0.738000] Generato pezzo 6
+[LOG : Player -> 0.817000] Generato pezzo 7
+[LOG : Player -> 0.902000] Generato pezzo 8
+[LOG : Player -> 0.991000] Generato pezzo 9
+[LOG : Player -> 1.079000] Generato pezzo 10
+[LOG : Player -> 1.168000] Generato pezzo 11
+[LOG : Player -> 1.246000] Generato pezzo 12
+[LOG : Player -> 1.314000] Generato pezzo 13
+[LOG : Player -> 1.396000] Generato pezzo 14
+[LOG : Player -> 1.485000] Generato pezzo 15
+[LOG : Player -> 1.560000] Generato pezzo 16
+[LOG : Player -> 1.621000] Generato pezzo 17
+[LOG : Player -> 1.690000] Generato pezzo 18
+[LOG : Player -> 1.766000] Generato pezzo 19
+[LOG : Player -> 1.784000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.076000] Player Started At 00:06:02
+[LOG : Player -> 0.124000] Tabella semafori iniziata
+[LOG : Player -> 0.132000] Setup Struttura dei segnali
+[LOG : Player -> 0.146000] Generazione pezzi iniziata
+[LOG : Player -> 0.236000] Generato pezzo 0
+[LOG : Player -> 0.339000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.109000] Player Started At 00:06:02
+[LOG : Player -> 0.148000] Tabella semafori iniziata
+[LOG : Player -> 0.177000] Setup Struttura dei segnali
+[LOG : Player -> 0.204000] Generazione pezzi iniziata
+[LOG : Player -> 0.302000] Generato pezzo 0
+[LOG : Player -> 0.330000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.082000] Player Started At 00:06:02
+[LOG : Player -> 0.116000] Tabella semafori iniziata
+[LOG : Player -> 0.126000] Setup Struttura dei segnali
+[LOG : Player -> 0.138000] Generazione pezzi iniziata
+[LOG : Player -> 0.223000] Generato pezzo 0
+[LOG : Player -> 0.345000] Generato pezzo 1
+[LOG : Player -> 0.451000] PLAYER_CLEANER:Interruzione esecuzione in corso

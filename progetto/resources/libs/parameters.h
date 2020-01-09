@@ -7,6 +7,15 @@
 #ifndef STRING_H
 #include <string.h>
 #endif
+#ifndef DEBUG_H
+#include "debug.h"
+#endif
+#ifdef ERROR_H
+#include "error.h"
+#endif
+#ifndef ERRNO_H
+#include "errno.h"
+#endif
 #ifndef PARAMETERS_H
 #define PARAMETERS_H
 

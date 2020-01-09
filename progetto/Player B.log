@@ -21401,3 +21401,32 @@
 [LOG : Player -> 0.708000] Generato pezzo 7 Attesa
 [LOG : Player -> 0.756000] Generato pezzo 8 Attesa
 [LOG : Player -> 0.809000] Generato pezzo 9 Attesa
+[LOG : Player -> 0.105000] Player Started At 00:06:02
+[LOG : Player -> 0.160000] Tabella semafori iniziata
+[LOG : Player -> 0.211000] Setup Struttura dei segnali
+[LOG : Player -> 0.237000] Generazione pezzi iniziata
+[LOG : Player -> 0.352000] Generato pezzo 0
+[LOG : Player -> 0.497000] Generato pezzo 1
+[LOG : Player -> 0.633000] Generato pezzo 2
+[LOG : Player -> 0.768000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.087000] Player Started At 00:06:02
+[LOG : Player -> 0.108000] Tabella semafori iniziata
+[LOG : Player -> 0.120000] Setup Struttura dei segnali
+[LOG : Player -> 0.131000] Generazione pezzi iniziata
+[LOG : Player -> 0.231000] Generato pezzo 0
+[LOG : Player -> 0.314000] Generato pezzo 1
+[LOG : Player -> 0.398000] Generato pezzo 2
+[LOG : Player -> 0.467000] Generato pezzo 3
+[LOG : Player -> 0.552000] Generato pezzo 4
+[LOG : Player -> 0.630000] Generato pezzo 5
+[LOG : Player -> 0.708000] Generato pezzo 6
+[LOG : Player -> 0.793000] Generato pezzo 7
+[LOG : Player -> 0.927000] PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Player -> 0.124000] Player Started At 00:06:02
+[LOG : Player -> 0.160000] Tabella semafori iniziata
+[LOG : Player -> 0.178000] Setup Struttura dei segnali
+[LOG : Player -> 0.190000] Generazione pezzi iniziata
+[LOG : Player -> 0.284000] Generato pezzo 0
+[LOG : Player -> 0.390000] Generato pezzo 1
+[LOG : Player -> 0.493000] Generato pezzo 2
+[LOG : Player -> 0.642000] PLAYER_CLEANER:Interruzione esecuzione in corso

@@ -29,7 +29,9 @@ struct sembuf sem;
 msg_cnt cnt;
 msg_master master;
 int player(){
+    
     processSign = "Player";
+    pieces = (pid_t *) malloc(sizeof(pid_t)*SO_NUM_P);
     cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
@@ -50,7 +52,6 @@ int player(){
     cleaner = player_clean;
     logg("Setup Struttura dei segnali");
     bzero(&player_mask,sizeof(player_mask));
-    player_signal.sa_handler = player_handler;
     sigemptyset(&player_mask);
     sigaddset(&player_mask,SIGINT);
     sigaddset(&player_mask,SIGROUND);
@@ -61,6 +62,10 @@ int player(){
     sigaction(SIGINT,&player_signal,NULL);
     sigaction(SIGUSR1,&player_signal,NULL);
     sigaction(SIGUSR2,&player_signal,NULL);
+    sigset(SIGINT,player_handler);
+    sigset(SIGUSR1,player_handler);
+    sigset(SIGUSR2,player_handler);
+    player_signal.sa_handler = player_handler;
     /* Generazione chiave della coda per il controllo dei pezzi
        ereditata da ciascun pezzo (una coda per Player) */
     if((key_MO = msgget(getpid(), IPC_CREAT | 0600)) == -1){
@@ -74,9 +79,12 @@ int player(){
     piecegen(SO_NUM_P);
     /* Impostazioni tattica di gioco */;
 
+
     sem.sem_num = PIECE_SEM;
     sem.sem_op = 1;
     semop(semid,&sem,SO_NUM_P);
+
+
 
     piececreated = 1;
 
@@ -201,21 +209,13 @@ void player_clean(){
     int i;
     logg("PLAYER_CLEANER:Interruzione esecuzione in corso");
     if(piececreated){
-    for(i = 0; i < sizeof(pieces); i++){
+    for(i = 0; i < SO_NUM_P; i++){
             kill(pieces[i],SIGINT);
-            msgrcv(key_MO,&cnt,sizeof(msg_cnt),8,MSG_INFO);
-            if(cnt.ask == 42){
-                logg("Closed ped %d",i);
-            }
-            else{
-                wait(NULL);
-            }
+            wait(NULL);
         }
     }
-    cnt.ask = 42;
-    cnt.type = 0;
-    msgsnd(master_msgqueue,&cnt,sizeof(msg_cnt),MSG_INFO);
     fclose(logger);
+    semctl(semid,0,IPC_RMID);
     shmdt(player_shared_table);
     msgctl(key_MO, IPC_RMID, NULL);
     exit(0);

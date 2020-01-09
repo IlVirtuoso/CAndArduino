@@ -64,7 +64,7 @@ void removeflag(cell * shared_table, int x, int y){
 
 void table_start(){
     int i,j;
-    sem_table_key = ftok("./master.c",'a');
+    sem_table_key = ftok("./makeFile",'a');
     if((table = shmget(IPC_PRIVATE,sizeof(cell)*SO_BASE*SO_ALTEZZA,IPC_CREAT | 0666)) > 0){
         debug("Memoria Condivisa Inizializzata");
     }

@@ -164,20 +164,30 @@ int rounds;
 
 int actual_round;
 
+FILE * cfg;
+
 int main(int argc, char * argv[]){
-    int i;
-    int opt;
+    int opt = 0;
     verbosity = 0;
     isDebug = 0;
-    rounds = 1;
+   
+    
+    
+    cleaner = clean;
+    placed = 0;
+    logger = fopen("Master.log","a+");    
+    logg("Started At: %s\n",__TIME__);
 
-    /*Region: inizializzazione e rilevamento argomenti*/
-    while ((opt = getopt(argc,argv,":if:cvdr")) != -1)
+     /*Region: inizializzazione e rilevamento argomenti*/
+    while ((opt = getopt(argc,argv,":c:h:v:d")) != -1)
     {
         switch (opt)
         {
         case 'c':
-            ParseFile(fopen(optarg,"r"));
+        /*cambia conf.config con optarg nella versione definitiva*/
+            logg("Reading file %s",optarg);
+            cfg = fopen("conf.config","r+");
+            ParseFile(cfg);
             break;
 
         case 'v':
@@ -188,18 +198,21 @@ int main(int argc, char * argv[]){
         isDebug = 1;
         break;
 
-        case 'r':
-        rounds = optarg;
-        default:
-            break;
+        case 'h':
+        manual();
+        break;
         }
     }
-    
-    
-    cleaner = clean;
-    placed = 0;
-    logger = fopen("Master.log","a+");    
-    logg("Started At: %s\n",__TIME__);
+logg("Variabile:SO_BASE inizializzata a %d \n ",SO_BASE);
+logg("Variabile:SO_ALTEZZA inizializzata a %d  \n",SO_ALTEZZA);
+logg("Variabile:SO_NUM_G inizializzata a %d  \n",SO_NUM_G);
+logg("Variabile:SO_NUM_P inizializzata a %d  \n",SO_NUM_P);
+logg("Variabile:SO_FLAG_MIN inizializzata a %d  \n",SO_FLAG_MIN);
+logg("Variabile:SO_FLAG_MAX inizializzata a %d  \n",SO_FLAG_MAX);
+logg("Variabile:SO_ROUND_SCORE inizializzata a %d  \n",SO_ROUND_SCORE);
+logg("Variabile:SO_MIN_HOLD_NSEC inizializzata a %d  \n",SO_MIN_HOLD_NSEC);
+logg("Variabile:SO_N_MOVES inizializzata a %d \n ",SO_N_MOVES);
+logg("Variabile:SO_MAX_TIME inizializzata a %d  \n",SO_MAX_TIME);
     init();
     
     logg("Inizializzazione Memoria Condivisa");
@@ -262,28 +275,24 @@ void clean(){
     for(i = 0; i < sem_num; i++){
         semctl(semid,i,IPC_RMID);
     }
+    logg("Cleaning ids");
     msgctl(master_msgqueue,IPC_RMID,NULL);
     msgctl(player_msgqueue,IPC_RMID,NULL);
     free(st);
     free(vex);
     fclose(logger);
-    
-    
-    
+    logg("All done BBYEEE");
+    exit(0);
 }
 
 void clean_process(){
     int i;
-    msg_cnt msg;
+    int status;
     for(i = 0; i < SO_NUM_G;i++){
+        logg("Killing process %d",st->pid[i]);
         kill((pid_t)st->pid[i],SIGINT);
-        msgrcv(master_msgqueue,&msg,sizeof(msg_cnt),0,MSG_INFO);
-        if(msg.ask == 42){
-            logg("Closed Player %d",i);
-        }
-        else{
-            wait(NULL);
-        }
+        wait(&status);
+        logg("Process %d exited with status %s",st->pid[i],WEXITSTATUS(status));
     }
 }
 
@@ -302,9 +311,9 @@ void stamp_score(score_table * t){
 void init(){
     int i;
     st =  malloc(sizeof(score_table));
-    st->name = (char)malloc(sizeof(char) * SO_NUM_G);
-    st->pid = (int)malloc(sizeof(int)*SO_NUM_G);
-    st->score = (int)malloc(sizeof(int)*SO_NUM_G);
+    st->name = (char *)malloc(sizeof(char) * SO_NUM_G);
+    st->pid = (int *)malloc(sizeof(int)*SO_NUM_G);
+    st->score = (int *)malloc(sizeof(int)*SO_NUM_G);
     for(i = 0; i < SO_NUM_G; i++){
         st -> name[i] = (char)((int)'A' + i);
         st -> score[i] = 0;
@@ -377,12 +386,9 @@ void playergen(int playernum){
     for(i = 0; i < playernum; i++){
         if((pid = fork())){
             /*padre*/
-            st -> pid[i] = pid;
+            st->pid[i] = pid;
             processSign = "Master";
             logg("Player: %d started with pid: %d",i,st ->pid[i]);
-            sem.sem_num = MASTER_SEM;
-            sem.sem_op = -1;
-            semop(semid,&sem,1);
             /*attesa*/
         }
         else{
@@ -391,7 +397,6 @@ void playergen(int playernum){
             if(player() == -1){
                 error("Errore nell'inizializzare il player",ECHILD);
             }
-            exit(0);
         }
     }
 }
@@ -487,7 +492,7 @@ void restart(){
 
 
 void manual(){
-    printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master <command> -c <config.sc>\ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n-r int round, specifica quanti round si vuole che il gioco faccia\n");
+    printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master  -c <config.sc> -v -d \ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n-r int round, specifica quanti round si vuole che il gioco faccia\n");
 }
 
 /*End Region*/

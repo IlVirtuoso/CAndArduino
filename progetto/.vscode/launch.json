@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request":"launch",
             "program": "${workspaceFolder}/master",
-            "args": [],
+            "args": ["-c conf.config -v -d"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "logging": {"trace": true,"exceptions": true,"programOutput": true, "engineLogging": true},
