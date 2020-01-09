@@ -332,7 +332,7 @@ void init(){
 int semid;
 void sem_init(){
     int i;
-    sem_num = 4; /*per adesso è di default*/
+    sem_num = 5; /*per adesso è di default*/
     if(sem_num < 3){sem_num = 3;} /*semafori necessari per il minimo funzionamento*/
 
     if((semid = semget(IPC_PRIVATE,sem_num,IPC_CREAT | IPC_EXCL | 0666)) == -1){

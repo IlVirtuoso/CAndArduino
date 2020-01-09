@@ -27,6 +27,10 @@
 #define PIECE_SEM 2
 #endif
 
+#ifndef REQUEST_SEM 
+#define REQUEST_SEM 5
+#endif
+
 #ifndef ROUND_STOP
 #define ROUND_STOP 42 /*la risposta a tutto quanto*/
 #endif

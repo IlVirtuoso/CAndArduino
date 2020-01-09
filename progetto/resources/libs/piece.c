@@ -63,33 +63,39 @@ void getplay(){
     semop(semid,&sem,1);
     msgrcv(key_MO, &order, sizeof(msg_cnt),8, MSG_INFO);
     logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d",order.pednum,order.x,order.y);
-    if(!override)setpos(order.x,order.y);
-    else move(order.x,order.y);
-    logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
-    piece_attr.n_moves = SO_N_MOVES;
-    tactic();
+    if(!override){
+        setpos(order.x,order.y);
+        logg("Pezzo %d del player %d in X:%d Y:%d",piece_attr.piece_id,player_id,piece_attr.x,piece_attr.y);
+        piece_attr.n_moves = SO_N_MOVES;
+        tactic();
+    }
+    else tactic();
 }
+    
+    
 
 void tactic(){
     int interrupt = 0;
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
-    target = search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
-     while(piece_attr.n_moves <= SO_N_MOVES){
+     while(piece_attr.n_moves != 0){
          if(getid(piece_shared_table, target.x, target.y) != FLAG){
              switch(order.ask){
                  case 0: 
-                 search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
+                 target = search(piece_shared_table,piece_attr.x,piece_attr.y,FLAG);
                   break;
-                 case 1: 
+                 case 1:
+                 /*creare il semaforo*/
                  kill(getppid(),SIGTACTIC);
-                 /*decidere la strategia*/
-                 interrupt = 1;
+                 order.x = piece_attr.x;
+                 order.y = piece_attr.y;
+                 order.type = 4;
+                 msgsnd(key_MO,&order,sizeof(msg_cnt)-sizeof(int),MSG_INFO);
+                 msgrcv(key_MO,&order,sizeof(msg_cnt) - sizeof(int),4,MSG_INFO);
+                 target.x = order.x;
+                 target.y = order.y;
+                 order.type = 8;
                  break;
              }
          }
-         if(interrupt) break; 
          goto_loc(target.x, target.y, order.strategy, 1);
      }
 }
@@ -241,7 +247,7 @@ int move(int x, int y){
             setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
             piece_attr.x = x;
             piece_attr.y = y;
-            piece_attr.n_moves ++;
+            piece_attr.n_moves --;
             return 1;
         }
         else{
@@ -249,7 +255,7 @@ int move(int x, int y){
             return 0;
         }
     }
-    else if(piece_attr.n_moves > SO_N_MOVES) logg("Questa pedina ha finito le mosse");
+    else if(piece_attr.n_moves == 0) logg("Questa pedina ha finito le mosse");
     else
     {
         error("Non ti puoi muovere di due celle nella stessa manovra",EBADR);
