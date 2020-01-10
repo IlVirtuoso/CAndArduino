@@ -203,11 +203,11 @@ int goto_loc(int x, int y, char method, char evasion){
     
     /* Gestione dell'evasione in caso di casella occupata vericalmente*/
     case EVASION_Y:
-        if((x - piece_attr.x) >= 0){ 
+        if((x - piece_attr.x) > 0){ 
             check = goto_loc(piece_attr.x + 1, piece_attr.y + 1, X_BEFORE_Y, 0);
             if(check == 0){ 
                 if((goto_loc(piece_attr.x - 1, piece_attr.y -1, X_BEFORE_Y, 0)) == 0) return 0;}
-        } else{
+        }else{
              check = ((goto_loc(piece_attr.x - 1, piece_attr.y - 1, X_BEFORE_Y,0)) == 0);
              if(check == 0){ 
                  if((goto_loc(piece_attr.x + 1, piece_attr.y + 1, X_BEFORE_Y, 0)) == 0) return 0;}
@@ -216,7 +216,7 @@ int goto_loc(int x, int y, char method, char evasion){
 
     /* Gestione dell'evasione in caso di casella occupata orizzontalmente*/
     case EVASION_X:
-        if((y - piece_attr.y) >= 0){ 
+        if((y - piece_attr.y) > 0){ 
             check = goto_loc(piece_attr.x + 1, piece_attr.y + 1, Y_BEFORE_X, 0);
             if(check == 0){ 
                 if((goto_loc(piece_attr.x - 1, piece_attr.y -1, Y_BEFORE_X, 0)) == 0) return 0;
@@ -242,14 +242,14 @@ int move(int x, int y){
     int isValid = 0;
     if(override){ isValid = 1; override = 0;}
     else isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
-    if(isValid && piece_attr.n_moves <= SO_N_MOVES){
-        if(pos_set){
+    if(isValid && piece_attr.n_moves >= 0){
+        if(isValid = pos_set){
             setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
             piece_attr.x = x;
             piece_attr.y = y;
             piece_attr.n_moves --;
             return 1;
-        }
+        }else if(isValid == 0) return 0; /* caso in cui la cella è occupata, necessario all'attivazione di evade*/
         else{
             error("Posizione iniziale della pedina non settata",EBADR);
             return 0;
@@ -259,7 +259,7 @@ int move(int x, int y){
     else
     {
         error("Non ti puoi muovere di due celle nella stessa manovra",EBADR);
-        return 0;
+        return -1;
     }
-    return 0;
+    return -1;
 }
