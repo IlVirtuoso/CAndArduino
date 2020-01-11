@@ -70,7 +70,7 @@ struct sigaction piece_signal;
 
 /*semaforo*/
 
-void setpos(int x, int y);
+int setpos(int x, int y);
 
 int semglobal;
 

@@ -6,21 +6,15 @@
 
 int x;
 int y;
-void display(){
+void display(cell * shared_table){
     for(x = 0 ; x < SO_ALTEZZA; x++){
         for(y = 0; y < SO_BASE; y++){
-            printf("|%c|", getid(board,x,y));
+            printf("|%c|", getid(shared_table,x,y));
         }
         printf("\n");
     }
 }
 
-void show(){
-    while(1){
-        sleep(1);
-        display();
-    }
-}
 
 void display_sem(){
     int x,y;

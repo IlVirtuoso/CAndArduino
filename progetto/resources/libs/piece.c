@@ -33,7 +33,7 @@ int piece()
     {
         error("Error nella creazione della tabella dei semafori", EACCES);
     }
-    if ((semplayer = semget(getppid(), 3, IPC_EXCL)) == -1)
+    if ((semplayer = semget(getppid(), SO_NUM_P + 3, IPC_EXCL)) == -1)
     {
         error("Errore nel get del semaforo player", EACCES);
     }
@@ -71,13 +71,14 @@ int piece()
 
 void getplay()
 {
-    do
-    {
-        msgrcv(key_MO, &order, sizeof(msg_cnt), 8, MSG_COPY & IPC_NOWAIT);
-    } while (order.pednum != piece_attr.piece_id);
-
-    msgrcv(key_MO, &order, sizeof(msg_cnt), 8, MSG_INFO);
+    sem.sem_num = PIECE_SEM + piece_attr.piece_id;
+    sem.sem_op = -1;
+    semop(semplayer, &sem, 1);
+    msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
     play(order.phase);
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = 1;
+    semop(semplayer,&sem,1);
 }
 
 void play(int command)
@@ -85,9 +86,16 @@ void play(int command)
     switch (command)
     {
     case 1:
-        logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d", order.pednum, order.x, order.y);
-        setpos(order.x, order.y);
-        logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
+        if (setpos(order.x, order.y))
+            logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
+        else
+        {
+            debug("Posizionamento non riuscito Riprovo");
+            srand(clock());
+            order.x = rand() % SO_ALTEZZA;
+            order.y = rand() % SO_BASE;
+            play(1);
+        }
         piece_attr.n_moves = SO_N_MOVES;
         break;
 
@@ -115,12 +123,12 @@ void tactic()
                 kill(getppid(), SIGTACTIC);
                 order.x = piece_attr.x;
                 order.y = piece_attr.y;
-                order.type = 4;
+                order.type = TACTIC_CHANNEL;
                 msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(int), MSG_INFO);
                 msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(int), 4, MSG_INFO);
                 target.x = order.x;
                 target.y = order.y;
-                order.type = 8;
+                order.type = ORDER_CHANNEL;
                 break;
             }
         }
@@ -162,17 +170,20 @@ void piece_cleaner()
     exit(EXIT_SUCCESS);
 }
 
-void setpos(int x, int y)
+int setpos(int x, int y)
 {
-    if (getid(piece_shared_table, x, y) == EMPTY)
+    if(x < 0) x = x * -1;
+    if(y < 0) y = y * - 1;
+    if (getid(piece_shared_table, x, y) == EMPTY && semctl(sem_table,x*SO_ALTEZZA + y, GETVAL) == 1)
     {
         setid(piece_shared_table, x, y, player_id, -1, -1);
         piece_attr.x = x;
         piece_attr.y = y;
+        return 1;
     }
     else
     {
-        setpos(rand() % SO_ALTEZZA, rand() % SO_BASE);
+        return 0;
     }
 }
 

@@ -33,17 +33,9 @@
 /*permette di mostrare lo stato della tabella, il metodo è costruito per funzionare a frame */
 void display();
 
-/*inizia il processo che farà da monitor per il gioco*/
-void show();
-
 /*metodo per vedere la tabella dei semafori*/
 void display_sem();
 
-/*metodo per startare il processo monitor*/
-int start_monitor();
-
-/*puntatore alla scacchiera*/
-cell * board;
 
 
 #endif

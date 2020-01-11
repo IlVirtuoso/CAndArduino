@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
     cleaner = clean;
     placed = 0;
 
-    logger = fopen("Master.log","a+");
+    logger = fopen("Master.log", "a+");
     /*Region: inizializzazione e rilevamento argomenti*/
     while ((opt = getopt(argc, argv, ":if:chvdw")) != -1)
     {
@@ -386,7 +386,6 @@ void shared_table_init()
             tab(master_shared_table, x, y)->id = EMPTY;
         }
     }
-    board = master_shared_table;
     if ((master_msgqueue = msgget(getpid(), IPC_CREAT | 0600)) == -1)
     {
         error("Errore nella creazione della msgqueue master", EACCES);
@@ -435,12 +434,12 @@ int getNumflag()
     }
     if (ln == 0)
     {
-        printf("ASSENZA DI UNA COMBINAZIONE PER CUI SCORE POSSA ESSERE DIVISO \n");
+        debug("ASSENZA DI UNA COMBINAZIONE PER CUI SCORE POSSA ESSERE DIVISO \n");
         numFlag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
     }
     else
     {
-        printf("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n");
+        debug("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n");
         collection = malloc(ln * sizeof(collection));
         for (i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++)
         {
@@ -501,19 +500,13 @@ void round()
         msg.phase = 1;
         msg.type = 1;
         msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
+        sem.sem_num = MASTER_SEM;
+        sem.sem_op = -1;
+        semop(semglobal, &sem, 1);
     }
-
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = -1;
-    semop(semglobal, &sem, SO_NUM_G);
     numflag = getNumflag();
     vex = getVex(numflag);
-    for (i = 0; i < numflag; i++)
-    {
-        processSign = "Master";
-        placeflag(master_shared_table, vex[i].x, vex[i].y);
-    }
-    display();
+    display(master_shared_table);
     /*End-Region*/
 
     /*Region Phase-2:Indication*/

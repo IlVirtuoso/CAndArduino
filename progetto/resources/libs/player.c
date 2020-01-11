@@ -40,7 +40,7 @@ int player()
     {
         error("errore nel get del semaforo master", ECONNABORTED);
     }
-    if ((semplayer = semget(getpid(), 3, IPC_CREAT | IPC_EXCL | 0666)) == -1)
+    if ((semplayer = semget(getpid(), SO_NUM_P + 3, IPC_CREAT | IPC_EXCL | 0666)) == -1)
     {
         error("errore nella creazione del semaforo per il player", EACCES);
     }
@@ -113,12 +113,19 @@ void phase(int phase)
             cnt.type = 8;
             cnt.phase = 1;
             cnt.pednum = i;
+            sem.sem_num = PIECE_SEM + i;
+            sem.sem_op = 1;
             semop(semplayer, &sem, 1);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
-            sem.sem_num = MASTER_SEM;
-            sem.sem_op = 1;
-            semop(semglobal, &sem, 1);
+            
+            sem.sem_num = PLAYER_SEM;
+            sem.sem_op = -1;
+            semop(semplayer, &sem, 1);
         }
+
+        sem.sem_num = MASTER_SEM;
+        sem.sem_op = 1;
+        semop(semglobal, &sem, 1);
         break;
 
     case 2:
@@ -176,7 +183,6 @@ int piecegen(int numpieces)
     }
     return 0;
 }
-
 
 void player_handler(int signum)
 {

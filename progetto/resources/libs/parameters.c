@@ -81,8 +81,6 @@ void ParseFile(FILE *config)
     {
       error("stringa non appartenente allo standard di configurazione", EBADR);
     }
-
-    printf("Variabile: %s impostata a %d", buffer, atoi(token));
     bzero(buffer, sizeof(buffer));
     bzero(token, sizeof(token));
     b = 0;
