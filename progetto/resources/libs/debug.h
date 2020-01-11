@@ -35,6 +35,7 @@ FILE * logger;
 /*variabile indicante la verbosità del log*/
 int verbosity;
 
+
 /*scrive su console e su un file un messaggio, utile per verificare la corretta esecuzione !!USATA SOLO DAL PROCESSO MASTER*/
 void logg( const char *__restrict__ message, ...); 
 

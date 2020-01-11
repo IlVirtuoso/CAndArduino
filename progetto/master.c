@@ -63,8 +63,6 @@
 #include "./resources/libs/table.h"
 #endif
 
-
-
 /*handler per il segnale di interruzione SIGINT*/
 void handler(int signum);
 
@@ -77,7 +75,6 @@ int placed;
 /*uccide tutti i processi inizializzati dal processo master*/
 void clean_process();
 
-
 /*master methods*/
 void init();
 void sem_init();
@@ -88,19 +85,17 @@ void restart();
 
 struct sigaction sa;
 
-
 /*struttura che definisce le bandiere, visibile solo al master*/
-typedef struct{
+typedef struct
+{
     int x;
     int y;
     int score;
     int taken;
-}vexillum;
-
+} vexillum;
 
 /*id della scacchiera*/
-int table; 
-
+int table;
 
 /*clock per misurare il tempo di esecuzione*/
 clock_t cl;
@@ -112,11 +107,10 @@ clock_t round_timer;
 static sigset_t mask;
 
 /*segmento di memoria condivisa della table*/
-cell * master_shared_table;
+cell *master_shared_table;
 
 /* variabile che dice se i giocatori sono stati creati*/
 int playercreated = 0;
-
 
 /*status dell'exit process*/
 int status;
@@ -125,31 +119,32 @@ int status;
 int sem_num;
 
 /* struttura dati per i punteggi */
-typedef struct{
+typedef struct
+{
     /* Array contenente i pids di tutti i processi giocatori creati*/
-    int * pid;
+    int *pid;
     /* Array contenente i nomi di tutti i processi giocatori creati*/
-    char * name;
+    char *name;
     /* Array contenente il punteggio di tutti i processi giocatori*/
-    int * score;
-}score_table;
+    int *score;
+} score_table;
 
-score_table * st;
+score_table *st;
 
 /*metodo del round*/
 void round();
 
 /*puntatore alla struttura vexillum per le bandiere*/
-vexillum * vex;
+vexillum *vex;
 
 /* stampa la tabella del punteggio */
-void stamp_score(score_table * t);
+void stamp_score(score_table *t);
 
 /* Genera il numero di bandierine*/
 int getNumflag();
 
-/* crea ed inizializza l'array di bandierine NB: usare prima getNumFlag() e free(target)*/  
-vexillum * getVex(int numFlag);
+/* crea ed inizializza l'array di bandierine NB: usare prima getNumFlag() e free(target)*/
+vexillum *getVex(int numFlag);
 
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
@@ -165,58 +160,56 @@ int actual_round;
 
 int numflag;
 
-FILE * cfg;
+FILE *cfg;
 
-int main(int argc, char * argv[]){
+int main(int argc, char *argv[])
+{
     int opt = 0;
     verbosity = 0;
     isDebug = 0;
-   
-    
-    
+
     cleaner = clean;
     placed = 0;
-    logger = fopen("Master.log","a+");    
-    logg("Started At: %s\n",__TIME__);
 
-     /*Region: inizializzazione e rilevamento argomenti*/
-    while ((opt = getopt(argc,argv,":c:h:v:d")) != -1)
+    logger = fopen("Master.log","a+");
+    /*Region: inizializzazione e rilevamento argomenti*/
+    while ((opt = getopt(argc, argv, ":if:chvdw")) != -1)
     {
         switch (opt)
         {
         case 'c':
-        /*cambia conf.config con optarg nella versione definitiva*/
-            logg("Reading file %s",optarg);
-            cfg = fopen("conf.config","r+");
+            /*cambia conf.config con optarg nella versione definitiva*/
+            cfg = fopen("conf.config", "r+");
             ParseFile(cfg);
             fclose(cfg);
             break;
 
         case 'v':
-        verbosity = 1;
-        break;
+            verbosity = 1;
+            break;
 
         case 'd':
-        isDebug = 1;
-        break;
+            isDebug = 1;
+            break;
 
         case 'h':
-        manual();
-        break;
+            manual();
+            break;
         }
     }
-logg("Variabile:SO_BASE inizializzata a %d \n ",SO_BASE);
-logg("Variabile:SO_ALTEZZA inizializzata a %d  \n",SO_ALTEZZA);
-logg("Variabile:SO_NUM_G inizializzata a %d  \n",SO_NUM_G);
-logg("Variabile:SO_NUM_P inizializzata a %d  \n",SO_NUM_P);
-logg("Variabile:SO_FLAG_MIN inizializzata a %d  \n",SO_FLAG_MIN);
-logg("Variabile:SO_FLAG_MAX inizializzata a %d  \n",SO_FLAG_MAX);
-logg("Variabile:SO_ROUND_SCORE inizializzata a %d  \n",SO_ROUND_SCORE);
-logg("Variabile:SO_MIN_HOLD_NSEC inizializzata a %d  \n",SO_MIN_HOLD_NSEC);
-logg("Variabile:SO_N_MOVES inizializzata a %d \n ",SO_N_MOVES);
-logg("Variabile:SO_MAX_TIME inizializzata a %d  \n",SO_MAX_TIME);
+    logg("Started At: %s\n", __TIME__);
+    logg("Variabile:SO_BASE inizializzata a %d \n ", SO_BASE);
+    logg("Variabile:SO_ALTEZZA inizializzata a %d  \n", SO_ALTEZZA);
+    logg("Variabile:SO_NUM_G inizializzata a %d  \n", SO_NUM_G);
+    logg("Variabile:SO_NUM_P inizializzata a %d  \n", SO_NUM_P);
+    logg("Variabile:SO_FLAG_MIN inizializzata a %d  \n", SO_FLAG_MIN);
+    logg("Variabile:SO_FLAG_MAX inizializzata a %d  \n", SO_FLAG_MAX);
+    logg("Variabile:SO_ROUND_SCORE inizializzata a %d  \n", SO_ROUND_SCORE);
+    logg("Variabile:SO_MIN_HOLD_NSEC inizializzata a %d  \n", SO_MIN_HOLD_NSEC);
+    logg("Variabile:SO_N_MOVES inizializzata a %d \n ", SO_N_MOVES);
+    logg("Variabile:SO_MAX_TIME inizializzata a %d  \n", SO_MAX_TIME);
     init();
-    
+
     logg("Inizializzazione Memoria Condivisa");
     /**
      * Region: Shared Memory Set & semaphores
@@ -229,7 +222,6 @@ logg("Variabile:SO_MAX_TIME inizializzata a %d  \n",SO_MAX_TIME);
 
     round();
 
-    
     /* Inizio operazioni relative al round*/
     /*while( Condizione alarm ||){
         numFlag = getNumflag();
@@ -237,15 +229,16 @@ logg("Variabile:SO_MAX_TIME inizializzata a %d  \n",SO_MAX_TIME);
     }*/
 
     /*End-Region*/
-    
+
     logg("End Of Execution");
-    logg("Stopped at %s",__TIME__);
+    logg("Stopped at %s", __TIME__);
     cleaner();
     return 0;
 }
 
 /*Region handler segnali*/
-void handler(int signum){
+void handler(int signum)
+{
     switch (signum)
     {
     case SIGINT:
@@ -254,35 +247,37 @@ void handler(int signum){
         break;
 
     case SIGUSR1:
-    logg("Segnale di creazione pezzi inviato al player");
-    break;
+        logg("Segnale di creazione pezzi inviato al player");
+        break;
 
     case SIGALRM:
-    logg("Fine del round, Sospensione");
-    clean();
-    break;
-    
+        logg("Fine del round, Sospensione");
+        clean();
+        break;
+
     default:
         break;
     }
 }
 
-
-void clean(){
+void clean()
+{
     int i;
-    if(playercreated){
+    if (playercreated)
+    {
         clean_process();
     }
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
-    shmctl(table,IPC_RMID,NULL);
-    semctl(semglobal,0,IPC_RMID);
-    for(i = 0; i < sem_num; i++){
-        semctl(semglobal,i,IPC_RMID);
+    shmctl(table, IPC_RMID, NULL);
+    semctl(semglobal, 0, IPC_RMID);
+    for (i = 0; i < sem_num; i++)
+    {
+        semctl(semglobal, i, IPC_RMID);
     }
     logg("Cleaning ids");
-    msgctl(master_msgqueue,IPC_RMID,NULL);
-    msgctl(player_msgqueue,IPC_RMID,NULL);
+    msgctl(master_msgqueue, IPC_RMID, NULL);
+    msgctl(player_msgqueue, IPC_RMID, NULL);
     free(st);
     free(vex);
     fclose(logger);
@@ -290,164 +285,201 @@ void clean(){
     exit(0);
 }
 
-void clean_process(){
+void clean_process()
+{
     int i;
     int status;
-    for(i = 0; i < SO_NUM_G;i++){
-        logg("Killing process %d",st->pid[i]);
-        kill((pid_t)st->pid[i],SIGINT);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        logg("Killing process %d", st->pid[i]);
+        kill((pid_t)st->pid[i], SIGINT);
         wait(&status);
-        logg("Process %d exited with status %s",st->pid[i],WEXITSTATUS(status));
+        logg("Process %d exited with status %s", st->pid[i], WEXITSTATUS(status));
     }
 }
 
 /*End Region*/
 
-void stamp_score(score_table * t){
+void stamp_score(score_table *t)
+{
     int i;
-	logg("PLAYER         SCORE\n");
-	for(i = 0; i < SO_NUM_G; i++){
-		logg("PLAYER %c   |   %d  \n", t -> name[i], t -> score[i]);
-	}
+    logg("PLAYER         SCORE\n");
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        logg("PLAYER %c   |   %d  \n", t->name[i], t->score[i]);
+    }
 }
 
 /*Master methods*/
 
-void init(){
+void init()
+{
     int i;
-    st =  malloc(sizeof(score_table));
+    st = malloc(sizeof(score_table));
     st->name = (char *)malloc(sizeof(char) * SO_NUM_G);
-    st->pid = (int *)malloc(sizeof(int)*SO_NUM_G);
-    st->score = (int *)malloc(sizeof(int)*SO_NUM_G);
-    for(i = 0; i < SO_NUM_G; i++){
-        st -> name[i] = (char)((int)'A' + i);
-        st -> score[i] = 0;
+    st->pid = (int *)malloc(sizeof(int) * SO_NUM_G);
+    st->score = (int *)malloc(sizeof(int) * SO_NUM_G);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        st->name[i] = (char)((int)'A' + i);
+        st->score[i] = 0;
     }
 
     logg("Impostazione maschere e segnali");
     /*Region: inizializzazione dei segnali*/
-    bzero(&sa,sizeof(sa));
+    bzero(&sa, sizeof(sa));
     sigemptyset(&mask);
-    sigaddset(&mask,SIGINT);
-    sigaddset(&mask,SIGALRM);
-    sigprocmask(SIG_BLOCK,&mask,NULL);
+    sigaddset(&mask, SIGINT);
+    sigaddset(&mask, SIGALRM);
+    sigprocmask(SIG_BLOCK, &mask, NULL);
     sa.sa_mask = mask;
     /*sa.sa_flags = SA_RESTART;*/ /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
-    sa.sa_flags = SA_NODEFER; /*Questa flag permette all'handler di generare altri segnali*/
-    sigaction(SIGINT,&sa,NULL);
-    sigaction(SIGALRM,&sa,NULL);
-    sigset(SIGINT,handler);
+    sa.sa_flags = SA_NODEFER;     /*Questa flag permette all'handler di generare altri segnali*/
+    sigaction(SIGINT, &sa, NULL);
+    sigaction(SIGALRM, &sa, NULL);
+    sigset(SIGINT, handler);
     sa.sa_handler = handler;
     /*End-Region*/
 }
 
-
-
 int semglobal;
 
-void sem_init(){
+void sem_init()
+{
     int i;
     sem_num = 5; /*per adesso è di default*/
-    if(sem_num < 3){sem_num = 3;} /*semafori necessari per il minimo funzionamento*/
+    if (sem_num < 3)
+    {
+        sem_num = 3;
+    } /*semafori necessari per il minimo funzionamento*/
 
-    if((semglobal = semget(IPC_PRIVATE,sem_num,IPC_CREAT | IPC_EXCL | 0666)) == -1){
-        error("errore nell'inizializzare il semaforo master",ECONNABORTED);
+    if ((semglobal = semget(IPC_PRIVATE, sem_num, IPC_CREAT | IPC_EXCL | 0666)) == -1)
+    {
+        error("errore nell'inizializzare il semaforo master", ECONNABORTED);
     }
-    for(i = 0; i < sem_num; i++){
-            if(semctl(semglobal,i,SETVAL,0) == -1){
-            error("Error in semctl semaforo master",ECOMM);
+    for (i = 0; i < sem_num; i++)
+    {
+        if (semctl(semglobal, i, SETVAL, 0) == -1)
+        {
+            error("Error in semctl semaforo master", ECOMM);
         }
     }
-    
 }
 
 int master_msgqueue;
 
-void shared_table_init(){
-    int x,y;
-    if((master_shared_table = (cell *)shmat(table,NULL,0)) == (void*) - 1){
-        error("Errore nell'attach della shared_table",EIO);
+void shared_table_init()
+{
+    int x, y;
+    if ((master_shared_table = (cell *)shmat(table, NULL, 0)) == (void *)-1)
+    {
+        error("Errore nell'attach della shared_table", EIO);
     }
-    else{
+    else
+    {
         debug("Shared Table attach completato");
     }
-    for(x = 0; x < SO_ALTEZZA;x++){
-        for(y = 0; y < SO_BASE; y++){
-            tab(master_shared_table,x,y)->id = EMPTY;
+    for (x = 0; x < SO_ALTEZZA; x++)
+    {
+        for (y = 0; y < SO_BASE; y++)
+        {
+            tab(master_shared_table, x, y)->id = EMPTY;
         }
     }
     board = master_shared_table;
-    if((master_msgqueue = msgget(getpid(),IPC_CREAT | 0600)) == -1){
-        error("Errore nella creazione della msgqueue master",EACCES);
+    if ((master_msgqueue = msgget(getpid(), IPC_CREAT | 0600)) == -1)
+    {
+        error("Errore nella creazione della msgqueue master", EACCES);
     }
 
     logg("Memoria Condivisa Inizializzata");
 }
 
-void playergen(int playernum){
+void playergen(int playernum)
+{
     /*Region: Process Creation*/
     int i;
     pid_t pid;
     playercreated = 1;
-    for(i = 0; i < playernum; i++){
-        if((pid = fork())){
+    for (i = 0; i < playernum; i++)
+    {
+        if ((pid = fork()))
+        {
             /*padre*/
             st->pid[i] = pid;
             processSign = "Master";
-            logg("Player: %d started with pid: %d",i,st ->pid[i]);
+            logg("Player: %d started with pid: %d", i, st->pid[i]);
             /*attesa*/
         }
-        else{
+        else
+        {
             /*figlio*/
-            player_id = st -> name[i]; /* Assegnazione del nome al Player*/
-            if(player() == -1){
-                error("Errore nell'inizializzare il player",ECHILD);
+            player_id = st->name[i]; /* Assegnazione del nome al Player*/
+            if (player() == -1)
+            {
+                error("Errore nell'inizializzare il player", ECHILD);
             }
         }
     }
 }
 
-int getNumflag(){
+int getNumflag()
+{
     int ln, i, numFlag;
-    int * collection;
+    int *collection;
     srand(clock() + getpid());
-    for(i =SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++){
-        if((SO_ROUND_SCORE % i) == 0) ln++;
+    for (i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++)
+    {
+        if ((SO_ROUND_SCORE % i) == 0)
+            ln++;
     }
-    if(ln == 0){
+    if (ln == 0)
+    {
         printf("ASSENZA DI UNA COMBINAZIONE PER CUI SCORE POSSA ESSERE DIVISO \n");
         numFlag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
-    }else{
-        printf("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n"); 
+    }
+    else
+    {
+        printf("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n");
         collection = malloc(ln * sizeof(collection));
-        for(i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++){
-            if(SO_ROUND_SCORE % i == 0){
+        for (i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++)
+        {
+            if (SO_ROUND_SCORE % i == 0)
+            {
                 collection[ln] = i;
                 ln++;
             }
         }
-        numFlag = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
+        numFlag = (0 + rand()) % ((ln - 1) + 1 - 0) + 0;
         numFlag = collection[numFlag];
         printf("%d \n", numFlag);
     }
     return numFlag;
 }
 
-vexillum * getVex(int numFlag){
-    vexillum * p;
+vexillum *getVex(int numFlag)
+{
+    vexillum *p;
     char flag;
     int i, x, y, r = SO_ROUND_SCORE % numFlag;
     p = (vexillum *)malloc(numFlag * sizeof(vexillum));
-    for(i = 0; i < numFlag; i++){
-        (p[i]).score = SO_ROUND_SCORE/numFlag;
-        if(r != 0){ (p[i]).score = (p[i]).score + 1; r --;}
-        for(flag = 0;flag;){
+    for (i = 0; i < numFlag; i++)
+    {
+        (p[i]).score = SO_ROUND_SCORE / numFlag;
+        if (r != 0)
+        {
+            (p[i]).score = (p[i]).score + 1;
+            r--;
+        }
+        for (flag = 0; flag;)
+        {
             x = (0 + rand()) % (SO_BASE + 1 - 0);
             y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
-            if((getid(master_shared_table, x, y)) == EMPTY){
+            if ((getid(master_shared_table, x, y)) == EMPTY)
+            {
                 p[i].x = x;
-                p[i].y = y;  
-                placeflag(master_shared_table, x, y);     
+                p[i].y = y;
+                placeflag(master_shared_table, x, y);
                 flag = 1;
             }
         }
@@ -455,85 +487,90 @@ vexillum * getVex(int numFlag){
     return p;
 }
 
-
-void round(){
-    int i ,k;
+void round()
+{
+    int i, k;
     msg_cnt captured;
-    
-        /*Region Phase-1:flag*/
-        alarm(3);
-        rounds++;
 
-    for(i = 0; i < SO_NUM_G; i++){
-    msg.phase = 1;
-    msg.type = 1;
-    msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
+    /*Region Phase-1:flag*/
+    alarm(3);
+    rounds++;
+
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        msg.phase = 1;
+        msg.type = 1;
+        msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
     }
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
-    semop(semglobal,&sem,SO_NUM_G);
+    semop(semglobal, &sem, SO_NUM_G);
     numflag = getNumflag();
     vex = getVex(numflag);
-    for(i = 0; i < numflag; i++){
+    for (i = 0; i < numflag; i++)
+    {
         processSign = "Master";
-        placeflag(master_shared_table,vex[i].x, vex[i].y);
+        placeflag(master_shared_table, vex[i].x, vex[i].y);
     }
     display();
     /*End-Region*/
 
     /*Region Phase-2:Indication*/
-    for(i = 0; i < SO_NUM_G; i++){
-    msg.phase = 2;
-    msg.type = 1;
-    msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        msg.phase = 2;
+        msg.type = 1;
+        msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
     }
     /*End-Region*/
 
     /*Region Phase-3:Anarchy*/
-    for(i = 0; i < SO_NUM_G; i++){
-    msg.phase = 3;
-    msg.type = 1;
-    msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        msg.phase = 3;
+        msg.type = 1;
+        msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
     }
-    for(i = 0; i < numflag; i++){
-        msgrcv(master_msgqueue,&captured,sizeof(msg_cnt),4,MSG_INFO);
-        for(k = 0; k < numflag; k++){
-            if(captured.x == vex[i].x && captured.y == vex[i].y){
-                removeflag(master_shared_table,vex[i].x,vex[i].y);
+    for (i = 0; i < numflag; i++)
+    {
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, MSG_INFO);
+        for (k = 0; k < numflag; k++)
+        {
+            if (captured.x == vex[i].x && captured.y == vex[i].y)
+            {
+                removeflag(master_shared_table, vex[i].x, vex[i].y);
                 st->score[captured.id] = st->score[captured.id] + vex[i].score;
             }
         }
         sem.sem_num = PIECE_SEM;
         sem.sem_op = 1;
-        semop(semglobal,&sem,1);
-        
+        semop(semglobal, &sem, 1);
     }
 
     /*End-Region*/
-    
 }
 
-void restart(){
+void restart()
+{
     int i;
-    for(i = 0; i < SO_NUM_G; i++){
-        kill(st->pid[i] , SIGROUND);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        kill(st->pid[i], SIGROUND);
     }
-    semctl(semglobal,PLAYER_SEM,0);
-    semctl(semglobal,PIECE_SEM,0);
-    semctl(semglobal,MASTER_SEM,0);
+    semctl(semglobal, PLAYER_SEM, 0);
+    semctl(semglobal, PIECE_SEM, 0);
+    semctl(semglobal, MASTER_SEM, 0);
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
-    semop(semglobal,&sem,SO_NUM_G);
+    semop(semglobal, &sem, SO_NUM_G);
     round();
 }
 
-
-void manual(){
+void manual()
+{
     printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master  -c <config.sc> -v -d \ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n-r int round, specifica quanti round si vuole che il gioco faccia\n");
 }
 
 /*End Region*/
-
-
