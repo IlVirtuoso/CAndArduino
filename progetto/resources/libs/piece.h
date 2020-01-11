@@ -72,8 +72,9 @@ struct sigaction piece_signal;
 
 void setpos(int x, int y);
 
-int semid;
+int semglobal;
 
+int semplayer;
 
 enum{
     STRAIGHT_TO,

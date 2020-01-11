@@ -25,11 +25,14 @@ int piece(){
     processSign = "Piece";
 
     srand(time(NULL));
-    if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
+    if((semglobal = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel semaforo",ECONNABORTED);
     }
     if((sem_table = semget(sem_table_key,SO_BASE*SO_ALTEZZA,IPC_EXCL)) == -1){
         error("Error nella creazione della tabella dei semafori",EACCES);
+    }
+    if((semplayer = semget(getppid(),3,IPC_EXCL)) == -1){
+        error("Errore nel get del semaforo player",EACCES);
     }
     else{
         logg("Tabella semafori iniziata");
@@ -54,15 +57,16 @@ int piece(){
     if((piece_shared_table = (cell*)shmat(table,NULL,0)) == (void*) - 1){
         error("Errore nell'inizializzare la table per il pezzo",EKEYREJECTED);
     }
+    override = 0;
     getplay();
     return 0;
 }
 
 
 void getplay(){
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
+    sem.sem_num = PLAYER_SEM;
+    sem.sem_op = 1;
+    semop(semplayer,&sem,1);
     msgrcv(key_MO, &order, sizeof(msg_cnt),8, MSG_INFO);
     logg("Ordine ricevuto, Pedina: %d in X:%d e Y:%d",order.pednum,order.x,order.y);
     if(!override){
@@ -126,7 +130,9 @@ void piece_handler(int signum){
 void piece_cleaner(){
     logg("cleaning and go");
     shmdt(piece_shared_table);
-    semctl(semid,0,IPC_RMID);
+    semctl(semglobal,0,IPC_RMID);
+    semctl(semplayer,0,IPC_RMID);
+    semctl(sem_table,0,IPC_RMID);
     msgctl(key_MO,IPC_RMID,0);
     exit(EXIT_SUCCESS);
 }
@@ -239,17 +245,23 @@ int goto_loc(int x, int y, char method, char evasion){
 }
 
 int move(int x, int y){
+    struct timespec move, remain;
+    move.tv_nsec = SO_MIN_HOLD_NSEC;
+    move.tv_sec = 0;
+    nanosleep(&move,&remain);
     int isValid = 0;
     if(override){ isValid = 1; override = 0;}
     else isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
     if(isValid && piece_attr.n_moves >= 0){
-        if(isValid = pos_set){
-            setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
+        if(isValid && pos_set){
+            if(setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y)){
             piece_attr.x = x;
             piece_attr.y = y;
             piece_attr.n_moves --;
             return 1;
-        }else if(isValid == 0) return 0; /* caso in cui la cella è occupata, necessario all'attivazione di evade*/
+            }
+            else{ return 0;}   /*questo fa partire la gestione evasion*/
+        }
         else{
             error("Posizione iniziale della pedina non settata",EBADR);
             return 0;

@@ -119,8 +119,9 @@ cell * player_shared_table;
 int master_msgqueue;
 
 
-int semid;
+int semglobal;
 
+int semplayer;
 
 char player_logbuffer[128];
 

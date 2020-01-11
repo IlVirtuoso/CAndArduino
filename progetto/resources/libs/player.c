@@ -29,15 +29,21 @@ struct sembuf sem;
 msg_cnt cnt;
 msg_master master;
 int player(){
-    
+    int i;
     processSign = "Player";
     pieces = (pid_t *) malloc(sizeof(pid_t)*SO_NUM_P);
     cleaner = player_clean;
     sprintf(filename,"Player %c.log", player_id);
     logger = fopen(filename,"a+");
     logg("Player Started At %s",__TIME__);
-    if((semid = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
+    if((semglobal = semget(IPC_PRIVATE,3,IPC_EXCL)) == -1){
         error("errore nel get del semaforo master",ECONNABORTED);
+    }
+    if((semplayer = semget(getpid(),3,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+        error("errore nella creazione del semaforo per il player",EACCES);
+    }
+    for(i = 0; i < 3; i++){
+        semctl(semplayer,i,SETVAL,0);
     }
     if((sem_table = semget(sem_table_key,SO_BASE*SO_ALTEZZA,IPC_EXCL)) == -1){
         error("Error nella creazione della tabella dei semafori",EACCES);
@@ -80,15 +86,11 @@ int player(){
     /* Impostazioni tattica di gioco */;
 
 
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,SO_NUM_P);
-
 
 
     piececreated = 1;
 
-    while(master.phase != 0){ /*la fase 0 determina l'interruzione del processo*/
+    while(master.phase != -1){ /*la fase 0 determina l'interruzione del processo*/
         stand();
     }
 
@@ -103,18 +105,17 @@ void phase(int phase){
     {
     case 1:/*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
     for(i = 0; i < SO_NUM_P; i++){
-        sem.sem_num = PIECE_SEM;
-        sem.sem_op = 1;
-        srand(i*128*player_id);
         cnt.x = rand()%SO_ALTEZZA;
         cnt.y = rand()%SO_BASE;
         cnt.pednum = i;
         cnt.strategy = 0;
         cnt.type = 8;
-        semop(semid,&sem,1);
+        semop(semplayer,&sem,1);
         msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
+        sem.sem_num = MASTER_SEM;
+        sem.sem_op = 1;
+        semop(semglobal,&sem,1);
     }
-    stand();
         break;
 
     case 2:
@@ -126,30 +127,20 @@ void phase(int phase){
         break;
 
     case ROUND_STOP:
-    for(i = 0; i < SO_NUM_P; i++){
-        kill(pieces[i], SIGROUND);
-
-    }
-
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = 1;
-    semop(semid,&sem,1);
-
-    stand();
+    player_clean();
     break;
+
     default:
+    stand();
         break;
     }
 }
 
 
 void stand(){
-    /*decrementa il semaforo così che vada automaticamente in pausa prima di cominciare*/
-    sem.sem_num = PLAYER_SEM;
-    sem.sem_op = -1;
-    semop(semid,&sem,1);
 
-    msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_COPY);
+    msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_INFO);
+    logg("Received Message Phase:%d ",master.phase);
     phase(master.phase);
 
 }
@@ -215,7 +206,9 @@ void player_clean(){
         }
     }
     fclose(logger);
-    semctl(semid,0,IPC_RMID);
+    semctl(semglobal,0,IPC_RMID);
+    semctl(semplayer,0,IPC_RMID);
+    semctl(sem_table,0,IPC_RMID);
     shmdt(player_shared_table);
     msgctl(key_MO, IPC_RMID, NULL);
     exit(0);

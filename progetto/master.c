@@ -188,6 +188,7 @@ int main(int argc, char * argv[]){
             logg("Reading file %s",optarg);
             cfg = fopen("conf.config","r+");
             ParseFile(cfg);
+            fclose(cfg);
             break;
 
         case 'v':
@@ -224,6 +225,8 @@ logg("Variabile:SO_MAX_TIME inizializzata a %d  \n",SO_MAX_TIME);
     table_start();
     shared_table_init();
     playergen(SO_NUM_G);
+
+    round();
 
     
     /* Inizio operazioni relative al round*/
@@ -272,8 +275,9 @@ void clean(){
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
     shmctl(table,IPC_RMID,NULL);
+    semctl(semglobal,0,IPC_RMID);
     for(i = 0; i < sem_num; i++){
-        semctl(semid,i,IPC_RMID);
+        semctl(semglobal,i,IPC_RMID);
     }
     logg("Cleaning ids");
     msgctl(master_msgqueue,IPC_RMID,NULL);
@@ -338,17 +342,18 @@ void init(){
 
 
 
-int semid;
+int semglobal;
+
 void sem_init(){
     int i;
     sem_num = 5; /*per adesso è di default*/
     if(sem_num < 3){sem_num = 3;} /*semafori necessari per il minimo funzionamento*/
 
-    if((semid = semget(IPC_PRIVATE,sem_num,IPC_CREAT | IPC_EXCL | 0666)) == -1){
+    if((semglobal = semget(IPC_PRIVATE,sem_num,IPC_CREAT | IPC_EXCL | 0666)) == -1){
         error("errore nell'inizializzare il semaforo master",ECONNABORTED);
     }
     for(i = 0; i < sem_num; i++){
-            if(semctl(semid,i,SETVAL,0) == -1){
+            if(semctl(semglobal,i,SETVAL,0) == -1){
             error("Error in semctl semaforo master",ECOMM);
         }
     }
@@ -450,20 +455,22 @@ vexillum * getVex(int numFlag){
 }
 
 void round(){
+    int i;
         /*Region Phase-1:flag*/
         alarm(3);
         rounds++;
-        msg.round = 1;
-        msg.phase = 1;
-        getVex(getNumflag());/*inizializza le bandiere*/
-        msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
-        sem.sem_num = PLAYER_SEM;
-        sem.sem_op = 1;
-        semop(semid,&sem,SO_NUM_G);
 
-        sem.sem_num = MASTER_SEM;
-        sem.sem_op = -1;
-        semop(semid,&sem,SO_NUM_G);
+    for(i = 0; i < SO_NUM_G; i++){
+    msg.phase = 1;
+    msg.type = 1;
+    msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
+    }
+
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = -1;
+    semop(semglobal,&sem,SO_NUM_G);
+    
+    getVex(getNumflag());
     /*End-Region*/
 
     /*Region Phase-2:Indication*/
@@ -480,13 +487,13 @@ void restart(){
     for(i = 0; i < SO_NUM_G; i++){
         kill(st->pid[i] , SIGROUND);
     }
-    semctl(semid,PLAYER_SEM,0);
-    semctl(semid,PIECE_SEM,0);
-    semctl(semid,MASTER_SEM,0);
+    semctl(semglobal,PLAYER_SEM,0);
+    semctl(semglobal,PIECE_SEM,0);
+    semctl(semglobal,MASTER_SEM,0);
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
-    semop(semid,&sem,SO_NUM_G);
+    semop(semglobal,&sem,SO_NUM_G);
     round();
 }
 
