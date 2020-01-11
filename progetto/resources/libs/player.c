@@ -34,15 +34,14 @@ int player()
     pieces = (pid_t *)malloc(sizeof(pid_t) * SO_NUM_P);
     cleaner = player_clean;
     sprintf(filename, "Player %c.log", player_id);
-    logger = fopen(filename, "a+");
     logg("Player Started At %s", __TIME__);
-    if ((semglobal = semget(IPC_PRIVATE, 5, IPC_EXCL)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, 5,  S_IXUSR | S_IWUSR | S_IRUSR | IPC_EXCL)) == -1)
     {
         error("errore nel get del semaforo master", ECONNABORTED);
     }
-    if ((semplayer = semget(getpid(), SO_NUM_P + 3, IPC_CREAT | IPC_EXCL | 0666)) == -1)
+    if ((semplayer = semget(getpid(), SO_NUM_P + 3, S_IXUSR | S_IWUSR | S_IRUSR | IPC_CREAT | IPC_EXCL)) == -1)
     {
-        error("errore nella creazione del semaforo per il player", EACCES);
+        error("errore nella creazione del semaforo per il player", errno);
     }
     for (i = 0; i < 3; i++)
     {
@@ -50,7 +49,7 @@ int player()
     }
     if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL)) == -1)
     {
-        error("Error nella creazione della tabella dei semafori", EACCES);
+        error("Error nella creazione della tabella dei semafori", errno);
     }
     else
     {
@@ -115,15 +114,16 @@ void phase(int phase)
             cnt.pednum = i;
             sem.sem_num = PIECE_SEM + i;
             sem.sem_op = 1;
-            if (semop(semplayer, &sem, 1))
-                error("Error in semop", EACCES);
+            if (semop(semplayer, &sem, 1) == -1)
+                error("Error in semop", errno);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
         }
         /*In questo punto la semop da errore per un motivo sconosciuto, da capire perchè*/
+        logg("Indicazione posizionamento terminata dal player %c",player_id);
         sem.sem_num = MASTER_SEM;
         sem.sem_op = 1;
         if (semop(semglobal, &sem, 1) == -1)
-            error("Error in semop", EACCES);
+            error("Error in semop", errno);
         break;
 
     case 2:
@@ -215,7 +215,6 @@ void player_clean()
             wait(NULL);
         }
     }
-    fclose(logger);
     semctl(semglobal, 0, IPC_RMID);
     semctl(semplayer, 0, IPC_RMID);
     semctl(sem_table, 0, IPC_RMID);

@@ -16,7 +16,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
             }
             else
             {
-                error("Errore nella semop durante la fase di rilascio", EACCES);
+                error("Errore nella semop durante la fase di rilascio", errno);
             }
         }
         else if (previous_x == -1 && previous_y == -1)
@@ -25,13 +25,14 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
         }
         else
         {
-            error("Errore nei parametri precedenti, sono a zero", ERANGE);
+            error("Errore nei parametri precedenti, fuori scala", ERANGE);
         }
         if (tab(shared_table, x, y)->id == EMPTY)
         {
             debug("Accesso alla cella X:%d Y:%d", x, y);
             sem_t.sem_num = x * y + y;
             sem_t.sem_op = -1;
+            sem_t.sem_flg = IPC_NOWAIT;
             debug("Semop");
             if ((semop(sem_table, &sem_t, 1)) == 0)
             {
@@ -39,7 +40,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
             }
             else
             {
-                error("Errore nella semop", EACCES);
+                error("Errore nella semop", errno);
             }
             tab(shared_table, x, y)->id = id;
             return 1;
@@ -50,6 +51,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
             debug("Cattura Bandiera X:%d Y:%d", x, y);
             sem_t.sem_num = x * y + y;
             sem_t.sem_op = -1;
+            sem_t.sem_flg = IPC_NOWAIT;
             debug("Semop");
             if ((semop(sem_table, &sem_t, 1)) == 0)
             {
@@ -57,7 +59,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
             }
             else
             {
-                error("Errore nella semop", EACCES);
+                error("Errore nella semop", errno);
             }
             return -1;
         }
@@ -94,7 +96,7 @@ cell *tab(cell *shared_table, int x, int y)
 
 void placeflag(cell *shared_table, int x, int y)
 {
-    if (strcmp(processSign, "Master"))
+    if (strcmp(processSign,"Master"))
     {
         tab(shared_table, x, y)->id = FLAG;
     }
@@ -120,9 +122,9 @@ void table_start()
     {
         error("Errore nell'inizializzazione del segmento di memoria", EKEYREJECTED);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_CREAT | 0666 | IPC_EXCL)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, S_IXUSR | S_IWUSR | S_IRUSR | IPC_CREAT | IPC_EXCL )) == -1)
     {
-        error("Error nella creazione della tabella dei semafori", EACCES);
+        error("Error nella creazione della tabella dei semafori", errno);
     }
     else
     {
@@ -134,7 +136,7 @@ void table_start()
         {
             if (semctl(sem_table, i * SO_BASE + j, SETVAL, 1) == -1)
             {
-                error("error nel controllo della sem table", EACCES);
+                error("error nel controllo della sem table", errno);
             }
         }
     }

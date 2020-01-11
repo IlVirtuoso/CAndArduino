@@ -41,6 +41,9 @@
 #ifndef STRING_H
 #include <string.h>
 #endif
+#ifdef STAT_H
+#include <sys/stat.h>
+#endif
 #ifndef MACRO_H
 #include "macro.h"
 #endif

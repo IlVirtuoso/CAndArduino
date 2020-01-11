@@ -32,6 +32,9 @@
 #ifndef TIME_H
 #include <time.h>
 #endif
+#ifndef STAT_H
+#include <sys/stat.h>
+#endif
 #ifndef STRING_H
 #include <string.h>
 #endif
@@ -171,7 +174,6 @@ int main(int argc, char *argv[])
     cleaner = clean;
     placed = 0;
 
-    logger = fopen("Master.log", "a+");
     /*Region: inizializzazione e rilevamento argomenti*/
     while ((opt = getopt(argc, argv, ":if:chvdw")) != -1)
     {
@@ -197,17 +199,17 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    logg("Started At: %s\n", __TIME__);
-    logg("Variabile:SO_BASE inizializzata a %d \n ", SO_BASE);
-    logg("Variabile:SO_ALTEZZA inizializzata a %d  \n", SO_ALTEZZA);
-    logg("Variabile:SO_NUM_G inizializzata a %d  \n", SO_NUM_G);
-    logg("Variabile:SO_NUM_P inizializzata a %d  \n", SO_NUM_P);
-    logg("Variabile:SO_FLAG_MIN inizializzata a %d  \n", SO_FLAG_MIN);
-    logg("Variabile:SO_FLAG_MAX inizializzata a %d  \n", SO_FLAG_MAX);
-    logg("Variabile:SO_ROUND_SCORE inizializzata a %d  \n", SO_ROUND_SCORE);
-    logg("Variabile:SO_MIN_HOLD_NSEC inizializzata a %d  \n", SO_MIN_HOLD_NSEC);
-    logg("Variabile:SO_N_MOVES inizializzata a %d \n ", SO_N_MOVES);
-    logg("Variabile:SO_MAX_TIME inizializzata a %d  \n", SO_MAX_TIME);
+    logg("Started At: %s", __TIME__);
+    logg("Variabile:SO_BASE inizializzata a %d ", SO_BASE);
+    logg("Variabile:SO_ALTEZZA inizializzata a %d ", SO_ALTEZZA);
+    logg("Variabile:SO_NUM_G inizializzata a %d ", SO_NUM_G);
+    logg("Variabile:SO_NUM_P inizializzata a %d ", SO_NUM_P);
+    logg("Variabile:SO_FLAG_MIN inizializzata a %d ", SO_FLAG_MIN);
+    logg("Variabile:SO_FLAG_MAX inizializzata a %d ", SO_FLAG_MAX);
+    logg("Variabile:SO_ROUND_SCORE inizializzata a %d ", SO_ROUND_SCORE);
+    logg("Variabile:SO_MIN_HOLD_NSEC inizializzata a %d ", SO_MIN_HOLD_NSEC);
+    logg("Variabile:SO_N_MOVES inizializzata a %d ", SO_N_MOVES);
+    logg("Variabile:SO_MAX_TIME inizializzata a %d ", SO_MAX_TIME);
     init();
 
     logg("Inizializzazione Memoria Condivisa");
@@ -280,7 +282,7 @@ void clean()
     msgctl(player_msgqueue, IPC_RMID, NULL);
     free(st);
     free(vex);
-    fclose(logger);
+
     logg("All done BBYEEE");
     exit(0);
 }
@@ -346,22 +348,25 @@ int semglobal;
 
 void sem_init()
 {
-    int i;
-    sem_num = 5; /*per adesso è di default*/
-    if (sem_num < 3)
+    int i, semnum;
+    union semun semattr;
+    semattr.val = 0;
+
+    semnum = 5; /*per adesso è di default*/
+    if (semnum < 3)
     {
-        sem_num = 3;
+        semnum = 3;
     } /*semafori necessari per il minimo funzionamento*/
 
-    if ((semglobal = semget(IPC_PRIVATE, sem_num, IPC_CREAT | IPC_EXCL | 0666)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, semnum, S_IXUSR | S_IWUSR | S_IRUSR | IPC_CREAT | IPC_EXCL)) == -1)
     {
-        error("errore nell'inizializzare il semaforo master", ECONNABORTED);
+        error("errore nell'inizializzare il semaforo master", errno);
     }
-    for (i = 0; i < sem_num; i++)
+    for (i = 0; i < semnum; i++)
     {
-        if (semctl(semglobal, i, SETVAL, 0) == -1)
+        if (semctl(semglobal, i, SETVAL, semattr) == -1)
         {
-            error("Error in semctl semaforo master", ECOMM);
+            error("Error in semctl semaforo master", errno);
         }
     }
 }
@@ -388,7 +393,7 @@ void shared_table_init()
     }
     if ((master_msgqueue = msgget(getpid(), IPC_CREAT | 0600)) == -1)
     {
-        error("Errore nella creazione della msgqueue master", EACCES);
+        error("Errore nella creazione della msgqueue master", errno);
     }
 
     logg("Memoria Condivisa Inizializzata");
@@ -505,7 +510,7 @@ void round()
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
     if (semop(semglobal, &sem, SO_NUM_G))
-        error("Error in semop", EACCES);
+        error("Error in semop", errno);
     numflag = getNumflag();
     vex = getVex(numflag);
     display(master_shared_table);
@@ -541,7 +546,7 @@ void round()
         sem.sem_num = PIECE_SEM;
         sem.sem_op = 1;
         if (semop(semglobal, &sem, 1))
-            error("Error in semop", EACCES);
+            error("Error in semop", errno);
     }
 
     /*End-Region*/
@@ -561,7 +566,7 @@ void restart()
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
     if (semop(semglobal, &sem, SO_NUM_G))
-        error("Error in semop", EACCES);
+        error("Error in semop", errno);
     round();
 }
 

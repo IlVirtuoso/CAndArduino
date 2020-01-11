@@ -25,23 +25,22 @@ int piece()
     processSign = "Piece";
 
     srand(time(NULL));
-    if ((semglobal = semget(IPC_PRIVATE, 3, IPC_EXCL)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, 3, S_IXUSR | S_IWUSR | S_IRUSR | IPC_EXCL)) == -1)
     {
         error("errore nel semaforo", ECONNABORTED);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA,S_IXUSR | S_IWUSR | S_IRUSR | IPC_EXCL)) == -1)
     {
-        error("Error nella creazione della tabella dei semafori", EACCES);
+        error("Error nella creazione della tabella dei semafori", errno);
     }
     if ((semplayer = semget(getppid(), SO_NUM_P + 3, IPC_EXCL)) == -1)
     {
-        error("Errore nel get del semaforo player", EACCES);
+        error("Errore nel get del semaforo player", errno);
     }
     else
     {
         logg("Tabella semafori iniziata");
     }
-    logger = fopen("Pieces.log", "a+");
     logg("Piece %d of player %c Started At %s", piece_attr.piece_id, player_id, __TIME__);
     cleaner = piece_cleaner;
     logg("Setup Struttura dei segnali");
@@ -73,14 +72,14 @@ void getplay()
 {
     sem.sem_num = PIECE_SEM + piece_attr.piece_id;
     sem.sem_op = -1;
-    if (!semop(semplayer, &sem, 1))
-        error("Error in semop", EACCES);
+    if (semop(semplayer, &sem, 1) == -1)
+        error("Error in semop", errno);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
     play(order.phase);
     sem.sem_num = PLAYER_SEM;
     sem.sem_op = 1;
-    if (!semop(semplayer, &sem, 1))
-        error("Error in semop", EACCES);
+    if (semop(semplayer, &sem, 1) == -1)
+        error("Error in semop", errno);
 }
 
 void play(int command)

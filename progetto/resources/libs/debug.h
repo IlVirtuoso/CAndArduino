@@ -29,9 +29,6 @@
 /*identifica se il Debug è o no attivo*/
 int isDebug; 
 
-/*File da aprire per lo store dei log*/
-FILE * logger;
-
 /*variabile indicante la verbosità del log*/
 int verbosity;
 

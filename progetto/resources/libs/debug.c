@@ -5,8 +5,8 @@
 char errore[24];
 void error(char message[], int err)
 {
-    sprintf(errore, "[ERROR]:%s,message:%s\n", strerror(err), message);
-    fprintf(logger, "%s", errore);
+    sprintf(errore, "[ERROR : %s]:%s,message:%s\n",processSign, strerror(err), message);
+    printf("%s",errore);
     cleaner();
     perror(errore);
     exit(err);
@@ -20,7 +20,6 @@ int debug(const char *__restrict__ message, ...)
     {
         va_start(args, message);
         vsnprintf(formatted, sizeof(formatted), message, args);
-        fprintf(logger, "[DEBUG : %s]: %s\n", processSign, formatted);
         printf("[Debug %s]: %s\n", processSign, formatted);
         va_end(args);
         bzero(formatted, sizeof(formatted));
@@ -40,8 +39,6 @@ void logg(const char *__restrict__ message, ...)
     actime = (double)clock() / 1000;
     va_start(args, message);
     vsnprintf(logformatted, sizeof(logformatted), message, args);
-
-    fprintf(logger, "[LOG : %s -> %f] %s\n", processSign, (float)actime, logformatted);
     if (verbosity > 0)
     {
         printf("[LOG : %s -> %f]%s\n", processSign, (float)actime, logformatted);

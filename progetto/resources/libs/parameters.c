@@ -56,7 +56,6 @@ void ParseFile(FILE *config)
       b++;
       r++;
     }
-    printf("%s", buffer);
     if (equals("SO_BASE", buffer))
       SO_BASE = atol(token);
     else if (equals("SO_ALTEZZA", buffer))

@@ -16,6 +16,9 @@
 #ifndef STDLIB_H
 #include <stdlib.h>
 #endif
+#ifndef STAT_H
+#include <sys/stat.h>
+#endif
 #ifndef TYPES_H
 #include <sys/types.h>
 #endif
