@@ -36,7 +36,7 @@ int player()
     sprintf(filename, "Player %c.log", player_id);
     logger = fopen(filename, "a+");
     logg("Player Started At %s", __TIME__);
-    if ((semglobal = semget(IPC_PRIVATE, 3, IPC_EXCL)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, 5, IPC_EXCL)) == -1)
     {
         error("errore nel get del semaforo master", ECONNABORTED);
     }
@@ -115,17 +115,15 @@ void phase(int phase)
             cnt.pednum = i;
             sem.sem_num = PIECE_SEM + i;
             sem.sem_op = 1;
-            semop(semplayer, &sem, 1);
+            if (semop(semplayer, &sem, 1))
+                error("Error in semop", EACCES);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
-            
-            sem.sem_num = PLAYER_SEM;
-            sem.sem_op = -1;
-            semop(semplayer, &sem, 1);
         }
-
+        /*In questo punto la semop da errore per un motivo sconosciuto, da capire perchè*/
         sem.sem_num = MASTER_SEM;
         sem.sem_op = 1;
-        semop(semglobal, &sem, 1);
+        if (semop(semglobal, &sem, 1) == -1)
+            error("Error in semop", EACCES);
         break;
 
     case 2:

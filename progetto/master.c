@@ -500,10 +500,12 @@ void round()
         msg.phase = 1;
         msg.type = 1;
         msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
-        sem.sem_num = MASTER_SEM;
-        sem.sem_op = -1;
-        semop(semglobal, &sem, 1);
     }
+
+    sem.sem_num = MASTER_SEM;
+    sem.sem_op = -1;
+    if (semop(semglobal, &sem, SO_NUM_G))
+        error("Error in semop", EACCES);
     numflag = getNumflag();
     vex = getVex(numflag);
     display(master_shared_table);
@@ -538,7 +540,8 @@ void round()
         }
         sem.sem_num = PIECE_SEM;
         sem.sem_op = 1;
-        semop(semglobal, &sem, 1);
+        if (semop(semglobal, &sem, 1))
+            error("Error in semop", EACCES);
     }
 
     /*End-Region*/
@@ -557,7 +560,8 @@ void restart()
 
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
-    semop(semglobal, &sem, SO_NUM_G);
+    if (semop(semglobal, &sem, SO_NUM_G))
+        error("Error in semop", EACCES);
     round();
 }
 

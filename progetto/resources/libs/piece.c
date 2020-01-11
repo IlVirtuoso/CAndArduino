@@ -73,12 +73,14 @@ void getplay()
 {
     sem.sem_num = PIECE_SEM + piece_attr.piece_id;
     sem.sem_op = -1;
-    semop(semplayer, &sem, 1);
+    if (!semop(semplayer, &sem, 1))
+        error("Error in semop", EACCES);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
     play(order.phase);
     sem.sem_num = PLAYER_SEM;
     sem.sem_op = 1;
-    semop(semplayer,&sem,1);
+    if (!semop(semplayer, &sem, 1))
+        error("Error in semop", EACCES);
 }
 
 void play(int command)
@@ -172,9 +174,11 @@ void piece_cleaner()
 
 int setpos(int x, int y)
 {
-    if(x < 0) x = x * -1;
-    if(y < 0) y = y * - 1;
-    if (getid(piece_shared_table, x, y) == EMPTY && semctl(sem_table,x*SO_ALTEZZA + y, GETVAL) == 1)
+    if (x < 0)
+        x = x * -1;
+    if (y < 0)
+        y = y * -1;
+    if (getid(piece_shared_table, x, y) == EMPTY && semctl(sem_table, x * SO_ALTEZZA + y, GETVAL) == 1)
     {
         setid(piece_shared_table, x, y, player_id, -1, -1);
         piece_attr.x = x;
