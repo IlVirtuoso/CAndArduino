@@ -94,14 +94,13 @@ typedef struct{
     int x;
     int y;
     int score;
+    int taken;
 }vexillum;
 
 
 /*id della scacchiera*/
 int table; 
 
-/*master 2 player msgqueue*/
-int master_msgqueue;
 
 /*clock per misurare il tempo di esecuzione*/
 clock_t cl;
@@ -163,6 +162,8 @@ struct sembuf sem;
 int rounds;
 
 int actual_round;
+
+int numflag;
 
 FILE * cfg;
 
@@ -454,8 +455,11 @@ vexillum * getVex(int numFlag){
     return p;
 }
 
+
 void round(){
-    int i;
+    int i ,k;
+    msg_cnt captured;
+    
         /*Region Phase-1:flag*/
         alarm(3);
         rounds++;
@@ -469,15 +473,43 @@ void round(){
     sem.sem_num = MASTER_SEM;
     sem.sem_op = -1;
     semop(semglobal,&sem,SO_NUM_G);
-    
-    getVex(getNumflag());
+    numflag = getNumflag();
+    vex = getVex(numflag);
+    for(i = 0; i < numflag; i++){
+        processSign = "Master";
+        placeflag(master_shared_table,vex[i].x, vex[i].y);
+    }
+    display();
     /*End-Region*/
 
     /*Region Phase-2:Indication*/
-
+    for(i = 0; i < SO_NUM_G; i++){
+    msg.phase = 2;
+    msg.type = 1;
+    msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
+    }
     /*End-Region*/
 
     /*Region Phase-3:Anarchy*/
+    for(i = 0; i < SO_NUM_G; i++){
+    msg.phase = 3;
+    msg.type = 1;
+    msgsnd(master_msgqueue,&msg,sizeof(msg_master),MSG_COPY);
+    }
+    for(i = 0; i < numflag; i++){
+        msgrcv(master_msgqueue,&captured,sizeof(msg_cnt),4,MSG_INFO);
+        for(k = 0; k < numflag; k++){
+            if(captured.x == vex[i].x && captured.y == vex[i].y){
+                removeflag(master_shared_table,vex[i].x,vex[i].y);
+                st->score[captured.id] = st->score[captured.id] + vex[i].score;
+            }
+        }
+        sem.sem_num = PIECE_SEM;
+        sem.sem_op = 1;
+        semop(semglobal,&sem,1);
+        
+    }
+
     /*End-Region*/
     
 }

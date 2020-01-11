@@ -4,6 +4,9 @@
 #ifndef SHM_H
 #include <sys/shm.h>
 #endif
+#ifndef MESSAGE_H
+#include "message.h"
+#endif
 #ifndef DEBUG_H
 #include "debug.h"
 #endif
@@ -114,6 +117,10 @@ void placeflag(cell * shared_table, int x, int y);
 
 /*metodo usato dal master per rimuovere le bandiere*/
 void removeflag(cell * shared_table, int x, int y);
+
+void capture(cell * shared_table,int x, int y, int player_id);
+
+int semglobal;
 
 struct sembuf sem_t;
 #endif

@@ -5,7 +5,7 @@
 
 
 int setid(cell * shared_table,int x, int y, char id, int previous_x, int previous_y){
-    if((tab(shared_table,x,y)->id == EMPTY ||tab(shared_table,x,y)->id == FLAG) && (semctl(sem_table,x*y + y,GETVAL) == 1)){
+    if((tab(shared_table,x,y)->id == EMPTY || tab(shared_table,x,y)->id == FLAG) && (semctl(sem_table,x*y + y,GETVAL) == 1)){
         if(previous_x >= 0 && previous_y >= 0){
                 sem_t.sem_num = previous_x * previous_y + previous_y;
                 sem_t.sem_op = 1;
@@ -22,6 +22,7 @@ int setid(cell * shared_table,int x, int y, char id, int previous_x, int previou
     else{
             error("Errore nei parametri precedenti, sono a zero", ERANGE);
     }
+    if(tab(shared_table,x,y)->id == EMPTY){
     debug("Accesso alla cella X:%d Y:%d",x,y);
     sem_t.sem_num = x*y + y;
     sem_t.sem_op = -1;
@@ -36,10 +37,38 @@ int setid(cell * shared_table,int x, int y, char id, int previous_x, int previou
     return 1;
     }
     else{
+    
+    debug("Cattura Bandiera X:%d Y:%d",x,y);
+    sem_t.sem_num = x*y + y;
+    sem_t.sem_op = -1;
+    debug("Semop");
+    if((semop(sem_table,&sem_t,1)) == 0){
+     debug("Accesso Acquisito");   
+    }
+    else{
+        error("Errore nella semop",EACCES);
+    }
+    return -1;
+    }
+
+    }
+    else{
         return 0;
     }
 }
 
+void capture(cell * shared_table, int x, int y, int player_id){
+    struct sembuf sem;
+    msg_cnt captured;
+    captured.x = x;
+    captured.y = y;
+    msgsnd(master_msgqueue,&captured,sizeof(msg_cnt),4);
+    captured.id = player_id;
+    sem.sem_num = PIECE_SEM;
+    sem.sem_op = -1;
+    semop(semglobal,&sem,1);
+    tab(shared_table,x,y)->id = player_id;    
+}
 
 char getid(cell * shared_table, int x, int y){
    return tab(shared_table,x,y)->id;

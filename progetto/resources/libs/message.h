@@ -62,14 +62,11 @@ typedef struct{
     char x;
     char y;
     char ask;
+    int id;
 }msg_cnt;
 
-typedef struct{
-    long type;
-    int pednum;
-    int posx;
-    int posy;
-}msg_pos;
+/*msgqueue globale*/
+int master_msgqueue;
 
 typedef struct{
     long type;

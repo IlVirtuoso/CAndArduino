@@ -246,19 +246,27 @@ int goto_loc(int x, int y, char method, char evasion){
 
 int move(int x, int y){
     struct timespec move, remain;
+    int moved;
+    int isValid = 0;
     move.tv_nsec = SO_MIN_HOLD_NSEC;
     move.tv_sec = 0;
     nanosleep(&move,&remain);
-    int isValid = 0;
     if(override){ isValid = 1; override = 0;}
     else isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >=-1) && ((piece_attr.y - y) <= 1 && (piece_attr.y -y) >= -1));
     if(isValid && piece_attr.n_moves >= 0){
         if(isValid && pos_set){
-            if(setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y)){
+            moved = setid(piece_shared_table,x,y,player_id,piece_attr.x,piece_attr.y);
+            if(moved){
             piece_attr.x = x;
             piece_attr.y = y;
             piece_attr.n_moves --;
             return 1;
+            }
+            else if(moved == -1){
+                capture(piece_shared_table,x,y,player_id);
+                piece_attr.x = x;
+                piece_attr.y = y;
+                piece_attr.n_moves --;
             }
             else{ return 0;}   /*questo fa partire la gestione evasion*/
         }
