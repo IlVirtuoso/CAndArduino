@@ -122,7 +122,7 @@ void phase(int phase)
             cnt.type = ORDER_CHANNEL;
             cnt.phase = 1;
             cnt.pednum = i;
-            msgrcv(key_MO, NULL, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
+            releaseSem(semplayer, PIECE_SEM + i);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
             msgrcv(key_MO, &cnt, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
             pieces[i].x = cnt.x;

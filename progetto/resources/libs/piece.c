@@ -73,8 +73,7 @@ int piece()
 void getplay()
 {
     msg_cnt response;
-    response.type = TACTIC_CHANNEL;
-    msgsnd(key_MO,&response,sizeof(msg_cnt),MSG_INFO);
+    reserveSem(semplayer,PIECE_SEM +piece_attr.piece_id);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id,order.phase);
     play(order.phase);
