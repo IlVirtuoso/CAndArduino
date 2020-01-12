@@ -127,13 +127,12 @@ cell * player_shared_table;
 
 int master_msgqueue;
 
+int playernum;
 
 int semglobal;
 
 int semplayer;
 
 int semnum;
-
-char player_logbuffer[128];
 
 #endif

@@ -33,6 +33,7 @@ int player()
     processSign = "Player";
     pieces = (piece_type *)malloc(sizeof(piece_type) * SO_NUM_P);
     cleaner = player_clean;
+    playernum = player_id - 65;
     sprintf(filename, "Player %c.log", player_id);
     logg("Player Started At %s", __TIME__);
     if ((semglobal = semget(getppid(), semnum, IPC_EXCL | 0600)) == -1)
@@ -102,6 +103,7 @@ int player()
 
 void stand()
 {
+    reserveSem(semglobal,PLAYER_SEM + playernum);
     master.type = 1;
     msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
     msgrcv(master_msgqueue, &master, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
@@ -117,6 +119,7 @@ void phase(int phase)
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
         for (i = 0; i < SO_NUM_P; i++)
         {
+            srand(clock());
             cnt.x = rand() % SO_ALTEZZA;
             cnt.y = rand() % SO_BASE;
             cnt.type = ORDER_CHANNEL;

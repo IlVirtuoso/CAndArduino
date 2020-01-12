@@ -351,7 +351,7 @@ int semnum;
 void sem_init()
 {
     int i;
-    semnum = 5;
+    semnum = PLAYER_SEM + SO_NUM_G + 1;
 
     if ((semglobal = semget(getpid(), semnum, IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
@@ -451,13 +451,16 @@ int getNumflag()
         }
         numFlag = (0 + rand()) % ((ln - 1) + 1 - 0) + 0;
         numFlag = collection[numFlag];
-        printf("%d \n", numFlag);
+        logg("Bandiere Calcolate : %d",numflag);
     }
     return numFlag;
 }
 
 vexillum *getVex(int numFlag)
 {
+    /**
+     * Bisogna riguardare il funzionameto di questo metodo perchè non piazza nulla
+     */
     vexillum *p;
     char flag;
     int i, x, y, r = SO_ROUND_SCORE % numFlag;
@@ -470,7 +473,7 @@ vexillum *getVex(int numFlag)
             (p[i]).score = (p[i]).score + 1;
             r--;
         }
-        for (flag = 0; flag;)
+        while(flag != 0)
         {
             x = (0 + rand()) % (SO_BASE + 1 - 0);
             y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
@@ -478,7 +481,6 @@ vexillum *getVex(int numFlag)
             {
                 p[i].x = x;
                 p[i].y = y;
-                processSign = "Master";
                 tab(master_shared_table, x, y)->id = FLAG;
                 flag = 1;
             }
@@ -498,7 +500,8 @@ void round()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_INFO);
+        releaseSem(semglobal,PLAYER_SEM + i);
+        msgrcv(master_msgqueue, &master, sizeof(msg_master), 1, MSG_INFO);
         master.phase = 1;
         master.type = ORDER_CHANNEL;
         if (msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO))
