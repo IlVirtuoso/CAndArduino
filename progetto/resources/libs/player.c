@@ -31,23 +31,23 @@ int player()
 {
     int i;
     processSign = "Player";
-    pieces = (pid_t *)malloc(sizeof(pid_t) * SO_NUM_P);
+    pieces = (piece_type *)malloc(sizeof(piece_type) * SO_NUM_P);
     cleaner = player_clean;
     sprintf(filename, "Player %c.log", player_id);
     logg("Player Started At %s", __TIME__);
-    if ((semglobal = semget(IPC_PRIVATE, 5,  S_IXUSR | S_IWUSR | S_IRUSR | IPC_EXCL)) == -1)
+    if ((semglobal = semget(getppid(), semnum, IPC_EXCL | 0600)) == -1)
     {
-        error("errore nel get del semaforo master", ECONNABORTED);
+        error("errore nel get del semaforo master", errno);
     }
-    if ((semplayer = semget(getpid(), SO_NUM_P + 3, S_IXUSR | S_IWUSR | S_IRUSR | IPC_CREAT | IPC_EXCL)) == -1)
+    if ((semplayer = semget(getpid(), SO_NUM_P + 3, IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("errore nella creazione del semaforo per il player", errno);
     }
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < SO_NUM_P + 3; i++)
     {
-        semctl(semplayer, i, SETVAL, 0);
+        initsemReserved(semplayer, i);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL | 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
@@ -79,7 +79,7 @@ int player()
     player_signal.sa_handler = player_handler;
     /* Generazione chiave della coda per il controllo dei pezzi
        ereditata da ciascun pezzo (una coda per Player) */
-    if ((key_MO = msgget(getpid(), IPC_CREAT | 0600)) == -1)
+    if ((key_MO = msgget(getpid(), IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("Errore nella creazione della coda di controllo", errno);
     }
@@ -89,14 +89,24 @@ int player()
     /* Impostazioni tattica di gioco */;
 
     piececreated = 1;
-
+    if (releaseSem(semglobal, MASTER_SEM))
+        error("error in semop", errno);
     while (master.phase != -1)
-    { /*la fase 0 determina l'interruzione del processo*/
+    { /*la fase -1 determina l'interruzione del processo*/
         stand();
     }
 
     player_clean();
     return 0;
+}
+
+void stand()
+{
+    master.type = 1;
+    msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
+    msgrcv(master_msgqueue, &master, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
+    logg("Received Message Phase:%d ", master.phase);
+    phase(master.phase);
 }
 
 void phase(int phase)
@@ -109,21 +119,16 @@ void phase(int phase)
         {
             cnt.x = rand() % SO_ALTEZZA;
             cnt.y = rand() % SO_BASE;
-            cnt.type = 8;
+            cnt.type = ORDER_CHANNEL;
             cnt.phase = 1;
             cnt.pednum = i;
-            sem.sem_num = PIECE_SEM + i;
-            sem.sem_op = 1;
-            if (semop(semplayer, &sem, 1) == -1)
-                error("Error in semop", errno);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
+            msgrcv(key_MO, &cnt, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
+            pieces[i].x = cnt.x;
+            pieces[i].y = cnt.y;
         }
-        /*In questo punto la semop da errore per un motivo sconosciuto, da capire perchè*/
-        logg("Indicazione posizionamento terminata dal player %c",player_id);
-        sem.sem_num = MASTER_SEM;
-        sem.sem_op = 1;
-        if (semop(semglobal, &sem, 1) == -1)
-            error("Error in semop", errno);
+        msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
         break;
 
     case 2:
@@ -147,14 +152,6 @@ void phase(int phase)
     }
 }
 
-void stand()
-{
-
-    msgrcv(master_msgqueue, &master, sizeof(msg_master), 1, MSG_INFO);
-    logg("Received Message Phase:%d ", master.phase);
-    phase(master.phase);
-}
-
 int piecegen(int numpieces)
 {
     int i;
@@ -165,7 +162,7 @@ int piecegen(int numpieces)
         if ((pid = fork()))
         {
             /*player*/
-            pieces[i] = pid;
+            pieces[i].piece_id = pid;
             logg("Generato pezzo %d", i);
         }
         else
@@ -211,7 +208,7 @@ void player_clean()
     {
         for (i = 0; i < SO_NUM_P; i++)
         {
-            kill(pieces[i], SIGINT);
+            kill(pieces[i].piece_id, SIGINT);
             wait(NULL);
         }
     }

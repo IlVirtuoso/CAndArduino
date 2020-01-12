@@ -25,15 +25,15 @@ int piece()
     processSign = "Piece";
 
     srand(time(NULL));
-    if ((semglobal = semget(IPC_PRIVATE, 3, S_IXUSR | S_IWUSR | S_IRUSR | IPC_EXCL)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, semnum,  IPC_EXCL | 0600)) == -1)
     {
         error("errore nel semaforo", ECONNABORTED);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA,S_IXUSR | S_IWUSR | S_IRUSR | IPC_EXCL)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL | 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
-    if ((semplayer = semget(getppid(), SO_NUM_P + 3, IPC_EXCL)) == -1)
+    if ((semplayer = semget(getppid(), SO_NUM_P + 3, IPC_EXCL | 0600)) == -1)
     {
         error("Errore nel get del semaforo player", errno);
     }
@@ -65,21 +65,24 @@ int piece()
     {
         getplay();
     }
+    piece_cleaner();
+    exit(0);
     return 0;
 }
 
 void getplay()
 {
-    sem.sem_num = PIECE_SEM + piece_attr.piece_id;
-    sem.sem_op = -1;
-    if (semop(semplayer, &sem, 1) == -1)
-        error("Error in semop", errno);
+    msg_cnt response;
+    response.type = TACTIC_CHANNEL;
+    msgsnd(key_MO,&response,sizeof(msg_cnt),MSG_INFO);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
+    debug("orders received piece %d phase %d", piece_attr.piece_id,order.phase);
     play(order.phase);
-    sem.sem_num = PLAYER_SEM;
-    sem.sem_op = 1;
-    if (semop(semplayer, &sem, 1) == -1)
-        error("Error in semop", errno);
+    response.x = piece_attr.x;
+    response.y = piece_attr.y;
+    response.type = TACTIC_CHANNEL;
+    response.pednum = piece_attr.piece_id;
+    msgsnd(key_MO, &response, sizeof(msg_cnt), MSG_INFO);
 }
 
 void play(int command)

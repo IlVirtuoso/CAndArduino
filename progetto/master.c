@@ -340,31 +340,26 @@ void init()
     sigaction(SIGINT, &sa, NULL);
     sigaction(SIGALRM, &sa, NULL);
     sigset(SIGINT, handler);
+    sigset(SIGALRM, handler);
     sa.sa_handler = handler;
     /*End-Region*/
 }
 
 int semglobal;
+int semnum;
 
 void sem_init()
 {
-    int i, semnum;
-    union semun semattr;
-    semattr.val = 0;
+    int i;
+    semnum = 5;
 
-    semnum = 5; /*per adesso è di default*/
-    if (semnum < 3)
-    {
-        semnum = 3;
-    } /*semafori necessari per il minimo funzionamento*/
-
-    if ((semglobal = semget(IPC_PRIVATE, semnum, S_IXUSR | S_IWUSR | S_IRUSR | IPC_CREAT | IPC_EXCL)) == -1)
+    if ((semglobal = semget(getpid(), semnum, IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("errore nell'inizializzare il semaforo master", errno);
     }
     for (i = 0; i < semnum; i++)
     {
-        if (semctl(semglobal, i, SETVAL, semattr) == -1)
+        if (initsemReserved(semglobal, i) == -1)
         {
             error("Error in semctl semaforo master", errno);
         }
@@ -391,7 +386,7 @@ void shared_table_init()
             tab(master_shared_table, x, y)->id = EMPTY;
         }
     }
-    if ((master_msgqueue = msgget(getpid(), IPC_CREAT | 0600)) == -1)
+    if ((master_msgqueue = msgget(getpid(), IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("Errore nella creazione della msgqueue master", errno);
     }
@@ -483,7 +478,8 @@ vexillum *getVex(int numFlag)
             {
                 p[i].x = x;
                 p[i].y = y;
-                placeflag(master_shared_table, x, y);
+                processSign = "Master";
+                tab(master_shared_table, x, y)->id = FLAG;
                 flag = 1;
             }
         }
@@ -495,22 +491,22 @@ void round()
 {
     int i, k;
     msg_cnt captured;
-
+    msg_master master;
     /*Region Phase-1:flag*/
-    alarm(3);
+    alarm(SO_MAX_TIME);
     rounds++;
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msg.phase = 1;
-        msg.type = 1;
-        msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
+        msgrcv(master_msgqueue,&master,sizeof(msg_master),1,MSG_INFO);
+        master.phase = 1;
+        master.type = ORDER_CHANNEL;
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO))
+            error("Error in sending message", errno);
     }
 
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = -1;
-    if (semop(semglobal, &sem, SO_NUM_G))
-        error("Error in semop", errno);
+    for (i = 0; i < SO_NUM_G; i++)
+        msgrcv(master_msgqueue, &master, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
     numflag = getNumflag();
     vex = getVex(numflag);
     display(master_shared_table);
@@ -521,7 +517,7 @@ void round()
     {
         msg.phase = 2;
         msg.type = 1;
-        msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
+        msgsnd(master_msgqueue, &msg, sizeof(msg_master), 0);
     }
     /*End-Region*/
 

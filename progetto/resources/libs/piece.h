@@ -76,6 +76,7 @@ int semglobal;
 
 int semplayer;
 
+int semnum;
 enum{
     STRAIGHT_TO,
     X_BEFORE_Y,

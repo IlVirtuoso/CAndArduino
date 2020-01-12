@@ -8,9 +8,8 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
     {
         if (previous_x >= 0 && previous_y >= 0)
         {
-            sem_t.sem_num = previous_x * previous_y + previous_y;
-            sem_t.sem_op = 1;
-            if ((semop(sem_table, &sem_t, 1)) == 0)
+
+            if ((releaseSem(sem_table, previous_x * SO_BASE + previous_y)) == 0)
             {
                 debug("Rilascio eseguito");
             }
@@ -30,11 +29,8 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
         if (tab(shared_table, x, y)->id == EMPTY)
         {
             debug("Accesso alla cella X:%d Y:%d", x, y);
-            sem_t.sem_num = x * y + y;
-            sem_t.sem_op = -1;
-            sem_t.sem_flg = IPC_NOWAIT;
             debug("Semop");
-            if ((semop(sem_table, &sem_t, 1)) == 0)
+            if ((reserveSem(sem_table,x*SO_BASE + y)) == 0)
             {
                 debug("Accesso Acquisito");
             }
@@ -49,11 +45,8 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
         {
 
             debug("Cattura Bandiera X:%d Y:%d", x, y);
-            sem_t.sem_num = x * y + y;
-            sem_t.sem_op = -1;
-            sem_t.sem_flg = IPC_NOWAIT;
             debug("Semop");
-            if ((semop(sem_table, &sem_t, 1)) == 0)
+            if ((reserveSem(sem_table,x*SO_BASE + y)) == 0)
             {
                 debug("Accesso Acquisito");
             }
@@ -96,7 +89,7 @@ cell *tab(cell *shared_table, int x, int y)
 
 void placeflag(cell *shared_table, int x, int y)
 {
-    if (strcmp(processSign,"Master"))
+    if (strcmp(processSign, "Master"))
     {
         tab(shared_table, x, y)->id = FLAG;
     }
@@ -113,7 +106,7 @@ void removeflag(cell *shared_table, int x, int y)
 void table_start()
 {
     int i, j;
-    sem_table_key = ftok("./makeFile", 'a');
+    sem_table_key = ftok("./makefile", 'a');
     if ((table = shmget(IPC_PRIVATE, sizeof(cell) * SO_BASE * SO_ALTEZZA, IPC_CREAT | 0666)) > 0)
     {
         debug("Memoria Condivisa Inizializzata");
@@ -122,7 +115,7 @@ void table_start()
     {
         error("Errore nell'inizializzazione del segmento di memoria", EKEYREJECTED);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, S_IXUSR | S_IWUSR | S_IRUSR | IPC_CREAT | IPC_EXCL )) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA,  IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
@@ -134,7 +127,7 @@ void table_start()
     {
         for (j = 0; j < SO_BASE; j++)
         {
-            if (semctl(sem_table, i * SO_BASE + j, SETVAL, 1) == -1)
+            if (initsemAvailable(sem_table, i * SO_BASE + j) == -1)
             {
                 error("error nel controllo della sem table", errno);
             }
@@ -221,4 +214,5 @@ int reachable(int moves, int x, int y, int x_targ, int y_targ)
         return -1;
     }
 }
+
 /*End Of Life*/

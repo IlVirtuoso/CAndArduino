@@ -50,34 +50,27 @@
 #ifndef SIGNAL_H
 #include <signal.h>
 #endif
+#ifndef SEMCONTROL_H
+#define SEMCONTROL_H
+int reserveSem(int semid, int semnum);
+
+int releaseSem(int semid, int semnum);
+
+int waitzeroSem(int semid, int semnum);
+
+int initsemAvailable(int semid, int semnum);
+
+int initsemReserved(int semid, int semnum);
 
 
-#ifndef MESSAGE_H
-#define MESSAGE_H
-/* struct per message queue; default su MQ = 1 */ 
-typedef struct{
-    long type;
-    int pednum; /* sarà usato per selezionare la pedina a cui inviare il messaggio*/
-    char strategy;
-    char x;
-    char y;
-    char ask;
-    int id;
-    int phase;
-}msg_cnt;
 
-/*msgqueue globale*/
-int master_msgqueue;
-
-typedef struct{
-    long type;
-    char round;
-    char phase;
-}msg_master;
-
-/*chiave message queue*/
-int key_MO;
-
-
+union semun {
+    int val;
+    struct semid_ds *buf;
+    unsigned short *array;
+#if defined(__linux__)
+    struct seminfo *__buf;
+#endif
+};
 
 #endif

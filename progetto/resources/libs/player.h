@@ -72,8 +72,14 @@
 /* Lunghezza dei messaggi per controllo pedine*/
 #define CONTROL_SIZE 10
 
-/*array che identifica i pezzi appartenenti a questo giocatore*/
-pid_t * pieces;
+typedef struct{
+    pid_t piecepid;
+    int piece_id;
+    int x;
+    int y;
+}piece_type;
+
+piece_type * pieces;
 
 /*struttura dei segnali del player*/
 struct sigaction player_signal;
@@ -125,6 +131,8 @@ int master_msgqueue;
 int semglobal;
 
 int semplayer;
+
+int semnum;
 
 char player_logbuffer[128];
 

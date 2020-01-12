@@ -46,6 +46,9 @@
 #ifndef MACRO_H
 #include "macro.h"
 #endif
+#ifndef SEMCONTROL_H
+#include "semcontrol.h"
+#endif
 #ifndef TABLE_H
 #define TABLE_H
 
@@ -125,5 +128,9 @@ void capture(cell * shared_table,int x, int y, int player_id);
 
 int semglobal;
 
+int semplayer;
+
 struct sembuf sem_t;
+
+
 #endif
