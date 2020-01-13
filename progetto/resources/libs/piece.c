@@ -415,38 +415,24 @@ char cond_free(int x, int y){
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
 char cond_old(int x, int y){
-=======
-char cond_free(x, y)
-{
     return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x, y);
 }
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
-char cond_old(x, y)
+char cond_old(int x, int y)
 {
->>>>>>> 4f14dafee43fb096bc4613e6300a9347d6880193
     return old_x == x && old_y == y;
 }
 
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
-<<<<<<< HEAD
 char cond_valid(int x, int y){
-=======
-char cond_valid(x, y)
-{
->>>>>>> 4f14dafee43fb096bc4613e6300a9347d6880193
     return x < SO_BASE && y < SO_ALTEZZA;
 }
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */
-<<<<<<< HEAD
+
 char cond(int x, int y){
     return cond_free(x,y) && !cond_old(x,y);
-=======
-char cond(x, y)
-{
-    return cond_free(x, y) && !cond_old(x, y);
->>>>>>> 4f14dafee43fb096bc4613e6300a9347d6880193
 }
 
 int move(int x, int y)
