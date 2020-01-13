@@ -463,19 +463,19 @@ vexillum *getVex(int numFlag)
      * Bisogna riguardare il funzionameto di questo metodo perchè non piazza nulla
      */
     vexillum *p;
-    char flag;
+    char positionComplete;
     int i, x, y, r = SO_ROUND_SCORE % numFlag;
     p = (vexillum *)malloc(numFlag * sizeof(vexillum));
     for (i = 0; i < numFlag; i++)
     {
-        flag = 0;
+        positionComplete = 0;
         (p[i]).score = SO_ROUND_SCORE / numFlag;
         if (r != 0)
         {
             (p[i]).score = (p[i]).score + 1;
             r--;
         }
-        while(!flag)
+        while(!PositionComplete)
         {
             x = (0 + rand()) % ((SO_BASE - 1) + 1 - 0) + 0;
             y = (0 + rand()) % ((SO_ALTEZZA - 1) + 1 - 0) + 0;
@@ -484,7 +484,7 @@ vexillum *getVex(int numFlag)
                 p[i].x = x;
                 p[i].y = y;
                 tab(master_shared_table, x, y)->id = FLAG;
-                flag ++;
+                positionComplete ++;
             }
         }
     }
