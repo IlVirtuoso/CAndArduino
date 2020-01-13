@@ -452,7 +452,6 @@ int getNumflag()
         }
         numFlag = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
         numFlag = collection[i];
-        
     }
     logg("Bandiere Calcolate : %d",numFlag);
     return numFlag;
