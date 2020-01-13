@@ -31,7 +31,7 @@ int piece()
     processSign = "Piece";
 
     srand(time(NULL));
-    if ((semglobal = semget(IPC_PRIVATE, semnum,  IPC_EXCL | 0600)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, semnum, IPC_EXCL | 0600)) == -1)
     {
         error("errore nel semaforo", ECONNABORTED);
     }
@@ -79,9 +79,9 @@ int piece()
 void getplay()
 {
     msg_cnt response;
-    reserveSem(semplayer,PIECE_SEM +piece_attr.piece_id);
+    reserveSem(semplayer, PIECE_SEM + piece_attr.piece_id);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
-    debug("orders received piece %d phase %d", piece_attr.piece_id,order.phase);
+    debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
     response.x = piece_attr.x;
     response.y = piece_attr.y;
@@ -95,8 +95,13 @@ void play(int command)
     switch (command)
     {
     case 1:
+        if (pos_set)
+            error("Cannot set pos 2 times", EBADR);
         if (setpos(order.x, order.y))
+        {
             logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
+            pos_set = 1;
+        }
         else
         {
             debug("Posizionamento non riuscito Riprovo");
@@ -128,9 +133,10 @@ void tactic()
             {
             case 0:
                 target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
-                if(!(reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) > 0 )){
-                        target = NULL;
-                        order.ask = -1;
+                if (!(reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) > 0))
+                {
+                    target = NULL;
+                    order.ask = -1;
                 }
                 break;
             case 1:
@@ -145,11 +151,11 @@ void tactic()
                 target.y = order.y;
                 order.type = ORDER_CHANNEL;
                 break;
-            default: 
+            default:
                 stand();
             }
         }
-        if(target != NULL)
+        if (target != NULL)
             goto_loc(target.x, target.y, order.strategy, 1);
     }
 }
@@ -207,123 +213,194 @@ int setpos(int x, int y)
     }
 }
 
-int goto_loc(int target_x, int target_y, char method, int evade){
+int goto_loc(int target_x, int target_y, char method, int evade)
+{
     int x = target_x, y = target_y, check;
     char random, left, right, down, up;
-    for(; piece_move > 0 && (piece_attr.x != x || piece_attr.y != y);){
-        if(getid(piece_shared_table, target_x, target_y) != FLAG) return -1;;
-        switch(method){
-            case Y_BEFORE:
-                if(y != piece_attr.y){
-                    if(piece_attr.y > y && (check = (int)cond_free(piece_attr.x, piece_attr.y - 1))){
-                        old_x = piece_attr.x;
-                        old_y = piece_attr.y;
-                        check = move(piece_attr.x, piece_attr.y -1);
-                    } else if(piece_attr.y < y && (check = (int)cond_free(piece_attr.x, piece_attr.y + 1))){
-                        old_x = piece_attr.x;
-                        old_y = piece_attr.y; 
-                        check = move(piece_attr.x, piece_attr.y +1);
-                    }
-                }else if(x != piece_attr.x){ method = X_BEFORE; }
-
-                if(check == 0) method = EVASION_Y;
-            break;
-            
-            case X_BEFORE:
-                if(x != piece_attr.x){
-                    if(piece_attr.x > x && ( check = (int)cond_free(piece_attr.x - 1, piece_attr.y))){
-                        old_x = piece_attr.x;
-                        old_y = piece_attr.y;
-                        check = move(piece_attr.x - 1, piece_attr.y);
-                    } else if(piece_attr.x < x && (check = (int)cond_free(piece_attr.x + 1, piece_attr.y))){
-                        old_x = piece_attr.x;
-                        old_y = piece_attr.y; 
-                        check = move(piece_attr.x + 1, piece_attr.y);
-                    }
-                }else if(y != piece_attr.y){ method = Y_BEFORE; }
-
-                if(check == 0) method = EVASION_X;
-            break;
-
-            case EVASION_Y:
-                right = 0; 
-                left = 0;
-                if(piece_attr.x >= x) left = 1;
-                if(piece_attr.x <= x) right = 1;
-                up = piece_attr.y > y ? 0 : 1;
-
-                if(cond(piece_attr.x - 1, piece_attr.y) && left){
-                    x = piece_attr.x - 1;
-                    y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1)) ;
-                    method = X_BEFORE; // x - 1
-                } else if(left && cond(piece_attr.x + 1, piece_attr.y)){
-                    x = piece_attr.x + 1;
-                    y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1)) ;
-                    method = X_BEFORE; // x + 1
-                } else if(cond(piece_attr.x + 1, piece_attr.y) && right){
-                    x = piece_attr.x + 1;
-                    y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1)) ;
-                    method = X_BEFORE; // x + 1
-            } else if(right && cond(piece_attr.x - 1, piece_attr.y)){
-                    x = piece_attr.x - 1;
-                    y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1)) ;
-                    method = X_BEFORE; // x-1
-                }else if(up && cond(piece_attr.x, piece_attr.y - 1)){
-                    y = piece_attr.y - 1;
-                    if(right == left){ x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x - 1)); signal = 1;}
-                    else x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
-                    method = Y_BEFORE;
-                } else if(!up && cond(piece_attr.x, piece_attr.y + 1)){
-                    y = piece_attr.y + 1;
-                    if(right == left){ x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x + 1)); signal = 1;}
-                    else x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
-                    method = Y_BEFORE;
-                } else {
-                    old_x = -1;
-                    old_y = -1;
+    for (; piece_move > 0 && (piece_attr.x != x || piece_attr.y != y);)
+    {
+        if (getid(piece_shared_table, target_x, target_y) != FLAG)
+            return -1;
+        ;
+        switch (method)
+        {
+        case Y_BEFORE:
+            if (y != piece_attr.y)
+            {
+                if (piece_attr.y > y && (check = (int)cond_free(piece_attr.x, piece_attr.y - 1)))
+                {
+                    old_x = piece_attr.x;
+                    old_y = piece_attr.y;
+                    check = move(piece_attr.x, piece_attr.y - 1);
                 }
-            break;
-
-            case EVASION_X:
-                down = 0; 
-                up = 0;
-                if(piece_attr.y >= y) down = 1;
-                if(piece_attr.y <= y) up = 1;
-                right = piece_attr.x > x ? 0 : 1;
-
-                if(cond(piece_attr.x, piece_attr.y - 1) && down){
-                    y = piece_attr.y - 1;
-                    x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1)) ;
-                    method = Y_BEFORE; // y - 1
-                } else if(down && cond(piece_attr.x, piece_attr.y + 1)){
-                    y = piece_attr.y + 1;
-                    x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1)) ;
-                    method = Y_BEFORE; // y + 1
-                } else if(cond(piece_attr.x, piece_attr.y + 1) && up){
-                    y = piece_attr.y + 1;
-                    x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1)) ;
-                    method = Y_BEFORE; // y + 1
-            } else if(up && cond(piece_attr.x, piece_attr.y - 1)){
-                    y = piece_attr.y - 1;
-                    x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1)) ;
-                    method = Y_BEFORE; // y - 1
-                } else if(right && cond(piece_attr.x - 1, piece_attr.y)){
-                    x = piece_attr.x - 1;
-                    if(up == down){ y = (piece_attr_y > old_y ? (piece_attr_y + 1) : (piece_attr_y - 1));}
-                    else y = (right ? (piece_attr.y + 1) : (piece_attr.y - 1));
-                    method = X_BEFORE;
-                } else if(!right && cond(piece_attr.x + 1, piece_attr.y)){
-                    x = piece_attr.x + 1;
-                    if(up == down){ y = piece_attr_y > old_y ? piece_attr_y + 1 : piece_attr_y - 1;}
-                    else y = (up ? (piece_attr.y + 1) : (piece_attr.y - 1));
-                    method = X_BEFORE;
-                } else {
-                    old_x = -1;
-                    old_y = -1;
+                else if (piece_attr.y < y && (check = (int)cond_free(piece_attr.x, piece_attr.y + 1)))
+                {
+                    old_x = piece_attr.x;
+                    old_y = piece_attr.y;
+                    check = move(piece_attr.x, piece_attr.y + 1);
                 }
+            }
+            else if (x != piece_attr.x)
+            {
+                method = X_BEFORE;
+            }
+
+            if (check == 0)
+                method = EVASION_Y;
+            break;
+
+        case X_BEFORE:
+            if (x != piece_attr.x)
+            {
+                if (piece_attr.x > x && (check = (int)cond_free(piece_attr.x - 1, piece_attr.y)))
+                {
+                    old_x = piece_attr.x;
+                    old_y = piece_attr.y;
+                    check = move(piece_attr.x - 1, piece_attr.y);
+                }
+                else if (piece_attr.x < x && (check = (int)cond_free(piece_attr.x + 1, piece_attr.y)))
+                {
+                    old_x = piece_attr.x;
+                    old_y = piece_attr.y;
+                    check = move(piece_attr.x + 1, piece_attr.y);
+                }
+            }
+            else if (y != piece_attr.y)
+            {
+                method = Y_BEFORE;
+            }
+
+            if (check == 0)
+                method = EVASION_X;
+            break;
+
+        case EVASION_Y:
+            right = 0;
+            left = 0;
+            if (piece_attr.x >= x)
+                left = 1;
+            if (piece_attr.x <= x)
+                right = 1;
+            up = piece_attr.y > y ? 0 : 1;
+
+            if (cond(piece_attr.x - 1, piece_attr.y) && left)
+            {
+                x = piece_attr.x - 1;
+                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                method = X_BEFORE; // x - 1
+            }
+            else if (left && cond(piece_attr.x + 1, piece_attr.y))
+            {
+                x = piece_attr.x + 1;
+                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                method = X_BEFORE; // x + 1
+            }
+            else if (cond(piece_attr.x + 1, piece_attr.y) && right)
+            {
+                x = piece_attr.x + 1;
+                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                method = X_BEFORE; // x + 1
+            }
+            else if (right && cond(piece_attr.x - 1, piece_attr.y))
+            {
+                x = piece_attr.x - 1;
+                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                method = X_BEFORE; // x-1
+            }
+            else if (up && cond(piece_attr.x, piece_attr.y - 1))
+            {
+                y = piece_attr.y - 1;
+                if (right == left)
+                {
+                    x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
+                    signal = 1;
+                }
+                else
+                    x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
+                method = Y_BEFORE;
+            }
+            else if (!up && cond(piece_attr.x, piece_attr.y + 1))
+            {
+                y = piece_attr.y + 1;
+                if (right == left)
+                {
+                    x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x + 1));
+                    signal = 1;
+                }
+                else
+                    x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
+                method = Y_BEFORE;
+            }
+            else
+            {
+                old_x = -1;
+                old_y = -1;
+            }
+            break;
+
+        case EVASION_X:
+            down = 0;
+            up = 0;
+            if (piece_attr.y >= y)
+                down = 1;
+            if (piece_attr.y <= y)
+                up = 1;
+            right = piece_attr.x > x ? 0 : 1;
+
+            if (cond(piece_attr.x, piece_attr.y - 1) && down)
+            {
+                y = piece_attr.y - 1;
+                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                method = Y_BEFORE; // y - 1
+            }
+            else if (down && cond(piece_attr.x, piece_attr.y + 1))
+            {
+                y = piece_attr.y + 1;
+                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                method = Y_BEFORE; // y + 1
+            }
+            else if (cond(piece_attr.x, piece_attr.y + 1) && up)
+            {
+                y = piece_attr.y + 1;
+                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                method = Y_BEFORE; // y + 1
+            }
+            else if (up && cond(piece_attr.x, piece_attr.y - 1))
+            {
+                y = piece_attr.y - 1;
+                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                method = Y_BEFORE; // y - 1
+            }
+            else if (right && cond(piece_attr.x - 1, piece_attr.y))
+            {
+                x = piece_attr.x - 1;
+                if (up == down)
+                {
+                    y = (piece_attr_y > old_y ? (piece_attr_y + 1) : (piece_attr_y - 1));
+                }
+                else
+                    y = (right ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                method = X_BEFORE;
+            }
+            else if (!right && cond(piece_attr.x + 1, piece_attr.y))
+            {
+                x = piece_attr.x + 1;
+                if (up == down)
+                {
+                    y = piece_attr_y > old_y ? piece_attr_y + 1 : piece_attr_y - 1;
+                }
+                else
+                    y = (up ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                method = X_BEFORE;
+            }
+            else
+            {
+                old_x = -1;
+                old_y = -1;
+            }
 
             break;
-            default:
+        default:
             break;
         }
     }
@@ -331,23 +408,27 @@ int goto_loc(int target_x, int target_y, char method, int evade){
 }
 
 /* Verifica se la cella obiettivo è libera */
-char cond_free(x, y){
-    return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x,y);
+char cond_free(x, y)
+{
+    return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x, y);
 }
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
-char cond_old(x, y){
+char cond_old(x, y)
+{
     return old_x == x && old_y == y;
 }
 
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
-char cond_valid(x, y){
+char cond_valid(x, y)
+{
     return x < SO_BASE && y < SO_ALTEZZA;
 }
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */
-char cond(x,y){
-    return cond_free(x,y) && !cond_old(x,y);
+char cond(x, y)
+{
+    return cond_free(x, y) && !cond_old(x, y);
 }
 
 int move(int x, int y)
