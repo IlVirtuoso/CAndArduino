@@ -54,15 +54,24 @@ sigset_t piece_mask;
 char piece_logbuffer[128];
 
 /**
- * dice alla pedina che punto raggiungere
+ * muove la pedina fino al punto da raggiungere
  * @param x  intero che indica la riga
  * @param y  intero che indica la colonna
  * @param method char che indica che metodo usare nello switch per raggiungere quel punto
- * @param evasion char che indica se schivare una cella occupata o meno 
- * ritorna 1 = successo, 0 = cella occupata, -1 = ERRORE
  */
-int goto_loc(int x, int y, char method, char evasion);
+int goto_loc(int x, int y, char method);
 
+/* Verifica se la cella obiettivo è libera */
+char cond_free(x, y);
+
+/* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
+char cond_old(x, y);
+
+/* Verifica se la cella bersaglio non eccede i limiti della tabella */
+char cond_valid(x, y);
+
+/* Verifica che la cella bersaglio sia ottimale per lo spostamento */
+char cond(x,y);
 
 int move(int x, int y);
 
