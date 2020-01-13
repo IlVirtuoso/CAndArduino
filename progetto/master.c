@@ -468,6 +468,7 @@ vexillum *getVex(int numFlag)
     p = (vexillum *)malloc(numFlag * sizeof(vexillum));
     for (i = 0; i < numFlag; i++)
     {
+        flag = 0;
         (p[i]).score = SO_ROUND_SCORE / numFlag;
         if (r != 0)
         {
@@ -476,8 +477,8 @@ vexillum *getVex(int numFlag)
         }
         while(!flag)
         {
-            x = (0 + rand()) % (SO_BASE + 1 - 0);
-            y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
+            x = (0 + rand()) % ((SO_BASE - 1) + 1 - 0) + 0;
+            y = (0 + rand()) % ((SO_ALTEZZA - 1) + 1 - 0) + 0;
             if ((getid(master_shared_table, x, y)) == EMPTY)
             {
                 p[i].x = x;
