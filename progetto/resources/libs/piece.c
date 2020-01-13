@@ -331,22 +331,22 @@ int goto_loc(int target_x, int target_y, char method, int evade){
 }
 
 /* Verifica se la cella obiettivo è libera */
-char cond_free(x, y){
+char cond_free(int x, int y){
     return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x,y);
 }
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
-char cond_old(x, y){
+char cond_old(int x, int y){
     return old_x == x && old_y == y;
 }
 
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
-char cond_valid(x, y){
+char cond_valid(int x, int y){
     return x < SO_BASE && y < SO_ALTEZZA;
 }
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */
-char cond(x,y){
+char cond(int x, int y){
     return cond_free(x,y) && !cond_old(x,y);
 }
 

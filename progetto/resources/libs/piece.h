@@ -62,16 +62,16 @@ char piece_logbuffer[128];
 int goto_loc(int x, int y, char method);
 
 /* Verifica se la cella obiettivo è libera */
-char cond_free(x, y);
+char cond_free(int x, int y);
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
-char cond_old(x, y);
+char cond_old(int x, int y);
 
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
-char cond_valid(x, y);
+char cond_valid(int x, int y);
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */
-char cond(x,y);
+char cond(int x, int y);
 
 int move(int x, int y);
 
