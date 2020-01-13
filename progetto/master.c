@@ -135,8 +135,14 @@ typedef struct
 score_table *st;
 
 /*metodo del round*/
-void round();
-
+void round(int phase);
+void phase1();
+void phase2();
+void phase3();
+enum{
+    NORMAL,
+    RESTARTED
+};
 /*puntatore alla struttura vexillum per le bandiere*/
 vexillum *vex;
 
@@ -221,16 +227,7 @@ int main(int argc, char *argv[])
     table_start();
     shared_table_init();
     playergen(SO_NUM_G);
-
-    round();
-
-    /* Inizio operazioni relative al round*/
-    /*while( Condizione alarm ||){
-        numFlag = getNumflag();
-        free(vex);
-    }*/
-
-    /*End-Region*/
+    round(NORMAL);
 
     logg("End Of Execution");
     logg("Stopped at %s", __TIME__);
@@ -429,7 +426,8 @@ int getNumflag()
     srand(clock() + getpid());
     for (i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++)
     {
-        if ((SO_ROUND_SCORE % i) == 0){
+        if ((SO_ROUND_SCORE % i) == 0)
+        {
             ln++;
         }
     }
@@ -450,10 +448,10 @@ int getNumflag()
                 ln++;
             }
         }
-        i = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
+        i = (0 + rand()) % ((ln - 1) + 1 - 0) + 0;
         numFlag = collection[i];
     }
-    logg("Bandiere Calcolate : %d",numFlag);
+    logg("Bandiere Calcolate : %d", numFlag);
     return numFlag;
 }
 
@@ -475,7 +473,7 @@ vexillum *getVex(int numFlag)
             (p[i]).score = (p[i]).score + 1;
             r--;
         }
-        while(!positionComplete)
+        while (!positionComplete)
         {
             x = (0 + rand()) % ((SO_BASE - 1) + 1 - 0) + 0;
             y = (0 + rand()) % ((SO_ALTEZZA - 1) + 1 - 0) + 0;
@@ -484,14 +482,37 @@ vexillum *getVex(int numFlag)
                 p[i].x = x;
                 p[i].y = y;
                 tab(master_shared_table, x, y)->id = FLAG;
-                positionComplete ++;
+                positionComplete++;
             }
         }
     }
     return p;
 }
 
-void round()
+
+void round(int phase)
+{
+    switch (phase)
+    {
+    case NORMAL:
+        phase1();
+        phase2();
+        phase3();
+        break;
+
+    case RESTARTED:
+        restart();
+        phase2();
+        phase3();
+        break;
+
+    default:
+        break;
+    }
+}
+
+int numf;
+void phase1()
 {
     int i, k;
     msg_cnt captured;
@@ -502,7 +523,7 @@ void round()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        releaseSem(semglobal,PLAYER_SEM + i);
+        releaseSem(semglobal, PLAYER_SEM + i);
         msgrcv(master_msgqueue, &master, sizeof(msg_master), 1, MSG_INFO);
         master.phase = 1;
         master.type = ORDER_CHANNEL;
@@ -512,11 +533,17 @@ void round()
 
     for (i = 0; i < SO_NUM_G; i++)
         msgrcv(master_msgqueue, &master, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
-    numflag = getNumflag();
-    vex = getVex(numflag);
+    numf = getNumflag();
+    vex = getVex(numf);
     display(master_shared_table);
     /*End-Region*/
+}
 
+void phase2()
+{
+    int i, k;
+    msg_cnt captured;
+    msg_master master;
     /*Region Phase-2:Indication*/
     for (i = 0; i < SO_NUM_G; i++)
     {
@@ -525,15 +552,20 @@ void round()
         msgsnd(master_msgqueue, &msg, sizeof(msg_master), 0);
     }
     /*End-Region*/
+}
 
-    /*Region Phase-3:Anarchy*/
+void phase3()
+{
+    int i, k;
+    msg_cnt captured;
+    msg_master master;
     for (i = 0; i < SO_NUM_G; i++)
     {
         msg.phase = 3;
         msg.type = 1;
         msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
     }
-    for (i = 0; i < numflag; i++)
+    for (i = 0; i < numf; i++)
     {
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, MSG_INFO);
         for (k = 0; k < numflag; k++)
@@ -549,26 +581,15 @@ void round()
         if (semop(semglobal, &sem, 1))
             error("Error in semop", errno);
     }
-
-    /*End-Region*/
+    stamp_score(st);
+    restart();
 }
 
 void restart()
 {
-    int i;
-    for (i = 0; i < SO_NUM_G; i++)
-    {
-        kill(st->pid[i], SIGROUND);
-    }
-    semctl(semglobal, PLAYER_SEM, 0);
-    semctl(semglobal, PIECE_SEM, 0);
-    semctl(semglobal, MASTER_SEM, 0);
-
-    sem.sem_num = MASTER_SEM;
-    sem.sem_op = -1;
-    if (semop(semglobal, &sem, SO_NUM_G))
-        error("Error in semop", errno);
-    round();
+    /**
+     * TODO: Bisogna Azzerare Bandiere e score
+     */
 }
 
 void manual()
