@@ -135,7 +135,8 @@ void tactic()
                 target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
                 if (!(reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) > 0))
                 {
-                    target = NULL;
+                    target.x = -1;
+                    target.y = -1;
                     order.ask = -1;
                 }
                 break;
@@ -152,10 +153,10 @@ void tactic()
                 order.type = ORDER_CHANNEL;
                 break;
             default:
-                stand();
+                getplay();
             }
         }
-        if (target != NULL)
+        if (target.x != -1 && target.y != -1)
             goto_loc(target.x, target.y, order.strategy, 1);
     }
 }
@@ -216,8 +217,8 @@ int setpos(int x, int y)
 int goto_loc(int target_x, int target_y, char method, int evade)
 {
     int x = target_x, y = target_y, check;
-    char random, left, right, down, up;
-    for (; piece_move > 0 && (piece_attr.x != x || piece_attr.y != y);)
+    char left, right, down, up;
+    for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
     {
         if (getid(piece_shared_table, target_x, target_y) != FLAG)
             return -1;
@@ -287,25 +288,25 @@ int goto_loc(int target_x, int target_y, char method, int evade)
             {
                 x = piece_attr.x - 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE; // x - 1
+                method = X_BEFORE;  
             }
             else if (left && cond(piece_attr.x + 1, piece_attr.y))
             {
                 x = piece_attr.x + 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE; // x + 1
+                method = X_BEFORE;  
             }
             else if (cond(piece_attr.x + 1, piece_attr.y) && right)
             {
                 x = piece_attr.x + 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE; // x + 1
+                method = X_BEFORE;  
             }
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE; // x-1
+                method = X_BEFORE;  
             }
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
@@ -313,7 +314,7 @@ int goto_loc(int target_x, int target_y, char method, int evade)
                 if (right == left)
                 {
                     x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
-                    signal = 1;
+                    /*signal = 1;*/
                 }
                 else
                     x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
@@ -325,7 +326,7 @@ int goto_loc(int target_x, int target_y, char method, int evade)
                 if (right == left)
                 {
                     x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x + 1));
-                    signal = 1;
+                    /*signal = 1;*/
                 }
                 else
                     x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
@@ -351,32 +352,32 @@ int goto_loc(int target_x, int target_y, char method, int evade)
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE; // y - 1
+                method = Y_BEFORE;  
             }
             else if (down && cond(piece_attr.x, piece_attr.y + 1))
             {
                 y = piece_attr.y + 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE; // y + 1
+                method = Y_BEFORE;  
             }
             else if (cond(piece_attr.x, piece_attr.y + 1) && up)
             {
                 y = piece_attr.y + 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE; // y + 1
+                method = Y_BEFORE;  
             }
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE; // y - 1
+                method = Y_BEFORE;  
             }
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
                 if (up == down)
                 {
-                    y = (piece_attr_y > old_y ? (piece_attr_y + 1) : (piece_attr_y - 1));
+                    y = (piece_attr.y > old_y ? (piece_attr.y + 1) : (piece_attr.y - 1));
                 }
                 else
                     y = (right ? (piece_attr.y + 1) : (piece_attr.y - 1));
@@ -387,7 +388,7 @@ int goto_loc(int target_x, int target_y, char method, int evade)
                 x = piece_attr.x + 1;
                 if (up == down)
                 {
-                    y = piece_attr_y > old_y ? piece_attr_y + 1 : piece_attr_y - 1;
+                    y = piece_attr.y > old_y ? piece_attr.y + 1 : piece_attr.y - 1;
                 }
                 else
                     y = (up ? (piece_attr.y + 1) : (piece_attr.y - 1));
@@ -408,31 +409,35 @@ int goto_loc(int target_x, int target_y, char method, int evade)
 }
 
 /* Verifica se la cella obiettivo è libera */
-<<<<<<< HEAD
-char cond_free(int x, int y){
-    return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x,y);
-}
 
-/* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
-char cond_old(int x, int y){
+char cond_free(int x, int y)
+{
     return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x, y);
 }
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
 char cond_old(int x, int y)
 {
+    return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x, y);
+}
+
+/* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
+char cond_old2(int x, int y)
+{
     return old_x == x && old_y == y;
 }
 
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
-char cond_valid(int x, int y){
+char cond_valid(int x, int y)
+{
     return x < SO_BASE && y < SO_ALTEZZA;
 }
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */
 
-char cond(int x, int y){
-    return cond_free(x,y) && !cond_old(x,y);
+char cond(int x, int y)
+{
+    return cond_free(x, y) && !cond_old(x, y);
 }
 
 int move(int x, int y)

@@ -450,7 +450,7 @@ int getNumflag()
                 ln++;
             }
         }
-        numFlag = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
+        i = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
         numFlag = collection[i];
     }
     logg("Bandiere Calcolate : %d",numFlag);
@@ -475,7 +475,7 @@ vexillum *getVex(int numFlag)
             (p[i]).score = (p[i]).score + 1;
             r--;
         }
-        while(!PositionComplete)
+        while(!positionComplete)
         {
             x = (0 + rand()) % ((SO_BASE - 1) + 1 - 0) + 0;
             y = (0 + rand()) % ((SO_ALTEZZA - 1) + 1 - 0) + 0;
