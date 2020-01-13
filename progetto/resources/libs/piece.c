@@ -5,9 +5,9 @@
 int pos_set = 0;
 
 /* Coordinata x dell'ultima cella visitata dalla pedina; aggiorna in move */
-int old_x = -1;
+int old_x;
 /* Coordinata x dell'ultima cella visitata dalla pedina; aggiorna in move */
-int old_y = -1;
+int old_y;
 
 /*metodi per gestire il round*/
 void play();
@@ -118,6 +118,8 @@ void play(int command)
 
 void tactic()
 {
+    old_x = -1;
+    old_y = -1;
     while (piece_attr.n_moves != 0)
     {
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
