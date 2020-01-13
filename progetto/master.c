@@ -449,10 +449,11 @@ int getNumflag()
                 ln++;
             }
         }
-        numFlag = (0 + rand()) % ((ln - 1) + 1 - 0) + 0;
-        numFlag = collection[numFlag];
-        logg("Bandiere Calcolate : %d",numflag);
+        i = rand()%ln;
+        numFlag = collection[i];
+        
     }
+    logg("Bandiere Calcolate : %d",numflag);
     return numFlag;
 }
 
@@ -473,7 +474,7 @@ vexillum *getVex(int numFlag)
             (p[i]).score = (p[i]).score + 1;
             r--;
         }
-        while(flag != 0)
+        while(!flag)
         {
             x = (0 + rand()) % (SO_BASE + 1 - 0);
             y = (0 + rand()) % (SO_ALTEZZA + 1 - 0);
@@ -482,7 +483,7 @@ vexillum *getVex(int numFlag)
                 p[i].x = x;
                 p[i].y = y;
                 tab(master_shared_table, x, y)->id = FLAG;
-                flag = 1;
+                flag ++;
             }
         }
     }
