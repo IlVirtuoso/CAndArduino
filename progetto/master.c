@@ -429,17 +429,18 @@ int getNumflag()
     srand(clock() + getpid());
     for (i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++)
     {
-        if ((SO_ROUND_SCORE % i) == 0)
+        if ((SO_ROUND_SCORE % i) == 0){
             ln++;
+        }
     }
     if (ln == 0)
     {
-        debug("ASSENZA DI UNA COMBINAZIONE PER CUI SCORE POSSA ESSERE DIVISO \n");
+        logg("ASSENZA DI UNA COMBINAZIONE PER CUI SCORE POSSA ESSERE DIVISO \n");
         numFlag = (SO_FLAG_MIN + rand()) % (SO_FLAG_MAX + 1 - SO_FLAG_MIN) + SO_FLAG_MIN;
     }
     else
     {
-        debug("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n");
+        logg("PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA \n");
         collection = malloc(ln * sizeof(collection));
         for (i = SO_FLAG_MIN, ln = 0; i <= SO_FLAG_MAX; i++)
         {
@@ -449,11 +450,11 @@ int getNumflag()
                 ln++;
             }
         }
-        i = rand()%ln;
+        numFlag = (0 + rand()) % ((ln - 1)+ 1 - 0) + 0;
         numFlag = collection[i];
         
     }
-    logg("Bandiere Calcolate : %d",numflag);
+    logg("Bandiere Calcolate : %d",numFlag);
     return numFlag;
 }
 
