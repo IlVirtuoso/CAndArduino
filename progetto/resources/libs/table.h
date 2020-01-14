@@ -124,7 +124,7 @@ void placeflag(cell * shared_table, int x, int y);
 /*metodo usato dal master per rimuovere le bandiere*/
 void removeflag(cell * shared_table, int x, int y);
 
-void capture(cell * shared_table,int x, int y, int player_id);
+void capture(cell * shared_table,int x, int y);
 
 int semglobal;
 

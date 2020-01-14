@@ -30,15 +30,15 @@ int piece()
 
     processSign = "Piece";
     srand(time(NULL));
-    if ((semglobal = semget(IPC_PRIVATE, semnum, IPC_EXCL | 0600)) == -1)
+    if ((semglobal = semget(IPC_PRIVATE, semnum, 0600)) == -1)
     {
         error("errore nel semaforo", ECONNABORTED);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL | 0600)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
-    if ((semplayer = semget(getppid(), SO_NUM_P + 2, IPC_EXCL | 0600)) == -1)
+    if ((semplayer = semget(getppid(), SO_NUM_P + 2, 0600)) == -1)
     {
         error("Errore nel get del semaforo player", errno);
     }
@@ -77,11 +77,8 @@ int piece()
 
 void getplay()
 {
-    msg_cnt temp;
-    temp.type = TACTIC_CHANNEL;
-    reserveSem(semplayer, PIECE_SEM + piece_attr.piece_id);
-    msgsnd(key_MO, &temp, sizeof(msg_cnt), MSG_INFO);
-    msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
+    order.phase = 0;
+    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
 }
@@ -98,6 +95,12 @@ void play(int command)
         {
             logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
             pos_set = 1;
+            piece_attr.n_moves = SO_N_MOVES;
+            temp.x = piece_attr.x;
+            temp.y = piece_attr.y;
+            temp.type = MASTERCHANNEL;
+            temp.pednum = piece_attr.piece_id;
+            msgsnd(key_MO, &temp, sizeof(msg_cnt), MSG_INFO);
         }
         else
         {
@@ -107,12 +110,6 @@ void play(int command)
             order.y = rand() % SO_BASE;
             play(1);
         }
-        piece_attr.n_moves = SO_N_MOVES;
-        temp.x = piece_attr.x;
-        temp.y = piece_attr.y;
-        temp.type = TACTIC_CHANNEL;
-        temp.pednum = piece_attr.piece_id;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt), MSG_INFO);
         break;
 
     case 2:
@@ -120,11 +117,14 @@ void play(int command)
         target.y = order.y;
         piece_attr.strategy = order.strategy;
         debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
-        releaseSem(semplayer, PLAYER_SEM);
+        temp.type = MASTERCHANNEL;
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case 3:
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
+        temp.type = MASTERCHANNEL;
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         tactic();
         break;
     default:
@@ -432,6 +432,7 @@ char cond(int x, int y)
 
 int move(int x, int y)
 {
+    msg_cnt captured;
     struct timespec move, remain;
     int moved;
     int isValid = 0;
@@ -456,10 +457,17 @@ int move(int x, int y)
             }
             else if (moved == -1)
             {
-                capture(piece_shared_table, x, y, player_id);
+                debug("Capturing x:%d, y:%d", x, y);
+                captured.type = MASTERCHANNEL;
+                captured.x = x;
+                captured.y = y;
+                captured.id = piece_attr.piece_id;
+                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                debug("Sended message to player");
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
+                msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid(),MSG_INFO);
                 return 1;
             }
             else

@@ -14,22 +14,9 @@
 #define EMPTY ' '
 #endif
 
-#ifndef TACTIC_CHANNEL
-#define TACTIC_CHANNEL 4
+#ifndef MASTERCHANNEL
+#define MASTERCHANNEL 1
 #endif
-
-#ifndef ORDER_CHANNEL
-#define ORDER_CHANNEL 8
-#endif
-
-#ifndef COMMAND_CHANNEL
-#define COMMAND_CHANNEL 1
-#endif
-
-#ifndef CAPTURED_CHANNEL
-#define CAPTURED_CHANNEL 2
-#endif
-
 #ifndef MASTER_SEM
 #define MASTER_SEM 0
 #endif

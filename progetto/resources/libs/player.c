@@ -25,7 +25,6 @@ int piececreated = 0;
 
 struct sembuf sem;
 
-msg_cnt cnt;
 msg_master master;
 int player()
 {
@@ -36,7 +35,7 @@ int player()
     playernum = player_id - 65;
     sprintf(filename, "Player %c.log", player_id);
     logg("Player Started At %s", __TIME__);
-    if ((semglobal = semget(getppid(), semnum, IPC_EXCL | 0600)) == -1)
+    if ((semglobal = semget(getppid(), semnum, 0600)) == -1)
     {
         error("errore nel get del semaforo master", errno);
     }
@@ -48,7 +47,7 @@ int player()
     {
         initsemReserved(semplayer, i);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_EXCL | 0600)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
@@ -88,7 +87,6 @@ int player()
     /* Impostazioni tattica di gioco */;
 
     piececreated = 1;
-    master.type = COMMAND_CHANNEL;
     if (releaseSem(semglobal, MASTER_SEM))
         error("error in semop", errno);
     while (master.phase != -1)
@@ -103,12 +101,9 @@ int player()
 void stand()
 {
     msg_master command;
-    command.type = ORDER_CHANNEL;
+    command.phase = 0;
     debug("Player %c In Attesa di comandi", player_id);
-    releaseSem(semglobal, PLAYER_SEM + playernum);
-    msgsnd(master_msgqueue, &command, sizeof(msg_master), MSG_INFO);
-    msgrcv(master_msgqueue, &command, sizeof(msg_master), COMMAND_CHANNEL, MSG_INFO);
-    master.phase = command.phase;
+    msgrcv(master_msgqueue, &command, sizeof(msg_master) - sizeof(long), getpid(), MSG_INFO);
     debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
 }
@@ -116,6 +111,7 @@ void stand()
 void phase(int phase)
 {
     msg_cnt captured;
+    msg_cnt master;
     int i;
     position pos;
     switch (phase)
@@ -124,18 +120,18 @@ void phase(int phase)
         for (i = 0; i < SO_NUM_P; i++)
         {
             srand(clock());
-            cnt.x = rand() % SO_ALTEZZA;
-            cnt.y = rand() % SO_BASE;
-            cnt.type = ORDER_CHANNEL;
-            cnt.phase = 1;
-            cnt.pednum = i;
-            releaseSem(semplayer, PIECE_SEM + i);
-            msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
-            msgrcv(key_MO, &cnt, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
-            pieces[i].x = cnt.x;
-            pieces[i].y = cnt.y;
+            captured.x = rand() % SO_ALTEZZA;
+            captured.y = rand() % SO_BASE;
+            captured.type = pieces[i].piecepid;
+            captured.phase = 1;
+            captured.pednum = i;
+            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+            pieces[i].x = captured.x;
+            pieces[i].y = captured.y;
         }
-        releaseSem(semglobal, PLAYER_SEM + playernum);
+        master.type = MASTERCHANNEL;
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case 2:
@@ -146,42 +142,46 @@ void phase(int phase)
                 debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
             else
                 debug("Flag not found for piece: %d", i);
-            cnt.pednum = i;
-            cnt.phase = 2;
-            cnt.strategy = rand()%2 ;
-            cnt.x = pos.x;
-            cnt.y = pos.y;
-            cnt.type = ORDER_CHANNEL;
-            releaseSem(semplayer, PIECE_SEM + i);
-            msgrcv(key_MO, NULL, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
-            msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
-            reserveSem(semplayer, PLAYER_SEM);
+            captured.pednum = i;
+            captured.phase = 2;
+            captured.type = pieces[i].piecepid;
+            captured.strategy = rand() % 2;
+            captured.x = pos.x;
+            captured.y = pos.y;
+            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
-        releaseSem(semglobal, PLAYER_SEM + playernum);
+        master.type = MASTERCHANNEL;
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case 3:
         /**
          * movimento
-         * cattura bandiera action to do
+         * cattura bandiera action to do 
          */
         for (i = 0; i < SO_NUM_P; i++)
         {
 
-            cnt.pednum = i;
-            cnt.phase = 3;
-            cnt.type = ORDER_CHANNEL;
-            releaseSem(semplayer, PIECE_SEM + i);
-            msgrcv(key_MO,NULL,sizeof(msg_cnt),TACTIC_CHANNEL,MSG_INFO);
-            msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
-            while(1){
-                releaseSem(semplayer,PLAYER_SEM);
-                msgrcv(key_MO,&captured,sizeof(msg_cnt),TACTIC_CHANNEL,MSG_INFO);
-                reserveSem(semglobal,MASTER_SEM);
-                msgsnd(master_msgqueue,&captured,sizeof(msg_cnt),CAPTURED_CHANNEL);
-                msgrcv(master_msgqueue,NULL,sizeof(msg_cnt),COMMAND_CHANNEL,MSG_INFO);
-                releaseSem(semplayer, PLAYER_SEM);
-            }
+            captured.pednum = i;
+            captured.phase = 3;
+            captured.type = pieces[i].piecepid;
+            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        }
+        master.type = MASTERCHANNEL;
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        while (1)
+        {
+            debug("Waiting piece");
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+            i = captured.id;
+            captured.id = player_id;
+            msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+            debug("sended message to master");
+            msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),getpid(),MSG_INFO);
+            captured.type = pieces[i].piecepid;
+            msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
             
         }
         break;
@@ -206,7 +206,8 @@ int piecegen(int numpieces)
         if ((pid = fork()))
         {
             /*player*/
-            pieces[i].piece_id = pid;
+            pieces[i].piecepid = pid;
+            pieces[i].piece_id = i;
             logg("Generato pezzo %d", i);
         }
         else

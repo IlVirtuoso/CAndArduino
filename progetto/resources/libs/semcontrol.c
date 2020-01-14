@@ -8,18 +8,18 @@ int releaseSem(int semId, int semNum)
     switch (semNum)
     {
     case 0:
-        debug("sem MASTER_SEM at %d", semctl(semId, semNum, GETVAL));
+        debug("sem MASTER_SEM of at %d", semctl(semId, semNum, GETVAL));
         break;
 
     case 1:
-        debug("sem PLAYER_SEM at %d", semctl(semId, semNum, GETVAL));
+        debug("sem PLAYER_SEM of at %d", semctl(semId, semNum, GETVAL));
         break;
     default:
         if (strcmp(processSign, "Master"))
-            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PLAYER:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         else
 
-            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PIECE:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -35,18 +35,18 @@ int waitzeroSem(int semId, int semNum)
     switch (semNum)
     {
     case 0:
-        debug("sem MASTER_SEM at %d", semctl(semId, semNum, GETVAL));
+        debug("sem MASTER_SEM of at %d", semctl(semId, semNum, GETVAL));
         break;
 
     case 1:
-        debug("sem PLAYER_SEM at %d", semctl(semId, semNum, GETVAL));
-
+        debug("sem PLAYER_SEM of at %d", semctl(semId, semNum, GETVAL));
+        break;
     default:
         if (strcmp(processSign, "Master"))
-            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PLAYER:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         else
 
-            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PIECE:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -62,17 +62,18 @@ int reserveSem(int semId, int semNum)
     switch (semNum)
     {
     case 0:
-        debug("sem MASTER_SEM at %d", semctl(semId, semNum, GETVAL));
+        debug("sem MASTER_SEM of at %d", semctl(semId, semNum, GETVAL));
         break;
 
     case 1:
-        debug("sem PLAYER_SEM at %d", semctl(semId, semNum, GETVAL));
+        debug("sem PLAYER_SEM of at %d", semctl(semId, semNum, GETVAL));
+        break;
     default:
         if (strcmp(processSign, "Master"))
-            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PLAYER:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         else
 
-            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PIECE:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -88,17 +89,18 @@ int initsemReserved(int semId, int semNum)
     switch (semNum)
     {
     case 0:
-        debug("sem MASTER_SEM at %d", 0);
+        debug("sem MASTER_SEM of at %d", semctl(semId, semNum, GETVAL));
         break;
 
     case 1:
-        debug("sem PLAYER_SEM at %d", 0);
+        debug("sem PLAYER_SEM of at %d", semctl(semId, semNum, GETVAL));
+        break;
     default:
         if (strcmp(processSign, "Master"))
-            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PLAYER:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         else
 
-            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+            debug("sem PIECE:%d of at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 

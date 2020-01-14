@@ -415,6 +415,7 @@ void playergen(int playernum)
         {
             /*figlio*/
             player_id = st->name[i]; /* Assegnazione del nome al Player*/
+            playernum = i;
             if (player() == -1)
             {
                 error("Errore nell'inizializzare il player", ECHILD);
@@ -522,11 +523,9 @@ void phase1()
     for (i = 0; i < SO_NUM_G; i++)
     {
         master.phase = 1;
-        master.type = COMMAND_CHANNEL;
-        reserveSem(semglobal, PLAYER_SEM + i);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
-        msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
-        reserveSem(semglobal, PLAYER_SEM + i);
+        master.type = st->pid[i];
+        msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, 0);
     }
     numf = getNumflag();
     vex = getVex(numf);
@@ -543,11 +542,9 @@ void phase2()
     for (i = 0; i < SO_NUM_G; i++)
     {
         master.phase = 2;
-        master.type = COMMAND_CHANNEL;
-        reserveSem(semglobal, PLAYER_SEM + i);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
-        msgsnd(master_msgqueue, &master, sizeof(msg_master), 0);
-        reserveSem(semglobal, PLAYER_SEM + i);
+        master.type = st->pid[i];
+        msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_master) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 }
 
@@ -569,18 +566,17 @@ void phase3()
     for (i = 0; i < SO_NUM_G; i++)
     {
         master.phase = 3;
-        master.type = COMMAND_CHANNEL;
-        reserveSem(semglobal, PLAYER_SEM + i);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
-        msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
-        reserveSem(semglobal, PLAYER_SEM + i);
+        master.type = st->pid[i];
+        msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
+
     while (numf > 0)
     {
         captured.x = -1;
         captured.y = -1;
-        releaseSem(semglobal, MASTER_SEM);
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, MSG_INFO);
+        captured.type = MASTERCHANNEL;
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata %d X:%d Y:%d", i, captured.x, captured.y);
         if (captured.x != -1 && captured.y != -1)
         {
@@ -592,9 +588,13 @@ void phase3()
                     removeflag(master_shared_table, vex[i].x, vex[i].y);
                     st->score[captured.id] = st->score[captured.id] + vex[i].score;
                     numf--;
+                    tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                 }
             }
         }
+        debug("Send message to player %d", captured.id);
+        captured.type = st->pid[captured.id];
+        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     stamp_score(st);
     restart();

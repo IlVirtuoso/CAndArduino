@@ -61,20 +61,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
     return 0;
 }
 
-void capture(cell *shared_table, int x, int y, int player_id)
-{
-    msg_cnt captured;
-    debug("Capturing x:%d, y:%d, from player %c", x, y, player_id);
-    captured.x = x;
-    captured.y = y;
-    captured.type = 4;
-    captured.id = player_id;
-    if (reserveSem(semplayer, PLAYER_SEM))
-        error("Error in semop", errno);
-    if (msgsnd(key_MO, &captured, sizeof(msg_cnt), MSG_INFO))
-        error("Error in sending message", errno);
-    tab(shared_table, x, y)->id = player_id;
-}
+
 
 char getid(cell *shared_table, int x, int y)
 {
