@@ -579,13 +579,16 @@ void phase3()
     {
         captured.x = -1;
         captured.y = -1;
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, IPC_NOWAIT);
+        releaseSem(semglobal, MASTER_SEM);
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, MSG_INFO);
+        debug("Bandiera Catturata %d X:%d Y:%d", i, captured.x, captured.y);
         if (captured.x != -1 && captured.y != -1)
         {
             for (k = 0; k < numflag; k++)
             {
                 if (captured.x == vex[i].x && captured.y == vex[i].y)
                 {
+
                     removeflag(master_shared_table, vex[i].x, vex[i].y);
                     st->score[captured.id] = st->score[captured.id] + vex[i].score;
                     numf--;

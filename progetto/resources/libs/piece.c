@@ -138,13 +138,12 @@ void tactic()
     char strategy = order.strategy;
     old_x = -1;
     old_y = -1;
-    debug("Piece %d Moves Remaining %d, Moves to: %d,%d", piece_attr.piece_id, piece_attr.n_moves,target.x,target.y);
+    debug("Piece %d Moves Remaining %d, Moves to: %d,%d", piece_attr.piece_id, piece_attr.n_moves, target.x, target.y);
     while (piece_attr.n_moves > 0)
     {
-        debug("Entering Cycle");
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
-            debug("Piece %d changing target",piece_attr.piece_id);
+            debug("Piece %d changing target", piece_attr.piece_id);
             target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
             if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
             {
@@ -152,7 +151,6 @@ void tactic()
                 getplay();
             }
         }
-         debug("Piece %d moving to target",piece_attr.piece_id);
         result = goto_loc(target.x, target.y, strategy);
         switch (result)
         {
@@ -226,7 +224,6 @@ int goto_loc(int target_x, int target_y, char method)
 {
     int x = target_x, y = target_y, check;
     char left, right, down, up, result = 0;
-    debug("Goto Loc Started From piece %d", piece_attr.piece_id);
     for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
     {
         if (getid(piece_shared_table, target_x, target_y) != FLAG)
@@ -448,7 +445,7 @@ int move(int x, int y)
         if (isValid && pos_set)
         {
             moved = setid(piece_shared_table, x, y, player_id, piece_attr.x, piece_attr.y);
-            if (moved)
+            if (moved == 1)
             {
                 old_x = piece_attr.x;
                 old_y = piece_attr.y;
@@ -463,7 +460,7 @@ int move(int x, int y)
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
-                
+                return 1;
             }
             else
             {

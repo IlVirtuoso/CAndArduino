@@ -115,6 +115,7 @@ void stand()
 
 void phase(int phase)
 {
+    msg_cnt captured;
     int i;
     position pos;
     switch (phase)
@@ -162,16 +163,25 @@ void phase(int phase)
     case 3:
         /**
          * movimento
-         * sembra che il player non riceva il comando fase 3
+         * cattura bandiera action to do
          */
         for (i = 0; i < SO_NUM_P; i++)
         {
+
             cnt.pednum = i;
             cnt.phase = 3;
             cnt.type = ORDER_CHANNEL;
             releaseSem(semplayer, PIECE_SEM + i);
             msgrcv(key_MO,NULL,sizeof(msg_cnt),TACTIC_CHANNEL,MSG_INFO);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
+            while(1){
+                releaseSem(semplayer,PLAYER_SEM);
+                msgrcv(key_MO,&captured,sizeof(msg_cnt),TACTIC_CHANNEL,MSG_INFO);
+                reserveSem(semglobal,MASTER_SEM);
+                msgsnd(master_msgqueue,&captured,sizeof(msg_cnt),CAPTURED_CHANNEL);
+                msgrcv(master_msgqueue,NULL,sizeof(msg_cnt),COMMAND_CHANNEL,MSG_INFO);
+                releaseSem(semplayer, PLAYER_SEM);
+            }
             
         }
         break;

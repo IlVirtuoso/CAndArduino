@@ -26,6 +26,10 @@
 #define COMMAND_CHANNEL 1
 #endif
 
+#ifndef CAPTURED_CHANNEL
+#define CAPTURED_CHANNEL 2
+#endif
+
 #ifndef MASTER_SEM
 #define MASTER_SEM 0
 #endif
