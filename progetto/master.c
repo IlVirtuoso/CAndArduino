@@ -170,6 +170,8 @@ int actual_round;
 
 int numflag;
 
+int numf;
+
 FILE *cfg;
 
 int main(int argc, char *argv[])
@@ -177,7 +179,7 @@ int main(int argc, char *argv[])
     int opt = 0;
     verbosity = 0;
     isDebug = 0;
-
+    processSign = "Master";
     cleaner = clean;
     placed = 0;
 
@@ -252,6 +254,7 @@ void handler(int signum)
 
     case SIGALRM:
         logg("Fine del round, Sospensione");
+        display(master_shared_table);
         clean();
         break;
 
@@ -458,9 +461,6 @@ int getNumflag()
 
 vexillum *getVex(int numFlag)
 {
-    /**
-     * Bisogna riguardare il funzionameto di questo metodo perchè non piazza nulla
-     */
     vexillum *p;
     char positionComplete;
     int i, x, y, r = SO_ROUND_SCORE % numFlag;
@@ -511,14 +511,12 @@ void round(int phase)
     }
 }
 
-int numf;
 void phase1()
 {
     int i;
     /*msg_cnt captured;*/
     msg_master master;
     /*Region Phase-1:flag*/
-    alarm(SO_MAX_TIME);
     rounds++;
 
     for (i = 0; i < SO_NUM_G; i++)
@@ -526,6 +524,7 @@ void phase1()
         master.phase = 1;
         master.type = COMMAND_CHANNEL;
         reserveSem(semglobal, PLAYER_SEM + i);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
         msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
         reserveSem(semglobal, PLAYER_SEM + i);
     }
@@ -546,39 +545,53 @@ void phase2()
         master.phase = 2;
         master.type = COMMAND_CHANNEL;
         reserveSem(semglobal, PLAYER_SEM + i);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
         msgsnd(master_msgqueue, &master, sizeof(msg_master), 0);
         reserveSem(semglobal, PLAYER_SEM + i);
     }
 }
 
+int alarmset;
 void phase3()
 {
-    int i, k;
+    /**
+     *BIsogna capire perchè le bandierine non vengono catturate
+     */
     msg_cnt captured;
     msg_master master;
+    int i, k;
+    if (!alarmset)
+    {
+        alarm(SO_MAX_TIME);
+        alarmset = 1;
+    }
+
     for (i = 0; i < SO_NUM_G; i++)
     {
         master.phase = 3;
         master.type = COMMAND_CHANNEL;
         reserveSem(semglobal, PLAYER_SEM + i);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
         msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
         reserveSem(semglobal, PLAYER_SEM + i);
     }
-    for (i = 0; i < numf; i++)
+    while (numf > 0)
     {
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, MSG_INFO);
-        for (k = 0; k < numflag; k++)
+        captured.x = -1;
+        captured.y = -1;
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt), 4, IPC_NOWAIT);
+        if (captured.x != -1 && captured.y != -1)
         {
-            if (captured.x == vex[i].x && captured.y == vex[i].y)
+            for (k = 0; k < numflag; k++)
             {
-                removeflag(master_shared_table, vex[i].x, vex[i].y);
-                st->score[captured.id] = st->score[captured.id] + vex[i].score;
+                if (captured.x == vex[i].x && captured.y == vex[i].y)
+                {
+                    removeflag(master_shared_table, vex[i].x, vex[i].y);
+                    st->score[captured.id] = st->score[captured.id] + vex[i].score;
+                    numf--;
+                }
             }
         }
-        sem.sem_num = PIECE_SEM;
-        sem.sem_op = 1;
-        if (semop(semglobal, &sem, 1))
-            error("Error in semop", errno);
     }
     stamp_score(st);
     restart();
@@ -586,8 +599,11 @@ void phase3()
 
 void restart()
 {
+    numf = getNumflag();
+    vex = getVex(numf);
+    display(master_shared_table);
     /**
-     * TODO: Bisogna Azzerare Bandiere e score
+     * TODO: Bisogna lanciare il sengale
      */
 }
 

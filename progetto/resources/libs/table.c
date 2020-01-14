@@ -11,6 +11,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
 
             if ((releaseSem(sem_table, previous_x * SO_BASE + previous_y)) == 0)
             {
+                tab(shared_table, previous_x, previous_y)->id = EMPTY;
                 debug("Rilascio eseguito");
             }
             else
@@ -30,7 +31,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
         {
             debug("Accesso alla cella X:%d Y:%d", x, y);
             debug("Semop");
-            if ((reserveSem(sem_table,x*SO_BASE + y)) == 0)
+            if ((reserveSem(sem_table, x * SO_BASE + y)) == 0)
             {
                 debug("Accesso Acquisito");
             }
@@ -46,7 +47,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
 
             debug("Cattura Bandiera X:%d Y:%d", x, y);
             debug("Semop");
-            if ((reserveSem(sem_table,x*SO_BASE + y)) == 0)
+            if ((reserveSem(sem_table, x * SO_BASE + y)) == 0)
             {
                 debug("Accesso Acquisito");
             }
@@ -65,15 +66,12 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
 
 void capture(cell *shared_table, int x, int y, int player_id)
 {
-    struct sembuf sem;
     msg_cnt captured;
     captured.x = x;
     captured.y = y;
-    msgsnd(master_msgqueue, &captured, sizeof(msg_cnt), 4);
+    captured.type = 4;
     captured.id = player_id;
-    sem.sem_num = PIECE_SEM;
-    sem.sem_op = -1;
-    semop(semglobal, &sem, 1);
+    msgsnd(master_msgqueue, &captured, sizeof(msg_cnt), MSG_INFO);
     tab(shared_table, x, y)->id = player_id;
 }
 
@@ -115,7 +113,7 @@ void table_start()
     {
         error("Errore nell'inizializzazione del segmento di memoria", EKEYREJECTED);
     }
-    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA,  IPC_CREAT | IPC_EXCL | 0600)) == -1)
+    if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
@@ -155,7 +153,7 @@ position search(cell *shared_table, int b, int h, char target)
             h++;
             y++;
         } /* +y */
-        else if (z == 0 && sign)
+        else if (z == 0 && !sign)
         {
             b--;
             y++;

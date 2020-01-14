@@ -60,7 +60,7 @@ char piece_logbuffer[128];
  * @param y  intero che indica la colonna
  * @param method char che indica che metodo usare nello switch per raggiungere quel punto
  */
-int goto_loc(int target_x, int target_y, char method, int evade);
+int goto_loc(int target_x, int target_y, char method);
 
 /* Verifica se la cella obiettivo è libera */
 char cond_free(int x, int y);
@@ -88,16 +88,18 @@ int semplayer;
 
 int semnum;
 enum{
-    STRAIGHT_TO,
     X_BEFORE,
     Y_BEFORE,
     PROBABLE_LESS_COSTLY,
     EVASION_Y,
     EVASION_X,
     CAOS_POWER,
-    STAND
+    STAND,
+    STRAIGHT_TO
 };
 
+/* Struttura adibita a memorizzare le coordinate della cella target */
+position target;
 
 #endif
 

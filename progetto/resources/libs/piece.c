@@ -19,11 +19,10 @@ void tactic();
 /*variabile per l'Override del movimento, utilizzabile per esempio per l'interruzione di un round*/
 int override;
 
-
 struct sembuf sem;
 /* Struttura adibita a ricevere i comandi tramite MQ */
 msg_cnt order;
-/* Struttura adibita a memorizzare le coordinate della cella target */
+
 position target;
 
 int piece()
@@ -39,7 +38,7 @@ int piece()
     {
         error("Error nella creazione della tabella dei semafori", errno);
     }
-    if ((semplayer = semget(getppid(), SO_NUM_P + 3, IPC_EXCL | 0600)) == -1)
+    if ((semplayer = semget(getppid(), SO_NUM_P + 2, IPC_EXCL | 0600)) == -1)
     {
         error("Errore nel get del semaforo player", errno);
     }
@@ -78,8 +77,10 @@ int piece()
 
 void getplay()
 {
-
-    releaseSem(semplayer, PIECE_SEM + piece_attr.piece_id);
+    msg_cnt temp;
+    temp.type = TACTIC_CHANNEL;
+    reserveSem(semplayer, PIECE_SEM + piece_attr.piece_id);
+    msgsnd(key_MO, &temp, sizeof(msg_cnt), MSG_INFO);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
@@ -115,16 +116,16 @@ void play(int command)
         break;
 
     case 2:
-        releaseSem(semplayer, PIECE_SEM + piece_attr.piece_id);
-        msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
         target.x = order.x;
         target.y = order.y;
         piece_attr.strategy = order.strategy;
+        debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
         releaseSem(semplayer, PLAYER_SEM);
         break;
 
     case 3:
-    goto_loc(target.x,target.y,piece_attr.strategy,0);
+        debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
+        tactic();
         break;
     default:
         break;
@@ -133,42 +134,39 @@ void play(int command)
 
 void tactic()
 {
+    int result;
+    char strategy = order.strategy;
     old_x = -1;
     old_y = -1;
-    while (piece_attr.n_moves != 0)
+    debug("Piece %d Moves Remaining %d, Moves to: %d,%d", piece_attr.piece_id, piece_attr.n_moves,target.x,target.y);
+    while (piece_attr.n_moves > 0)
     {
+        debug("Entering Cycle");
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
-            switch (order.ask)
+            debug("Piece %d changing target",piece_attr.piece_id);
+            target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
+            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
             {
-            case 0:
-                target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
-                if (!(reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) > 0))
-                {
-                    target.x = -1;
-                    target.y = -1;
-                    order.ask = -1;
-                }
-                break;
-            case 1:
-                /*creare il semaforo*/
-                kill(getppid(), SIGTACTIC);
-                order.x = piece_attr.x;
-                order.y = piece_attr.y;
-                order.type = TACTIC_CHANNEL;
-                msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(int), MSG_INFO);
-                msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(int), 4, MSG_INFO);
-                target.x = order.x;
-                target.y = order.y;
-                order.type = ORDER_CHANNEL;
-                break;
-            default:
+                debug("Insufficent moves for piece %d", piece_attr.piece_id);
                 getplay();
             }
         }
-        if (target.x != -1 && target.y != -1)
-            goto_loc(target.x, target.y, order.strategy, 1);
+         debug("Piece %d moving to target",piece_attr.piece_id);
+        result = goto_loc(target.x, target.y, strategy);
+        switch (result)
+        {
+        case 0:
+            strategy = order.strategy;
+            break;
+        case 1:
+            strategy = X_BEFORE;
+            break;
+        case 2:
+            break;
+        }
     }
+    debug("Moves Finished for piece %d", piece_attr.piece_id);
 }
 
 void piece_handler(int signum)
@@ -224,30 +222,27 @@ int setpos(int x, int y)
     }
 }
 
-int goto_loc(int target_x, int target_y, char method, int evade)
+int goto_loc(int target_x, int target_y, char method)
 {
     int x = target_x, y = target_y, check;
-    char left, right, down, up;
+    char left, right, down, up, result = 0;
+    debug("Goto Loc Started From piece %d", piece_attr.piece_id);
     for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
     {
         if (getid(piece_shared_table, target_x, target_y) != FLAG)
-            return -1;
+            return 0;
         ;
         switch (method)
         {
         case Y_BEFORE:
             if (y != piece_attr.y)
             {
-                if (piece_attr.y > y && (check = (int)cond_free(piece_attr.x, piece_attr.y - 1)))
+                if (piece_attr.y > y && (check = cond_free(piece_attr.x, piece_attr.y - 1)))
                 {
-                    old_x = piece_attr.x;
-                    old_y = piece_attr.y;
                     check = move(piece_attr.x, piece_attr.y - 1);
                 }
-                else if (piece_attr.y < y && (check = (int)cond_free(piece_attr.x, piece_attr.y + 1)))
+                else if (piece_attr.y < y && (check = cond_free(piece_attr.x, piece_attr.y + 1)))
                 {
-                    old_x = piece_attr.x;
-                    old_y = piece_attr.y;
                     check = move(piece_attr.x, piece_attr.y + 1);
                 }
             }
@@ -263,16 +258,12 @@ int goto_loc(int target_x, int target_y, char method, int evade)
         case X_BEFORE:
             if (x != piece_attr.x)
             {
-                if (piece_attr.x > x && (check = (int)cond_free(piece_attr.x - 1, piece_attr.y)))
+                if (piece_attr.x > x && (check = cond_free(piece_attr.x - 1, piece_attr.y)))
                 {
-                    old_x = piece_attr.x;
-                    old_y = piece_attr.y;
                     check = move(piece_attr.x - 1, piece_attr.y);
                 }
-                else if (piece_attr.x < x && (check = (int)cond_free(piece_attr.x + 1, piece_attr.y)))
+                else if (piece_attr.x < x && (check = cond_free(piece_attr.x + 1, piece_attr.y)))
                 {
-                    old_x = piece_attr.x;
-                    old_y = piece_attr.y;
                     check = move(piece_attr.x + 1, piece_attr.y);
                 }
             }
@@ -385,23 +376,15 @@ int goto_loc(int target_x, int target_y, char method, int evade)
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
-                if (up == down)
-                {
-                    y = (piece_attr.y > old_y ? (piece_attr.y + 1) : (piece_attr.y - 1));
-                }
-                else
-                    y = (right ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                y = (piece_attr.y >= old_y ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                result = 1;
                 method = X_BEFORE;
             }
             else if (!right && cond(piece_attr.x + 1, piece_attr.y))
             {
                 x = piece_attr.x + 1;
-                if (up == down)
-                {
-                    y = piece_attr.y > old_y ? piece_attr.y + 1 : piece_attr.y - 1;
-                }
-                else
-                    y = (up ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                y = piece_attr.y <= old_y ? piece_attr.y - 1 : piece_attr.y + 1;
+                result = 1;
                 method = X_BEFORE;
             }
             else
@@ -415,7 +398,7 @@ int goto_loc(int target_x, int target_y, char method, int evade)
             break;
         }
     }
-    return 1;
+    return result;
 }
 
 /* Verifica se la cella obiettivo è libera */
@@ -455,16 +438,11 @@ int move(int x, int y)
     struct timespec move, remain;
     int moved;
     int isValid = 0;
+    debug("Moving piece %d to X:%d Y:%d", piece_attr.piece_id, x, y);
     move.tv_nsec = SO_MIN_HOLD_NSEC;
     move.tv_sec = 0;
     nanosleep(&move, &remain);
-    if (override)
-    {
-        isValid = 1;
-        override = 0;
-    }
-    else
-        isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
+    isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
     if (isValid && piece_attr.n_moves >= 0)
     {
         if (isValid && pos_set)
@@ -485,6 +463,7 @@ int move(int x, int y)
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
+                
             }
             else
             {

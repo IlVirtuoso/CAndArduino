@@ -30,7 +30,7 @@ msg_master master;
 int player()
 {
     int i;
-    processSign = "Player";
+    processSign = "Players";
     pieces = (piece_type *)malloc(sizeof(piece_type) * SO_NUM_P);
     cleaner = player_clean;
     playernum = player_id - 65;
@@ -40,11 +40,11 @@ int player()
     {
         error("errore nel get del semaforo master", errno);
     }
-    if ((semplayer = semget(getpid(), SO_NUM_P + 3, IPC_CREAT | IPC_EXCL | 0600)) == -1)
+    if ((semplayer = semget(getpid(), SO_NUM_P + 2, IPC_CREAT | IPC_EXCL | 0600)) == -1)
     {
         error("errore nella creazione del semaforo per il player", errno);
     }
-    for (i = 0; i < SO_NUM_P + 3; i++)
+    for (i = 0; i < SO_NUM_P + 2; i++)
     {
         initsemReserved(semplayer, i);
     }
@@ -103,12 +103,14 @@ int player()
 void stand()
 {
     msg_master command;
-    debug("Player %c In Attesa di comandi",player_id);
-    releaseSem(semglobal,PLAYER_SEM + playernum);
-    msgrcv(master_msgqueue,&command,sizeof(msg_master),COMMAND_CHANNEL,MSG_INFO);
+    command.type = ORDER_CHANNEL;
+    debug("Player %c In Attesa di comandi", player_id);
+    releaseSem(semglobal, PLAYER_SEM + playernum);
+    msgsnd(master_msgqueue, &command, sizeof(msg_master), MSG_INFO);
+    msgrcv(master_msgqueue, &command, sizeof(msg_master), COMMAND_CHANNEL, MSG_INFO);
     master.phase = command.phase;
+    debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
-    
 }
 
 void phase(int phase)
@@ -139,13 +141,18 @@ void phase(int phase)
         for (i = 0; i < SO_NUM_P; i++)
         {
             pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG);
+            if (pos.x != -1 && pos.y != -1)
+                debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
+            else
+                debug("Flag not found for piece: %d", i);
             cnt.pednum = i;
             cnt.phase = 2;
-            cnt.strategy = rand() % 8;
+            cnt.strategy = rand()%2 ;
             cnt.x = pos.x;
             cnt.y = pos.y;
             cnt.type = ORDER_CHANNEL;
-            reserveSem(semplayer, PIECE_SEM + i);
+            releaseSem(semplayer, PIECE_SEM + i);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt), TACTIC_CHANNEL, MSG_INFO);
             msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
             reserveSem(semplayer, PLAYER_SEM);
         }
@@ -162,8 +169,9 @@ void phase(int phase)
             cnt.pednum = i;
             cnt.phase = 3;
             cnt.type = ORDER_CHANNEL;
-            reserveSem(semplayer,PIECE_SEM + i);
-            msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
+            releaseSem(semplayer, PIECE_SEM + i);
+            msgrcv(key_MO,NULL,sizeof(msg_cnt),TACTIC_CHANNEL,MSG_INFO);
+            msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
             
         }
         break;

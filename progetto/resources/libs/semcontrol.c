@@ -13,9 +13,13 @@ int releaseSem(int semId, int semNum)
 
     case 1:
         debug("sem PLAYER_SEM at %d", semctl(semId, semNum, GETVAL));
-
+        break;
     default:
-        debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+        if (strcmp(processSign, "Master"))
+            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+        else
+
+            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -38,7 +42,11 @@ int waitzeroSem(int semId, int semNum)
         debug("sem PLAYER_SEM at %d", semctl(semId, semNum, GETVAL));
 
     default:
-        debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+        if (strcmp(processSign, "Master"))
+            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+        else
+
+            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -59,9 +67,12 @@ int reserveSem(int semId, int semNum)
 
     case 1:
         debug("sem PLAYER_SEM at %d", semctl(semId, semNum, GETVAL));
-
     default:
-        debug("sem PIECE:%d at %d", semNum, semctl(semId, semNum, GETVAL));
+        if (strcmp(processSign, "Master"))
+            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+        else
+
+            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -82,9 +93,12 @@ int initsemReserved(int semId, int semNum)
 
     case 1:
         debug("sem PLAYER_SEM at %d", 0);
-
     default:
-        debug("sem PIECE:%d setted %d", (semNum - 2), 0);
+        if (strcmp(processSign, "Master"))
+            debug("sem PLAYER:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
+        else
+
+            debug("sem PIECE:%d at %d", (semNum - 2), semctl(semId, semNum, GETVAL));
         break;
     }
 
@@ -112,4 +126,3 @@ int initsemAvailable(int semId, int semNum)
     semun.val = 1;
     return semctl(semId, semNum, SETVAL, semun);
 }
-
