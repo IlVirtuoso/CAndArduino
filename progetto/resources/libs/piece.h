@@ -30,6 +30,7 @@ struct{
     int x;
     int y; /*posizione della pedina*/ 
     int n_moves; /* numero mosse disponibili*/
+    int strategy;
 }piece_attr;
 
 char player_id;

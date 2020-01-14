@@ -84,12 +84,11 @@ int player()
     {
         error("Errore nella creazione della coda di controllo", errno);
     }
-
-    master.type = 1; /*canale 1 per la comunicazione con il master*/
     piecegen(SO_NUM_P);
     /* Impostazioni tattica di gioco */;
 
     piececreated = 1;
+    master.type = COMMAND_CHANNEL;
     if (releaseSem(semglobal, MASTER_SEM))
         error("error in semop", errno);
     while (master.phase != -1)
@@ -103,17 +102,19 @@ int player()
 
 void stand()
 {
-    reserveSem(semglobal,PLAYER_SEM + playernum);
-    master.type = 1;
-    msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
-    msgrcv(master_msgqueue, &master, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
-    logg("Received Message Phase:%d ", master.phase);
-    phase(master.phase);
+    msg_master command;
+    debug("Player %c In Attesa di comandi",player_id);
+    releaseSem(semglobal,PLAYER_SEM + playernum);
+    msgrcv(master_msgqueue,&command,sizeof(msg_master),COMMAND_CHANNEL,MSG_INFO);
+    master.phase = command.phase;
+    phase(command.phase);
+    
 }
 
 void phase(int phase)
 {
     int i;
+    position pos;
     switch (phase)
     {
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
@@ -131,18 +132,40 @@ void phase(int phase)
             pieces[i].x = cnt.x;
             pieces[i].y = cnt.y;
         }
-        msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
+        releaseSem(semglobal, PLAYER_SEM + playernum);
         break;
 
     case 2:
-
-        sem.sem_num = MASTER_SEM;
-        sem.sem_op = 1;
-        semop(semglobal, &sem, 1);
+        for (i = 0; i < SO_NUM_P; i++)
+        {
+            pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG);
+            cnt.pednum = i;
+            cnt.phase = 2;
+            cnt.strategy = rand() % 8;
+            cnt.x = pos.x;
+            cnt.y = pos.y;
+            cnt.type = ORDER_CHANNEL;
+            reserveSem(semplayer, PIECE_SEM + i);
+            msgsnd(key_MO, &cnt, sizeof(msg_cnt), MSG_INFO);
+            reserveSem(semplayer, PLAYER_SEM);
+        }
+        releaseSem(semglobal, PLAYER_SEM + playernum);
         break;
 
     case 3:
-
+        /**
+         * movimento
+         * sembra che il player non riceva il comando fase 3
+         */
+        for (i = 0; i < SO_NUM_P; i++)
+        {
+            cnt.pednum = i;
+            cnt.phase = 3;
+            cnt.type = ORDER_CHANNEL;
+            reserveSem(semplayer,PIECE_SEM + i);
+            msgsnd(key_MO,&cnt,sizeof(msg_cnt),MSG_INFO);
+            
+        }
         break;
 
     case ROUND_STOP:

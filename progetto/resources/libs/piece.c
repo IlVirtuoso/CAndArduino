@@ -19,6 +19,7 @@ void tactic();
 /*variabile per l'Override del movimento, utilizzabile per esempio per l'interruzione di un round*/
 int override;
 
+
 struct sembuf sem;
 /* Struttura adibita a ricevere i comandi tramite MQ */
 msg_cnt order;
@@ -29,7 +30,6 @@ int piece()
 {
 
     processSign = "Piece";
-
     srand(time(NULL));
     if ((semglobal = semget(IPC_PRIVATE, semnum, IPC_EXCL | 0600)) == -1)
     {
@@ -78,20 +78,16 @@ int piece()
 
 void getplay()
 {
-    msg_cnt response;
-    reserveSem(semplayer, PIECE_SEM + piece_attr.piece_id);
+
+    releaseSem(semplayer, PIECE_SEM + piece_attr.piece_id);
     msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
-    response.x = piece_attr.x;
-    response.y = piece_attr.y;
-    response.type = TACTIC_CHANNEL;
-    response.pednum = piece_attr.piece_id;
-    msgsnd(key_MO, &response, sizeof(msg_cnt), MSG_INFO);
 }
 
 void play(int command)
 {
+    msg_cnt temp;
     switch (command)
     {
     case 1:
@@ -111,10 +107,24 @@ void play(int command)
             play(1);
         }
         piece_attr.n_moves = SO_N_MOVES;
+        temp.x = piece_attr.x;
+        temp.y = piece_attr.y;
+        temp.type = TACTIC_CHANNEL;
+        temp.pednum = piece_attr.piece_id;
+        msgsnd(key_MO, &temp, sizeof(msg_cnt), MSG_INFO);
         break;
 
     case 2:
+        releaseSem(semplayer, PIECE_SEM + piece_attr.piece_id);
+        msgrcv(key_MO, &order, sizeof(msg_cnt), ORDER_CHANNEL, MSG_INFO);
+        target.x = order.x;
+        target.y = order.y;
+        piece_attr.strategy = order.strategy;
+        releaseSem(semplayer, PLAYER_SEM);
+        break;
 
+    case 3:
+    goto_loc(target.x,target.y,piece_attr.strategy,0);
         break;
     default:
         break;
@@ -288,25 +298,25 @@ int goto_loc(int target_x, int target_y, char method, int evade)
             {
                 x = piece_attr.x - 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE;  
+                method = X_BEFORE;
             }
             else if (left && cond(piece_attr.x + 1, piece_attr.y))
             {
                 x = piece_attr.x + 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE;  
+                method = X_BEFORE;
             }
             else if (cond(piece_attr.x + 1, piece_attr.y) && right)
             {
                 x = piece_attr.x + 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE;  
+                method = X_BEFORE;
             }
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
-                method = X_BEFORE;  
+                method = X_BEFORE;
             }
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
@@ -352,25 +362,25 @@ int goto_loc(int target_x, int target_y, char method, int evade)
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE;  
+                method = Y_BEFORE;
             }
             else if (down && cond(piece_attr.x, piece_attr.y + 1))
             {
                 y = piece_attr.y + 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE;  
+                method = Y_BEFORE;
             }
             else if (cond(piece_attr.x, piece_attr.y + 1) && up)
             {
                 y = piece_attr.y + 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE;  
+                method = Y_BEFORE;
             }
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
-                method = Y_BEFORE;  
+                method = Y_BEFORE;
             }
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {

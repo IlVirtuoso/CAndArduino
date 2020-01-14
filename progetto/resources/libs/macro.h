@@ -22,6 +22,10 @@
 #define ORDER_CHANNEL 8
 #endif
 
+#ifndef COMMAND_CHANNEL
+#define COMMAND_CHANNEL 1
+#endif
+
 #ifndef MASTER_SEM
 #define MASTER_SEM 0
 #endif

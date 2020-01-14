@@ -139,7 +139,8 @@ void round(int phase);
 void phase1();
 void phase2();
 void phase3();
-enum{
+enum
+{
     NORMAL,
     RESTARTED
 };
@@ -489,7 +490,6 @@ vexillum *getVex(int numFlag)
     return p;
 }
 
-
 void round(int phase)
 {
     switch (phase)
@@ -514,8 +514,8 @@ void round(int phase)
 int numf;
 void phase1()
 {
-    int i, k;
-    msg_cnt captured;
+    int i;
+    /*msg_cnt captured;*/
     msg_master master;
     /*Region Phase-1:flag*/
     alarm(SO_MAX_TIME);
@@ -523,16 +523,12 @@ void phase1()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        releaseSem(semglobal, PLAYER_SEM + i);
-        msgrcv(master_msgqueue, &master, sizeof(msg_master), 1, MSG_INFO);
         master.phase = 1;
-        master.type = ORDER_CHANNEL;
-        if (msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO))
-            error("Error in sending message", errno);
+        master.type = COMMAND_CHANNEL;
+        reserveSem(semglobal, PLAYER_SEM + i);
+        msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
+        reserveSem(semglobal, PLAYER_SEM + i);
     }
-
-    for (i = 0; i < SO_NUM_G; i++)
-        msgrcv(master_msgqueue, &master, sizeof(msg_master), ORDER_CHANNEL, MSG_INFO);
     numf = getNumflag();
     vex = getVex(numf);
     display(master_shared_table);
@@ -541,17 +537,18 @@ void phase1()
 
 void phase2()
 {
-    int i, k;
-    msg_cnt captured;
+    int i;
+    /*msg_cnt captured;*/
     msg_master master;
     /*Region Phase-2:Indication*/
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msg.phase = 2;
-        msg.type = 1;
-        msgsnd(master_msgqueue, &msg, sizeof(msg_master), 0);
+        master.phase = 2;
+        master.type = COMMAND_CHANNEL;
+        reserveSem(semglobal, PLAYER_SEM + i);
+        msgsnd(master_msgqueue, &master, sizeof(msg_master), 0);
+        reserveSem(semglobal, PLAYER_SEM + i);
     }
-    /*End-Region*/
 }
 
 void phase3()
@@ -561,9 +558,11 @@ void phase3()
     msg_master master;
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msg.phase = 3;
-        msg.type = 1;
-        msgsnd(master_msgqueue, &msg, sizeof(msg_master), MSG_COPY);
+        master.phase = 3;
+        master.type = COMMAND_CHANNEL;
+        reserveSem(semglobal, PLAYER_SEM + i);
+        msgsnd(master_msgqueue, &master, sizeof(msg_master), MSG_INFO);
+        reserveSem(semglobal, PLAYER_SEM + i);
     }
     for (i = 0; i < numf; i++)
     {
