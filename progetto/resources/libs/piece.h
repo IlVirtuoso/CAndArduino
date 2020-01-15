@@ -90,10 +90,10 @@ int semnum;
 enum{
     X_BEFORE,
     Y_BEFORE,
-    PROBABLE_LESS_COSTLY,
+    DIAGONAL,
+    CAOS_THEORY,
     EVASION_Y,
     EVASION_X,
-    CAOS_POWER,
     STAND,
     STRAIGHT_TO
 };
