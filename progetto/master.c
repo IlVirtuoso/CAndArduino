@@ -578,6 +578,9 @@ void phase3()
     }
     while (numflag > 0)
     {
+        /**
+         * implementare controllo su bandiere già catturate
+         */
         captured.x = -1;
         captured.y = -1;
         captured.type = MASTERCHANNEL;
