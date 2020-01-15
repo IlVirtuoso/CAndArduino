@@ -60,7 +60,7 @@ char piece_logbuffer[128];
  * @param y  intero che indica la colonna
  * @param method char che indica che metodo usare nello switch per raggiungere quel punto
  */
-int goto_loc(int target_x, int target_y, char method);
+int goto_loc(int target_x, int target_y, char strategy);
 
 /* Verifica se la cella obiettivo è libera */
 char cond_free(int x, int y);

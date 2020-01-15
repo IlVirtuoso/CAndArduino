@@ -143,6 +143,7 @@ void tactic()
     char strategy = order.strategy;
     old_x = -1;
     old_y = -1;
+    /* posizione provvisoria */ srand(clock() + getpid());
     debug("Piece %d Moves Remaining %d, Moves to: %d,%d", piece_attr.piece_id, piece_attr.n_moves, target.x, target.y);
     while (piece_attr.n_moves > 0)
     {
@@ -228,10 +229,9 @@ int setpos(int x, int y)
     }
 }
 
-int goto_loc(int target_x, int target_y, char method)
-{
+int goto_loc(int target_x, int target_y, char strategy)
     int x = target_x, y = target_y, check;
-    char left, right, down, up, result = 0;
+    char left, right, down, up, result = 0, method = strategy, changeT = (char)((1 + rand()) % ((2)) + 1);
     for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
     {
         if (getid(piece_shared_table, target_x, target_y) != FLAG)
@@ -259,6 +259,10 @@ int goto_loc(int target_x, int target_y, char method)
 
             if (check == 0)
                 method = EVASION_Y;
+            else if(changeT > 0 && strategy == DIAGONAL) 
+                method = DIAGONAL;
+            else if(changeT > 0 && strategy == CHAOS_THEORY) 
+                method = CHAOS_THEORY; 
             break;
 
         /* Precedenza all'asse verticale*/
@@ -281,10 +285,15 @@ int goto_loc(int target_x, int target_y, char method)
 
             if (check == 0)
                 method = EVASION_X;
+            else if(changeT > 0 && strategy == DIAGONAL) 
+                method = DIAGONAL;
+            else if(changeT > 0 && strategy == CHAOS_THEORY) 
+                method = CHAOS_THEORY;
             break;
 
         /* Schivata da asse orizzontale */
         case EVASION_Y:
+            changeT = 0;
             right = 0;
             left = 0;
             if (piece_attr.x >= x)
@@ -344,6 +353,7 @@ int goto_loc(int target_x, int target_y, char method)
 
         /* Schivata da asse verticale */
         case EVASION_X:
+            changeT = 0;
             down = 0;
             up = 0;
             if (piece_attr.y >= y)
@@ -403,6 +413,18 @@ int goto_loc(int target_x, int target_y, char method)
                 old_y = -1;
             }
 
+            break;
+            case DIAGONAL:
+                switch(changeT){
+                    case 1: method = X_BEFORE; changeT = 2; break;
+                    case 2: method = Y_BEFORE; changeT = 1; break;
+                }
+            break;
+            case CHAOS_THEORY:
+                switch(changeT){
+                    case 1: method = X_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
+                    case 2: method = Y_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
+                }   
             break;
         default:
             break;
