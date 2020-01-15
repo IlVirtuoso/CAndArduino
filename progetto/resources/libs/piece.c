@@ -159,8 +159,6 @@ void tactic()
         result = goto_loc(target.x, target.y, strategy);
         switch (result)
         {
-        case -1:
-            break;
         case 0:
             strategy = order.strategy;
             break;
@@ -168,7 +166,10 @@ void tactic()
             strategy = X_BEFORE;
             break;
         case 2:
+        strategy = Y_BEFORE;
             break;
+        default:
+        break;
         }
     }
     debug("Moves Finished for piece %d", piece_attr.piece_id);
@@ -282,6 +283,7 @@ int goto_loc(int target_x, int target_y, char method)
                 method = EVASION_X;
             break;
 
+        /* Schivata da asse orizzontale */
         case EVASION_Y:
             right = 0;
             left = 0;
@@ -291,41 +293,48 @@ int goto_loc(int target_x, int target_y, char method)
                 right = 1;
             up = piece_attr.y > y ? 0 : 1;
 
+            /* Schiva in basso*/
             if (cond(piece_attr.x - 1, piece_attr.y) && left)
             {
                 x = piece_attr.x - 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
                 method = X_BEFORE;
             }
+            /* Schiva in alto perchè in basso è occupato*/
             else if (left && cond(piece_attr.x + 1, piece_attr.y))
             {
                 x = piece_attr.x + 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
                 method = X_BEFORE;
             }
+            /* Schiva in alto */
             else if (cond(piece_attr.x + 1, piece_attr.y) && right)
             {
                 x = piece_attr.x + 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
                 method = X_BEFORE;
             }
+            /* Schiva in basso perchè in alto è occupato*/
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
                 y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
                 method = X_BEFORE;
             }
+            /* Schiva verso sinistra (torna indietro) */
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x <= tmp_old_x ? (piece_attr.x - 1) : (piece_attr.x + 1));
             }
+            /* Schiva verso destra (torna indietro) */
             else if (!up && cond(piece_attr.x, piece_attr.y + 1))
             {
                 y = piece_attr.y + 1;
                     x = (piece_attr.x >= tmp_old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
                 result = 2;
             }
+            /*Nessuna tattica trovata: disattiva blocco per movimento all'indietro */ 
             else
             {
                 old_x = -1;
@@ -333,6 +342,7 @@ int goto_loc(int target_x, int target_y, char method)
             }
             break;
 
+        /* Schivata da asse orizzontale */
         case EVASION_X:
             down = 0;
             up = 0;
@@ -342,30 +352,35 @@ int goto_loc(int target_x, int target_y, char method)
                 up = 1;
             right = piece_attr.x > x ? 0 : 1;
 
+            /* Schiva verso sinistra */
             if (cond(piece_attr.x, piece_attr.y - 1) && down)
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
                 method = Y_BEFORE;
             }
+            /* Schiva verso destra perchè a sinistra è occupato */
             else if (down && cond(piece_attr.x, piece_attr.y + 1))
             {
                 y = piece_attr.y + 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
                 method = Y_BEFORE;
             }
+            /* Schiva verso destra */
             else if (cond(piece_attr.x, piece_attr.y + 1) && up)
             {
                 y = piece_attr.y + 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
                 method = Y_BEFORE;
             }
+            /* Schiva verso sinistra perchè a destra è occupato */
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
                 y = piece_attr.y - 1;
                 x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
                 method = Y_BEFORE;
             }
+            /* Schiva verso il basso (torna indietro) */
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
@@ -373,6 +388,7 @@ int goto_loc(int target_x, int target_y, char method)
                 result = 1;
                 method = X_BEFORE;
             }
+            /*Schiva verso l'alto (torna indietro) */
             else if (!right && cond(piece_attr.x + 1, piece_attr.y))
             {
                 x = piece_attr.x + 1;
@@ -380,6 +396,7 @@ int goto_loc(int target_x, int target_y, char method)
                 result = 1;
                 method = X_BEFORE;
             }
+            /* Nessuna tattica trovata: disattiva blocco per movimento all'indietro */
             else
             {
                 old_x = -1;
