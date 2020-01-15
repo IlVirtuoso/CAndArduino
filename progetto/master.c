@@ -557,9 +557,6 @@ void phase2()
 int alarmset;
 void phase3()
 {
-    /**
-     *BIsogna capire perchè le bandierine non vengono catturate
-     */
     msg_cnt captured;
     msg_master master;
     int i, k;
