@@ -29,7 +29,7 @@ struct{
     int piece_id; /*id del pezzo, tipicamente è la sua posizione nell'array dei pezzi*/
     int x;
     int y; /*posizione della pedina*/ 
-    int n_moves; /* numero mosse disponibili*/
+    long n_moves; /* numero mosse disponibili*/
     int strategy;
 }piece_attr;
 

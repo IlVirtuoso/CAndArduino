@@ -248,13 +248,14 @@ void handler(int signum)
         clean();
         break;
 
-    case SIGUSR1:
-        logg("Segnale di creazione pezzi inviato al player");
+    case SIGROUND:
+        
         break;
 
     case SIGALRM:
-        logg("Fine del round, Sospensione");
+        logg("Tempo Esaurito, chiusura");
         display(master_shared_table);
+        stamp_score(st);
         clean();
         break;
 
@@ -306,10 +307,10 @@ void clean_process()
 void stamp_score(score_table *t)
 {
     int i;
-    logg("PLAYER         SCORE\n");
+    printf("PLAYER         SCORE\n");
     for (i = 0; i < SO_NUM_G; i++)
     {
-        logg("PLAYER %c   |   %d  \n", t->name[i], t->score[i]);
+        printf("PLAYER %c   |   %d  \n", t->name[i], t->score[i]);
     }
 }
 
@@ -577,7 +578,7 @@ void phase3()
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
-    while (numflag >= 0)
+    while (numflag > 0)
     {
         /**
          * implementare controllo su bandiere già catturate
@@ -597,7 +598,7 @@ void phase3()
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
                     vex[k].taken = 1;
                     st->score[captured.id] = st->score[captured.id] + vex[k].score;
-                    numf--;
+                    numflag--;
                     tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                     debug("Success");
                 }
@@ -607,15 +608,21 @@ void phase3()
         captured.type = st->pid[captured.id];
         msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
-    stamp_score(st);
+    for(i = 0; i < SO_NUM_G; i++){
+        kill(st->pid[i],SIGROUND);
+        msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),MASTERCHANNEL,MSG_INFO);
+    }
     restart();
 }
 
 void restart()
 {
-    numf = getNumflag();
-    getVex(numf);
+    debug("Restarting");
+    numflag = getNumflag();
+    getVex(numflag);
     display(master_shared_table);
+    stamp_score(st);
+    round(RESTARTED);
     /**
      * TODO: Bisogna lanciare il sengale
      */

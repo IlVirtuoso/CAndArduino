@@ -194,7 +194,13 @@ void phase(int phase)
         break;
 
     case ROUND_STOP:
-        player_clean();
+    debug("Restarting");
+        for(i = 0; i < SO_NUM_P; i++){
+            kill(pieces[i].piecepid,SIGROUND);
+            msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_INFO);
+        }
+        captured.type = MASTERCHANNEL;
+        msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
         break;
 
     default:

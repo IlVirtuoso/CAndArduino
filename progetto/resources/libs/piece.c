@@ -141,9 +141,9 @@ void tactic()
     old_x = -1;
     old_y = -1;
     /* posizione provvisoria */ srand(clock() + getpid());
-    debug("Piece %d Moves Remaining %d, Moves to: %d,%d", piece_attr.piece_id, piece_attr.n_moves, target.x, target.y);
     while (piece_attr.n_moves > 0)
     {
+
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
             debug("Piece %d changing target", piece_attr.piece_id);
@@ -175,6 +175,7 @@ void tactic()
 
 void piece_handler(int signum)
 {
+    msg_cnt temp;
     switch (signum)
     {
     case SIGINT:
@@ -182,8 +183,9 @@ void piece_handler(int signum)
         break;
 
     case SIGROUND:
-        logg("Restart Execution");
-        override = 1;
+        debug("Restart Execution");
+        temp.type = getppid() * 10;
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         getplay();
         break;
 
@@ -512,7 +514,7 @@ int move(int x, int y)
                 piece_attr.n_moves--;
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
                 debug("Restart");
-                return 1;
+                return 0;
             }
             else
             {
