@@ -148,7 +148,7 @@ void tactic()
         {
             debug("Piece %d changing target", piece_attr.piece_id);
             target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
-            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
+            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) < 0))
             {
                 debug("Insufficent moves for piece %d", piece_attr.piece_id);
                 getplay();
@@ -453,7 +453,7 @@ int goto_loc(int target_x, int target_y, char strategy)
 
 char cond_free(int x, int y)
 {
-    return cond_valid(x, y) && (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG);
+    return cond_valid(x, y) && (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && semctl(sem_table,x*SO_BASE + y,GETVAL) == 1;
 }
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
@@ -481,7 +481,7 @@ int move(int x, int y)
     struct timespec move, remain;
     int moved;
     int isValid = 0;
-    debug("Moving piece %d to X:%d Y:%d", piece_attr.piece_id, x, y);
+    logg("Moving piece %d to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, x, y,piece_attr.n_moves);
     move.tv_nsec = SO_MIN_HOLD_NSEC;
     move.tv_sec = 0;
     nanosleep(&move, &remain);
