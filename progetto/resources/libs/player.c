@@ -145,7 +145,7 @@ void phase(int phase)
             captured.pednum = i;
             captured.phase = 2;
             captured.type = pieces[i].piecepid;
-            captured.strategy = rand() % 2;
+            captured.strategy = rand() % 4;
             captured.x = pos.x;
             captured.y = pos.y;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
