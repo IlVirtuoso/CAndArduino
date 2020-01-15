@@ -91,7 +91,7 @@ enum{
     X_BEFORE,
     Y_BEFORE,
     DIAGONAL,
-    CAOS_THEORY,
+    CHAOS_THEORY,
     EVASION_Y,
     EVASION_X,
     STAND,

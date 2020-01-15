@@ -98,25 +98,21 @@ void play(int command)
     case 1:
         if (pos_set)
             error("Cannot set pos 2 times", EBADR);
-        if (setpos(order.x, order.y))
-        {
-            logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
-            pos_set = 1;
-            piece_attr.n_moves = SO_N_MOVES;
-            temp.x = piece_attr.x;
-            temp.y = piece_attr.y;
-            temp.type = MASTERCHANNEL;
-            temp.pednum = piece_attr.piece_id;
-            msgsnd(key_MO, &temp, sizeof(msg_cnt), MSG_INFO);
-        }
-        else
+        while (!setpos(order.x, order.y))
         {
             debug("Posizionamento non riuscito Riprovo");
             srand(clock());
             order.x = rand() % SO_ALTEZZA;
             order.y = rand() % SO_BASE;
-            play(1);
         }
+        logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
+        pos_set = 1;
+        piece_attr.n_moves = SO_N_MOVES;
+        temp.x = piece_attr.x;
+        temp.y = piece_attr.y;
+        temp.type = getppid() * 10;
+        temp.pednum = piece_attr.piece_id;
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case 2:
@@ -124,7 +120,7 @@ void play(int command)
         target.y = order.y;
         piece_attr.strategy = order.strategy;
         debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
-        temp.type = MASTERCHANNEL;
+        temp.type = getppid() * 10;
         msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
@@ -132,6 +128,7 @@ void play(int command)
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
+
     default:
         break;
     }
@@ -167,10 +164,10 @@ void tactic()
             strategy = X_BEFORE;
             break;
         case 2:
-        strategy = Y_BEFORE;
+            strategy = Y_BEFORE;
             break;
         default:
-        break;
+            break;
         }
     }
     debug("Moves Finished for piece %d", piece_attr.piece_id);
@@ -229,7 +226,8 @@ int setpos(int x, int y)
     }
 }
 
-int goto_loc(int target_x, int target_y, char strategy){
+int goto_loc(int target_x, int target_y, char strategy)
+{
     int x = target_x, y = target_y, check;
     char left, right, down, up, result = 0, method = strategy, changeT = (char)((1 + rand()) % ((2)) + 1);
     for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
@@ -259,10 +257,10 @@ int goto_loc(int target_x, int target_y, char strategy){
 
             if (check == 0)
                 method = EVASION_Y;
-            else if(changeT > 0 && strategy == DIAGONAL) 
+            else if (changeT > 0 && strategy == DIAGONAL)
                 method = DIAGONAL;
-            else if(changeT > 0 && strategy == CHAOS_THEORY) 
-                method = CHAOS_THEORY; 
+            else if (changeT > 0 && strategy == CHAOS_THEORY)
+                method = CHAOS_THEORY;
             break;
 
         /* Precedenza all'asse verticale*/
@@ -285,9 +283,9 @@ int goto_loc(int target_x, int target_y, char strategy){
 
             if (check == 0)
                 method = EVASION_X;
-            else if(changeT > 0 && strategy == DIAGONAL) 
+            else if (changeT > 0 && strategy == DIAGONAL)
                 method = DIAGONAL;
-            else if(changeT > 0 && strategy == CHAOS_THEORY) 
+            else if (changeT > 0 && strategy == CHAOS_THEORY)
                 method = CHAOS_THEORY;
             break;
 
@@ -340,10 +338,10 @@ int goto_loc(int target_x, int target_y, char strategy){
             else if (!up && cond(piece_attr.x, piece_attr.y + 1))
             {
                 y = piece_attr.y + 1;
-                    x = (piece_attr.x >= tmp_old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
+                x = (piece_attr.x >= tmp_old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
                 result = 2;
             }
-            /*Nessuna tattica trovata: disattiva blocco per movimento all'indietro */ 
+            /*Nessuna tattica trovata: disattiva blocco per movimento all'indietro */
             else
             {
                 old_x = -1;
@@ -416,20 +414,34 @@ int goto_loc(int target_x, int target_y, char strategy){
             break;
         /* Alterna il movimento sulle assi */
         case DIAGONAL:
-            switch(changeT){
-                case 1: method = X_BEFORE; changeT = 2; break;
-                case 2: method = Y_BEFORE; changeT = 1; break;
+            switch (changeT)
+            {
+            case 1:
+                method = X_BEFORE;
+                changeT = 2;
+                break;
+            case 2:
+                method = Y_BEFORE;
+                changeT = 1;
+                break;
             }
-        break;
+            break;
         /* Estrae casualmente l'asse su cui muoversi */
         case CHAOS_THEORY:
-            switch(changeT){
-                case 1: method = X_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
-                case 2: method = Y_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
-            }   
-        break;
-    default:
-        break;
+            switch (changeT)
+            {
+            case 1:
+                method = X_BEFORE;
+                changeT = (char)((1 + rand()) % ((2)) + 1);
+                break;
+            case 2:
+                method = Y_BEFORE;
+                changeT = (char)((1 + rand()) % ((2)) + 1);
+                break;
+            }
+            break;
+        default:
+            break;
         }
     }
     return result;
@@ -441,7 +453,6 @@ char cond_free(int x, int y)
 {
     return cond_valid(x, y) && (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG);
 }
-
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
 char cond_old(int x, int y)
@@ -490,7 +501,7 @@ int move(int x, int y)
             else if (moved == -1)
             {
                 debug("Capturing x:%d, y:%d", x, y);
-                captured.type = 2;
+                captured.type = getppid() * 10;
                 captured.x = x;
                 captured.y = y;
                 captured.id = piece_attr.piece_id;

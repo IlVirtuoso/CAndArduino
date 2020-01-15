@@ -126,7 +126,7 @@ void phase(int phase)
             captured.phase = 1;
             captured.pednum = i;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
             pieces[i].x = captured.x;
             pieces[i].y = captured.y;
         }
@@ -145,11 +145,11 @@ void phase(int phase)
             captured.pednum = i;
             captured.phase = 2;
             captured.type = pieces[i].piecepid;
-            captured.strategy = rand() % 4;
+            captured.strategy = rand() % 8;
             captured.x = pos.x;
             captured.y = pos.y;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
         }
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
@@ -160,6 +160,8 @@ void phase(int phase)
          * movimento
          * cattura bandiera action to do 
          */
+        
+        
         for (i = 0; i < SO_NUM_P; i++)
         {
 
@@ -169,13 +171,16 @@ void phase(int phase)
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
 
+        
+
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
 
+        i = 0;
         while (1)
         {
             debug("Waiting piece");
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), 2, MSG_INFO);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
             i = captured.id;
             captured.id = playernum;
             captured.type = MASTERCHANNEL;

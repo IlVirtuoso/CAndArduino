@@ -44,8 +44,7 @@ int setid(cell *shared_table, int x, int y, char id, int previous_x, int previou
         }
         else
         {
-
-            debug("Cattura Bandiera X:%d Y:%d", x, y);
+            
             debug("Semop");
             if ((reserveSem(sem_table, x * SO_BASE + y)) == 0)
             {

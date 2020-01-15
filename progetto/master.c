@@ -576,7 +576,8 @@ void phase3()
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
-    while (numflag > 0)
+
+    while (numflag >= 0)
     {
         /**
          * implementare controllo su bandiere già catturate
@@ -585,15 +586,16 @@ void phase3()
         captured.y = -1;
         captured.type = MASTERCHANNEL;
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
-        debug("Bandiera Catturata %d X:%d Y:%d", i, captured.x, captured.y);
+        debug("Bandiera Catturata da %d X:%d Y:%d", captured.id, captured.x, captured.y);
         if (captured.x != -1 && captured.y != -1)
         {
             for (k = 0; k < numflag; k++)
             {
-                if (captured.x == vex[k].x && captured.y == vex[k].y)
+                if (captured.x == vex[k].x && captured.y == vex[k].y && vex[k].taken != 1)
                 {
 
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
+                    vex[k].taken = 1;
                     st->score[captured.id] = st->score[captured.id] + vex[k].score;
                     numf--;
                     tab(master_shared_table, captured.x, captured.y)->id = captured.id;
