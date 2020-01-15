@@ -167,22 +167,23 @@ void phase(int phase)
             captured.phase = 3;
             captured.type = pieces[i].piecepid;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
+
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+
         while (1)
         {
             debug("Waiting piece");
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), 2, MSG_INFO);
             i = captured.id;
-            captured.id = player_id;
-            msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+            captured.id = playernum;
+            captured.type = MASTERCHANNEL;
+            msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
             debug("sended message to master");
-            msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),getpid(),MSG_INFO);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
             captured.type = pieces[i].piecepid;
-            msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
-            
+            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
         break;
 

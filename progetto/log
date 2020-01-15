@@ -1,0 +1,2110 @@
+[LOG : Master -> 0.740000]Started At: 11:40:15
+[LOG : Master -> 0.751000]Variabile:SO_BASE inizializzata a 10 
+[LOG : Master -> 0.753000]Variabile:SO_ALTEZZA inizializzata a 10 
+[LOG : Master -> 0.754000]Variabile:SO_NUM_G inizializzata a 1 
+[LOG : Master -> 0.754000]Variabile:SO_NUM_P inizializzata a 1 
+[LOG : Master -> 0.755000]Variabile:SO_FLAG_MIN inizializzata a 10 
+[LOG : Master -> 0.756000]Variabile:SO_FLAG_MAX inizializzata a 10 
+[LOG : Master -> 0.756000]Variabile:SO_ROUND_SCORE inizializzata a 100 
+[LOG : Master -> 0.757000]Variabile:SO_MIN_HOLD_NSEC inizializzata a 100000000 
+[LOG : Master -> 0.758000]Variabile:SO_N_MOVES inizializzata a 40 
+[LOG : Master -> 0.758000]Variabile:SO_MAX_TIME inizializzata a 3 
+[LOG : Master -> 0.759000]Impostazione maschere e segnali
+[LOG : Master -> 0.762000]Inizializzazione Memoria Condivisa
+[Debug Master]: sem MASTER_SEM of at 0
+[Debug Master]: sem PLAYER_SEM of at 0
+[Debug Master]: sem PIECE:0 of at 0
+[Debug Master]: Memoria Condivisa Inizializzata
+[LOG : Master -> 0.784000]Tabella semafori iniziata
+[Debug Master]: sem MASTER_SEM at 1
+[Debug Master]: sem PLAYER_SEM at 1
+[Debug Master]: sem PIECE:-1 setted 1
+[Debug Master]: sem PIECE:0 setted 1
+[Debug Master]: sem PIECE:1 setted 1
+[Debug Master]: sem PIECE:2 setted 1
+[Debug Master]: sem PIECE:3 setted 1
+[Debug Master]: sem PIECE:4 setted 1
+[Debug Master]: sem PIECE:5 setted 1
+[Debug Master]: sem PIECE:6 setted 1
+[Debug Master]: sem PIECE:7 setted 1
+[Debug Master]: sem PIECE:8 setted 1
+[Debug Master]: sem PIECE:9 setted 1
+[Debug Master]: sem PIECE:10 setted 1
+[Debug Master]: sem PIECE:11 setted 1
+[Debug Master]: sem PIECE:12 setted 1
+[Debug Master]: sem PIECE:13 setted 1
+[Debug Master]: sem PIECE:14 setted 1
+[Debug Master]: sem PIECE:15 setted 1
+[Debug Master]: sem PIECE:16 setted 1
+[Debug Master]: sem PIECE:17 setted 1
+[Debug Master]: sem PIECE:18 setted 1
+[Debug Master]: sem PIECE:19 setted 1
+[Debug Master]: sem PIECE:20 setted 1
+[Debug Master]: sem PIECE:21 setted 1
+[Debug Master]: sem PIECE:22 setted 1
+[Debug Master]: sem PIECE:23 setted 1
+[Debug Master]: sem PIECE:24 setted 1
+[Debug Master]: sem PIECE:25 setted 1
+[Debug Master]: sem PIECE:26 setted 1
+[Debug Master]: sem PIECE:27 setted 1
+[Debug Master]: sem PIECE:28 setted 1
+[Debug Master]: sem PIECE:29 setted 1
+[Debug Master]: sem PIECE:30 setted 1
+[Debug Master]: sem PIECE:31 setted 1
+[Debug Master]: sem PIECE:32 setted 1
+[Debug Master]: sem PIECE:33 setted 1
+[Debug Master]: sem PIECE:34 setted 1
+[Debug Master]: sem PIECE:35 setted 1
+[Debug Master]: sem PIECE:36 setted 1
+[Debug Master]: sem PIECE:37 setted 1
+[Debug Master]: sem PIECE:38 setted 1
+[Debug Master]: sem PIECE:39 setted 1
+[Debug Master]: sem PIECE:40 setted 1
+[Debug Master]: sem PIECE:41 setted 1
+[Debug Master]: sem PIECE:42 setted 1
+[Debug Master]: sem PIECE:43 setted 1
+[Debug Master]: sem PIECE:44 setted 1
+[Debug Master]: sem PIECE:45 setted 1
+[Debug Master]: sem PIECE:46 setted 1
+[Debug Master]: sem PIECE:47 setted 1
+[Debug Master]: sem PIECE:48 setted 1
+[Debug Master]: sem PIECE:49 setted 1
+[Debug Master]: sem PIECE:50 setted 1
+[Debug Master]: sem PIECE:51 setted 1
+[Debug Master]: sem PIECE:52 setted 1
+[Debug Master]: sem PIECE:53 setted 1
+[Debug Master]: sem PIECE:54 setted 1
+[Debug Master]: sem PIECE:55 setted 1
+[Debug Master]: sem PIECE:56 setted 1
+[Debug Master]: sem PIECE:57 setted 1
+[Debug Master]: sem PIECE:58 setted 1
+[Debug Master]: sem PIECE:59 setted 1
+[Debug Master]: sem PIECE:60 setted 1
+[Debug Master]: sem PIECE:61 setted 1
+[Debug Master]: sem PIECE:62 setted 1
+[Debug Master]: sem PIECE:63 setted 1
+[Debug Master]: sem PIECE:64 setted 1
+[Debug Master]: sem PIECE:65 setted 1
+[Debug Master]: sem PIECE:66 setted 1
+[Debug Master]: sem PIECE:67 setted 1
+[Debug Master]: sem PIECE:68 setted 1
+[Debug Master]: sem PIECE:69 setted 1
+[Debug Master]: sem PIECE:70 setted 1
+[Debug Master]: sem PIECE:71 setted 1
+[Debug Master]: sem PIECE:72 setted 1
+[Debug Master]: sem PIECE:73 setted 1
+[Debug Master]: sem PIECE:74 setted 1
+[Debug Master]: sem PIECE:75 setted 1
+[Debug Master]: sem PIECE:76 setted 1
+[Debug Master]: sem PIECE:77 setted 1
+[Debug Master]: sem PIECE:78 setted 1
+[Debug Master]: sem PIECE:79 setted 1
+[Debug Master]: sem PIECE:80 setted 1
+[Debug Master]: sem PIECE:81 setted 1
+[Debug Master]: sem PIECE:82 setted 1
+[Debug Master]: sem PIECE:83 setted 1
+[Debug Master]: sem PIECE:84 setted 1
+[Debug Master]: sem PIECE:85 setted 1
+[Debug Master]: sem PIECE:86 setted 1
+[Debug Master]: sem PIECE:87 setted 1
+[Debug Master]: sem PIECE:88 setted 1
+[Debug Master]: sem PIECE:89 setted 1
+[Debug Master]: sem PIECE:90 setted 1
+[Debug Master]: sem PIECE:91 setted 1
+[Debug Master]: sem PIECE:92 setted 1
+[Debug Master]: sem PIECE:93 setted 1
+[Debug Master]: sem PIECE:94 setted 1
+[Debug Master]: sem PIECE:95 setted 1
+[Debug Master]: sem PIECE:96 setted 1
+[Debug Master]: sem PIECE:97 setted 1
+[LOG : Master -> 0.893000]tabella semafori configurata
+[Debug Master]: Shared Table attach completato
+[LOG : Master -> 0.905000]Memoria Condivisa Inizializzata
+[LOG : Players -> 0.090000]Player Started At 11:40:15
+[Debug Players]: sem MASTER_SEM of at 0
+[Debug Players]: sem PLAYER_SEM of at 0
+[Debug Players]: sem PLAYER:0 of at 0
+[LOG : Players -> 0.123000]Tabella semafori iniziata
+[LOG : Players -> 0.137000]Setup Struttura dei segnali
+[LOG : Players -> 0.146000]Generazione pezzi iniziata
+[LOG : Players -> 0.234000]Generato pezzo 0
+[Debug Players]: sem MASTER_SEM of at 0
+[Debug Players]: Player A In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player A
+[Debug Players]: Player A In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player A
+[Debug Players]: Flag Found for piece: 0, at X:3 Y:4
+[Debug Players]: Player A In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player A
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to master
+[Debug Players]: Waiting piece
+[Debug Players]: sended message to mast

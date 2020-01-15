@@ -485,6 +485,7 @@ vexillum *getVex(int numFlag)
                 p[i].y = y;
                 tab(master_shared_table, x, y)->id = FLAG;
                 positionComplete++;
+                debug("Placed Flag %d at %d %d", i, p[i].x, p[i].y);
             }
         }
     }
@@ -529,6 +530,11 @@ void phase1()
     }
     numf = getNumflag();
     vex = getVex(numf);
+    /*
+    *Capire perchè vex non può essere acceduto
+    */
+    for (i = 0; i < numflag; i++)
+        debug("Bandiera %d", vex[i].score);
     display(master_shared_table);
     /*End-Region*/
 }
@@ -569,8 +575,8 @@ void phase3()
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
-
     while (numf > 0)
     {
         captured.x = -1;
@@ -582,13 +588,14 @@ void phase3()
         {
             for (k = 0; k < numflag; k++)
             {
-                if (captured.x == vex[i].x && captured.y == vex[i].y)
+                if (captured.x == vex[k].x && captured.y == vex[k].y)
                 {
 
-                    removeflag(master_shared_table, vex[i].x, vex[i].y);
-                    st->score[captured.id] = st->score[captured.id] + vex[i].score;
+                    removeflag(master_shared_table, vex[k].x, vex[k].y);
+                    st->score[captured.id] = st->score[captured.id] + vex[k].score;
                     numf--;
                     tab(master_shared_table, captured.x, captured.y)->id = captured.id;
+                    debug("Success");
                 }
             }
         }

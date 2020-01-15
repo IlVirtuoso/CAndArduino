@@ -78,6 +78,7 @@ int piece()
 void getplay()
 {
     order.phase = 0;
+    debug("Waiting message from Player");
     msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
@@ -123,8 +124,6 @@ void play(int command)
 
     case 3:
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
-        temp.type = MASTERCHANNEL;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         tactic();
         break;
     default:
@@ -458,7 +457,7 @@ int move(int x, int y)
             else if (moved == -1)
             {
                 debug("Capturing x:%d, y:%d", x, y);
-                captured.type = MASTERCHANNEL;
+                captured.type = 2;
                 captured.x = x;
                 captured.y = y;
                 captured.id = piece_attr.piece_id;
