@@ -229,7 +229,7 @@ int setpos(int x, int y)
     }
 }
 
-int goto_loc(int target_x, int target_y, char strategy)
+int goto_loc(int target_x, int target_y, char strategy){
     int x = target_x, y = target_y, check;
     char left, right, down, up, result = 0, method = strategy, changeT = (char)((1 + rand()) % ((2)) + 1);
     for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
@@ -414,20 +414,22 @@ int goto_loc(int target_x, int target_y, char strategy)
             }
 
             break;
-            case DIAGONAL:
-                switch(changeT){
-                    case 1: method = X_BEFORE; changeT = 2; break;
-                    case 2: method = Y_BEFORE; changeT = 1; break;
-                }
-            break;
-            case CHAOS_THEORY:
-                switch(changeT){
-                    case 1: method = X_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
-                    case 2: method = Y_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
-                }   
-            break;
-        default:
-            break;
+        /* Alterna il movimento sulle assi */
+        case DIAGONAL:
+            switch(changeT){
+                case 1: method = X_BEFORE; changeT = 2; break;
+                case 2: method = Y_BEFORE; changeT = 1; break;
+            }
+        break;
+        /* Estrae casualmente l'asse su cui muoversi */
+        case CHAOS_THEORY:
+            switch(changeT){
+                case 1: method = X_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
+                case 2: method = Y_BEFORE; changeT = (char)((1 + rand()) % ((2)) + 1); break;
+            }   
+        break;
+    default:
+        break;
         }
     }
     return result;
