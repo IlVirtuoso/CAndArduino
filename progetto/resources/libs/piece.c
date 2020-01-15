@@ -261,7 +261,7 @@ int goto_loc(int target_x, int target_y, char method)
                 method = EVASION_Y;
             break;
 
-        /* Precedenza all'asse orizzontale*/
+        /* Precedenza all'asse verticale*/
         case X_BEFORE:
             if (x != piece_attr.x)
             {
@@ -342,7 +342,7 @@ int goto_loc(int target_x, int target_y, char method)
             }
             break;
 
-        /* Schivata da asse orizzontale */
+        /* Schivata da asse verticale */
         case EVASION_X:
             down = 0;
             up = 0;
@@ -415,17 +415,12 @@ int goto_loc(int target_x, int target_y, char method)
 
 char cond_free(int x, int y)
 {
-    return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x, y);
+    return cond_valid(x, y) && (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG);
 }
+
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
 char cond_old(int x, int y)
-{
-    return (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && cond_valid(x, y);
-}
-
-/* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
-char cond_old2(int x, int y)
 {
     return old_x == x && old_y == y;
 }
@@ -433,7 +428,7 @@ char cond_old2(int x, int y)
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
 char cond_valid(int x, int y)
 {
-    return x < SO_BASE && y < SO_ALTEZZA;
+    return (x > -1 && x < SO_BASE) && (y > -1 && y < SO_ALTEZZA);
 }
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */
