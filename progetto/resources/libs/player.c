@@ -183,6 +183,7 @@ void phase(int phase)
             debug("sended message to master");
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
             captured.type = pieces[i].piecepid;
+            debug("Send message to piece %d",captured.type);
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
         break;

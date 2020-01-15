@@ -154,7 +154,7 @@ void stamp_score(score_table *t);
 int getNumflag();
 
 /* crea ed inizializza l'array di bandierine NB: usare prima getNumFlag() e free(target)*/
-vexillum *getVex(int numFlag);
+void getVex(int numFlag);
 
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
@@ -460,19 +460,19 @@ int getNumflag()
     return numFlag;
 }
 
-vexillum *getVex(int numFlag)
+void getVex(int numFlag)
 {
-    vexillum *p;
+
     char positionComplete;
     int i, x, y, r = SO_ROUND_SCORE % numFlag;
-    p = (vexillum *)malloc(numFlag * sizeof(vexillum));
+    vex = (vexillum *)malloc(numFlag * sizeof(vexillum));
     for (i = 0; i < numFlag; i++)
     {
         positionComplete = 0;
-        (p[i]).score = SO_ROUND_SCORE / numFlag;
+        (vex[i]).score = SO_ROUND_SCORE / numFlag;
         if (r != 0)
         {
-            (p[i]).score = (p[i]).score + 1;
+            (vex[i]).score = (vex[i]).score + 1;
             r--;
         }
         while (!positionComplete)
@@ -481,15 +481,14 @@ vexillum *getVex(int numFlag)
             y = (0 + rand()) % ((SO_ALTEZZA - 1) + 1 - 0) + 0;
             if ((getid(master_shared_table, x, y)) == EMPTY)
             {
-                p[i].x = x;
-                p[i].y = y;
+                vex[i].x = x;
+                vex[i].y = y;
                 tab(master_shared_table, x, y)->id = FLAG;
                 positionComplete++;
-                debug("Placed Flag %d at %d %d", i, p[i].x, p[i].y);
+                debug("Placed Flag %d at %d %d", i, vex[i].x, vex[i].y);
             }
         }
     }
-    return p;
 }
 
 void round(int phase)
@@ -528,8 +527,8 @@ void phase1()
         msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, 0);
     }
-    numf = getNumflag();
-    vex = getVex(numf);
+    numflag = getNumflag();
+    getVex(numflag);
     /*
     *Capire perchè vex non può essere acceduto
     */
@@ -577,7 +576,7 @@ void phase3()
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
-    while (numf > 0)
+    while (numflag > 0)
     {
         captured.x = -1;
         captured.y = -1;
@@ -599,7 +598,7 @@ void phase3()
                 }
             }
         }
-        debug("Send message to player %d", captured.id);
+        debug("Send message to player %d", st->pid[captured.id]);
         captured.type = st->pid[captured.id];
         msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
@@ -610,7 +609,7 @@ void phase3()
 void restart()
 {
     numf = getNumflag();
-    vex = getVex(numf);
+    getVex(numf);
     display(master_shared_table);
     /**
      * TODO: Bisogna lanciare il sengale

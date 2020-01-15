@@ -153,6 +153,8 @@ void tactic()
         result = goto_loc(target.x, target.y, strategy);
         switch (result)
         {
+        case -1:
+            break;
         case 0:
             strategy = order.strategy;
             break;
@@ -466,7 +468,8 @@ int move(int x, int y)
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
-                msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid(),MSG_INFO);
+                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+                debug("Restart");
                 return 1;
             }
             else
