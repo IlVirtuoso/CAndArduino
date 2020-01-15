@@ -9,6 +9,12 @@ int old_x;
 /* Coordinata x dell'ultima cella visitata dalla pedina; aggiorna in move */
 int old_y;
 
+/* Valore mai annullato della coordinata x precedentemente occupata */
+int tmp_old_x;
+
+/* Valore mai annullato della coordinata y precedentemente occupata */
+int tmp_old_y;
+
 /*metodi per gestire il round*/
 void play();
 void getplay();
@@ -232,6 +238,7 @@ int goto_loc(int target_x, int target_y, char method)
         ;
         switch (method)
         {
+        /* Precedenza all'asse orizzontale */
         case Y_BEFORE:
             if (y != piece_attr.y)
             {
@@ -253,6 +260,7 @@ int goto_loc(int target_x, int target_y, char method)
                 method = EVASION_Y;
             break;
 
+        /* Precedenza all'asse orizzontale*/
         case X_BEFORE:
             if (x != piece_attr.x)
             {
@@ -310,26 +318,13 @@ int goto_loc(int target_x, int target_y, char method)
             else if (up && cond(piece_attr.x, piece_attr.y - 1))
             {
                 y = piece_attr.y - 1;
-                if (right == left)
-                {
-                    x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
-                    /*signal = 1;*/
-                }
-                else
-                    x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
-                method = Y_BEFORE;
+                x = (piece_attr.x <= tmp_old_x ? (piece_attr.x - 1) : (piece_attr.x + 1));
             }
             else if (!up && cond(piece_attr.x, piece_attr.y + 1))
             {
                 y = piece_attr.y + 1;
-                if (right == left)
-                {
-                    x = (piece_attr.x > old_x ? (piece_attr.x + 1) : (piece_attr.x + 1));
-                    /*signal = 1;*/
-                }
-                else
-                    x = (right ? (piece_attr.x + 1) : (piece_attr.x - 1));
-                method = Y_BEFORE;
+                    x = (piece_attr.x >= tmp_old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
+                result = 2;
             }
             else
             {
@@ -374,14 +369,14 @@ int goto_loc(int target_x, int target_y, char method)
             else if (right && cond(piece_attr.x - 1, piece_attr.y))
             {
                 x = piece_attr.x - 1;
-                y = (piece_attr.y >= old_y ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                y = (piece_attr.y >= tmp_old_y ? (piece_attr.y + 1) : (piece_attr.y - 1));
                 result = 1;
                 method = X_BEFORE;
             }
             else if (!right && cond(piece_attr.x + 1, piece_attr.y))
             {
                 x = piece_attr.x + 1;
-                y = piece_attr.y <= old_y ? piece_attr.y - 1 : piece_attr.y + 1;
+                y = (piece_attr.y <= tmp_old_y ? (piece_attr.y - 1) : (piece_attr.y + 1));
                 result = 1;
                 method = X_BEFORE;
             }
@@ -449,8 +444,8 @@ int move(int x, int y)
             moved = setid(piece_shared_table, x, y, player_id, piece_attr.x, piece_attr.y);
             if (moved == 1)
             {
-                old_x = piece_attr.x;
-                old_y = piece_attr.y;
+                tmp_old_x = old_x = piece_attr.x;
+                tmp_old_y = old_y = piece_attr.y;
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
