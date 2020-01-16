@@ -117,7 +117,6 @@ char getid(cell * shared_table, int x, int y);
  * @param previous_x: riga della cella da rilasciare prima di spostarsi[tipicamente: piece_attr.x]
  * @param previous_y : colonna della cella da rilasciare prima di spostarsi[tipicamente: piece_attr.y]
  */
-int setid(cell * shared_table,int x, int y, char id, int previous_x, int previous_y);
 
 /*metodo usato dal master per piazzare le bandiere*/
 void placeflag(cell * shared_table, int x, int y);

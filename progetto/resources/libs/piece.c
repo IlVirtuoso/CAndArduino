@@ -218,7 +218,11 @@ int setpos(int x, int y)
         y = y * -1;
     if (getid(piece_shared_table, x, y) == EMPTY && semctl(sem_table, x * SO_ALTEZZA + y, GETVAL) == 1)
     {
-        setid(piece_shared_table, x, y, player_id, -1, -1);
+        if (reserveSem(sem_table, x * SO_BASE + y))
+        {
+            error("error in acquiring pos cell", errno);
+        }
+        tab(piece_shared_table,x,y)->id = player_id;
         piece_attr.x = x;
         piece_attr.y = y;
         return 1;
@@ -479,25 +483,33 @@ char cond(int x, int y)
 int move(int x, int y)
 {
     msg_cnt captured;
-    int moved;
+    struct timespec move, remain;
     int isValid = 0;
+    move.tv_nsec = SO_MIN_HOLD_NSEC;
+    move.tv_sec = 0;
     logg("Moving piece %d to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, x, y, piece_attr.n_moves);
     isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
     if (isValid && piece_attr.n_moves >= 0)
     {
         if (isValid && pos_set)
         {
-            moved = setid(piece_shared_table, x, y, player_id, piece_attr.x, piece_attr.y);
-            if (moved == 1)
+
+            tab(piece_shared_table, piece_attr.x, piece_attr.y)->id = EMPTY;
+            if (releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y))
+                error("Error while releasing prevous cell", errno);
+            nanosleep(&move, &remain);
+            if (reserveSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y))
+                error("Error while acquiring new cell", errno);
+            if (getid(piece_shared_table, x, y) == EMPTY)
             {
+                tab(piece_shared_table, x, y)->id = player_id;
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
-                return 1;
             }
-            else if (moved == -1)
+            else if (getid(piece_shared_table, x, y) == FLAG)
             {
                 debug("Capturing x:%d, y:%d", x, y);
                 captured.type = getppid() * 10;
@@ -507,19 +519,16 @@ int move(int x, int y)
                 msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 debug("Sended message to player");
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
-                releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y);
-                tab(piece_shared_table, piece_attr.x, piece_attr.y)->id = EMPTY;
-                tab(piece_shared_table, x, y)->id = player_id;
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
                 debug("Restart");
-                return 1;
             }
             else
             {
                 return 0;
             } /*questo fa partire la gestione evasion*/
+            return 1;
         }
         else
         {

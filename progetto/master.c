@@ -130,6 +130,7 @@ typedef struct
     char *name;
     /* Array contenente il punteggio di tutti i processi giocatori*/
     int *score;
+    int rounds;
 } score_table;
 
 score_table *st;
@@ -229,6 +230,7 @@ int main(int argc, char *argv[])
     sem_init();
     table_start();
     shared_table_init();
+    st->rounds = 0;
     playergen(SO_NUM_G);
     round(NORMAL);
 
@@ -307,11 +309,13 @@ void clean_process()
 void stamp_score(score_table *t)
 {
     int i;
+    printf("Round: %d\n",st->rounds);
     printf("PLAYER         SCORE\n");
     for (i = 0; i < SO_NUM_G; i++)
     {
         printf("PLAYER %c   |   %d  \n", t->name[i], t->score[i]);
     }
+    
 }
 
 /*Master methods*/
@@ -582,7 +586,6 @@ void phase3()
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
-
     while (numf > 0)
     {
         /**
@@ -603,8 +606,9 @@ void phase3()
                     /***
                      * Le Pedine non catturano tutte le bandiere
                      */
+                    debug("Bandiera %d rimossa",k);
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
-                    vex[k].taken = 1;
+                    tab(master_shared_table,captured.x,captured.y)->id = captured.id;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numf--;
                     debug("Success");
@@ -626,15 +630,19 @@ void restart()
         kill(st->pid[i], SIGROUND);
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
+    display(master_shared_table);
+    for(i = 0; i < numf; i++){
+        vex[i].score = -1;
+        vex[i].x = -1;
+        vex[i].y = -1;
+    }
+    st->rounds++;
     debug("Restarting");
     numflag = getNumflag();
+    numf = numflag;
     getVex(numflag);
-    display(master_shared_table);
     stamp_score(st);
     round(RESTARTED);
-    /**
-     * TODO: Bisogna lanciare il sengale
-     */
 }
 
 void manual()

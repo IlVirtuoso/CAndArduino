@@ -41,6 +41,7 @@ void display(cell *shared_table)
         }
         printf("\n");
     }
+    usleep(500*1000);
 }
 
 void display_sem()
