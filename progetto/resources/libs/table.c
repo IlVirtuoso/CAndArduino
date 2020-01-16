@@ -4,36 +4,47 @@
 
 int setid(cell *shared_table, int x, int y, char id, int previous_x, int previous_y)
 {
-    if ((tab(shared_table, x, y)->id == EMPTY || tab(shared_table, x, y)->id == FLAG) && (semctl(sem_table, x * y + y, GETVAL) == 1)){
-        if(getid(shared_table,x,y) == EMPTY){
-            debug("Accesso alla cella X:%d Y:%d",x,y);
-            if(reserveSem(sem_table,x*SO_BASE + y)){
-                error("error in semop while taking the new cell",errno);
+    struct timespec move, remain;
+    move.tv_nsec = SO_MIN_HOLD_NSEC;
+    move.tv_sec = 0;
+        
+    if ((tab(shared_table, x, y)->id == EMPTY || tab(shared_table, x, y)->id == FLAG) && (semctl(sem_table, x * y + y, GETVAL) == 1))
+    {
+        if (previous_x == -1 && previous_y == -1)
+        {
+            debug("Nessun Semaforo da sbloccare Causa Posizionamento");
+        }
+        else
+        {
+            if (releaseSem(sem_table, previous_x * SO_BASE + previous_y))
+            {
+                error("error in semop while releasing previous position", errno);
             }
-            tab(shared_table,x,y)->id = id;
-            if(previous_x == -1 && previous_y == -1){
-                debug("Nessun Semaforo da sbloccare Causa Posizionamento");
+            tab(shared_table, previous_x, previous_y)->id = EMPTY;
+        }
+        nanosleep(&move, &remain);
+        if (getid(shared_table, x, y) == EMPTY)
+        {
+            debug("Accesso alla cella X:%d Y:%d", x, y);
+            if (reserveSem(sem_table, x * SO_BASE + y))
+            {
+                error("error in semop while taking the new cell", errno);
             }
-            else{
-                if(releaseSem(sem_table,previous_x * SO_BASE + previous_y)){
-                    error("error in semop while releasing previous position",errno);
-                }
-                tab(shared_table,previous_x,previous_y)->id = EMPTY;
-            }
+            tab(shared_table, x, y)->id = id;
             return 1;
         }
-        else if(getid(shared_table,x,y) == FLAG){
-            debug("cattura bandiera X:%d Y:%d",x,y);
-            if(reserveSem(sem_table,x*SO_BASE + y)){
-                error("error in semop while taking new cell",errno);
+        else if (getid(shared_table, x, y) == FLAG)
+        {
+            debug("cattura bandiera X:%d Y:%d", x, y);
+            if (reserveSem(sem_table, x * SO_BASE + y))
+            {
+                error("error in semop while taking new cell", errno);
             }
             return -1;
         }
     }
-   return 0;
+    return 0;
 }
-
-
 
 char getid(cell *shared_table, int x, int y)
 {
@@ -144,16 +155,16 @@ position search(cell *shared_table, int b, int h, char target, int itera)
             {
                 if (getid(shared_table, b, h) == target)
                 {
-                   if(itera == 1){
+                    if (itera == 1)
+                    {
                         pos.x = b;
                         pos.y = h;
                         return pos;
-                    }else
+                    }
+                    else
                     {
                         itera--;
                     }
-                    
-                   
                 }
                 n++;
             }

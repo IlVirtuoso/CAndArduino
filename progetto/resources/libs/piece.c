@@ -454,7 +454,7 @@ int goto_loc(int target_x, int target_y, char strategy)
 
 char cond_free(int x, int y)
 {
-    return cond_valid(x, y) && (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && semctl(sem_table,x*SO_BASE + y,GETVAL) == 1;
+    return cond_valid(x, y) && (getid(piece_shared_table, x, y) == EMPTY || getid(piece_shared_table, x, y) == FLAG) && semctl(sem_table, x * SO_BASE + y, GETVAL) == 1;
 }
 
 /* Verifica se la cella bersaglio non è stata già percorsa nell'immediato */
@@ -479,13 +479,9 @@ char cond(int x, int y)
 int move(int x, int y)
 {
     msg_cnt captured;
-    struct timespec move, remain;
     int moved;
     int isValid = 0;
-    logg("Moving piece %d to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, x, y,piece_attr.n_moves);
-    move.tv_nsec = SO_MIN_HOLD_NSEC;
-    move.tv_sec = 0;
-    nanosleep(&move, &remain);
+    logg("Moving piece %d to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, x, y, piece_attr.n_moves);
     isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
     if (isValid && piece_attr.n_moves >= 0)
     {
@@ -511,8 +507,8 @@ int move(int x, int y)
                 msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 debug("Sended message to player");
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
-                releaseSem(sem_table,piece_attr.x*SO_BASE + piece_attr.y);
-                tab(piece_shared_table,piece_attr.x,piece_attr.y)->id = EMPTY;
+                releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y);
+                tab(piece_shared_table, piece_attr.x, piece_attr.y)->id = EMPTY;
                 tab(piece_shared_table, x, y)->id = player_id;
                 piece_attr.x = x;
                 piece_attr.y = y;

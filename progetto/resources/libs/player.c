@@ -112,7 +112,12 @@ void phase(int phase)
     msg_cnt captured;
     msg_cnt master;
     int i, j, z, itera = 1;
-    char mode = ((1 + rand()) % ((2)) + 1);
+    /**
+     * la modalità 1 per qualche ragione manda tutto in palla
+     * dai un occhiata, la bloccherò fino ad allora per consentire
+     * il funzionamento
+     */
+    char mode =  2 /* ((1 + rand()) % ((2)) + 1) */;
     position pos;
     switch (phase)
     {

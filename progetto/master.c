@@ -540,6 +540,7 @@ void phase1()
         }
     }
     numflag = getNumflag();
+    numf = numflag;
     debug("Bandiere Generate: %d", numflag);
     getVex(numflag);
     display(master_shared_table);
@@ -582,7 +583,7 @@ void phase3()
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
-    while (numflag > 0)
+    while (numf > 0)
     {
         /**
          * implementare controllo su bandiere già catturate
@@ -592,12 +593,12 @@ void phase3()
         captured.type = MASTERCHANNEL;
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
-        debug("Bandiere Rimaste %d", numflag);
+        debug("Bandiere Rimaste %d", numf);
         if (captured.x != -1 && captured.y != -1)
         {
-            for (k = 0; k < numflag; k++)
+            for (k = 0; k < numf; k++)
             {
-                if (captured.x == vex[k].x && captured.y == vex[k].y && vex[k].taken != 1)
+                if (captured.x == vex[k].x && captured.y == vex[k].y)
                 {
                     /***
                      * Le Pedine non catturano tutte le bandiere
@@ -605,7 +606,7 @@ void phase3()
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
                     vex[k].taken = 1;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
-                    numflag--;
+                    numf--;
                     debug("Success");
                     debug("Send message to player %d", st->pid[captured.ask]);
                     captured.type = st->pid[captured.ask];
