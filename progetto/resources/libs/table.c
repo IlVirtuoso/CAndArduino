@@ -96,7 +96,7 @@ void table_start()
 
 position search(cell *shared_table, int b, int h, char target, int itera)
 {
-    int x = 1, y = 0, n = 0, or_x = x, or_y = h;
+    int x = 1, y = 0, n = 0;
     char flag = 1, z = 0, sign = 1;
     position pos;
     pos.x = b;

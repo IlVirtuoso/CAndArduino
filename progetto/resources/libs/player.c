@@ -139,16 +139,23 @@ void phase(int phase)
         break;
 
     case 2:
-        switch(mode)
+        switch (mode)
+        {
         case 1:
             /* One piece for one flag */
-            for(i = 0; i < SO_BASE, i++){
-                for(j = 0; j < SO_ALTEZZA; j++){
-                    if(getid(player_shared_table, i, j) == FLAG){
-                        do{
-                            pos = search(player_shared_table, i, j, player_id ,itera);
-                            for(z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++);
-                            if(reachable(piece[z].moves, i, j, pos.x, pos.y) > 0) {
+            for (i = 0; i < SO_BASE; i++)
+            {
+                for (j = 0; j < SO_ALTEZZA; j++)
+                {
+                    if (getid(player_shared_table, i, j) == FLAG)
+                    {
+                        do
+                        {
+                            pos = search(player_shared_table, i, j, player_id, itera);
+                            for (z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++)
+                                ;
+                            if (reachable(SO_N_MOVES, i, j, pos.x, pos.y) > 0)
+                            {
                                 itera = 0;
                                 captured.pednum = z;
                                 captured.phase = 2;
@@ -158,20 +165,22 @@ void phase(int phase)
                                 captured.y = j;
                                 msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
-                            }else{
-                                itera ++;
                             }
-                        } while(itera != 0 && itera < SO_NUM_P);
+                            else
+                            {
+                                itera++;
+                            }
+                        } while (itera != 0 && itera < SO_NUM_P);
                     }
                 }
             }
-        break;
+            break;
         case 2:
             /* One flag for one piece*/
             for (i = 0; i < SO_NUM_P; i++)
             {
                 pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG, 1);
-                if (pos.x != piece_attr[i].x && pos.y != piece_attr[i].y)
+                if (pos.x != pieces[i].x && pos.y != pieces[i].y)
                     debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
                 else
                     debug("Flag not found for piece: %d", i);
@@ -184,7 +193,6 @@ void phase(int phase)
                 msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             }
-        break;
         }
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);

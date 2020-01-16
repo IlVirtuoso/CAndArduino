@@ -10,7 +10,7 @@ void display(cell *shared_table)
     {
         if (i < 10 && SO_ALTEZZA < 100 && SO_BASE < 100)
             printf(" 0%d", i);
-        else if(SO_ALTEZZA < 100 && SO_BASE < 100)
+        else if (SO_ALTEZZA < 100 && SO_BASE < 100)
             printf(" %d", i);
     }
     printf("\n");
@@ -18,28 +18,29 @@ void display(cell *shared_table)
     {
         if (i < 10 && SO_BASE < 100 && SO_ALTEZZA < 100)
             printf("0%d", i);
-        else if(SO_BASE < 100 && SO_ALTEZZA < 100)
+        else if (SO_BASE < 100 && SO_ALTEZZA < 100)
             printf("%d", i);
         for (j = 0; j < SO_ALTEZZA; j++)
         {
             if (getid(shared_table, i, j) == EMPTY)
             {
-                if(SO_BASE < 100 && SO_ALTEZZA < 100)
+                if (SO_BASE < 100 && SO_ALTEZZA < 100)
                     printf("  %c", '-');
                 else
                     printf("%c", '-');
-                
             }
-            else{
-                if(SO_BASE < 100 && SO_ALTEZZA < 100){
+            else
+            {
+                if (SO_BASE < 100 && SO_ALTEZZA < 100)
+                {
                     printf("  %c", getid(shared_table, i, j));
+                }
                 else
                     printf("%c", getid(shared_table, i, j));
             }
         }
         printf("\n");
     }
-    printf("\n");
 }
 
 void display_sem()

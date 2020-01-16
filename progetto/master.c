@@ -592,7 +592,7 @@ void phase3()
         captured.type = MASTERCHANNEL;
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
-        debug("Bandiere Rimaster %d", numflag);
+        debug("Bandiere Rimaste %d", numflag);
         if (captured.x != -1 && captured.y != -1)
         {
             for (k = 0; k < numflag; k++)
