@@ -249,7 +249,7 @@ void handler(int signum)
         break;
 
     case SIGROUND:
-        
+
         break;
 
     case SIGALRM:
@@ -515,7 +515,7 @@ void round(int phase)
 
 void phase1()
 {
-    int i;
+    int i,k;
     /*msg_cnt captured;*/
     msg_master master;
     /*Region Phase-1:flag*/
@@ -527,6 +527,15 @@ void phase1()
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, 0);
+    }
+
+    for(i = 0; i < SO_NUM_P;i++){
+        for(k = 0; k < SO_NUM_G;k++){
+            master.type = st->pid[k];
+            msgsnd(master_msgqueue,&master,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+            msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),MASTERCHANNEL,MSG_INFO);
+            usleep(500*1000);
+        }
     }
     numflag = getNumflag();
     getVex(numflag);
@@ -608,9 +617,10 @@ void phase3()
         captured.type = st->pid[captured.ask];
         msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
-    for(i = 0; i < SO_NUM_G; i++){
-        kill(st->pid[i],SIGROUND);
-        msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),MASTERCHANNEL,MSG_INFO);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        kill(st->pid[i], SIGROUND);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
     restart();
 }

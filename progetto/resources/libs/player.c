@@ -117,8 +117,11 @@ void phase(int phase)
     switch (phase)
     {
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
+        master.type = MASTERCHANNEL;
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         for (i = 0; i < SO_NUM_P; i++)
         {
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
             srand(clock());
             captured.x = rand() % SO_ALTEZZA;
             captured.y = rand() % SO_BASE;
@@ -126,12 +129,13 @@ void phase(int phase)
             captured.phase = 1;
             captured.pednum = i;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             pieces[i].x = captured.x;
             pieces[i].y = captured.y;
+            master.type = MASTERCHANNEL;
+            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
-        master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+
         break;
 
     case 2:
@@ -149,7 +153,7 @@ void phase(int phase)
             captured.x = pos.x;
             captured.y = pos.y;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
         }
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
@@ -160,8 +164,7 @@ void phase(int phase)
          * movimento
          * cattura bandiera action to do 
          */
-        
-        
+
         for (i = 0; i < SO_NUM_P; i++)
         {
 
@@ -171,8 +174,6 @@ void phase(int phase)
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
 
-        
-
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
 
@@ -180,7 +181,7 @@ void phase(int phase)
         while (1)
         {
             debug("Waiting piece");
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             i = captured.id;
             captured.id = player_id;
             captured.ask = playernum;
@@ -189,19 +190,20 @@ void phase(int phase)
             debug("sended message to master");
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
             captured.type = pieces[i].piecepid;
-            debug("Send message to piece %d",captured.type);
+            debug("Send message to piece %d", captured.type);
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
         break;
 
     case ROUND_STOP:
-    debug("Restarting");
-        for(i = 0; i < SO_NUM_P; i++){
-            kill(pieces[i].piecepid,SIGROUND);
-            msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_INFO);
+        debug("Restarting");
+        for (i = 0; i < SO_NUM_P; i++)
+        {
+            kill(pieces[i].piecepid, SIGROUND);
+            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
         }
         captured.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     default:
