@@ -534,7 +534,6 @@ void phase1()
             master.type = st->pid[k];
             msgsnd(master_msgqueue,&master,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
             msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),MASTERCHANNEL,MSG_INFO);
-            usleep(500*1000);
         }
     }
     numflag = getNumflag();
