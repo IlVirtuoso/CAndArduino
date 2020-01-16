@@ -515,7 +515,7 @@ void round(int phase)
 
 void phase1()
 {
-    int i,k;
+    int i, k;
     /*msg_cnt captured;*/
     msg_master master;
     /*Region Phase-1:flag*/
@@ -529,11 +529,13 @@ void phase1()
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, 0);
     }
 
-    for(i = 0; i < SO_NUM_P;i++){
-        for(k = 0; k < SO_NUM_G;k++){
+    for (i = 0; i < SO_NUM_P; i++)
+    {
+        for (k = 0; k < SO_NUM_G; k++)
+        {
             master.type = st->pid[k];
-            msgsnd(master_msgqueue,&master,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
-            msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),MASTERCHANNEL,MSG_INFO);
+            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
     }
     numflag = getNumflag();
@@ -609,12 +611,12 @@ void phase3()
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numflag--;
                     debug("Success");
+                    debug("Send message to player %d", st->pid[captured.ask]);
+                    captured.type = st->pid[captured.ask];
+                    msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 }
             }
         }
-        debug("Send message to player %d", st->pid[captured.ask]);
-        captured.type = st->pid[captured.ask];
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     for (i = 0; i < SO_NUM_G; i++)
     {
