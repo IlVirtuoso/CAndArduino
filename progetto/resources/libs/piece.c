@@ -64,6 +64,7 @@ int piece()
     /*Questi due segnali serviranno per dare al player dei comandi addizionali*/
     sigprocmask(SIG_BLOCK, &piece_mask, NULL);
     piece_signal.sa_mask = piece_mask;
+    piece_signal.sa_flags = SA_NODEFER;
     sigaction(SIGINT, &piece_signal, NULL);
     sigaction(SIGROUND, &piece_signal, NULL);
     sigset(SIGINT, piece_handler);

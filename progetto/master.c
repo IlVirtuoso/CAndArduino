@@ -484,6 +484,7 @@ void getVex(int numFlag)
             {
                 vex[i].x = x;
                 vex[i].y = y;
+                vex[i].taken = 0;
                 tab(master_shared_table, x, y)->id = FLAG;
                 positionComplete++;
                 debug("Placed Flag %d at %d %d", i, vex[i].x, vex[i].y);
@@ -515,7 +516,7 @@ void round(int phase)
 
 void phase1()
 {
-    int i,k;
+    int i, k;
     /*msg_cnt captured;*/
     msg_master master;
     /*Region Phase-1:flag*/
@@ -529,20 +530,18 @@ void phase1()
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, 0);
     }
 
-    for(i = 0; i < SO_NUM_P;i++){
-        for(k = 0; k < SO_NUM_G;k++){
+    for (i = 0; i < SO_NUM_P; i++)
+    {
+        for (k = 0; k < SO_NUM_G; k++)
+        {
             master.type = st->pid[k];
-            msgsnd(master_msgqueue,&master,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
-            msgrcv(master_msgqueue,NULL,sizeof(msg_cnt) - sizeof(long),MASTERCHANNEL,MSG_INFO);
+            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
     }
     numflag = getNumflag();
+    debug("Bandiere Generate: %d", numflag);
     getVex(numflag);
-    /*
-    *Capire perchè vex non può essere acceduto
-    */
-    for (i = 0; i < numflag; i++)
-        debug("Bandiera %d", vex[i].score);
     display(master_shared_table);
     /*End-Region*/
 }
@@ -593,6 +592,7 @@ void phase3()
         captured.type = MASTERCHANNEL;
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
+        debug("Bandiere Rimaster %d", numflag);
         if (captured.x != -1 && captured.y != -1)
         {
             for (k = 0; k < numflag; k++)
@@ -600,32 +600,31 @@ void phase3()
                 if (captured.x == vex[k].x && captured.y == vex[k].y && vex[k].taken != 1)
                 {
                     /***
-                     *Captured.id genera incongruenza in questo punto, ti serve un modo
-                     * per distinguere tra l'id del player da scrivere nella cella e 
-                     * la posizione del player nel'array
+                     * Le Pedine non catturano tutte le bandiere
                      */
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
                     vex[k].taken = 1;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numflag--;
                     debug("Success");
+                    debug("Send message to player %d", st->pid[captured.ask]);
+                    captured.type = st->pid[captured.ask];
+                    msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 }
             }
         }
-        debug("Send message to player %d", st->pid[captured.ask]);
-        captured.type = st->pid[captured.ask];
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-    }
-    for (i = 0; i < SO_NUM_G; i++)
-    {
-        kill(st->pid[i], SIGROUND);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
     restart();
 }
 
 void restart()
 {
+    int i;
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        kill(st->pid[i], SIGROUND);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+    }
     debug("Restarting");
     numflag = getNumflag();
     getVex(numflag);

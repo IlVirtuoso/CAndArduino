@@ -68,7 +68,6 @@ int player()
     sigaddset(&player_mask, SIGROUND);
     sigprocmask(SIG_BLOCK, &player_mask, NULL);
     player_signal.sa_mask = player_mask;
-    player_signal.sa_flags = SA_RESTART;
     player_signal.sa_flags = SA_NODEFER;
     sigaction(SIGINT, &player_signal, NULL);
     sigaction(SIGUSR1, &player_signal, NULL);
@@ -196,7 +195,7 @@ void phase(int phase)
         break;
 
     case ROUND_STOP:
-        debug("Restarting");
+        debug("Restarting For finished Round");
         for (i = 0; i < SO_NUM_P; i++)
         {
             kill(pieces[i].piecepid, SIGROUND);
