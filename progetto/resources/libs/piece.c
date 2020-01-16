@@ -517,8 +517,6 @@ int move(int x, int y)
                 piece_attr.y = y;
                 piece_attr.n_moves--;
                 debug("Restart");
-                sleep(1);
-                display(piece_shared_table);
                 return 1;
             }
             else
