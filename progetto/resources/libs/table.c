@@ -94,13 +94,13 @@ void table_start()
     logg("tabella semafori configurata");
 }
 
-position search(cell *shared_table, int b, int h, char target)
+position search(cell *shared_table, int b, int h, char target, int itera)
 {
-    int x = 1, y = 0, n = 0;
+    int x = 1, y = 0, n = 0, or_x = x, or_y = h;
     char flag = 1, z = 0, sign = 1;
     position pos;
-    pos.x = -1;
-    pos.y = -1;
+    pos.x = b;
+    pos.y = h;
     while (flag && n < (SO_BASE * SO_ALTEZZA))
     {
         if (z == 0 && sign)
@@ -144,9 +144,16 @@ position search(cell *shared_table, int b, int h, char target)
             {
                 if (getid(shared_table, b, h) == target)
                 {
-                    pos.x = b;
-                    pos.y = h;
-                    return pos;
+                   if(itera == 1){
+                        pos.x = b;
+                        pos.y = h;
+                        return pos;
+                    }else
+                    {
+                        itera--;
+                    }
+                    
+                   
                 }
                 n++;
             }
@@ -169,7 +176,7 @@ int reachable(int moves, int x, int y, int x_targ, int y_targ)
     }
     else
     {
-        return -1;
+        return 0;
     }
 }
 

@@ -148,8 +148,8 @@ void tactic()
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
             debug("Piece %d changing target", piece_attr.piece_id);
-            target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG);
-            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) < 0))
+            target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG, 1);
+            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
             {
                 debug("Insufficent moves for piece %d", piece_attr.piece_id);
                 getplay();

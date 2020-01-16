@@ -73,10 +73,11 @@ cell * tab(cell * table, int x, int y);
 /**
  * metodo che cerca la posizione di un target all'interno di una tabella
  * @param shared_table: indirizzo alla table condivisa
- * @param  b, h, base e altezza da cui partire
- * @param target target cercato sulla tabella
+ * @param  b, h: base e altezza da cui partire
+ * @param target: target cercato sulla tabella
+ * @param moves: numero di iterazioni di ricerca
  * */
-position search(cell * shared_table, int b, int h, char target);
+position search(cell * shared_table, int b, int h, char target, int itera);
 
 /* Ritorna la distanza tra il punto (x,y) ed il punto (x_targ, y_targ)*/
 int getDistance(int x, int y, int x_targ, int y_targ);
@@ -86,7 +87,7 @@ int getDistance(int x, int y, int x_targ, int y_targ);
  * @param x,y: coordinate attuali della pedina
  * @param x_targ,y_targ: coordinate obiettivo della pedina
  * @return -1: se il numero di mosse non è sufficiente a raggiungere la cella target
- * @return 0: se il numero di mosse è sufficiente a raggiungere target
+ * @return n_moves: se il numero di mosse è sufficiente a raggiungere target
  */
 int reachable(int moves,int x, int y, int x_targ, int y_targ);
 

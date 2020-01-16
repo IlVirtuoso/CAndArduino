@@ -8,8 +8,8 @@
  * es.
  *  char x       // coordinata x da raggiungere
  *  char y       // coordinata y da raggiungere 
- *  char ask     // attiva la richiesta al player in caso di blocco
- *  char method  // possibile valore di controllo per cambio algoritmo
+ *  char ask     // utile per la condivisione dell'ID del player
+ *  char method  // valore di controllo che indica la tattica di movimento
  * In alternativa un unico array char ma confusione sugli indici?
  * La struct deve essere disponibile anche al Player
  */
@@ -111,7 +111,8 @@ void phase(int phase)
 {
     msg_cnt captured;
     msg_cnt master;
-    int i;
+    int i, j, z, itera = 1;
+    char mode = ((1 + rand()) % ((2)) + 1);
     position pos;
     switch (phase)
     {
@@ -138,21 +139,52 @@ void phase(int phase)
         break;
 
     case 2:
-        for (i = 0; i < SO_NUM_P; i++)
-        {
-            pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG);
-            if (pos.x != -1 && pos.y != -1)
-                debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
-            else
-                debug("Flag not found for piece: %d", i);
-            captured.pednum = i;
-            captured.phase = 2;
-            captured.type = pieces[i].piecepid;
-            captured.strategy = rand() % 4;
-            captured.x = pos.x;
-            captured.y = pos.y;
-            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+        switch(mode)
+        case 1:
+            /* One piece for one flag */
+            for(i = 0; i < SO_BASE, i++){
+                for(j = 0; j < SO_ALTEZZA; j++){
+                    if(getid(player_shared_table, i, j) == FLAG){
+                        do{
+                            pos = search(player_shared_table, i, j, player_id ,itera);
+                            for(z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++);
+                            if(reachable(piece[z].moves, i, j, pos.x, pos.y) > 0) {
+                                itera = 0;
+                                captured.pednum = z;
+                                captured.phase = 2;
+                                captured.type = pieces[z].piecepid;
+                                captured.strategy = rand() % 4;
+                                captured.x = i;
+                                captured.y = j;
+                                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+                            }else{
+                                itera ++;
+                            }
+                        } while(itera != 0 && itera < SO_NUM_P);
+                    }
+                }
+            }
+        break;
+        case 2:
+            /* One flag for one piece*/
+            for (i = 0; i < SO_NUM_P; i++)
+            {
+                pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG, 1);
+                if (pos.x != piece_attr[i].x && pos.y != piece_attr[i].y)
+                    debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
+                else
+                    debug("Flag not found for piece: %d", i);
+                captured.pednum = i;
+                captured.phase = 2;
+                captured.type = pieces[i].piecepid;
+                captured.strategy = rand() % 4;
+                captured.x = pos.x;
+                captured.y = pos.y;
+                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+            }
+        break;
         }
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
