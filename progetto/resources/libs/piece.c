@@ -105,7 +105,7 @@ void play(int command)
             order.x = rand() % SO_ALTEZZA;
             order.y = rand() % SO_BASE;
         }
-        logg("Pezzo %d del player %d in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
+        logg("Pezzo %d del player %c in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
         pos_set = 1;
         piece_attr.n_moves = SO_N_MOVES;
         temp.x = piece_attr.x;
