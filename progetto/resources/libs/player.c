@@ -145,7 +145,7 @@ void phase(int phase)
             captured.pednum = i;
             captured.phase = 2;
             captured.type = pieces[i].piecepid;
-            captured.strategy = rand() % 8;
+            captured.strategy = rand() % 4;
             captured.x = pos.x;
             captured.y = pos.y;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
@@ -182,7 +182,8 @@ void phase(int phase)
             debug("Waiting piece");
             msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid()*10, MSG_INFO);
             i = captured.id;
-            captured.id = playernum;
+            captured.id = player_id;
+            captured.ask = playernum;
             captured.type = MASTERCHANNEL;
             msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
             debug("sended message to master");

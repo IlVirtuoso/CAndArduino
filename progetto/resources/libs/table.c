@@ -4,60 +4,33 @@
 
 int setid(cell *shared_table, int x, int y, char id, int previous_x, int previous_y)
 {
-    if ((tab(shared_table, x, y)->id == EMPTY || tab(shared_table, x, y)->id == FLAG) && (semctl(sem_table, x * y + y, GETVAL) == 1))
-    {
-        if (previous_x >= 0 && previous_y >= 0)
-        {
-
-            if ((releaseSem(sem_table, previous_x * SO_BASE + previous_y)) == 0)
-            {
-                tab(shared_table, previous_x, previous_y)->id = EMPTY;
-                debug("Rilascio eseguito");
+    if ((tab(shared_table, x, y)->id == EMPTY || tab(shared_table, x, y)->id == FLAG) && (semctl(sem_table, x * y + y, GETVAL) == 1)){
+        if(getid(shared_table,x,y) == EMPTY){
+            debug("Accesso alla cella X:%d Y:%d",x,y);
+            if(reserveSem(sem_table,x*SO_BASE + y)){
+                error("error in semop while taking the new cell",errno);
             }
-            else
-            {
-                error("Errore nella semop durante la fase di rilascio", errno);
+            tab(shared_table,x,y)->id = id;
+            if(previous_x == -1 && previous_y == -1){
+                debug("Nessun Semaforo da sbloccare Causa Posizionamento");
             }
-        }
-        else if (previous_x == -1 && previous_y == -1)
-        {
-            debug("Set della posizione, ignora i semafori");
-        }
-        else
-        {
-            error("Errore nei parametri precedenti, fuori scala", ERANGE);
-        }
-        if (tab(shared_table, x, y)->id == EMPTY)
-        {
-            debug("Accesso alla cella X:%d Y:%d", x, y);
-            debug("Semop");
-            if ((reserveSem(sem_table, x * SO_BASE + y)) == 0)
-            {
-                debug("Accesso Acquisito");
+            else{
+                if(releaseSem(sem_table,previous_x * SO_BASE + previous_y)){
+                    error("error in semop while releasing previous position",errno);
+                }
+                tab(shared_table,previous_x,previous_y)->id = EMPTY;
             }
-            else
-            {
-                error("Errore nella semop", errno);
-            }
-            tab(shared_table, x, y)->id = id;
             return 1;
         }
-        else
-        {
-            
-            debug("Semop");
-            if ((reserveSem(sem_table, x * SO_BASE + y)) == 0)
-            {
-                debug("Accesso Acquisito");
-                return -1;
+        else if(getid(shared_table,x,y) == FLAG){
+            debug("cattura bandiera X:%d Y:%d",x,y);
+            if(reserveSem(sem_table,x*SO_BASE + y)){
+                error("error in semop while taking new cell",errno);
             }
-            else
-            {
-                error("Errore nella semop", errno);
-            }
+            return -1;
         }
     }
-    return 0;
+   return 0;
 }
 
 

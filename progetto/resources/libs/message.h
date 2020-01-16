@@ -61,7 +61,7 @@ typedef struct{
     char strategy;
     char x;
     char y;
-    char ask;
+    int ask;
     int id;
     int phase;
 }msg_cnt;

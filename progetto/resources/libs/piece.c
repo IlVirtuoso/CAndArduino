@@ -509,12 +509,17 @@ int move(int x, int y)
                 captured.id = piece_attr.piece_id;
                 msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 debug("Sended message to player");
+                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+                releaseSem(sem_table,piece_attr.x*SO_BASE + piece_attr.y);
+                tab(piece_shared_table,piece_attr.x,piece_attr.y)->id = EMPTY;
+                tab(piece_shared_table, x, y)->id = player_id;
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
-                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
                 debug("Restart");
-                return 0;
+                sleep(1);
+                display(piece_shared_table);
+                return 1;
             }
             else
             {

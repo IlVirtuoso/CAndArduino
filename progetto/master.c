@@ -584,25 +584,28 @@ void phase3()
         captured.y = -1;
         captured.type = MASTERCHANNEL;
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
-        debug("Bandiera Catturata da %d X:%d Y:%d", captured.id, captured.x, captured.y);
+        debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         if (captured.x != -1 && captured.y != -1)
         {
             for (k = 0; k < numflag; k++)
             {
                 if (captured.x == vex[k].x && captured.y == vex[k].y && vex[k].taken != 1)
                 {
-
+                    /***
+                     *Captured.id genera incongruenza in questo punto, ti serve un modo
+                     * per distinguere tra l'id del player da scrivere nella cella e 
+                     * la posizione del player nel'array
+                     */
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
                     vex[k].taken = 1;
-                    st->score[captured.id] = st->score[captured.id] + vex[k].score;
+                    st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numflag--;
-                    tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                     debug("Success");
                 }
             }
         }
-        debug("Send message to player %d", st->pid[captured.id]);
-        captured.type = st->pid[captured.id];
+        debug("Send message to player %d", st->pid[captured.ask]);
+        captured.type = st->pid[captured.ask];
         msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     for(i = 0; i < SO_NUM_G; i++){
