@@ -65,7 +65,7 @@ int piece()
     sigprocmask(SIG_BLOCK, &piece_mask, NULL);
     piece_signal.sa_mask = piece_mask;
     piece_signal.sa_flags = SA_NODEFER;
-    piece_signal.sa_flags = SA_ONSTACK;
+    piece_signal.sa_flags = SA_RESTART;
     sigaction(SIGINT, &piece_signal, NULL);
     sigaction(SIGROUND, &piece_signal, NULL);
     sigset(SIGINT, piece_handler);
@@ -136,14 +136,17 @@ void play(int command)
     }
 }
 
+int override;
 void tactic()
 {
+
     int result;
     char strategy = order.strategy;
     old_x = -1;
     old_y = -1;
+    override = 0;
     /* posizione provvisoria */ srand(clock() + getpid());
-    while (piece_attr.n_moves > 0)
+    while (piece_attr.n_moves > 0 || override == 1)
     {
 
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
@@ -188,7 +191,7 @@ void piece_handler(int signum)
         debug("Restart Execution");
         temp.type = getppid() * 10;
         msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        getplay();
+        override = 1;
         break;
 
     case SIGUSR2:
@@ -488,18 +491,17 @@ int move(int x, int y)
     int isValid = 0;
     move.tv_nsec = SO_MIN_HOLD_NSEC;
     move.tv_sec = 0;
-    logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id,player_id, x, y, piece_attr.n_moves);
+    logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, player_id, x, y, piece_attr.n_moves);
     isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
     if (isValid && piece_attr.n_moves >= 0)
     {
         if (isValid && pos_set)
         {
-            tab(piece_shared_table,piece_attr.x,piece_attr.y)->id = EMPTY;
+            tab(piece_shared_table, piece_attr.x, piece_attr.y)->id = EMPTY;
             releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y);
             nanosleep(&move, &remain);
-            reserveSem(sem_table, x*SO_BASE + y);
-            
-            
+            reserveSem(sem_table, x * SO_BASE + y);
+
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
                 tab(piece_shared_table, x, y)->id = player_id;
