@@ -69,6 +69,7 @@ int player()
     sigprocmask(SIG_BLOCK, &player_mask, NULL);
     player_signal.sa_mask = player_mask;
     player_signal.sa_flags = SA_NODEFER;
+    player_signal.sa_flags = SA_RESTART;
     sigaction(SIGINT, &player_signal, NULL);
     sigaction(SIGUSR1, &player_signal, NULL);
     sigaction(SIGUSR2, &player_signal, NULL);
@@ -107,18 +108,22 @@ void stand()
     phase(command.phase);
 }
 
+int override;
 void phase(int phase)
 {
     msg_cnt captured;
+    msg_cnt temp;
     msg_cnt master;
     int i, j, z, itera = 1;
+
     /**
      * la modalità 1 per qualche ragione manda tutto in palla
      * dai un occhiata, la bloccherò fino ad allora per consentire
      * il funzionamento
      */
-    char mode =  2 /* ((1 + rand()) % ((2)) + 1) */;
+    char mode = 2 /* ((1 + rand()) % ((2)) + 1) */;
     position pos;
+    override = 0;
     switch (phase)
     {
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
@@ -220,22 +225,20 @@ void phase(int phase)
 
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-
-        i = 0;
-        while (1)
+        while (!override)
         {
             debug("Waiting piece");
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
-            i = captured.id;
-            captured.id = player_id;
-            captured.ask = playernum;
-            captured.type = MASTERCHANNEL;
-            msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+            i = temp.id;
+            temp.id = player_id;
+            temp.ask = playernum;
+            temp.type = MASTERCHANNEL;
+            msgsnd(master_msgqueue, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
             debug("sended message to master");
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
-            captured.type = pieces[i].piecepid;
-            debug("Send message to piece %d", captured.type);
-            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            temp.type = pieces[i].piecepid;
+            debug("Send message to piece %d", temp.type);
+            msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
         break;
 
@@ -247,6 +250,7 @@ void phase(int phase)
             msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
         }
         captured.type = MASTERCHANNEL;
+        override = 1;
         msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 

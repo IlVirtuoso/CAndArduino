@@ -23,6 +23,7 @@ int debug(const char *__restrict__ message, ...)
         printf("[Debug %s]: %s\n", processSign, formatted);
         va_end(args);
         bzero(formatted, sizeof(formatted));
+        fflush(stdout);
         return 1;
     }
     else
@@ -45,4 +46,5 @@ void logg(const char *__restrict__ message, ...)
     }
     va_end(args);
     bzero(logformatted, sizeof(logformatted));
+    fflush(stdout);
 }

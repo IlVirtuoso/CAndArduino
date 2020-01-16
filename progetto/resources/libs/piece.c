@@ -65,6 +65,7 @@ int piece()
     sigprocmask(SIG_BLOCK, &piece_mask, NULL);
     piece_signal.sa_mask = piece_mask;
     piece_signal.sa_flags = SA_NODEFER;
+    piece_signal.sa_flags = SA_ONSTACK;
     sigaction(SIGINT, &piece_signal, NULL);
     sigaction(SIGROUND, &piece_signal, NULL);
     sigset(SIGINT, piece_handler);
@@ -73,7 +74,7 @@ int piece()
     {
         error("Errore nell'inizializzare la table per il pezzo", EKEYREJECTED);
     }
-    while (order.phase != -1)
+    while (1)
     {
         getplay();
     }
@@ -222,7 +223,7 @@ int setpos(int x, int y)
         {
             error("error in acquiring pos cell", errno);
         }
-        tab(piece_shared_table,x,y)->id = player_id;
+        tab(piece_shared_table, x, y)->id = player_id;
         piece_attr.x = x;
         piece_attr.y = y;
         return 1;
@@ -487,19 +488,18 @@ int move(int x, int y)
     int isValid = 0;
     move.tv_nsec = SO_MIN_HOLD_NSEC;
     move.tv_sec = 0;
-    logg("Moving piece %d to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, x, y, piece_attr.n_moves);
+    logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id,player_id, x, y, piece_attr.n_moves);
     isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
     if (isValid && piece_attr.n_moves >= 0)
     {
         if (isValid && pos_set)
         {
-
-            tab(piece_shared_table, piece_attr.x, piece_attr.y)->id = EMPTY;
-            if (releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y))
-                error("Error while releasing prevous cell", errno);
+            tab(piece_shared_table,piece_attr.x,piece_attr.y)->id = EMPTY;
+            releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y);
             nanosleep(&move, &remain);
-            if (reserveSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y))
-                error("Error while acquiring new cell", errno);
+            reserveSem(sem_table, x*SO_BASE + y);
+            
+            
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
                 tab(piece_shared_table, x, y)->id = player_id;

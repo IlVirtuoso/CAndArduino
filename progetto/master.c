@@ -309,13 +309,12 @@ void clean_process()
 void stamp_score(score_table *t)
 {
     int i;
-    printf("Round: %d\n",st->rounds);
+    printf("Round: %d\n", st->rounds);
     printf("PLAYER         SCORE\n");
     for (i = 0; i < SO_NUM_G; i++)
     {
         printf("PLAYER %c   |   %d  \n", t->name[i], t->score[i]);
     }
-    
 }
 
 /*Master methods*/
@@ -591,9 +590,7 @@ void phase3()
         /**
          * implementare controllo su bandiere già catturate
          */
-        captured.x = -1;
-        captured.y = -1;
-        captured.type = MASTERCHANNEL;
+        bzero(&captured,sizeof(msg_cnt));
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         debug("Bandiere Rimaste %d", numf);
@@ -606,18 +603,18 @@ void phase3()
                     /***
                      * Le Pedine non catturano tutte le bandiere
                      */
-                    debug("Bandiera %d rimossa",k);
+                    debug("Bandiera %d rimossa", k);
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
-                    tab(master_shared_table,captured.x,captured.y)->id = captured.id;
+                    tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numf--;
                     debug("Success");
-                    debug("Send message to player %d", st->pid[captured.ask]);
-                    captured.type = st->pid[captured.ask];
-                    msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 }
             }
         }
+        debug("Send message to player %d", st->pid[captured.ask]);
+        captured.type = st->pid[captured.ask];
+        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     restart();
 }
@@ -625,13 +622,9 @@ void phase3()
 void restart()
 {
     int i;
-    for (i = 0; i < SO_NUM_G; i++)
-    {
-        kill(st->pid[i], SIGROUND);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
-    }
     display(master_shared_table);
-    for(i = 0; i < numf; i++){
+    for (i = 0; i < numf; i++)
+    {
         vex[i].score = -1;
         vex[i].x = -1;
         vex[i].y = -1;
@@ -642,6 +635,11 @@ void restart()
     numf = numflag;
     getVex(numflag);
     stamp_score(st);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        kill(st->pid[i], SIGROUND);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+    }
     round(RESTARTED);
 }
 
