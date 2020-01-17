@@ -132,6 +132,8 @@ void play(int command)
         break;
 
     default:
+    play(3);
+
         break;
     }
 }
@@ -146,7 +148,7 @@ void tactic()
     old_y = -1;
     override = 0;
     /* posizione provvisoria */ srand(clock() + getpid());
-    while (piece_attr.n_moves > 0 || override == 1)
+    while (piece_attr.n_moves > 0 && override == 0)
     {
 
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
@@ -191,6 +193,7 @@ void piece_handler(int signum)
         debug("Restart Execution");
         temp.type = getppid() * 10;
         msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        piece_attr.n_moves = SO_N_MOVES;
         override = 1;
         break;
 

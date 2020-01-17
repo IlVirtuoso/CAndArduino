@@ -160,8 +160,6 @@ void getVex(int numFlag);
 /*variabile che dice se le bandiere sono state create*/
 int flagcreated = 0;
 
-msg_master msg;
-
 struct sembuf sem;
 
 /*specifica i round da fare*/
@@ -340,8 +338,8 @@ void init()
     sigaddset(&mask, SIGALRM);
     sigprocmask(SIG_BLOCK, &mask, NULL);
     sa.sa_mask = mask;
-    /*sa.sa_flags = SA_RESTART;*/ /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
-    sa.sa_flags = SA_NODEFER;     /*Questa flag permette all'handler di generare altri segnali*/
+    sa.sa_flags = SA_RESTART; /*Questa flag fa si che dopo l'handling del segnale il codice riparta da dove interrotto*/
+    sa.sa_flags = SA_NODEFER; /*Questa flag permette all'handler di generare altri segnali*/
     sigaction(SIGINT, &sa, NULL);
     sigaction(SIGALRM, &sa, NULL);
     sigset(SIGINT, handler);
@@ -507,7 +505,6 @@ void round(int phase)
         break;
 
     case RESTARTED:
-        restart();
         phase2();
         phase3();
         break;
@@ -521,7 +518,7 @@ void phase1()
 {
     int i, k;
     /*msg_cnt captured;*/
-    msg_master master;
+    msg_cnt master;
     /*Region Phase-1:flag*/
     rounds++;
 
@@ -529,8 +526,8 @@ void phase1()
     {
         master.phase = 1;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, 0);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
     for (i = 0; i < SO_NUM_P; i++)
@@ -554,14 +551,14 @@ void phase2()
 {
     int i;
     /*msg_cnt captured;*/
-    msg_master master;
+    msg_cnt master;
     /*Region Phase-2:Indication*/
     for (i = 0; i < SO_NUM_G; i++)
     {
         master.phase = 2;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_master) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 }
 
@@ -569,7 +566,7 @@ int alarmset;
 void phase3()
 {
     msg_cnt captured;
-    msg_master master;
+    msg_cnt master;
     int i, k;
     if (!alarmset)
     {
@@ -581,16 +578,15 @@ void phase3()
     {
         master.phase = 3;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_master) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
     while (numf > 0)
     {
         /**
          * implementare controllo su bandiere già catturate
          */
-        bzero(&captured,sizeof(msg_cnt));
+        bzero(&captured, sizeof(msg_cnt));
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         debug("Bandiere Rimaste %d", numf);

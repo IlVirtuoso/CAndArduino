@@ -1,167 +1,171 @@
-[LOG : Master -> 0.635000]Started At: 23:43:28
-[LOG : Master -> 0.659000]Variabile:SO_BASE inizializzata a 10 
-[LOG : Master -> 0.662000]Variabile:SO_ALTEZZA inizializzata a 10 
-[LOG : Master -> 0.665000]Variabile:SO_NUM_G inizializzata a 2 
-[LOG : Master -> 0.667000]Variabile:SO_NUM_P inizializzata a 1 
-[LOG : Master -> 0.669000]Variabile:SO_FLAG_MIN inizializzata a 1 
-[LOG : Master -> 0.671000]Variabile:SO_FLAG_MAX inizializzata a 1 
-[LOG : Master -> 0.673000]Variabile:SO_ROUND_SCORE inizializzata a 100 
-[LOG : Master -> 0.675000]Variabile:SO_MIN_HOLD_NSEC inizializzata a 1000000 
-[LOG : Master -> 0.677000]Variabile:SO_N_MOVES inizializzata a 20 
-[LOG : Master -> 0.679000]Variabile:SO_MAX_TIME inizializzata a 3 
-[LOG : Master -> 0.682000]Impostazione maschere e segnali
-[LOG : Master -> 0.686000]Inizializzazione Memoria Condivisa
+[LOG : Master -> 0.934000]Started At: 01:14:44
+[LOG : Master -> 0.973000]Variabile:SO_BASE inizializzata a 10 
+[LOG : Master -> 0.979000]Variabile:SO_ALTEZZA inizializzata a 10 
+[LOG : Master -> 0.983000]Variabile:SO_NUM_G inizializzata a 2 
+[LOG : Master -> 0.986000]Variabile:SO_NUM_P inizializzata a 1 
+[LOG : Master -> 0.989000]Variabile:SO_FLAG_MIN inizializzata a 1 
+[LOG : Master -> 0.993000]Variabile:SO_FLAG_MAX inizializzata a 1 
+[LOG : Master -> 0.996000]Variabile:SO_ROUND_SCORE inizializzata a 100 
+[LOG : Master -> 0.999000]Variabile:SO_MIN_HOLD_NSEC inizializzata a 1000000 
+[LOG : Master -> 1.002000]Variabile:SO_N_MOVES inizializzata a 20 
+[LOG : Master -> 1.006000]Variabile:SO_MAX_TIME inizializzata a 30 
+[LOG : Master -> 1.010000]Impostazione maschere e segnali
+[LOG : Master -> 1.017000]Inizializzazione Memoria Condivisa
 [Debug Master]: Memoria Condivisa Inizializzata
-[LOG : Master -> 0.708000]Tabella semafori iniziata
-[LOG : Master -> 0.778000]tabella semafori configurata
+[LOG : Master -> 1.048000]Tabella semafori iniziata
+[LOG : Master -> 1.168000]tabella semafori configurata
 [Debug Master]: Shared Table attach completato
-[LOG : Master -> 0.791000]Memoria Condivisa Inizializzata
-[LOG : Master -> 0.856000]Player: 0 started with pid: 5443
-[LOG : Players -> 0.063000]Player Started At 23:43:28
-[LOG : Players -> 0.086000]Tabella semafori iniziata
-[LOG : Players -> 0.094000]Setup Struttura dei segnali
-[LOG : Players -> 0.102000]Generazione pezzi iniziata
-[LOG : Master -> 0.925000]Player: 1 started with pid: 5444
-[LOG : Players -> 0.057000]Player Started At 23:43:28
-[LOG : Players -> 0.083000]Tabella semafori iniziata
-[LOG : Players -> 0.092000]Setup Struttura dei segnali
-[LOG : Players -> 0.165000]Generato pezzo 0
-[LOG : Players -> 0.100000]Generazione pezzi iniziata
+[LOG : Master -> 1.187000]Memoria Condivisa Inizializzata
+[LOG : Master -> 1.285000]Player: 0 started with pid: 18296
+[LOG : Players -> 0.121000]Player Started At 01:14:45
+[LOG : Master -> 1.378000]Player: 1 started with pid: 18297
+[LOG : Players -> 0.159000]Tabella semafori iniziata
+[LOG : Players -> 0.171000]Setup Struttura dei segnali
+[LOG : Players -> 0.184000]Generazione pezzi iniziata
+[LOG : Players -> 0.267000]Generato pezzo 0
 [Debug Players]: Player A In Attesa di comandi
 [Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player A
-[LOG : Piece -> 0.082000]Tabella semafori iniziata
-[LOG : Players -> 0.179000]Generato pezzo 0
-[LOG : Piece -> 0.133000]Piece 0 of player A Started At 23:43:28
-[Debug Players]: Player B In Attesa di comandi
-[LOG : Piece -> 0.142000]Setup Struttura dei segnali
-[Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player B
+[LOG : Players -> 0.096000]Player Started At 01:14:45
+[LOG : Players -> 0.138000]Tabella semafori iniziata
+[LOG : Piece -> 0.068000]Tabella semafori iniziata
+[LOG : Players -> 0.151000]Setup Struttura dei segnali
+[LOG : Piece -> 0.111000]Piece 0 of player A Started At 01:14:45
+[LOG : Piece -> 0.116000]Setup Struttura dei segnali
+[LOG : Players -> 0.166000]Generazione pezzi iniziata
 [Debug Piece]: Waiting message from Player
-[LOG : Piece -> 0.063000]Tabella semafori iniziata
-[LOG : Piece -> 0.094000]Piece 0 of player B Started At 23:43:28
-[LOG : Piece -> 0.098000]Setup Struttura dei segnali
+[LOG : Players -> 0.247000]Generato pezzo 0
+[Debug Players]: Player B In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player B
+[LOG : Piece -> 0.069000]Tabella semafori iniziata
+[LOG : Piece -> 0.110000]Piece 0 of player B Started At 01:14:45
+[LOG : Piece -> 0.115000]Setup Struttura dei segnali
 [Debug Piece]: Waiting message from Player
 [Debug Piece]: orders received piece 0 phase 1
-[LOG : Piece -> 0.204000]Pezzo 0 del player A in X:6 Y:6
+[LOG : Piece -> 0.217000]Pezzo 0 del player A in X:6 Y:5
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player A In Attesa di comandi
 [Debug Piece]: orders received piece 0 phase 1
-[LOG : Piece -> 0.154000]Pezzo 0 del player B in X:2 Y:2
+[LOG : Piece -> 0.220000]Pezzo 0 del player B in X:2 Y:9
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player B In Attesa di comandi
-[LOG : Master -> 1.111000]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
+[LOG : Master -> 1.576000]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
 
-[LOG : Master -> 1.119000]Bandiere Calcolate : 1
+[LOG : Master -> 1.600000]Bandiere Calcolate : 1
 [Debug Master]: Bandiere Generate: 1
-[Debug Master]: Placed Flag 0 at 0 8
+[Debug Master]: Placed Flag 0 at 3 2
  00 01 02 03 04 05 06 07 08 09
-00  -  -  -  -  -  -  -  -  !  -
+00  -  -  -  -  -  -  -  -  -  -
 01  -  -  -  -  -  -  -  -  -  -
-02  -  -  B  -  -  -  -  -  -  -
-03  -  -  -  -  -  -  -  -  -  -
+02  -  -  -  -  -  -  -  -  -  B
+03  -  -  !  -  -  -  -  -  -  -
 04  -  -  -  -  -  -  -  -  -  -
 05  -  -  -  -  -  -  -  -  -  -
-06  -  -  -  -  -  -  A  -  -  -
+06  -  -  -  -  -  A  -  -  -  -
 07  -  -  -  -  -  -  -  -  -  -
 08  -  -  -  -  -  -  -  -  -  -
 09  -  -  -  -  -  -  -  -  -  -
 [Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player A
-[Debug Players]: Flag Found for piece: 0, at X:0 Y:8
+[Debug Players]: Flag Found for piece: 0, at X:3 Y:2
 [Debug Piece]: orders received piece 0 phase 2
-[Debug Piece]: Target Acquired, Piece 0 To X:0 Y:8
+[Debug Piece]: Target Acquired, Piece 0 To X:3 Y:2
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player A In Attesa di comandi
-[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player B
-[Debug Players]: Flag Found for piece: 0, at X:0 Y:8
 [Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player A
-[Debug Piece]: orders received piece 0 phase 2
-[Debug Piece]: Target Acquired, Piece 0 To X:0 Y:8
 [Debug Players]: Waiting piece
-[Debug Piece]: Waiting message from Player
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player B
 [Debug Piece]: orders received piece 0 phase 3
+[Debug Players]: Flag Found for piece: 0, at X:3 Y:2
 [Debug Piece]: Piece 0 Start moving, with tactic 0
-[LOG : Piece -> 0.342000]Moving piece 0 of player A to X:5 Y:6, Remaining Moves: 20
+[LOG : Piece -> 0.384000]Moving piece 0 of player A to X:5 Y:5, Remaining Moves: 20
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:3 Y:2
+[Debug Piece]: Waiting message from Player
 [Debug Players]: Player B In Attesa di comandi
 [Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player B
-[Debug Piece]: orders received piece 0 phase 3
 [Debug Players]: Waiting piece
-[Debug Piece]: Piece 0 Start moving, with tactic 2
-[LOG : Piece -> 0.296000]Moving piece 0 of player B to X:1 Y:2, Remaining Moves: 20
-[LOG : Piece -> 0.406000]Moving piece 0 of player A to X:4 Y:6, Remaining Moves: 19
-[LOG : Piece -> 0.340000]Moving piece 0 of player B to X:1 Y:3, Remaining Moves: 19
-[LOG : Piece -> 0.366000]Moving piece 0 of player B to X:0 Y:3, Remaining Moves: 18
-[LOG : Piece -> 0.437000]Moving piece 0 of player A to X:3 Y:6, Remaining Moves: 18
-[LOG : Piece -> 0.459000]Moving piece 0 of player A to X:2 Y:6, Remaining Moves: 17
-[LOG : Piece -> 0.381000]Moving piece 0 of player B to X:0 Y:4, Remaining Moves: 17
-[LOG : Piece -> 0.521000]Moving piece 0 of player A to X:1 Y:6, Remaining Moves: 16
-[LOG : Piece -> 0.419000]Moving piece 0 of player B to X:0 Y:5, Remaining Moves: 16
-[LOG : Piece -> 0.577000]Moving piece 0 of player A to X:0 Y:6, Remaining Moves: 15
-[LOG : Piece -> 0.475000]Moving piece 0 of player B to X:0 Y:6, Remaining Moves: 15
-[LOG : Piece -> 0.626000]Moving piece 0 of player A to X:0 Y:7, Remaining Moves: 14
-[LOG : Piece -> 0.517000]Moving piece 0 of player B to X:0 Y:7, Remaining Moves: 14
-[LOG : Piece -> 0.738000]Moving piece 0 of player A to X:0 Y:8, Remaining Moves: 13
-[LOG : Piece -> 0.570000]Moving piece 0 of player B to X:0 Y:8, Remaining Moves: 13
-[Debug Piece]: Capturing x:0, y:8
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Piece]: Piece 0 Start moving, with tactic 1
+[LOG : Piece -> 0.337000]Moving piece 0 of player B to X:2 Y:8, Remaining Moves: 20
+[LOG : Piece -> 0.427000]Moving piece 0 of player A to X:4 Y:5, Remaining Moves: 19
+[LOG : Piece -> 0.372000]Moving piece 0 of player B to X:2 Y:7, Remaining Moves: 19
+[LOG : Piece -> 0.518000]Moving piece 0 of player A to X:3 Y:5, Remaining Moves: 18
+[LOG : Piece -> 0.424000]Moving piece 0 of player B to X:2 Y:6, Remaining Moves: 18
+[LOG : Piece -> 0.616000]Moving piece 0 of player A to X:3 Y:4, Remaining Moves: 17
+[LOG : Piece -> 0.485000]Moving piece 0 of player B to X:2 Y:5, Remaining Moves: 17
+[LOG : Piece -> 0.576000]Moving piece 0 of player B to X:2 Y:4, Remaining Moves: 16
+[LOG : Piece -> 0.756000]Moving piece 0 of player A to X:3 Y:3, Remaining Moves: 16
+[LOG : Piece -> 0.650000]Moving piece 0 of player B to X:2 Y:3, Remaining Moves: 15
+[LOG : Piece -> 0.840000]Moving piece 0 of player A to X:3 Y:2, Remaining Moves: 15
+[LOG : Piece -> 0.702000]Moving piece 0 of player B to X:2 Y:2, Remaining Moves: 14
+[Debug Piece]: Capturing x:3, y:2
 [Debug Piece]: Sended message to player
 [Debug Players]: sended message to master
-[Debug Master]: Bandiera Catturata da A X:0 Y:8
+[Debug Master]: Bandiera Catturata da A X:3 Y:2
 [Debug Master]: Bandiere Rimaste 1
 [Debug Master]: Bandiera 0 rimossa
 [Debug Master]: Success
-[Debug Master]: Send message to player 5443
-[Debug Players]: Restarting For finished Round
-[Debug Piece]: Restart Execution
-[Debug Piece]: Waiting message from Player
-[Debug Players]: Player A In Attesa di comandi
-[Debug Players]: Restarting For finished Round
-[Debug Piece]: Restart Execution
-[Debug Piece]: Waiting message from Player
-[Debug Players]: Player B In Attesa di comandi
+[Debug Master]: Send message to player 18296
  00 01 02 03 04 05 06 07 08 09
-00  -  -  -  -  -  -  -  -  A  -
+00  -  -  -  -  -  -  -  -  -  -
 01  -  -  -  -  -  -  -  -  -  -
 02  -  -  -  -  -  -  -  -  -  -
-03  -  -  -  -  -  -  -  -  -  -
+03  -  -  A  -  -  -  -  -  -  -
 04  -  -  -  -  -  -  -  -  -  -
 05  -  -  -  -  -  -  -  -  -  -
 06  -  -  -  -  -  -  -  -  -  -
 07  -  -  -  -  -  -  -  -  -  -
 08  -  -  -  -  -  -  -  -  -  -
 09  -  -  -  -  -  -  -  -  -  -
+[Debug Players]: Send message to piece 18298
 [Debug Master]: Restarting
-[LOG : Master -> 1.422000]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
+[Debug Players]: Waiting piece
+[LOG : Master -> 1.913000]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
 
-[LOG : Master -> 1.427000]Bandiere Calcolate : 1
-[Debug Master]: Placed Flag 0 at 1 4
+[LOG : Master -> 1.923000]Bandiere Calcolate : 1
+[Debug Master]: Placed Flag 0 at 9 7
+[Debug Piece]: Restart
+[Debug Piece]: Piece 0 changing target
+[Debug Players]: Restarting For finished Round
+[LOG : Piece -> 0.949000]Moving piece 0 of player A to X:4 Y:2, Remaining Moves: 14
+[Debug Piece]: Restart Execution
+[Debug Players]: sended message to master
+[Debug Players]: Restarting For finished Round
+[Debug Players]: Send message to piece 0
+[Debug Players]: Player A In Attesa di comandi
+[Debug Piece]: Restart Execution
+[Debug Piece]: Moves Finished for piece 0
+[Debug Piece]: Waiting message from Player
+[Debug Players]: sended message to master
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player A
+[Debug Players]: Waiting piece
+[LOG : Piece -> 1.040000]Moving piece 0 of player A to X:5 Y:2, Remaining Moves: 19
+[LOG : Piece -> 1.116000]Moving piece 0 of player A to X:6 Y:2, Remaining Moves: 18
+[LOG : Piece -> 1.217000]Moving piece 0 of player A to X:7 Y:2, Remaining Moves: 17
+[LOG : Piece -> 1.286000]Moving piece 0 of player A to X:8 Y:2, Remaining Moves: 16
+[LOG : Piece -> 1.342000]Moving piece 0 of player A to X:9 Y:2, Remaining Moves: 15
+[LOG : Piece -> 1.423000]Moving piece 0 of player A to X:9 Y:3, Remaining Moves: 14
+[LOG : Piece -> 1.494000]Moving piece 0 of player A to X:9 Y:4, Remaining Moves: 13
+[LOG : Piece -> 1.583000]Moving piece 0 of player A to X:9 Y:5, Remaining Moves: 12
+[LOG : Piece -> 1.655000]Moving piece 0 of player A to X:9 Y:6, Remaining Moves: 11
+[LOG : Piece -> 1.708000]Moving piece 0 of player A to X:9 Y:7, Remaining Moves: 10
+[Debug Piece]: Capturing x:9, y:7
+[Debug Piece]: Sended message to player
+[Debug Piece]: Restart
+[Debug Piece]: Moves Finished for piece 0
+[Debug Piece]: Waiting message from Player
+[Debug Players]: sended message to master
 Round: 1
 PLAYER         SCORE
 PLAYER A   |   100  
 PLAYER B   |   0  
-[LOG : Master -> 1.471000]Tempo Esaurito, chiusura
- 00 01 02 03 04 05 06 07 08 09
-00  -  -  -  -  -  -  -  -  A  -
-01  -  -  -  -  !  -  -  -  -  -
-02  -  -  -  -  -  -  -  -  -  -
-03  -  -  -  -  -  -  -  -  -  -
-04  -  -  -  -  -  -  -  -  -  -
-05  -  -  -  -  -  -  -  -  -  -
-06  -  -  -  -  -  -  -  -  -  -
-07  -  -  -  -  -  -  -  -  -  -
-08  -  -  -  -  -  -  -  -  -  -
-09  -  -  -  -  -  -  -  -  -  -
-Round: 1
-PLAYER         SCORE
-PLAYER A   |   100  
-PLAYER B   |   0  
-[LOG : Master -> 1.534000]Killing process 5443
-[LOG : Players -> 0.789000]PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : Piece -> 0.732000]cleaning and go
-[LOG : Piece -> 0.940000]cleaning and go
-[LOG : Players -> 0.649000]PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : Master -> 1.604000]Ricevuto Segnale SIGINT
-[LOG : Master -> 1.658000]Killing process 5443
-[LOG : Master -> 1.699000]Process 5443 exited with status (null)
-[LOG : Master -> 1.710000]Killing process 5444
-[LOG : Master -> 1.746000]Process 5444 exited with status (null)
-[LOG : Master -> 1.753000]MASTER_CLEANER_LAUNCHED
-[LOG : Master -> 1.771000]Cleaning ids
-[LOG : Master -> 1.777000]All done BBYEEE
+[LOG : Master -> 2.196000]Ricevuto Segnale SIGINT
+[LOG : Piece -> 0.870000]cleaning and go
+[LOG : Master -> 2.260000]Killing process 18296
+[LOG : Master -> 2.314000]Process 18296 exited with status (null)
+[LOG : Master -> 2.323000]Killing process 18297
+[LOG : Players -> 1.072000]PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Piece -> 1.886000]cleaning and go
+[LOG : Master -> 2.431000]Process 18297 exited with status (null)
+[LOG : Master -> 2.453000]MASTER_CLEANER_LAUNCHED
+[LOG : Master -> 2.486000]Cleaning ids
+[LOG : Master -> 2.499000]All done BBYEEE

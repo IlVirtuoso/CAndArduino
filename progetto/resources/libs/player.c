@@ -25,7 +25,7 @@ int piececreated = 0;
 
 struct sembuf sem;
 
-msg_master master;
+msg_cnt master;
 int player()
 {
     int i;
@@ -100,10 +100,10 @@ int player()
 
 void stand()
 {
-    msg_master command;
+    msg_cnt command;
     command.phase = 0;
     debug("Player %c In Attesa di comandi", player_id);
-    msgrcv(master_msgqueue, &command, sizeof(msg_master) - sizeof(long), getpid(), MSG_INFO);
+    msgrcv(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
 }
@@ -213,6 +213,7 @@ void phase(int phase)
          * movimento
          * cattura bandiera action to do 
          */
+        override = 0;
 
         for (i = 0; i < SO_NUM_P; i++)
         {
