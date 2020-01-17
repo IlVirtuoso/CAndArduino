@@ -56,6 +56,8 @@ int reserveSem(int semid, int semnum);
 
 int releaseSem(int semid, int semnum);
 
+int reserveSemNoWait(int semid, int semnum);
+
 int waitzeroSem(int semid, int semnum);
 
 int initsemAvailable(int semid, int semnum);

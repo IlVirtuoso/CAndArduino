@@ -65,7 +65,6 @@ int piece()
     sigprocmask(SIG_BLOCK, &piece_mask, NULL);
     piece_signal.sa_mask = piece_mask;
     piece_signal.sa_flags = SA_NODEFER;
-    piece_signal.sa_flags = SA_RESTART;
     sigaction(SIGINT, &piece_signal, NULL);
     sigaction(SIGROUND, &piece_signal, NULL);
     sigset(SIGINT, piece_handler);
@@ -132,7 +131,6 @@ void play(int command)
         break;
 
     default:
-    play(3);
 
         break;
     }
@@ -194,7 +192,8 @@ void piece_handler(int signum)
         temp.type = getppid() * 10;
         msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         piece_attr.n_moves = SO_N_MOVES;
-        override = 1;
+        while (1)
+            getplay();
         break;
 
     case SIGUSR2:
@@ -490,20 +489,22 @@ char cond(int x, int y)
 int move(int x, int y)
 {
     msg_cnt captured;
-    struct timespec move, remain;
+    struct timespec moved, remain;
     int isValid = 0;
-    move.tv_nsec = SO_MIN_HOLD_NSEC;
-    move.tv_sec = 0;
+    moved.tv_nsec = SO_MIN_HOLD_NSEC;
+    moved.tv_sec = 0;
     logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, player_id, x, y, piece_attr.n_moves);
     isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
     if (isValid && piece_attr.n_moves >= 0)
     {
         if (isValid && pos_set)
         {
-            tab(piece_shared_table, piece_attr.x, piece_attr.y)->id = EMPTY;
-            releaseSem(sem_table, piece_attr.x * SO_BASE + piece_attr.y);
-            nanosleep(&move, &remain);
-            reserveSem(sem_table, x * SO_BASE + y);
+            if (reserveSemNoWait(sem_table, x * SO_BASE + y))
+            {
+                if (errno == EAGAIN)
+                    return 0;
+            }
+            nanosleep(&moved, &remain);
 
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
@@ -513,10 +514,14 @@ int move(int x, int y)
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
+                tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
+                releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
             }
             else if (getid(piece_shared_table, x, y) == FLAG)
             {
                 debug("Capturing x:%d, y:%d", x, y);
+                tmp_old_x = old_x = piece_attr.x;
+                tmp_old_y = old_y = piece_attr.y;
                 captured.type = getppid() * 10;
                 captured.x = x;
                 captured.y = y;
@@ -527,12 +532,10 @@ int move(int x, int y)
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
+                tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
+                releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
                 debug("Restart");
             }
-            else
-            {
-                return 0;
-            } /*questo fa partire la gestione evasion*/
             return 1;
         }
         else

@@ -1,171 +1,1974 @@
-[LOG : Master -> 0.934000]Started At: 01:14:44
-[LOG : Master -> 0.973000]Variabile:SO_BASE inizializzata a 10 
-[LOG : Master -> 0.979000]Variabile:SO_ALTEZZA inizializzata a 10 
-[LOG : Master -> 0.983000]Variabile:SO_NUM_G inizializzata a 2 
-[LOG : Master -> 0.986000]Variabile:SO_NUM_P inizializzata a 1 
-[LOG : Master -> 0.989000]Variabile:SO_FLAG_MIN inizializzata a 1 
-[LOG : Master -> 0.993000]Variabile:SO_FLAG_MAX inizializzata a 1 
-[LOG : Master -> 0.996000]Variabile:SO_ROUND_SCORE inizializzata a 100 
-[LOG : Master -> 0.999000]Variabile:SO_MIN_HOLD_NSEC inizializzata a 1000000 
-[LOG : Master -> 1.002000]Variabile:SO_N_MOVES inizializzata a 20 
-[LOG : Master -> 1.006000]Variabile:SO_MAX_TIME inizializzata a 30 
-[LOG : Master -> 1.010000]Impostazione maschere e segnali
-[LOG : Master -> 1.017000]Inizializzazione Memoria Condivisa
+[LOG : Master -> 0.621000]Started At: 21:15:03
+[LOG : Master -> 0.648000]Variabile:SO_BASE inizializzata a 50 
+[LOG : Master -> 0.651000]Variabile:SO_ALTEZZA inizializzata a 50 
+[LOG : Master -> 0.654000]Variabile:SO_NUM_G inizializzata a 4 
+[LOG : Master -> 0.656000]Variabile:SO_NUM_P inizializzata a 1 
+[LOG : Master -> 0.658000]Variabile:SO_FLAG_MIN inizializzata a 1 
+[LOG : Master -> 0.660000]Variabile:SO_FLAG_MAX inizializzata a 1 
+[LOG : Master -> 0.662000]Variabile:SO_ROUND_SCORE inizializzata a 100 
+[LOG : Master -> 0.663000]Variabile:SO_MIN_HOLD_NSEC inizializzata a 1000000 
+[LOG : Master -> 0.665000]Variabile:SO_N_MOVES inizializzata a 2000 
+[LOG : Master -> 0.667000]Variabile:SO_MAX_TIME inizializzata a 3 
+[LOG : Master -> 0.670000]Impostazione maschere e segnali
+[LOG : Master -> 0.673000]Inizializzazione Memoria Condivisa
 [Debug Master]: Memoria Condivisa Inizializzata
-[LOG : Master -> 1.048000]Tabella semafori iniziata
-[LOG : Master -> 1.168000]tabella semafori configurata
+[LOG : Master -> 0.716000]Tabella semafori iniziata
+[LOG : Master -> 36.870998]tabella semafori configurata
 [Debug Master]: Shared Table attach completato
-[LOG : Master -> 1.187000]Memoria Condivisa Inizializzata
-[LOG : Master -> 1.285000]Player: 0 started with pid: 18296
-[LOG : Players -> 0.121000]Player Started At 01:14:45
-[LOG : Master -> 1.378000]Player: 1 started with pid: 18297
-[LOG : Players -> 0.159000]Tabella semafori iniziata
-[LOG : Players -> 0.171000]Setup Struttura dei segnali
-[LOG : Players -> 0.184000]Generazione pezzi iniziata
-[LOG : Players -> 0.267000]Generato pezzo 0
+[LOG : Master -> 36.965000]Memoria Condivisa Inizializzata
+[LOG : Master -> 37.044998]Player: 0 started with pid: 12790
+[LOG : Players -> 0.065000]Player Started At 21:15:03
+[LOG : Players -> 0.094000]Tabella semafori iniziata
+[LOG : Players -> 0.102000]Setup Struttura dei segnali
+[LOG : Master -> 37.113998]Player: 1 started with pid: 12791
+[LOG : Players -> 0.112000]Generazione pezzi iniziata
+[LOG : Players -> 0.089000]Player Started At 21:15:03
+[LOG : Master -> 37.192001]Player: 2 started with pid: 12793
+[LOG : Players -> 0.183000]Generato pezzo 0
 [Debug Players]: Player A In Attesa di comandi
+[LOG : Players -> 0.161000]Tabella semafori iniziata
+[LOG : Players -> 0.066000]Player Started At 21:15:03
+[LOG : Players -> 0.179000]Setup Struttura dei segnali
+[LOG : Players -> 0.095000]Tabella semafori iniziata
+[LOG : Players -> 0.189000]Generazione pezzi iniziata
+[LOG : Piece -> 0.089000]Tabella semafori iniziata
+[LOG : Players -> 0.105000]Setup Struttura dei segnali
+[LOG : Piece -> 0.119000]Piece 0 of player A Started At 21:15:03
+[LOG : Piece -> 0.124000]Setup Struttura dei segnali
+[LOG : Players -> 0.120000]Generazione pezzi iniziata
+[Debug Piece]: Waiting message from Player
+[LOG : Master -> 37.318001]Player: 3 started with pid: 12794
+[LOG : Players -> 0.048000]Player Started At 21:15:03
+[LOG : Players -> 0.078000]Tabella semafori iniziata
 [Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player A
-[LOG : Players -> 0.096000]Player Started At 01:14:45
-[LOG : Players -> 0.138000]Tabella semafori iniziata
-[LOG : Piece -> 0.068000]Tabella semafori iniziata
-[LOG : Players -> 0.151000]Setup Struttura dei segnali
-[LOG : Piece -> 0.111000]Piece 0 of player A Started At 01:14:45
-[LOG : Piece -> 0.116000]Setup Struttura dei segnali
-[LOG : Players -> 0.166000]Generazione pezzi iniziata
-[Debug Piece]: Waiting message from Player
-[LOG : Players -> 0.247000]Generato pezzo 0
+[LOG : Players -> 0.087000]Setup Struttura dei segnali
+[LOG : Players -> 0.101000]Generazione pezzi iniziata
+[LOG : Players -> 0.212000]Generato pezzo 0
+[LOG : Players -> 0.305000]Generato pezzo 0
+[Debug Players]: Player C In Attesa di comandi
 [Debug Players]: Player B In Attesa di comandi
+[LOG : Piece -> 0.052000]Tabella semafori iniziata
 [Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player B
-[LOG : Piece -> 0.069000]Tabella semafori iniziata
-[LOG : Piece -> 0.110000]Piece 0 of player B Started At 01:14:45
-[LOG : Piece -> 0.115000]Setup Struttura dei segnali
+[LOG : Piece -> 0.081000]Piece 0 of player B Started At 21:15:03
+[LOG : Piece -> 0.090000]Setup Struttura dei segnali
+[LOG : Players -> 0.174000]Generato pezzo 0
+[LOG : Piece -> 0.031000]Tabella semafori iniziata
+[Debug Players]: Player D In Attesa di comandi
 [Debug Piece]: Waiting message from Player
+[LOG : Piece -> 0.057000]Piece 0 of player C Started At 21:15:03
+[LOG : Piece -> 0.064000]Setup Struttura dei segnali
+[Debug Piece]: Waiting message from Player
+[LOG : Piece -> 0.052000]Tabella semafori iniziata
+[LOG : Piece -> 0.076000]Piece 0 of player D Started At 21:15:03
+[LOG : Piece -> 0.079000]Setup Struttura dei segnali
+[Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player C
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Comando ricevuto: Fase 1 iniziata dal Player D
 [Debug Piece]: orders received piece 0 phase 1
-[LOG : Piece -> 0.217000]Pezzo 0 del player A in X:6 Y:5
+[LOG : Piece -> 0.178000]Pezzo 0 del player A in X:36 Y:6
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player A In Attesa di comandi
 [Debug Piece]: orders received piece 0 phase 1
-[LOG : Piece -> 0.220000]Pezzo 0 del player B in X:2 Y:9
+[LOG : Piece -> 0.141000]Pezzo 0 del player B in X:12 Y:36
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player B In Attesa di comandi
-[LOG : Master -> 1.576000]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
+[Debug Piece]: orders received piece 0 phase 1
+[LOG : Piece -> 0.125000]Pezzo 0 del player C in X:2 Y:44
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player C In Attesa di comandi
+[Debug Piece]: orders received piece 0 phase 1
+[LOG : Piece -> 0.128000]Pezzo 0 del player D in X:47 Y:37
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player D In Attesa di comandi
+[LOG : Master -> 37.655998]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
 
-[LOG : Master -> 1.600000]Bandiere Calcolate : 1
+[LOG : Master -> 37.661999]Bandiere Calcolate : 1
 [Debug Master]: Bandiere Generate: 1
-[Debug Master]: Placed Flag 0 at 3 2
- 00 01 02 03 04 05 06 07 08 09
-00  -  -  -  -  -  -  -  -  -  -
-01  -  -  -  -  -  -  -  -  -  -
-02  -  -  -  -  -  -  -  -  -  B
-03  -  -  !  -  -  -  -  -  -  -
-04  -  -  -  -  -  -  -  -  -  -
-05  -  -  -  -  -  -  -  -  -  -
-06  -  -  -  -  -  A  -  -  -  -
-07  -  -  -  -  -  -  -  -  -  -
-08  -  -  -  -  -  -  -  -  -  -
-09  -  -  -  -  -  -  -  -  -  -
+[Debug Master]: Placed Flag 0 at 9 43
+ 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+00  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+01  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+02  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  C  -  -  -  -  -
+03  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+04  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+05  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+06  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+07  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+08  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+09  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  !  -  -  -  -  -  -
+10  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+11  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+12  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  B  -  -  -  -  -  -  -  -  -  -  -  -  -
+13  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+14  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+15  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+16  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+17  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+18  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+19  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+20  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+21  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+22  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+23  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+24  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+25  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+26  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+27  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+28  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+29  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+30  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+31  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+32  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+33  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+34  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+35  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+36  -  -  -  -  -  -  A  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+37  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+38  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+39  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+40  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+41  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+42  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+43  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+44  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+45  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+46  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+47  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  D  -  -  -  -  -  -  -  -  -  -  -  -
+48  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+49  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 [Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player A
-[Debug Players]: Flag Found for piece: 0, at X:3 Y:2
+[Debug Players]: Flag Found for piece: 0, at X:9 Y:43
 [Debug Piece]: orders received piece 0 phase 2
-[Debug Piece]: Target Acquired, Piece 0 To X:3 Y:2
+[Debug Piece]: Target Acquired, Piece 0 To X:9 Y:43
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player A In Attesa di comandi
-[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player A
-[Debug Players]: Waiting piece
 [Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player B
-[Debug Piece]: orders received piece 0 phase 3
-[Debug Players]: Flag Found for piece: 0, at X:3 Y:2
-[Debug Piece]: Piece 0 Start moving, with tactic 0
-[LOG : Piece -> 0.384000]Moving piece 0 of player A to X:5 Y:5, Remaining Moves: 20
+[Debug Players]: Flag Found for piece: 0, at X:9 Y:43
 [Debug Piece]: orders received piece 0 phase 2
-[Debug Piece]: Target Acquired, Piece 0 To X:3 Y:2
+[Debug Piece]: Target Acquired, Piece 0 To X:9 Y:43
 [Debug Piece]: Waiting message from Player
 [Debug Players]: Player B In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player C
+[Debug Players]: Flag Found for piece: 0, at X:9 Y:43
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:9 Y:43
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player C In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player D
+[Debug Players]: Flag Found for piece: 0, at X:9 Y:43
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:9 Y:43
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player D In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player A
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Players]: Waiting piece
+[Debug Piece]: Piece 0 Start moving, with tactic 2
+[LOG : Piece -> 0.292000]Moving piece 0 of player A to X:36 Y:7, Remaining Moves: 2000
 [Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player B
 [Debug Players]: Waiting piece
 [Debug Piece]: orders received piece 0 phase 3
+[Debug Piece]: Piece 0 Start moving, with tactic 2
+[LOG : Piece -> 0.270000]Moving piece 0 of player B to X:11 Y:36, Remaining Moves: 2000
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player C
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Players]: Waiting piece
 [Debug Piece]: Piece 0 Start moving, with tactic 1
-[LOG : Piece -> 0.337000]Moving piece 0 of player B to X:2 Y:8, Remaining Moves: 20
-[LOG : Piece -> 0.427000]Moving piece 0 of player A to X:4 Y:5, Remaining Moves: 19
-[LOG : Piece -> 0.372000]Moving piece 0 of player B to X:2 Y:7, Remaining Moves: 19
-[LOG : Piece -> 0.518000]Moving piece 0 of player A to X:3 Y:5, Remaining Moves: 18
-[LOG : Piece -> 0.424000]Moving piece 0 of player B to X:2 Y:6, Remaining Moves: 18
-[LOG : Piece -> 0.616000]Moving piece 0 of player A to X:3 Y:4, Remaining Moves: 17
-[LOG : Piece -> 0.485000]Moving piece 0 of player B to X:2 Y:5, Remaining Moves: 17
-[LOG : Piece -> 0.576000]Moving piece 0 of player B to X:2 Y:4, Remaining Moves: 16
-[LOG : Piece -> 0.756000]Moving piece 0 of player A to X:3 Y:3, Remaining Moves: 16
-[LOG : Piece -> 0.650000]Moving piece 0 of player B to X:2 Y:3, Remaining Moves: 15
-[LOG : Piece -> 0.840000]Moving piece 0 of player A to X:3 Y:2, Remaining Moves: 15
-[LOG : Piece -> 0.702000]Moving piece 0 of player B to X:2 Y:2, Remaining Moves: 14
-[Debug Piece]: Capturing x:3, y:2
+[LOG : Piece -> 0.275000]Moving piece 0 of player C to X:2 Y:43, Remaining Moves: 2000
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player D
+[Debug Players]: Waiting piece
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Piece]: Piece 0 Start moving, with tactic 0
+[Debug Master]: Waiting for players message
+[LOG : Piece -> 0.224000]Moving piece 0 of player D to X:46 Y:37, Remaining Moves: 2000
+[LOG : Piece -> 0.338000]Moving piece 0 of player A to X:35 Y:7, Remaining Moves: 1999
+[LOG : Piece -> 0.349000]Moving piece 0 of player B to X:11 Y:37, Remaining Moves: 1999
+[LOG : Piece -> 0.295000]Moving piece 0 of player C to X:3 Y:43, Remaining Moves: 1999
+[LOG : Piece -> 0.410000]Moving piece 0 of player A to X:35 Y:8, Remaining Moves: 1998
+[LOG : Piece -> 0.283000]Moving piece 0 of player D to X:45 Y:37, Remaining Moves: 1999
+[LOG : Piece -> 0.451000]Moving piece 0 of player B to X:10 Y:37, Remaining Moves: 1998
+[LOG : Piece -> 0.358000]Moving piece 0 of player C to X:4 Y:43, Remaining Moves: 1998
+[LOG : Piece -> 0.442000]Moving piece 0 of player A to X:34 Y:8, Remaining Moves: 1997
+[LOG : Piece -> 0.325000]Moving piece 0 of player D to X:44 Y:37, Remaining Moves: 1998
+[LOG : Piece -> 0.478000]Moving piece 0 of player B to X:10 Y:38, Remaining Moves: 1997
+[LOG : Piece -> 0.505000]Moving piece 0 of player A to X:34 Y:9, Remaining Moves: 1996
+[LOG : Piece -> 0.432000]Moving piece 0 of player C to X:5 Y:43, Remaining Moves: 1997
+[LOG : Piece -> 0.354000]Moving piece 0 of player D to X:43 Y:37, Remaining Moves: 1997
+[LOG : Piece -> 0.508000]Moving piece 0 of player B to X:9 Y:38, Remaining Moves: 1996
+[LOG : Piece -> 0.540000]Moving piece 0 of player A to X:33 Y:9, Remaining Moves: 1995
+[LOG : Piece -> 0.464000]Moving piece 0 of player C to X:6 Y:43, Remaining Moves: 1996
+[LOG : Piece -> 0.426000]Moving piece 0 of player D to X:42 Y:37, Remaining Moves: 1996
+[LOG : Piece -> 0.543000]Moving piece 0 of player B to X:9 Y:39, Remaining Moves: 1995
+[LOG : Piece -> 0.575000]Moving piece 0 of player A to X:33 Y:10, Remaining Moves: 1994
+[LOG : Piece -> 0.535000]Moving piece 0 of player C to X:7 Y:43, Remaining Moves: 1995
+[LOG : Piece -> 0.486000]Moving piece 0 of player D to X:41 Y:37, Remaining Moves: 1995
+[LOG : Piece -> 0.636000]Moving piece 0 of player B to X:9 Y:40, Remaining Moves: 1994
+[LOG : Piece -> 0.626000]Moving piece 0 of player A to X:32 Y:10, Remaining Moves: 1993
+[LOG : Piece -> 0.581000]Moving piece 0 of player C to X:8 Y:43, Remaining Moves: 1994
+[LOG : Piece -> 0.563000]Moving piece 0 of player D to X:40 Y:37, Remaining Moves: 1994
+[LOG : Piece -> 0.696000]Moving piece 0 of player A to X:32 Y:11, Remaining Moves: 1992
+[LOG : Piece -> 0.689000]Moving piece 0 of player B to X:9 Y:41, Remaining Moves: 1993
+[LOG : Piece -> 0.661000]Moving piece 0 of player C to X:9 Y:43, Remaining Moves: 1993
+[LOG : Piece -> 0.613000]Moving piece 0 of player D to X:39 Y:37, Remaining Moves: 1993
+[LOG : Piece -> 0.810000]Moving piece 0 of player A to X:31 Y:11, Remaining Moves: 1991
+[LOG : Piece -> 0.764000]Moving piece 0 of player B to X:9 Y:42, Remaining Moves: 1992
+[LOG : Piece -> 0.681000]Moving piece 0 of player D to X:38 Y:37, Remaining Moves: 1992
+[Debug Piece]: Capturing x:9, y:43
 [Debug Piece]: Sended message to player
-[Debug Players]: sended message to master
-[Debug Master]: Bandiera Catturata da A X:3 Y:2
+[Debug Players]: sended message to master: X:9 Y:43 ID:67
+[Debug Master]: Bandiera Catturata da C X:9 Y:43
 [Debug Master]: Bandiere Rimaste 1
 [Debug Master]: Bandiera 0 rimossa
 [Debug Master]: Success
-[Debug Master]: Send message to player 18296
- 00 01 02 03 04 05 06 07 08 09
-00  -  -  -  -  -  -  -  -  -  -
-01  -  -  -  -  -  -  -  -  -  -
-02  -  -  -  -  -  -  -  -  -  -
-03  -  -  A  -  -  -  -  -  -  -
-04  -  -  -  -  -  -  -  -  -  -
-05  -  -  -  -  -  -  -  -  -  -
-06  -  -  -  -  -  -  -  -  -  -
-07  -  -  -  -  -  -  -  -  -  -
-08  -  -  -  -  -  -  -  -  -  -
-09  -  -  -  -  -  -  -  -  -  -
-[Debug Players]: Send message to piece 18298
-[Debug Master]: Restarting
-[Debug Players]: Waiting piece
-[LOG : Master -> 1.913000]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
-
-[LOG : Master -> 1.923000]Bandiere Calcolate : 1
-[Debug Master]: Placed Flag 0 at 9 7
+[Debug Master]: Send message to player 12793
+[Debug Players]: Send message to piece 12796
+ 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+00  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+01  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+02  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+03  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+04  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+05  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+06  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+07  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+08  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  C  -  -  -  -  -  -
+09  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  B  -  C  -  -  -  -  -  -
+10  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+11  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+12  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+13  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+14  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+15  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+16  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+17  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+18  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+19  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+20  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+21  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+22  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+23  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+24  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+25  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - [Debug Players]: Waiting piece
 [Debug Piece]: Restart
 [Debug Piece]: Piece 0 changing target
+ -  -  -  -  -  -  -  -  -  -  -
+26  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+27  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+28  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+29  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+30  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+31  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+32  -  -  -  -  -  -  -  -  -  -  -  A  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+33  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+34  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+35  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+36  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+37  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+38  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+39  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  D  -  -  -  -  -  -  -  -  -  -  -  -
+40  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+41  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+42  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+43  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+44  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+45  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+46  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+47  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+48  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+49  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+[Debug Master]: Restarting
+[LOG : Master -> 38.339001]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
+
+[LOG : Master -> 38.342999]Bandiere Calcolate : 1
+[Debug Master]: Placed Flag 0 at 5 24
 [Debug Players]: Restarting For finished Round
-[LOG : Piece -> 0.949000]Moving piece 0 of player A to X:4 Y:2, Remaining Moves: 14
 [Debug Piece]: Restart Execution
-[Debug Players]: sended message to master
-[Debug Players]: Restarting For finished Round
-[Debug Players]: Send message to piece 0
+[Debug Piece]: Waiting message from Player
 [Debug Players]: Player A In Attesa di comandi
+[Debug Players]: Restarting For finished Round
 [Debug Piece]: Restart Execution
-[Debug Piece]: Moves Finished for piece 0
 [Debug Piece]: Waiting message from Player
-[Debug Players]: sended message to master
+[Debug Players]: Player B In Attesa di comandi
+[Debug Players]: Restarting For finished Round
+[Debug Piece]: Restart Execution
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player C In Attesa di comandi
+[Debug Players]: Restarting For finished Round
+[Debug Piece]: Restart Execution
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player D In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player A
+[Debug Players]: Flag Found for piece: 0, at X:5 Y:24
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:5 Y:24
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player A In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player B
+[Debug Players]: Flag Found for piece: 0, at X:5 Y:24
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:5 Y:24
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player B In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player C
+[Debug Players]: Flag Found for piece: 0, at X:5 Y:24
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:5 Y:24
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player C In Attesa di comandi
+[Debug Players]: Comando ricevuto: Fase 2 iniziata dal Player D
+[Debug Players]: Flag Found for piece: 0, at X:5 Y:24
+[Debug Piece]: orders received piece 0 phase 2
+[Debug Piece]: Target Acquired, Piece 0 To X:5 Y:24
+[Debug Piece]: Waiting message from Player
+[Debug Players]: Player D In Attesa di comandi
 [Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player A
+[Debug Piece]: orders received piece 0 phase 3
 [Debug Players]: Waiting piece
-[LOG : Piece -> 1.040000]Moving piece 0 of player A to X:5 Y:2, Remaining Moves: 19
-[LOG : Piece -> 1.116000]Moving piece 0 of player A to X:6 Y:2, Remaining Moves: 18
-[LOG : Piece -> 1.217000]Moving piece 0 of player A to X:7 Y:2, Remaining Moves: 17
-[LOG : Piece -> 1.286000]Moving piece 0 of player A to X:8 Y:2, Remaining Moves: 16
-[LOG : Piece -> 1.342000]Moving piece 0 of player A to X:9 Y:2, Remaining Moves: 15
-[LOG : Piece -> 1.423000]Moving piece 0 of player A to X:9 Y:3, Remaining Moves: 14
-[LOG : Piece -> 1.494000]Moving piece 0 of player A to X:9 Y:4, Remaining Moves: 13
-[LOG : Piece -> 1.583000]Moving piece 0 of player A to X:9 Y:5, Remaining Moves: 12
-[LOG : Piece -> 1.655000]Moving piece 0 of player A to X:9 Y:6, Remaining Moves: 11
-[LOG : Piece -> 1.708000]Moving piece 0 of player A to X:9 Y:7, Remaining Moves: 10
-[Debug Piece]: Capturing x:9, y:7
-[Debug Piece]: Sended message to player
-[Debug Piece]: Restart
-[Debug Piece]: Moves Finished for piece 0
-[Debug Piece]: Waiting message from Player
-[Debug Players]: sended message to master
+[Debug Piece]: Piece 0 Start moving, with tactic 1
+[LOG : Piece -> 1.052000]Moving piece 0 of player A to X:32 Y:12, Remaining Moves: 2000
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player B
+[Debug Players]: Waiting piece
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player C
+[Debug Players]: Waiting piece
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Piece]: Piece 0 Start moving, with tactic 1
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Piece]: Piece 0 Start moving, with tactic 0
+[LOG : Piece -> 1.352000]Moving piece 0 of player C to X:8 Y:43, Remaining Moves: 2000
+[Debug Players]: Comando ricevuto: Fase 3 iniziata dal Player D
+[LOG : Piece -> 0.939000]Moving piece 0 of player B to X:8 Y:41, Remaining Moves: 2000
+[Debug Piece]: orders received piece 0 phase 3
+[Debug Players]: Waiting piece
+[Debug Piece]: Piece 0 Start moving, with tactic 1
+[LOG : Piece -> 0.877000]Moving piece 0 of player D to X:39 Y:36, Remaining Moves: 2000
 Round: 1
 PLAYER         SCORE
-PLAYER A   |   100  
+PLAYER A   |   0  
 PLAYER B   |   0  
-[LOG : Master -> 2.196000]Ricevuto Segnale SIGINT
-[LOG : Piece -> 0.870000]cleaning and go
-[LOG : Master -> 2.260000]Killing process 18296
-[LOG : Master -> 2.314000]Process 18296 exited with status (null)
-[LOG : Master -> 2.323000]Killing process 18297
-[LOG : Players -> 1.072000]PLAYER_CLEANER:Interruzione esecuzione in corso
-[LOG : Piece -> 1.886000]cleaning and go
-[LOG : Master -> 2.431000]Process 18297 exited with status (null)
-[LOG : Master -> 2.453000]MASTER_CLEANER_LAUNCHED
-[LOG : Master -> 2.486000]Cleaning ids
-[LOG : Master -> 2.499000]All done BBYEEE
+PLAYER C   |   100  
+PLAYER D   |   0  
+[Debug Master]: Waiting for players message
+[LOG : Piece -> 0.969000]Moving piece 0 of player B to X:7 Y:41, Remaining Moves: 1999
+[LOG : Piece -> 1.396000]Moving piece 0 of player C to X:8 Y:42, Remaining Moves: 1999
+[LOG : Piece -> 0.915000]Moving piece 0 of player D to X:39 Y:35, Remaining Moves: 1999
+[LOG : Piece -> 1.128000]Moving piece 0 of player A to X:32 Y:13, Remaining Moves: 1999
+[LOG : Piece -> 1.174000]Moving piece 0 of player A to X:32 Y:14, Remaining Moves: 1998
+[LOG : Piece -> 1.477000]Moving piece 0 of player C to X:7 Y:42, Remaining Moves: 1998
+[LOG : Piece -> 1.024000]Moving piece 0 of player B to X:6 Y:41, Remaining Moves: 1998
+[LOG : Piece -> 0.964000]Moving piece 0 of player D to X:39 Y:34, Remaining Moves: 1998
+[LOG : Piece -> 1.250000]Moving piece 0 of player A to X:32 Y:15, Remaining Moves: 1997
+[LOG : Piece -> 1.559000]Moving piece 0 of player C to X:6 Y:42, Remaining Moves: 1997
+[LOG : Piece -> 1.116000]Moving piece 0 of player B to X:5 Y:41, Remaining Moves: 1997
+[LOG : Piece -> 1.334000]Moving piece 0 of player A to X:32 Y:16, Remaining Moves: 1996
+[LOG : Piece -> 1.064000]Moving piece 0 of player D to X:39 Y:33, Remaining Moves: 1997
+[LOG : Piece -> 1.618000]Moving piece 0 of player C to X:5 Y:42, Remaining Moves: 1996
+[LOG : Piece -> 1.156000]Moving piece 0 of player B to X:5 Y:40, Remaining Moves: 1996
+[LOG : Piece -> 1.681000]Moving piece 0 of player C to X:4 Y:42, Remaining Moves: 1995
+[LOG : Piece -> 1.413000]Moving piece 0 of player A to X:32 Y:17, Remaining Moves: 1995
+[LOG : Piece -> 1.124000]Moving piece 0 of player D to X:39 Y:32, Remaining Moves: 1996
+[LOG : Piece -> 1.221000]Moving piece 0 of player B to X:5 Y:39, Remaining Moves: 1995
+[LOG : Piece -> 1.298000]Moving piece 0 of player B to X:5 Y:38, Remaining Moves: 1994
+[LOG : Piece -> 1.752000]Moving piece 0 of player C to X:4 Y:41, Remaining Moves: 1994
+[LOG : Piece -> 1.466000]Moving piece 0 of player A to X:32 Y:18, Remaining Moves: 1994
+[LOG : Piece -> 1.198000]Moving piece 0 of player D to X:39 Y:31, Remaining Moves: 1995
+[LOG : Piece -> 1.566000]Moving piece 0 of player A to X:32 Y:19, Remaining Moves: 1993
+[LOG : Piece -> 1.363000]Moving piece 0 of player B to X:5 Y:37, Remaining Moves: 1993
+[LOG : Piece -> 1.260000]Moving piece 0 of player D to X:39 Y:30, Remaining Moves: 1994
+[LOG : Piece -> 1.821000]Moving piece 0 of player C to X:4 Y:40, Remaining Moves: 1993
+[LOG : Piece -> 1.633000]Moving piece 0 of player A to X:32 Y:20, Remaining Moves: 1992
+[LOG : Piece -> 1.432000]Moving piece 0 of player B to X:5 Y:36, Remaining Moves: 1992
+[LOG : Piece -> 1.846000]Moving piece 0 of player C to X:4 Y:39, Remaining Moves: 1992
+[LOG : Piece -> 1.325000]Moving piece 0 of player D to X:39 Y:29, Remaining Moves: 1993
+[LOG : Piece -> 1.693000]Moving piece 0 of player A to X:32 Y:21, Remaining Moves: 1991
+[LOG : Piece -> 1.508000]Moving piece 0 of player B to X:5 Y:35, Remaining Moves: 1991
+[LOG : Piece -> 1.744000]Moving piece 0 of player A to X:32 Y:22, Remaining Moves: 1990
+[LOG : Piece -> 1.887000]Moving piece 0 of player C to X:4 Y:38, Remaining Moves: 1991
+[LOG : Piece -> 1.357000]Moving piece 0 of player D to X:39 Y:28, Remaining Moves: 1992
+[LOG : Piece -> 1.582000]Moving piece 0 of player B to X:5 Y:34, Remaining Moves: 1990
+[LOG : Piece -> 1.782000]Moving piece 0 of player A to X:32 Y:23, Remaining Moves: 1989
+[LOG : Piece -> 1.929000]Moving piece 0 of player C to X:4 Y:37, Remaining Moves: 1990
+[LOG : Piece -> 1.395000]Moving piece 0 of player D to X:39 Y:27, Remaining Moves: 1991
+[LOG : Piece -> 1.633000]Moving piece 0 of player B to X:5 Y:33, Remaining Moves: 1989
+[LOG : Piece -> 1.829000]Moving piece 0 of player A to X:32 Y:24, Remaining Moves: 1988
+[LOG : Piece -> 1.967000]Moving piece 0 of player C to X:4 Y:36, Remaining Moves: 1989
+[LOG : Piece -> 1.685000]Moving piece 0 of player B to X:5 Y:32, Remaining Moves: 1988
+[LOG : Piece -> 1.881000]Moving piece 0 of player A to X:31 Y:24, Remaining Moves: 1987
+[LOG : Piece -> 1.498000]Moving piece 0 of player D to X:39 Y:26, Remaining Moves: 1990
+[LOG : Piece -> 2.037000]Moving piece 0 of player C to X:4 Y:35, Remaining Moves: 1988
+[LOG : Piece -> 1.773000]Moving piece 0 of player B to X:5 Y:31, Remaining Moves: 1987
+[LOG : Piece -> 1.963000]Moving piece 0 of player A to X:30 Y:24, Remaining Moves: 1986
+[LOG : Piece -> 1.526000]Moving piece 0 of player D to X:39 Y:25, Remaining Moves: 1989
+[LOG : Piece -> 2.023000]Moving piece 0 of player A to X:29 Y:24, Remaining Moves: 1985
+[LOG : Piece -> 1.821000]Moving piece 0 of player B to X:5 Y:30, Remaining Moves: 1986
+[LOG : Piece -> 1.573000]Moving piece 0 of player D to X:39 Y:24, Remaining Moves: 1988
+[LOG : Piece -> 2.081000]Moving piece 0 of player C to X:4 Y:34, Remaining Moves: 1987
+[LOG : Piece -> 2.070000]Moving piece 0 of player A to X:28 Y:24, Remaining Moves: 1984
+[LOG : Piece -> 1.597000]Moving piece 0 of player D to X:38 Y:24, Remaining Moves: 1987
+[LOG : Piece -> 1.857000]Moving piece 0 of player B to X:5 Y:29, Remaining Moves: 1985
+[LOG : Piece -> 1.719000]Moving piece 0 of player D to X:37 Y:24, Remaining Moves: 1986
+[LOG : Piece -> 2.163000]Moving piece 0 of player A to X:27 Y:24, Remaining Moves: 1983
+[LOG : Piece -> 2.132000]Moving piece 0 of player C to X:4 Y:33, Remaining Moves: 1986
+[LOG : Piece -> 2.197000]Moving piece 0 of player C to X:4 Y:32, Remaining Moves: 1985
+[LOG : Piece -> 1.746000]Moving piece 0 of player D to X:36 Y:24, Remaining Moves: 1985
+[LOG : Piece -> 2.214000]Moving piece 0 of player A to X:26 Y:24, Remaining Moves: 1982
+[LOG : Piece -> 1.934000]Moving piece 0 of player B to X:5 Y:28, Remaining Moves: 1984
+[LOG : Piece -> 2.307000]Moving piece 0 of player A to X:25 Y:24, Remaining Moves: 1981
+[LOG : Piece -> 1.819000]Moving piece 0 of player D to X:35 Y:24, Remaining Moves: 1984
+[LOG : Piece -> 2.281000]Moving piece 0 of player C to X:4 Y:31, Remaining Moves: 1984
+[LOG : Piece -> 1.983000]Moving piece 0 of player B to X:5 Y:27, Remaining Moves: 1983
+[LOG : Piece -> 2.343000]Moving piece 0 of player C to X:4 Y:30, Remaining Moves: 1983
+[LOG : Piece -> 1.868000]Moving piece 0 of player D to X:34 Y:24, Remaining Moves: 1983
+[LOG : Piece -> 2.365000]Moving piece 0 of player A to X:24 Y:24, Remaining Moves: 1980
+[LOG : Piece -> 2.039000]Moving piece 0 of player B to X:5 Y:26, Remaining Moves: 1982
+[LOG : Piece -> 2.438000]Moving piece 0 of player C to X:4 Y:29, Remaining Moves: 1982
+[LOG : Piece -> 2.107000]Moving piece 0 of player B to X:5 Y:25, Remaining Moves: 1981
+[LOG : Piece -> 1.937000]Moving piece 0 of player D to X:33 Y:24, Remaining Moves: 1982
+[LOG : Piece -> 2.420000]Moving piece 0 of player A to X:23 Y:24, Remaining Moves: 1979
+[LOG : Piece -> 1.967000]Moving piece 0 of player D to X:32 Y:24, Remaining Moves: 1981
+[LOG : Piece -> 2.518000]Moving piece 0 of player C to X:4 Y:28, Remaining Moves: 1981
+[LOG : Piece -> 2.171000]Moving piece 0 of player B to X:5 Y:24, Remaining Moves: 1980
+[LOG : Piece -> 2.481000]Moving piece 0 of player A to X:22 Y:24, Remaining Moves: 1978
+[LOG : Piece -> 2.566000]Moving piece 0 of player C to X:4 Y:27, Remaining Moves: 1980
+[Debug Piece]: Capturing x:5, y:24
+[Debug Piece]: Sended message to player
+[Debug Master]: Bandiera Catturata da B X:5 Y:24
+[Debug Players]: sended message to master: X:5 Y:24 ID:66
+[Debug Master]: Bandiere Rimaste 1
+[LOG : Piece -> 2.528000]Moving piece 0 of player A to X:21 Y:24, Remaining Moves: 1977
+[Debug Master]: Bandiera 0 rimossa
+[Debug Master]: Success
+[Debug Master]: Send message to player 12791
+[Debug Players]: Send message to piece 12795
+[Debug Players]: Waiting piece
+ 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+00  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+01  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+02  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+03  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+04  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  C  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+05  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  B  B  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+06  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+07  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+08  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+09  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+10  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+11  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+12  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+13  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+14  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+15  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+16  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+17  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+18  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+19  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+20  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+21  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+22  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  A  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+23  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+24  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+25  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - [Debug Piece]: Restart
+[Debug Piece]: Piece 0 changing target
+ -  -  -  -  -  -  -  -  -  -  -
+26  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+27  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+28  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+29  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+30  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+31  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+32  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+33  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  D  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+34  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+35  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+36  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+37  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+38  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+39  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+40  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+41  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+42  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+43  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+44  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+45  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+46  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+47  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+48  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+49  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+[Debug Master]: Restarting
+[LOG : Master -> 39.016998]PRESENZA DI POSSIBILI COMBINAZIONI PER DIVISIONE INTERA 
+
+[LOG : Master -> 39.021000]Bandiere Calcolate : 1
+[Debug Master]: Placed Flag 0 at 31 27
+[Debug Piece]: Piece 0 changing target
+[LOG : Piece -> 2.031000]Moving piece 0 of player D to X:32 Y:25, Remaining Moves: 1980
+[Debug Piece]: Piece 0 changing target
+[LOG : Piece -> 2.611000]Moving piece 0 of player A to X:21 Y:25, Remaining Moves: 1976
+[Debug Piece]: Piece 0 changing target
+[LOG : Piece -> 2.683000]Moving piece 0 of player C to X:5 Y:27, Remaining Moves: 1979
+[LOG : Piece -> 2.076000]Moving piece 0 of player D to X:32 Y:26, Remaining Moves: 1979
+[LOG : Piece -> 2.725000]Moving piece 0 of player C to X:6 Y:27, Remaining Moves: 1978
+[LOG : Piece -> 2.663000]Moving piece 0 of player A to X:21 Y:26, Remaining Moves: 1975
+[LOG : Piece -> 2.138000]Moving piece 0 of player D to X:32 Y:27, Remaining Moves: 1978
+[LOG : Piece -> 2.794000]Moving piece 0 of player C to X:7 Y:27, Remaining Moves: 1977
+[LOG : Piece -> 2.736000]Moving piece 0 of player A to X:21 Y:27, Remaining Moves: 1974
+[LOG : Piece -> 2.206000]Moving piece 0 of player D to X:31 Y:27, Remaining Moves: 1977
+[LOG : Piece -> 2.862000]Moving piece 0 of player C to X:8 Y:27, Remaining Moves: 1976
+[LOG : Piece -> 2.789000]Moving piece 0 of player A to X:22 Y:27, Remaining Moves: 1973
+[Debug Piece]: Capturing x:31, y:27
+[Debug Piece]: Sended message to player
+[Debug Players]: sended message to master: X:31 Y:27 ID:68
+[LOG : Piece -> 2.923000]Moving piece 0 of player C to X:9 Y:27, Remaining Moves: 1975
+[LOG : Piece -> 2.818000]Moving piece 0 of player A to X:23 Y:27, Remaining Moves: 1972
+[LOG : Piece -> 2.979000]Moving piece 0 of player C to X:10 Y:27, Remaining Moves: 1974
+[LOG : Piece -> 2.882000]Moving piece 0 of player A to X:24 Y:27, Remaining Moves: 1971
+[LOG : Piece -> 2.920000]Moving piece 0 of player A to X:25 Y:27, Remaining Moves: 1970
+[LOG : Piece -> 3.091000]Moving piece 0 of player C to X:11 Y:27, Remaining Moves: 1973
+[LOG : Piece -> 3.160000]Moving piece 0 of player C to X:12 Y:27, Remaining Moves: 1972
+[LOG : Piece -> 3.005000]Moving piece 0 of player A to X:26 Y:27, Remaining Moves: 1969
+[LOG : Piece -> 3.238000]Moving piece 0 of player C to X:13 Y:27, Remaining Moves: 1971
+[LOG : Piece -> 3.043000]Moving piece 0 of player A to X:27 Y:27, Remaining Moves: 1968
+[LOG : Piece -> 3.128000]Moving piece 0 of player A to X:28 Y:27, Remaining Moves: 1967
+[LOG : Piece -> 3.312000]Moving piece 0 of player C to X:14 Y:27, Remaining Moves: 1970
+[LOG : Piece -> 3.195000]Moving piece 0 of player A to X:29 Y:27, Remaining Moves: 1966
+[LOG : Piece -> 3.363000]Moving piece 0 of player C to X:15 Y:27, Remaining Moves: 1969
+[LOG : Piece -> 3.261000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1965
+[LOG : Piece -> 3.428000]Moving piece 0 of player C to X:16 Y:27, Remaining Moves: 1968
+[LOG : Piece -> 3.301000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1964
+[LOG : Piece -> 3.517000]Moving piece 0 of player C to X:17 Y:27, Remaining Moves: 1967
+[LOG : Piece -> 3.581000]Moving piece 0 of player C to X:18 Y:27, Remaining Moves: 1966
+[LOG : Piece -> 3.377000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1963
+[LOG : Piece -> 3.455000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1962
+[LOG : Piece -> 3.655000]Moving piece 0 of player C to X:19 Y:27, Remaining Moves: 1965
+[LOG : Piece -> 3.508000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1961
+[LOG : Piece -> 3.695000]Moving piece 0 of player C to X:20 Y:27, Remaining Moves: 1964
+[LOG : Piece -> 3.575000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1960
+[LOG : Piece -> 3.783000]Moving piece 0 of player C to X:21 Y:27, Remaining Moves: 1963
+[LOG : Piece -> 3.604000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1959
+[LOG : Piece -> 3.818000]Moving piece 0 of player C to X:22 Y:27, Remaining Moves: 1962
+[LOG : Piece -> 3.645000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1958
+[LOG : Piece -> 3.884000]Moving piece 0 of player C to X:23 Y:27, Remaining Moves: 1961
+[LOG : Piece -> 3.960000]Moving piece 0 of player C to X:24 Y:27, Remaining Moves: 1960
+[LOG : Piece -> 3.701000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1957
+[LOG : Piece -> 4.042000]Moving piece 0 of player C to X:25 Y:27, Remaining Moves: 1959
+[LOG : Piece -> 3.785000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1956
+[LOG : Piece -> 3.842000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1955
+[LOG : Piece -> 4.095000]Moving piece 0 of player C to X:26 Y:27, Remaining Moves: 1958
+[LOG : Piece -> 3.886000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1954
+[LOG : Piece -> 4.137000]Moving piece 0 of player C to X:27 Y:27, Remaining Moves: 1957
+[LOG : Piece -> 3.931000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1953
+[LOG : Piece -> 4.185000]Moving piece 0 of player C to X:28 Y:27, Remaining Moves: 1956
+[LOG : Piece -> 3.963000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1952
+[LOG : Piece -> 4.229000]Moving piece 0 of player C to X:29 Y:27, Remaining Moves: 1955
+[LOG : Piece -> 4.008000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1951
+[LOG : Piece -> 4.284000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1954
+[LOG : Piece -> 4.042000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1950
+[LOG : Piece -> 4.334000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1953
+[LOG : Piece -> 4.138000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1949
+[LOG : Piece -> 4.425000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1952
+[LOG : Piece -> 4.532000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1951
+[LOG : Piece -> 4.218000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1948
+[LOG : Piece -> 4.280000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1947
+[LOG : Piece -> 4.639000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1950
+[LOG : Piece -> 4.307000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1946
+[LOG : Piece -> 4.670000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1949
+[LOG : Piece -> 4.349000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1945
+[LOG : Piece -> 4.712000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1948
+[LOG : Piece -> 4.395000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1944
+[LOG : Piece -> 4.756000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1947
+[LOG : Piece -> 4.438000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1943
+[LOG : Piece -> 4.804000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1946
+[LOG : Piece -> 4.495000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1942
+[LOG : Piece -> 4.552000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1941
+[LOG : Piece -> 4.893000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1945
+[LOG : Piece -> 4.936000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1944
+[LOG : Piece -> 4.619000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1940
+[LOG : Piece -> 4.649000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1939
+[LOG : Piece -> 4.967000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1943
+[LOG : Piece -> 5.006000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1942
+[LOG : Piece -> 4.690000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1938
+[LOG : Piece -> 5.035000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1941
+[LOG : Piece -> 4.718000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1937
+[LOG : Piece -> 4.755000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1936
+[LOG : Piece -> 5.077000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1940
+[LOG : Piece -> 5.154000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1939
+[LOG : Piece -> 4.833000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1935
+[LOG : Piece -> 4.903000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1934
+[LOG : Piece -> 5.229000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1938
+[LOG : Piece -> 4.940000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1933
+[LOG : Piece -> 5.268000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1937
+[LOG : Piece -> 5.306000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1936
+[LOG : Piece -> 4.981000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1932
+[LOG : Piece -> 5.358000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1935
+[LOG : Piece -> 5.023000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1931
+[LOG : Piece -> 5.399000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1934
+[LOG : Piece -> 5.073000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1930
+[LOG : Piece -> 5.429000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1933
+[LOG : Piece -> 5.131000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1929
+[LOG : Piece -> 5.190000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1928
+[LOG : Piece -> 5.520000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1932
+[LOG : Piece -> 5.263000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1927
+[LOG : Piece -> 5.598000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1931
+[LOG : Piece -> 5.341000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1926
+[LOG : Piece -> 5.668000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1930
+[LOG : Piece -> 5.430000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1925
+[LOG : Piece -> 5.796000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1929
+[LOG : Piece -> 5.858000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1928
+[LOG : Piece -> 5.489000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1924
+[LOG : Piece -> 5.561000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1923
+[LOG : Piece -> 5.901000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1927
+[LOG : Piece -> 5.626000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1922
+[LOG : Piece -> 5.951000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1926
+[LOG : Piece -> 5.698000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1921
+[LOG : Piece -> 5.988000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1925
+[LOG : Piece -> 5.719000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1920
+[LOG : Piece -> 6.033000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1924
+[LOG : Piece -> 5.765000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1919
+[LOG : Piece -> 6.127000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1923
+[LOG : Piece -> 5.838000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1918
+[LOG : Piece -> 6.187000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1922
+[LOG : Piece -> 5.912000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1917
+[LOG : Piece -> 5.949000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1916
+[LOG : Piece -> 6.218000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1921
+[LOG : Piece -> 6.262000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1920
+[LOG : Piece -> 6.015000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1915
+[LOG : Piece -> 6.289000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1919
+[LOG : Piece -> 6.046000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1914
+[LOG : Piece -> 6.093000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1913
+[LOG : Piece -> 6.336000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1918
+[LOG : Piece -> 6.371000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1917
+[LOG : Piece -> 6.125000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1912
+[LOG : Piece -> 6.412000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1916
+[LOG : Piece -> 6.166000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1911
+[LOG : Piece -> 6.441000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1915
+[LOG : Piece -> 6.197000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1910
+[LOG : Piece -> 6.488000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1914
+[LOG : Piece -> 6.242000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1909
+[LOG : Piece -> 6.525000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1913
+[LOG : Piece -> 6.280000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1908
+[LOG : Piece -> 6.583000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1912
+[LOG : Piece -> 6.336000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1907
+[LOG : Piece -> 6.406000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1906
+[LOG : Piece -> 6.637000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1911
+[LOG : Piece -> 6.686000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1910
+[LOG : Piece -> 6.455000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1905
+[LOG : Piece -> 6.524000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1904
+[LOG : Piece -> 6.762000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1909
+[LOG : Piece -> 6.595000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1903
+[LOG : Piece -> 6.814000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1908
+[LOG : Piece -> 6.645000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1902
+[LOG : Piece -> 6.863000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1907
+[LOG : Piece -> 6.690000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1901
+[LOG : Piece -> 6.911000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1906
+[LOG : Piece -> 6.717000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1900
+[LOG : Piece -> 6.946000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1905
+[LOG : Piece -> 6.745000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1899
+[LOG : Piece -> 6.983000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1904
+[LOG : Piece -> 6.790000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1898
+[LOG : Piece -> 7.035000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1903
+[LOG : Piece -> 6.834000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1897
+[LOG : Piece -> 7.077000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1902
+[LOG : Piece -> 6.880000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1896
+[LOG : Piece -> 7.119000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1901
+[LOG : Piece -> 6.930000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1895
+[LOG : Piece -> 7.163000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1900
+[LOG : Piece -> 6.976000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1894
+[LOG : Piece -> 7.208000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1899
+[LOG : Piece -> 7.018000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1893
+[LOG : Piece -> 7.258000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1898
+[LOG : Piece -> 7.067000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1892
+[LOG : Piece -> 7.307000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1897
+[LOG : Piece -> 7.099000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1891
+[LOG : Piece -> 7.342000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1896
+[LOG : Piece -> 7.132000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1890
+[LOG : Piece -> 7.369000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1895
+[LOG : Piece -> 7.163000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1889
+[LOG : Piece -> 7.413000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1894
+[LOG : Piece -> 7.211000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1888
+[LOG : Piece -> 7.458000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1893
+[LOG : Piece -> 7.262000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1887
+[LOG : Piece -> 7.504000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1892
+[LOG : Piece -> 7.323000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1886
+[LOG : Piece -> 7.537000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1891
+[LOG : Piece -> 7.383000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1885
+[LOG : Piece -> 7.604000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1890
+[LOG : Piece -> 7.455000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1884
+[LOG : Piece -> 7.665000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1889
+[LOG : Piece -> 7.510000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1883
+[LOG : Piece -> 7.701000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1888
+[LOG : Piece -> 7.583000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1882
+[LOG : Piece -> 7.784000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1887
+[LOG : Piece -> 7.606000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1881
+[LOG : Piece -> 7.830000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1886
+[LOG : Piece -> 7.644000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1880
+[LOG : Piece -> 7.872000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1885
+[LOG : Piece -> 7.702000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1879
+[LOG : Piece -> 7.951000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1884
+[LOG : Piece -> 7.729000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1878
+[LOG : Piece -> 7.988000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1883
+[LOG : Piece -> 7.769000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1877
+[LOG : Piece -> 8.030000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1882
+[LOG : Piece -> 7.809000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1876
+[LOG : Piece -> 8.081000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1881
+[LOG : Piece -> 7.877000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1875
+[LOG : Piece -> 8.127000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1880
+[LOG : Piece -> 7.926000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1874
+[LOG : Piece -> 8.174000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1879
+[LOG : Piece -> 7.971000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1873
+[LOG : Piece -> 8.216000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1878
+[LOG : Piece -> 8.012000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1872
+[LOG : Piece -> 8.255000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1877
+[LOG : Piece -> 8.054000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1871
+[LOG : Piece -> 8.315000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1876
+[LOG : Piece -> 8.102000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1870
+[LOG : Piece -> 8.360000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1875
+[LOG : Piece -> 8.146000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1869
+[LOG : Piece -> 8.407000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1874
+[LOG : Piece -> 8.187000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1868
+[LOG : Piece -> 8.458000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1873
+[LOG : Piece -> 8.229000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1867
+[LOG : Piece -> 8.520000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1872
+[LOG : Piece -> 8.317000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1866
+[LOG : Piece -> 8.596000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1871
+[LOG : Piece -> 8.420000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1865
+[LOG : Piece -> 8.655000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1870
+[LOG : Piece -> 8.483000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1864
+[LOG : Piece -> 8.731000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1869
+[LOG : Piece -> 8.551000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1863
+[LOG : Piece -> 8.809000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1868
+[LOG : Piece -> 8.613000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1862
+[LOG : Piece -> 8.641000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1861
+[LOG : Piece -> 8.840000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1867
+[LOG : Piece -> 8.700000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1860
+[LOG : Piece -> 8.908000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1866
+[LOG : Piece -> 8.733000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1859
+[LOG : Piece -> 8.942000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1865
+[LOG : Piece -> 8.776000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1858
+[LOG : Piece -> 8.980000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1864
+[LOG : Piece -> 8.807000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1857
+[LOG : Piece -> 9.014000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1863
+[LOG : Piece -> 9.044000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1862
+[LOG : Piece -> 8.853000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1856
+[LOG : Piece -> 8.886000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1855
+[LOG : Piece -> 9.076000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1861
+[LOG : Piece -> 9.124000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1860
+[LOG : Piece -> 8.930000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1854
+[LOG : Piece -> 8.957000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1853
+[LOG : Piece -> 9.154000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1859
+[LOG : Piece -> 8.988000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1852
+[LOG : Piece -> 9.187000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1858
+[LOG : Piece -> 9.022000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1851
+[LOG : Piece -> 9.219000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1857
+[LOG : Piece -> 9.268000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1856
+[LOG : Piece -> 9.065000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1850
+[LOG : Piece -> 9.298000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1855
+[LOG : Piece -> 9.097000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1849
+[LOG : Piece -> 9.141000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1848
+[LOG : Piece -> 9.346000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1854
+[LOG : Piece -> 9.382000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1853
+[LOG : Piece -> 9.171000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1847
+[LOG : Piece -> 9.456000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1852
+[LOG : Piece -> 9.232000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1846
+[LOG : Piece -> 9.520000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1851
+[LOG : Piece -> 9.328000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1845
+[LOG : Piece -> 9.392000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1844
+[LOG : Piece -> 9.574000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1850
+[LOG : Piece -> 9.471000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1843
+[LOG : Piece -> 9.644000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1849
+[LOG : Piece -> 9.717000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1848
+[LOG : Piece -> 9.517000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1842
+[LOG : Piece -> 9.779000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1847
+[LOG : Piece -> 9.583000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1841
+[LOG : Piece -> 9.846000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1846
+[LOG : Piece -> 9.905000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1845
+[LOG : Piece -> 9.618000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1840
+[LOG : Piece -> 9.947000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1844
+[LOG : Piece -> 9.662000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1839
+[LOG : Piece -> 9.993000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1843
+[LOG : Piece -> 9.739000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1838
+[LOG : Piece -> 10.054000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1842
+[LOG : Piece -> 9.793000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1837
+[LOG : Piece -> 9.836000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1836
+[LOG : Piece -> 10.101000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1841
+[LOG : Piece -> 10.138000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1840
+[LOG : Piece -> 9.876000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1835
+[LOG : Piece -> 10.241000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1839
+[LOG : Piece -> 9.946000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1834
+[LOG : Piece -> 10.305000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1838
+[LOG : Piece -> 10.030000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1833
+[LOG : Piece -> 10.342000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1837
+[LOG : Piece -> 10.070000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1832
+[LOG : Piece -> 10.368000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1836
+[LOG : Piece -> 10.116000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1831
+[LOG : Piece -> 10.406000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1835
+[LOG : Piece -> 10.159000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1830
+[LOG : Piece -> 10.431000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1834
+[LOG : Piece -> 10.226000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1829
+[LOG : Piece -> 10.472000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1833
+[LOG : Piece -> 10.269000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1828
+[LOG : Piece -> 10.502000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1832
+[LOG : Piece -> 10.315000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1827
+[LOG : Piece -> 10.546000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1831
+[LOG : Piece -> 10.380000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1826
+[LOG : Piece -> 10.613000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1830
+[LOG : Piece -> 10.426000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1825
+[LOG : Piece -> 10.706000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1829
+[LOG : Piece -> 10.526000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1824
+[LOG : Piece -> 10.758000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1828
+[LOG : Piece -> 10.603000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1823
+[LOG : Piece -> 10.788000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1827
+[LOG : Piece -> 10.670000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1822
+[LOG : Piece -> 10.843000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1826
+[LOG : Piece -> 10.916000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1825
+[LOG : Piece -> 10.731000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1821
+[LOG : Piece -> 10.960000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1824
+[LOG : Piece -> 10.774000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1820
+[LOG : Piece -> 11.005000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1823
+[LOG : Piece -> 10.815000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1819
+[LOG : Piece -> 10.856000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1818
+[LOG : Piece -> 11.053000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1822
+[LOG : Piece -> 10.885000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1817
+[LOG : Piece -> 11.089000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1821
+[LOG : Piece -> 11.155000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1820
+[LOG : Piece -> 10.965000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1816
+[LOG : Piece -> 11.251000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1819
+[LOG : Piece -> 11.038000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1815
+[LOG : Piece -> 11.299000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1818
+[LOG : Piece -> 11.081000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1814
+[LOG : Piece -> 11.342000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1817
+[LOG : Piece -> 11.125000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1813
+[LOG : Piece -> 11.388000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1816
+[LOG : Piece -> 11.168000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1812
+[LOG : Piece -> 11.216000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1811
+[LOG : Piece -> 11.438000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1815
+[LOG : Piece -> 11.467000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1814
+[LOG : Piece -> 11.243000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1810
+[LOG : Piece -> 11.280000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1809
+[LOG : Piece -> 11.509000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1813
+[LOG : Piece -> 11.308000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1808
+[LOG : Piece -> 11.541000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1812
+[LOG : Piece -> 11.581000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1811
+[LOG : Piece -> 11.345000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1807
+[LOG : Piece -> 11.450000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1806
+[LOG : Piece -> 11.653000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1810
+[LOG : Piece -> 11.719000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1809
+[LOG : Piece -> 11.554000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1805
+[LOG : Piece -> 11.792000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1808
+[LOG : Piece -> 11.608000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1804
+[LOG : Piece -> 11.875000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1807
+[LOG : Piece -> 11.921000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1806
+[LOG : Piece -> 11.672000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1803
+[LOG : Piece -> 12.001000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1805
+[LOG : Piece -> 11.737000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1802
+[LOG : Piece -> 11.770000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1801
+[LOG : Piece -> 12.036000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1804
+[LOG : Piece -> 11.816000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1800
+[LOG : Piece -> 12.076000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1803
+[LOG : Piece -> 12.122000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1802
+[LOG : Piece -> 11.863000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1799
+[LOG : Piece -> 11.935000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1798
+[LOG : Piece -> 12.181000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1801
+[LOG : Piece -> 12.215000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1800
+[LOG : Piece -> 11.979000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1797
+[LOG : Piece -> 12.021000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1796
+[LOG : Piece -> 12.258000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1799
+[LOG : Piece -> 12.303000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1798
+[LOG : Piece -> 12.064000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1795
+[LOG : Piece -> 12.346000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1797
+[LOG : Piece -> 12.112000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1794
+[LOG : Piece -> 12.382000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1796
+[LOG : Piece -> 12.162000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1793
+[LOG : Piece -> 12.428000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1795
+[LOG : Piece -> 12.213000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1792
+[LOG : Piece -> 12.459000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1794
+[LOG : Piece -> 12.244000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1791
+[LOG : Piece -> 12.291000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1790
+[LOG : Piece -> 12.503000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1793
+[LOG : Piece -> 12.326000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1789
+[LOG : Piece -> 12.538000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1792
+[LOG : Piece -> 12.369000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1788
+[LOG : Piece -> 12.587000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1791
+[LOG : Piece -> 12.396000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1787
+[LOG : Piece -> 12.615000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1790
+[LOG : Piece -> 12.440000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1786
+[LOG : Piece -> 12.664000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1789
+[LOG : Piece -> 12.755000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1788
+[LOG : Piece -> 12.520000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1785
+[LOG : Piece -> 12.828000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1787
+[LOG : Piece -> 12.573000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1784
+[LOG : Piece -> 12.609000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1783
+[LOG : Piece -> 12.861000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1786
+[LOG : Piece -> 12.634000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1782
+[LOG : Piece -> 12.894000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1785
+[LOG : Piece -> 12.661000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1781
+[LOG : Piece -> 12.947000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1784
+[LOG : Piece -> 12.718000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1780
+[LOG : Piece -> 13.008000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1783
+[LOG : Piece -> 12.788000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1779
+[LOG : Piece -> 13.057000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1782
+[LOG : Piece -> 13.147000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1781
+[LOG : Piece -> 12.859000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1778
+[LOG : Piece -> 13.225000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1780
+[LOG : Piece -> 12.928000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1777
+[LOG : Piece -> 12.973000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1776
+[LOG : Piece -> 13.267000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1779
+[LOG : Piece -> 13.321000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1778
+[LOG : Piece -> 13.007000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1775
+[LOG : Piece -> 13.382000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1777
+[LOG : Piece -> 13.056000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1774
+[LOG : Piece -> 13.424000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1776
+[LOG : Piece -> 13.090000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1773
+[LOG : Piece -> 13.468000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1775
+[LOG : Piece -> 13.136000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1772
+[LOG : Piece -> 13.512000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1774
+[LOG : Piece -> 13.178000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1771
+[LOG : Piece -> 13.556000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1773
+[LOG : Piece -> 13.248000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1770
+[LOG : Piece -> 13.644000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1772
+[LOG : Piece -> 13.680000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1771
+[LOG : Piece -> 13.295000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1769
+[LOG : Piece -> 13.339000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1768
+[LOG : Piece -> 13.726000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1770
+[LOG : Piece -> 13.775000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1769
+[LOG : Piece -> 13.384000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1767
+[LOG : Piece -> 13.430000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1766
+[LOG : Piece -> 13.821000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1768
+[LOG : Piece -> 13.529000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1765
+[LOG : Piece -> 13.899000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1767
+[LOG : Piece -> 13.585000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1764
+[LOG : Piece -> 13.972000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1766
+[LOG : Piece -> 13.667000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1763
+[LOG : Piece -> 14.064000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1765
+[LOG : Piece -> 13.742000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1762
+[LOG : Piece -> 14.127000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1764
+[LOG : Piece -> 13.802000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1761
+[LOG : Piece -> 14.167000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1763
+[LOG : Piece -> 13.869000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1760
+[LOG : Piece -> 13.924000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1759
+[LOG : Piece -> 14.210000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1762
+[LOG : Piece -> 13.996000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1758
+[LOG : Piece -> 14.269000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1761
+[LOG : Piece -> 14.024000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1757
+[LOG : Piece -> 14.317000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1760
+[LOG : Piece -> 14.068000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1756
+[LOG : Piece -> 14.358000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1759
+[LOG : Piece -> 14.107000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1755
+[LOG : Piece -> 14.402000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1758
+[LOG : Piece -> 14.172000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1754
+[LOG : Piece -> 14.225000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1753
+[LOG : Piece -> 14.453000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1757
+[LOG : Piece -> 14.269000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1752
+[LOG : Piece -> 14.497000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1756
+[LOG : Piece -> 14.313000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1751
+[LOG : Piece -> 14.540000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1755
+[LOG : Piece -> 14.360000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1750
+[LOG : Piece -> 14.585000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1754
+[LOG : Piece -> 14.404000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1749
+[LOG : Piece -> 14.634000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1753
+[LOG : Piece -> 14.460000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1748
+[LOG : Piece -> 14.699000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1752
+[LOG : Piece -> 14.772000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1751
+[LOG : Piece -> 14.526000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1747
+[LOG : Piece -> 14.842000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1750
+[LOG : Piece -> 14.559000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1746
+[LOG : Piece -> 14.886000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1749
+[LOG : Piece -> 14.598000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1745
+[LOG : Piece -> 14.969000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1748
+[LOG : Piece -> 14.686000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1744
+[LOG : Piece -> 15.054000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1747
+[LOG : Piece -> 14.768000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1743
+[LOG : Piece -> 14.801000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1742
+[LOG : Piece -> 15.128000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1746
+[LOG : Piece -> 15.223000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1745
+[LOG : Piece -> 14.855000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1741
+[LOG : Piece -> 15.275000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1744
+[LOG : Piece -> 14.892000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1740
+[LOG : Piece -> 15.310000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1743
+[LOG : Piece -> 14.958000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1739
+[LOG : Piece -> 15.343000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1742
+[LOG : Piece -> 15.071000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1738
+[LOG : Piece -> 15.433000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1741
+[LOG : Piece -> 15.121000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1737
+[LOG : Piece -> 15.518000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1740
+[LOG : Piece -> 15.580000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1739
+[LOG : Piece -> 15.152000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1736
+[LOG : Piece -> 15.220000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1735
+[LOG : Piece -> 15.627000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1738
+[LOG : Piece -> 15.269000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1734
+[LOG : Piece -> 15.674000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1737
+[LOG : Piece -> 15.338000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1733
+[LOG : Piece -> 15.705000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1736
+[LOG : Piece -> 15.371000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1732
+[LOG : Piece -> 15.743000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1735
+[LOG : Piece -> 15.414000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1731
+[LOG : Piece -> 15.818000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1734
+[LOG : Piece -> 15.501000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1730
+[LOG : Piece -> 15.854000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1733
+[LOG : Piece -> 15.914000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1732
+[LOG : Piece -> 15.533000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1729
+[LOG : Piece -> 15.989000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1731
+[LOG : Piece -> 15.589000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1728
+[LOG : Piece -> 16.084000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1730
+[LOG : Piece -> 15.652000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1727
+[LOG : Piece -> 16.112000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1729
+[LOG : Piece -> 15.708000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1726
+[LOG : Piece -> 16.195999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1728
+[LOG : Piece -> 15.750000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1725
+[LOG : Piece -> 16.228001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1727
+[LOG : Piece -> 16.318001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1726
+[LOG : Piece -> 15.858000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1724
+[LOG : Piece -> 15.893000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1723
+[LOG : Piece -> 16.389000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1725
+[LOG : Piece -> 16.438000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1724
+[LOG : Piece -> 15.947000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1722
+[LOG : Piece -> 16.011000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1721
+[LOG : Piece -> 16.500999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1723
+[LOG : Piece -> 16.570000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1722
+[LOG : Piece -> 16.054001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1720
+[LOG : Piece -> 16.617001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1721
+[LOG : Piece -> 16.103001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1719
+[LOG : Piece -> 16.677999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1720
+[LOG : Piece -> 16.180000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1718
+[LOG : Piece -> 16.757000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1719
+[LOG : Piece -> 16.261999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1717
+[LOG : Piece -> 16.337000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1716
+[LOG : Piece -> 16.832001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1718
+[LOG : Piece -> 16.412001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1715
+[LOG : Piece -> 16.910000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1717
+[LOG : Piece -> 16.489000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1714
+[LOG : Piece -> 16.948000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1716
+[LOG : Piece -> 16.545000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1713
+[LOG : Piece -> 17.002001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1715
+[LOG : Piece -> 17.087000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1714
+[LOG : Piece -> 16.674000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1712
+[LOG : Piece -> 17.136999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1713
+[LOG : Piece -> 16.731001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1711
+[LOG : Piece -> 16.789000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1710
+[LOG : Piece -> 17.187000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1712
+[LOG : Piece -> 17.257000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1711
+[LOG : Piece -> 16.858000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1709
+[LOG : Piece -> 16.900999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1708
+[LOG : Piece -> 17.302000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1710
+[LOG : Piece -> 17.365000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1709
+[LOG : Piece -> 16.981001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1707
+[LOG : Piece -> 17.433001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1708
+[LOG : Piece -> 17.048000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1706
+[LOG : Piece -> 17.513000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1707
+[LOG : Piece -> 17.104000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1705
+[LOG : Piece -> 17.174999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1704
+[LOG : Piece -> 17.559000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1706
+[LOG : Piece -> 17.229000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1703
+[LOG : Piece -> 17.587999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1705
+[LOG : Piece -> 17.294001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1702
+[LOG : Piece -> 17.327000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1701
+[LOG : Piece -> 17.653000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1704
+[LOG : Piece -> 17.368000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1700
+[LOG : Piece -> 17.691000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1703
+[LOG : Piece -> 17.723000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1702
+[LOG : Piece -> 17.398001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1699
+[LOG : Piece -> 17.768999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1701
+[LOG : Piece -> 17.427000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1698
+[LOG : Piece -> 17.797001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1700
+[LOG : Piece -> 17.468000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1697
+[LOG : Piece -> 17.837999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1699
+[LOG : Piece -> 17.511999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1696
+[LOG : Piece -> 17.924999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1698
+[LOG : Piece -> 18.000000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1697
+[LOG : Piece -> 17.617001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1695
+[LOG : Piece -> 18.069000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1696
+[LOG : Piece -> 17.655001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1694
+[LOG : Piece -> 18.139000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1695
+[LOG : Piece -> 17.704000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1693
+[LOG : Piece -> 18.233000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1694
+[LOG : Piece -> 17.844000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1692
+[LOG : Piece -> 18.333000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1693
+[LOG : Piece -> 17.962000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1691
+[LOG : Piece -> 18.033001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1690
+[LOG : Piece -> 18.403000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1692
+[LOG : Piece -> 18.098000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1689
+[LOG : Piece -> 18.450001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1691
+[LOG : Piece -> 18.184999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1688
+[LOG : Piece -> 18.249001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1687
+[LOG : Piece -> 18.493000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1690
+[LOG : Piece -> 18.296000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1686
+[LOG : Piece -> 18.535000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1689
+[LOG : Piece -> 18.341000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1685
+[LOG : Piece -> 18.577999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1688
+[LOG : Piece -> 18.370001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1684
+[LOG : Piece -> 18.617001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1687
+[LOG : Piece -> 18.414000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1683
+[LOG : Piece -> 18.679001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1686
+[LOG : Piece -> 18.480000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1682
+[LOG : Piece -> 18.704000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1685
+[LOG : Piece -> 18.563000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1681
+[LOG : Piece -> 18.763000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1684
+[LOG : Piece -> 18.591999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1680
+[LOG : Piece -> 18.834000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1683
+[LOG : Piece -> 18.631001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1679
+[LOG : Piece -> 18.879999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1682
+[LOG : Piece -> 18.674000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1678
+[LOG : Piece -> 18.936001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1681
+[LOG : Piece -> 18.718000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1677
+[LOG : Piece -> 18.976000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1680
+[LOG : Piece -> 18.745001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1676
+[LOG : Piece -> 19.062000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1679
+[LOG : Piece -> 18.822001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1675
+[LOG : Piece -> 19.091000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1678
+[LOG : Piece -> 19.149000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1677
+[LOG : Piece -> 18.889999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1674
+[LOG : Piece -> 19.214001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1676
+[LOG : Piece -> 18.924999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1673
+[LOG : Piece -> 19.308001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1675
+[LOG : Piece -> 19.014000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1672
+[LOG : Piece -> 19.365000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1674
+[LOG : Piece -> 19.084999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1671
+[LOG : Piece -> 19.415001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1673
+[LOG : Piece -> 19.191999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1670
+[LOG : Piece -> 19.253000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1669
+[LOG : Piece -> 19.459999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1672
+[LOG : Piece -> 19.327999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1668
+[LOG : Piece -> 19.538000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1671
+[LOG : Piece -> 19.355000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1667
+[LOG : Piece -> 19.580000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1670
+[LOG : Piece -> 19.398001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1666
+[LOG : Piece -> 19.620001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1669
+[LOG : Piece -> 19.440001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1665
+[LOG : Piece -> 19.653000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1668
+[LOG : Piece -> 19.489000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1664
+[LOG : Piece -> 19.709000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1667
+[LOG : Piece -> 19.534000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1663
+[LOG : Piece -> 19.753000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1666
+[LOG : Piece -> 19.577999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1662
+[LOG : Piece -> 19.797001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1665
+[LOG : Piece -> 19.617001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1661
+[LOG : Piece -> 19.849001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1664
+[LOG : Piece -> 19.658001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1660
+[LOG : Piece -> 19.920000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1663
+[LOG : Piece -> 19.701000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1659
+[LOG : Piece -> 20.004999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1662
+[LOG : Piece -> 19.743000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1658
+[LOG : Piece -> 20.035000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1661
+[LOG : Piece -> 20.073999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1660
+[LOG : Piece -> 19.777000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1657
+[LOG : Piece -> 20.118999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1659
+[LOG : Piece -> 19.815001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1656
+[LOG : Piece -> 20.174000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1658
+[LOG : Piece -> 19.875999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1655
+[LOG : Piece -> 19.917000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1654
+[LOG : Piece -> 20.216999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1657
+[LOG : Piece -> 19.962999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1653
+[LOG : Piece -> 20.264999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1656
+[LOG : Piece -> 20.037001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1652
+[LOG : Piece -> 20.327000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1655
+[LOG : Piece -> 20.111000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1651
+[LOG : Piece -> 20.417999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1654
+[LOG : Piece -> 20.186001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1650
+[LOG : Piece -> 20.487000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1653
+[LOG : Piece -> 20.577000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1652
+[LOG : Piece -> 20.260000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1649
+[LOG : Piece -> 20.618999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1651
+[LOG : Piece -> 20.302000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1648
+[LOG : Piece -> 20.666000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1650
+[LOG : Piece -> 20.346001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1647
+[LOG : Piece -> 20.716000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1649
+[LOG : Piece -> 20.391001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1646
+[LOG : Piece -> 20.761999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1648
+[LOG : Piece -> 20.433001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1645
+[LOG : Piece -> 20.804001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1647
+[LOG : Piece -> 20.473000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1644
+[LOG : Piece -> 20.516001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1643
+[LOG : Piece -> 20.872000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1646
+[LOG : Piece -> 20.566000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1642
+[LOG : Piece -> 21.017000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1645
+[LOG : Piece -> 21.045000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1644
+[LOG : Piece -> 20.613001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1641
+[LOG : Piece -> 21.097000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1643
+[LOG : Piece -> 20.662001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1640
+[LOG : Piece -> 21.155001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1642
+[LOG : Piece -> 20.707001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1639
+[LOG : Piece -> 21.230000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1641
+[LOG : Piece -> 20.747000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1638
+[LOG : Piece -> 21.275000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1640
+[LOG : Piece -> 20.789000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1637
+[LOG : Piece -> 21.319000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1639
+[LOG : Piece -> 20.830999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1636
+[LOG : Piece -> 21.358999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1638
+[LOG : Piece -> 20.877001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1635
+[LOG : Piece -> 21.402000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1637
+[LOG : Piece -> 20.926001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1634
+[LOG : Piece -> 21.445999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1636
+[LOG : Piece -> 20.974001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1633
+[LOG : Piece -> 21.525000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1635
+[LOG : Piece -> 21.042999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1632
+[LOG : Piece -> 21.591999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1634
+[LOG : Piece -> 21.091000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1631
+[LOG : Piece -> 21.646999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1633
+[LOG : Piece -> 21.153999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1630
+[LOG : Piece -> 21.729000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1632
+[LOG : Piece -> 21.209000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1629
+[LOG : Piece -> 21.796000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1631
+[LOG : Piece -> 21.247000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1628
+[LOG : Piece -> 21.327000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1627
+[LOG : Piece -> 21.864000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1630
+[LOG : Piece -> 21.393000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1626
+[LOG : Piece -> 21.941000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1629
+[LOG : Piece -> 22.004999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1628
+[LOG : Piece -> 21.476999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1625
+[LOG : Piece -> 22.069000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1627
+[LOG : Piece -> 21.521000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1624
+[LOG : Piece -> 22.114000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1626
+[LOG : Piece -> 21.563000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1623
+[LOG : Piece -> 22.139999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1625
+[LOG : Piece -> 21.606001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1622
+[LOG : Piece -> 22.170000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1624
+[LOG : Piece -> 21.649000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1621
+[LOG : Piece -> 22.212999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1623
+[LOG : Piece -> 21.695999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1620
+[LOG : Piece -> 22.254000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1622
+[LOG : Piece -> 21.738001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1619
+[LOG : Piece -> 22.296000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1621
+[LOG : Piece -> 21.781000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1618
+[LOG : Piece -> 22.341000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1620
+[LOG : Piece -> 21.826000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1617
+[LOG : Piece -> 21.856001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1616
+[LOG : Piece -> 22.382999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1619
+[LOG : Piece -> 21.899000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1615
+[LOG : Piece -> 22.440001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1618
+[LOG : Piece -> 22.488001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1617
+[LOG : Piece -> 21.947001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1614
+[LOG : Piece -> 22.535999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1616
+[LOG : Piece -> 21.993000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1613
+[LOG : Piece -> 22.032000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1612
+[LOG : Piece -> 22.580000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1615
+[LOG : Piece -> 22.691999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1614
+[LOG : Piece -> 22.099001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1611
+[LOG : Piece -> 22.742001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1613
+[LOG : Piece -> 22.177000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1610
+[LOG : Piece -> 22.270000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1609
+[LOG : Piece -> 22.809000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1612
+[LOG : Piece -> 22.881001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1611
+[LOG : Piece -> 22.313000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1608
+[LOG : Piece -> 22.937000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1610
+[LOG : Piece -> 22.341000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1607
+[LOG : Piece -> 23.014000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1609
+[LOG : Piece -> 22.414000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1606
+[LOG : Piece -> 23.041000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1608
+[LOG : Piece -> 23.072001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1607
+[LOG : Piece -> 22.459000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1605
+[LOG : Piece -> 22.490999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1604
+[LOG : Piece -> 23.143999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1606
+[LOG : Piece -> 22.518999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1603
+[LOG : Piece -> 23.187000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1605
+[LOG : Piece -> 22.569000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1602
+[LOG : Piece -> 23.231001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1604
+[LOG : Piece -> 22.639999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1601
+[LOG : Piece -> 23.273001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1603
+[LOG : Piece -> 22.700001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1600
+[LOG : Piece -> 22.742001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1599
+[LOG : Piece -> 23.344999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1602
+[LOG : Piece -> 22.782000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1598
+[LOG : Piece -> 23.400999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1601
+[LOG : Piece -> 23.445000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1600
+[LOG : Piece -> 22.871000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1597
+[LOG : Piece -> 23.506001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1599
+[LOG : Piece -> 22.917000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1596
+[LOG : Piece -> 23.552999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1598
+[LOG : Piece -> 22.964001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1595
+[LOG : Piece -> 23.000000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1594
+[LOG : Piece -> 23.600000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1597
+[LOG : Piece -> 23.049000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1593
+[LOG : Piece -> 23.650999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1596
+[LOG : Piece -> 23.094000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1592
+[LOG : Piece -> 23.698999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1595
+[LOG : Piece -> 23.173000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1591
+[LOG : Piece -> 23.745001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1594
+[LOG : Piece -> 23.812000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1593
+[LOG : Piece -> 23.242001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1590
+[LOG : Piece -> 23.888000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1592
+[LOG : Piece -> 23.333000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1589
+[LOG : Piece -> 23.389999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1588
+[LOG : Piece -> 23.945000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1591
+[LOG : Piece -> 23.441000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1587
+[LOG : Piece -> 24.011000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1590
+[LOG : Piece -> 24.049999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1589
+[LOG : Piece -> 23.516001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1586
+[LOG : Piece -> 23.582001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1585
+[LOG : Piece -> 24.094999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1588
+[LOG : Piece -> 23.650999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1584
+[LOG : Piece -> 24.139000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1587
+[LOG : Piece -> 24.174000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1586
+[LOG : Piece -> 23.690001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1583
+[LOG : Piece -> 24.201000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1585
+[LOG : Piece -> 23.724001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1582
+[LOG : Piece -> 24.239000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1584
+[LOG : Piece -> 23.752001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1581
+[LOG : Piece -> 23.794001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1580
+[LOG : Piece -> 24.282000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1583
+[LOG : Piece -> 23.834000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1579
+[LOG : Piece -> 24.319000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1582
+[LOG : Piece -> 24.396999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1581
+[LOG : Piece -> 23.881001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1578
+[LOG : Piece -> 24.441999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1580
+[LOG : Piece -> 23.927999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1577
+[LOG : Piece -> 23.980000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1576
+[LOG : Piece -> 24.469999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1579
+[LOG : Piece -> 24.018999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1575
+[LOG : Piece -> 24.509001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1578
+[LOG : Piece -> 24.063000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1574
+[LOG : Piece -> 24.549999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1577
+[LOG : Piece -> 24.096001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1573
+[LOG : Piece -> 24.593000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1576
+[LOG : Piece -> 24.143999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1572
+[LOG : Piece -> 24.634001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1575
+[LOG : Piece -> 24.190001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1571
+[LOG : Piece -> 24.681000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1574
+[LOG : Piece -> 24.233000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1570
+[LOG : Piece -> 24.730000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1573
+[LOG : Piece -> 24.295000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1569
+[LOG : Piece -> 24.407000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1568
+[LOG : Piece -> 24.816000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1572
+[LOG : Piece -> 24.527000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1567
+[LOG : Piece -> 24.909000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1571
+[LOG : Piece -> 24.988001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1570
+[LOG : Piece -> 24.608000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1566
+[LOG : Piece -> 24.667000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1565
+[LOG : Piece -> 25.049000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1569
+[LOG : Piece -> 25.080999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1568
+[LOG : Piece -> 24.732000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1564
+[LOG : Piece -> 25.146999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1567
+[LOG : Piece -> 24.775999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1563
+[LOG : Piece -> 25.191000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1566
+[LOG : Piece -> 24.827000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1562
+[LOG : Piece -> 25.235001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1565
+[LOG : Piece -> 24.874001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1561
+[LOG : Piece -> 25.278000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1564
+[LOG : Piece -> 24.917000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1560
+[LOG : Piece -> 25.323999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1563
+[LOG : Piece -> 24.959999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1559
+[LOG : Piece -> 25.370001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1562
+[LOG : Piece -> 25.006001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1558
+[LOG : Piece -> 25.413000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1561
+[LOG : Piece -> 25.075001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1557
+[LOG : Piece -> 25.469000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1560
+[LOG : Piece -> 25.160999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1556
+[LOG : Piece -> 25.507999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1559
+[LOG : Piece -> 25.198000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1555
+[LOG : Piece -> 25.552000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1558
+[LOG : Piece -> 25.243000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1554
+[LOG : Piece -> 25.273001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1553
+[LOG : Piece -> 25.580000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1557
+[LOG : Piece -> 25.625000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1556
+[LOG : Piece -> 25.319000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1552
+[LOG : Piece -> 25.672001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1555
+[LOG : Piece -> 25.378000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1551
+[LOG : Piece -> 25.732000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1554
+[LOG : Piece -> 25.407000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1550
+[LOG : Piece -> 25.813999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1553
+[LOG : Piece -> 25.473000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1549
+[LOG : Piece -> 25.843000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1552
+[LOG : Piece -> 25.523001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1548
+[LOG : Piece -> 25.895000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1551
+[LOG : Piece -> 25.573000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1547
+[LOG : Piece -> 25.931999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1550
+[LOG : Piece -> 25.625000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1546
+[LOG : Piece -> 25.987000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1549
+[LOG : Piece -> 26.048000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1548
+[LOG : Piece -> 25.708000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1545
+[LOG : Piece -> 26.117001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1547
+[LOG : Piece -> 25.775000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1544
+[LOG : Piece -> 25.801001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1543
+[LOG : Piece -> 26.145000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1546
+[LOG : Piece -> 26.208000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1545
+[LOG : Piece -> 25.889999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1542
+[LOG : Piece -> 25.957001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1541
+[LOG : Piece -> 26.299000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1544
+[LOG : Piece -> 26.386000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1543
+[LOG : Piece -> 26.018000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1540
+[LOG : Piece -> 26.443001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1542
+[LOG : Piece -> 26.072001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1539
+[LOG : Piece -> 26.496000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1541
+[LOG : Piece -> 26.150000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1538
+[LOG : Piece -> 26.177999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1537
+[LOG : Piece -> 26.525000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1540
+[LOG : Piece -> 26.231001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1536
+[LOG : Piece -> 26.607000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1539
+[LOG : Piece -> 26.318001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1535
+[LOG : Piece -> 26.646999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1538
+[LOG : Piece -> 26.403000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1534
+[LOG : Piece -> 26.702000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1537
+[LOG : Piece -> 26.426001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1533
+[LOG : Piece -> 26.746000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1536
+[LOG : Piece -> 26.452000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1532
+[LOG : Piece -> 26.792999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1535
+[LOG : Piece -> 26.488001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1531
+[LOG : Piece -> 26.527000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1530
+[LOG : Piece -> 26.841999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1534
+[LOG : Piece -> 26.570999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1529
+[LOG : Piece -> 26.885000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1533
+[LOG : Piece -> 26.617001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1528
+[LOG : Piece -> 26.947001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1532
+[LOG : Piece -> 26.688000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1527
+[LOG : Piece -> 27.010000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1531
+[LOG : Piece -> 26.754999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1526
+[LOG : Piece -> 27.073999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1530
+[LOG : Piece -> 27.117001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1529
+[LOG : Piece -> 26.804001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1525
+[LOG : Piece -> 27.180000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1528
+[LOG : Piece -> 26.848000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1524
+[LOG : Piece -> 26.875000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1523
+[LOG : Piece -> 27.243999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1527
+[LOG : Piece -> 27.292000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1526
+[LOG : Piece -> 26.940001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1522
+[LOG : Piece -> 27.009001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1521
+[LOG : Piece -> 27.361000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1525
+[LOG : Piece -> 27.068001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1520
+[LOG : Piece -> 27.427999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1524
+[LOG : Piece -> 27.469999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1523
+[LOG : Piece -> 27.108999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1519
+[LOG : Piece -> 27.535999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1522
+[LOG : Piece -> 27.149000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1518
+[LOG : Piece -> 27.603001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1521
+[LOG : Piece -> 27.181999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1517
+[LOG : Piece -> 27.698000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1520
+[LOG : Piece -> 27.257999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1516
+[LOG : Piece -> 27.730000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1519
+[LOG : Piece -> 27.302999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1515
+[LOG : Piece -> 27.771999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1518
+[LOG : Piece -> 27.798000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1517
+[LOG : Piece -> 27.334000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1514
+[LOG : Piece -> 27.841999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1516
+[LOG : Piece -> 27.388000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1513
+[LOG : Piece -> 27.423000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1512
+[LOG : Piece -> 27.874001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1515
+[LOG : Piece -> 27.466999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1511
+[LOG : Piece -> 27.930000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1514
+[LOG : Piece -> 27.511000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1510
+[LOG : Piece -> 27.981001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1513
+[LOG : Piece -> 27.555000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1509
+[LOG : Piece -> 28.028000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1512
+[LOG : Piece -> 27.601000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1508
+[LOG : Piece -> 28.073000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1511
+[LOG : Piece -> 27.650999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1507
+[LOG : Piece -> 28.118000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1510
+[LOG : Piece -> 27.695000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1506
+[LOG : Piece -> 28.153000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1509
+[LOG : Piece -> 27.737000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1505
+[LOG : Piece -> 28.200001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1508
+[LOG : Piece -> 28.261000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1507
+[LOG : Piece -> 27.799000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1504
+[LOG : Piece -> 28.329000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1506
+[LOG : Piece -> 27.900000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1503
+[LOG : Piece -> 28.417999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1505
+[LOG : Piece -> 28.497000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1504
+[LOG : Piece -> 27.951000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1502
+[LOG : Piece -> 28.575001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1503
+[LOG : Piece -> 28.004999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1501
+[LOG : Piece -> 28.618999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1502
+[LOG : Piece -> 28.049000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1500
+[LOG : Piece -> 28.672001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1501
+[LOG : Piece -> 28.113001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1499
+[LOG : Piece -> 28.747000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1500
+[LOG : Piece -> 28.180000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1498
+[LOG : Piece -> 28.805000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1499
+[LOG : Piece -> 28.225000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1497
+[LOG : Piece -> 28.891001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1498
+[LOG : Piece -> 28.938000]Moving piece 0 of player C to X:33 Y:29, Remaining Moves: 1497
+[LOG : Piece -> 28.270000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1496
+[LOG : Piece -> 28.993999]Moving piece 0 of player C to X:32 Y:29, Remaining Moves: 1496
+[LOG : Piece -> 29.051001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1495
+[LOG : Piece -> 28.315001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1495
+[LOG : Piece -> 29.143000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1494
+[LOG : Piece -> 28.364000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1494
+[LOG : Piece -> 29.174999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1493
+[LOG : Piece -> 28.410999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1493
+[LOG : Piece -> 29.230000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1492
+[LOG : Piece -> 29.278000]Moving piece 0 of player C to X:29 Y:27, Remaining Moves: 1491
+[LOG : Piece -> 28.455000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1492
+[LOG : Piece -> 29.320000]Moving piece 0 of player C to X:29 Y:26, Remaining Moves: 1490
+[LOG : Piece -> 28.497000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1491
+[LOG : Piece -> 29.361000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1489
+[LOG : Piece -> 28.546000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1490
+[LOG : Piece -> 29.406000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1488
+[LOG : Piece -> 28.612000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1489
+[LOG : Piece -> 29.488001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1487
+[LOG : Piece -> 28.653999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1488
+[LOG : Piece -> 29.513000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1486
+[LOG : Piece -> 29.580999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1485
+[LOG : Piece -> 28.701000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1487
+[LOG : Piece -> 29.643999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1484
+[LOG : Piece -> 28.770000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1486
+[LOG : Piece -> 29.721001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1483
+[LOG : Piece -> 29.768999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1482
+[LOG : Piece -> 28.843000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1485
+[LOG : Piece -> 28.937000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1484
+[LOG : Piece -> 29.861000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1481
+[LOG : Piece -> 29.899000]Moving piece 0 of player C to X:29 Y:28, Remaining Moves: 1480
+[LOG : Piece -> 28.983000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1483
+[LOG : Piece -> 29.968000]Moving piece 0 of player C to X:29 Y:27, Remaining Moves: 1479
+[LOG : Piece -> 29.039000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1482
+[LOG : Piece -> 30.017000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1478
+[LOG : Piece -> 29.082001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1481
+[LOG : Piece -> 30.061001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1477
+[LOG : Piece -> 29.129000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1480
+[LOG : Piece -> 30.105000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1476
+[LOG : Piece -> 29.160999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1479
+[LOG : Piece -> 30.138000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1475
+[LOG : Piece -> 29.188000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1478
+[LOG : Piece -> 30.188999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1474
+[LOG : Piece -> 29.233000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1477
+[LOG : Piece -> 30.261000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1473
+[LOG : Piece -> 29.285000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1476
+[LOG : Piece -> 30.313000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1472
+[LOG : Piece -> 29.347000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1475
+[LOG : Piece -> 30.365999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1471
+[LOG : Piece -> 29.406000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1474
+[LOG : Piece -> 30.445999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1470
+[LOG : Piece -> 30.495001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1469
+[LOG : Piece -> 29.437000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1473
+[LOG : Piece -> 30.563999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1468
+[LOG : Piece -> 29.476000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1472
+[LOG : Piece -> 30.634001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1467
+[LOG : Piece -> 29.517000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1471
+[LOG : Piece -> 30.677999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1466
+[LOG : Piece -> 29.603001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1470
+[LOG : Piece -> 30.743999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1465
+[LOG : Piece -> 29.639999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1469
+[LOG : Piece -> 30.788000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1464
+[LOG : Piece -> 29.707001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1468
+[LOG : Piece -> 29.757000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1467
+[LOG : Piece -> 30.830999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1463
+[LOG : Piece -> 29.802000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1466
+[LOG : Piece -> 30.878000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1462
+[LOG : Piece -> 29.846001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1465
+[LOG : Piece -> 30.923000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1461
+[LOG : Piece -> 29.891001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1464
+[LOG : Piece -> 30.968000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1460
+[LOG : Piece -> 29.968000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1463
+[LOG : Piece -> 31.069000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1459
+[LOG : Piece -> 30.021999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1462
+[LOG : Piece -> 31.121000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1458
+[LOG : Piece -> 30.077999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1461
+[LOG : Piece -> 30.179001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1460
+[LOG : Piece -> 31.222000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1457
+[LOG : Piece -> 31.318001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1456
+[LOG : Piece -> 30.253000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1459
+[LOG : Piece -> 30.298000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1458
+[LOG : Piece -> 31.365000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1455
+[LOG : Piece -> 31.433001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1454
+[LOG : Piece -> 30.364000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1457
+[LOG : Piece -> 30.421000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1456
+[LOG : Piece -> 31.476000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1453
+[LOG : Piece -> 31.524000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1452
+[LOG : Piece -> 30.466999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1455
+[LOG : Piece -> 31.566000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1451
+[LOG : Piece -> 30.511000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1454
+[LOG : Piece -> 31.608999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1450
+[LOG : Piece -> 30.554001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1453
+[LOG : Piece -> 31.653000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1449
+[LOG : Piece -> 30.600000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1452
+[LOG : Piece -> 31.700001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1448
+[LOG : Piece -> 30.643000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1451
+[LOG : Piece -> 31.750999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1447
+[LOG : Piece -> 31.792999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1446
+[LOG : Piece -> 30.702999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1450
+[LOG : Piece -> 31.840000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1445
+[LOG : Piece -> 30.747999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1449
+[LOG : Piece -> 31.886999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1444
+[LOG : Piece -> 30.798000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1448
+[LOG : Piece -> 30.827999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1447
+[LOG : Piece -> 31.916000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1443
+[LOG : Piece -> 31.962999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1442
+[LOG : Piece -> 30.872999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1446
+[LOG : Piece -> 31.992001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1441
+[LOG : Piece -> 30.907000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1445
+[LOG : Piece -> 30.955000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1444
+[LOG : Piece -> 32.041000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1440
+[LOG : Piece -> 31.016001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1443
+[LOG : Piece -> 32.110001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1439
+[LOG : Piece -> 31.077000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1442
+[LOG : Piece -> 32.174999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1438
+[LOG : Piece -> 31.136000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1441
+[LOG : Piece -> 32.272999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1437
+[LOG : Piece -> 31.193001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1440
+[LOG : Piece -> 31.268000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1439
+[LOG : Piece -> 32.346001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1436
+[LOG : Piece -> 32.403999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1435
+[LOG : Piece -> 31.316000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1438
+[LOG : Piece -> 32.485001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1434
+[LOG : Piece -> 31.370001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1437
+[LOG : Piece -> 31.415001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1436
+[LOG : Piece -> 32.530998]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1433
+[LOG : Piece -> 32.577999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1432
+[LOG : Piece -> 31.459999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1435
+[LOG : Piece -> 31.496000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1434
+[LOG : Piece -> 32.612000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1431
+[LOG : Piece -> 31.542000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1433
+[LOG : Piece -> 32.653999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1430
+[LOG : Piece -> 32.702999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1429
+[LOG : Piece -> 31.587000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1432
+[LOG : Piece -> 32.748001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1428
+[LOG : Piece -> 31.632000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1431
+[LOG : Piece -> 31.662001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1430
+[LOG : Piece -> 32.780998]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1427
+[LOG : Piece -> 32.825001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1426
+[LOG : Piece -> 31.752001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1429
+[LOG : Piece -> 31.820999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1428
+[LOG : Piece -> 32.905998]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1425
+[LOG : Piece -> 31.896999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1427
+[LOG : Piece -> 32.991001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1424
+[LOG : Piece -> 31.966999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1426
+[LOG : Piece -> 33.036999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1423
+[LOG : Piece -> 32.014000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1425
+[LOG : Piece -> 33.078999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1422
+[LOG : Piece -> 32.058998]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1424
+[LOG : Piece -> 33.119999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1421
+[LOG : Piece -> 32.106998]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1423
+[LOG : Piece -> 33.161999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1420
+[LOG : Piece -> 32.158001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1422
+[LOG : Piece -> 32.231998]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1421
+[LOG : Piece -> 33.250000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1419
+[LOG : Piece -> 32.272999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1420
+[LOG : Piece -> 33.327999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1418
+[LOG : Piece -> 33.358002]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1417
+[LOG : Piece -> 32.320000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1419
+[LOG : Piece -> 33.425999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1416
+[LOG : Piece -> 32.393002]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1418
+[LOG : Piece -> 33.497002]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1415
+[LOG : Piece -> 32.466000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1417
+[LOG : Piece -> 32.512001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1416
+[LOG : Piece -> 33.539001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1414
+[LOG : Piece -> 32.542999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1415
+[LOG : Piece -> 33.577999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1413
+[LOG : Piece -> 32.587002]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1414
+[LOG : Piece -> 33.618000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1412
+[LOG : Piece -> 32.626999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1413
+[LOG : Piece -> 33.659000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1411
+[LOG : Piece -> 32.669998]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1412
+[LOG : Piece -> 33.748001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1410
+[LOG : Piece -> 33.790001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1409
+[LOG : Piece -> 32.716000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1411
+[LOG : Piece -> 32.762001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1410
+[LOG : Piece -> 33.835999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1408
+[LOG : Piece -> 32.792999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1409
+[LOG : Piece -> 33.868999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1407
+[LOG : Piece -> 33.917000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1406
+[LOG : Piece -> 32.856998]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1408
+[LOG : Piece -> 32.888000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1407
+[LOG : Piece -> 33.949001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1405
+[LOG : Piece -> 33.985001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1404
+[LOG : Piece -> 32.933998]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1406
+[LOG : Piece -> 32.962002]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1405
+[LOG : Piece -> 34.018002]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1403
+[LOG : Piece -> 34.069000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1402
+[LOG : Piece -> 33.007999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1404
+[LOG : Piece -> 34.096001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1401
+[LOG : Piece -> 33.056000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1403
+[LOG : Piece -> 33.109001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1402
+[LOG : Piece -> 34.160000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1400
+[LOG : Piece -> 33.209000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1401
+[LOG : Piece -> 34.233002]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1399
+[LOG : Piece -> 33.262001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1400
+[LOG : Piece -> 34.287998]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1398
+[LOG : Piece -> 34.342999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1397
+[LOG : Piece -> 33.334999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1399
+[LOG : Piece -> 33.363998]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1398
+[LOG : Piece -> 34.377998]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1396
+[LOG : Piece -> 33.404999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1397
+[LOG : Piece -> 34.436001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1395
+[LOG : Piece -> 33.441002]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1396
+[LOG : Piece -> 34.493000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1394
+[LOG : Piece -> 33.480999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1395
+[LOG : Piece -> 34.541000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1393
+[LOG : Piece -> 33.534000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1394
+[LOG : Piece -> 34.584000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1392
+[LOG : Piece -> 33.576000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1393
+[LOG : Piece -> 34.618999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1391
+[LOG : Piece -> 33.641998]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1392
+[LOG : Piece -> 34.695999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1390
+[LOG : Piece -> 33.707001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1391
+[LOG : Piece -> 34.766998]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1389
+[LOG : Piece -> 34.827999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1388
+[LOG : Piece -> 33.750000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1390
+[LOG : Piece -> 34.902000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1387
+[LOG : Piece -> 33.801998]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1389
+[LOG : Piece -> 34.949001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1386
+[LOG : Piece -> 33.897999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1388
+[LOG : Piece -> 35.008999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1385
+[LOG : Piece -> 33.931999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1387
+[LOG : Piece -> 35.082001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1384
+[LOG : Piece -> 33.973999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1386
+[LOG : Piece -> 35.125999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1383
+[LOG : Piece -> 34.021000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1385
+[LOG : Piece -> 35.168999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1382
+[LOG : Piece -> 34.068001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1384
+[LOG : Piece -> 35.209999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1381
+[LOG : Piece -> 34.112999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1383
+[LOG : Piece -> 35.252998]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1380
+[LOG : Piece -> 34.158001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1382
+[LOG : Piece -> 35.296001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1379
+[LOG : Piece -> 35.365002]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1378
+[LOG : Piece -> 34.227001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1381
+[LOG : Piece -> 34.263000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1380
+[LOG : Piece -> 35.417000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1377
+[LOG : Piece -> 35.478001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1376
+[LOG : Piece -> 34.339001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1379
+[LOG : Piece -> 34.421001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1378
+[LOG : Piece -> 35.546001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1375
+[LOG : Piece -> 34.490002]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1377
+[LOG : Piece -> 35.584999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1374
+[LOG : Piece -> 34.575001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1376
+[LOG : Piece -> 35.639999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1373
+[LOG : Piece -> 34.639000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1375
+[LOG : Piece -> 35.688999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1372
+[LOG : Piece -> 34.681000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1374
+[LOG : Piece -> 35.736000]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1371
+[LOG : Piece -> 34.722000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1373
+[LOG : Piece -> 35.783001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1370
+[LOG : Piece -> 34.764999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1372
+[LOG : Piece -> 35.811001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1369
+[LOG : Piece -> 34.790001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1371
+[LOG : Piece -> 35.841999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1368
+[LOG : Piece -> 34.831001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1370
+[LOG : Piece -> 35.879002]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1367
+[LOG : Piece -> 35.910000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1366
+[LOG : Piece -> 34.863998]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1369
+[LOG : Piece -> 35.955002]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1365
+[LOG : Piece -> 34.901001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1368
+[LOG : Piece -> 36.000000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1364
+[LOG : Piece -> 34.978001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1367
+[LOG : Piece -> 35.049000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1366
+[LOG : Piece -> 36.039001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1363
+[LOG : Piece -> 35.117001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1365
+[LOG : Piece -> 36.083000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1362
+[LOG : Piece -> 35.178001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1364
+[LOG : Piece -> 36.143002]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1361
+[LOG : Piece -> 35.205002]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1363
+[LOG : Piece -> 36.203999]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1360
+[LOG : Piece -> 35.247002]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1362
+[LOG : Piece -> 36.258999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1359
+[LOG : Piece -> 35.290001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1361
+[LOG : Piece -> 36.317001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1358
+[LOG : Piece -> 35.331001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1360
+[LOG : Piece -> 36.346001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1357
+[LOG : Piece -> 36.416000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1356
+[LOG : Piece -> 35.401001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1359
+[LOG : Piece -> 36.495998]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1355
+[LOG : Piece -> 35.491001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1358
+[LOG : Piece -> 36.581001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1354
+[LOG : Piece -> 35.549999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1357
+[LOG : Piece -> 36.653000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1353
+[LOG : Piece -> 35.651001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1356
+[LOG : Piece -> 36.724998]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1352
+[LOG : Piece -> 35.676998]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1355
+[LOG : Piece -> 36.768002]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1351
+[LOG : Piece -> 35.723999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1354
+[LOG : Piece -> 36.799000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1350
+[LOG : Piece -> 35.764999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1353
+[LOG : Piece -> 36.860001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1349
+[LOG : Piece -> 35.807999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1352
+[LOG : Piece -> 36.922001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1348
+[LOG : Piece -> 36.985001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1347
+[LOG : Piece -> 35.852001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1351
+[LOG : Piece -> 37.063000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1346
+[LOG : Piece -> 35.917000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1350
+[LOG : Piece -> 37.096001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1345
+[LOG : Piece -> 35.977001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1349
+[LOG : Piece -> 37.143002]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1344
+[LOG : Piece -> 36.018002]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1348
+[LOG : Piece -> 37.186001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1343
+[LOG : Piece -> 36.058998]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1347
+[LOG : Piece -> 37.233002]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1342
+[LOG : Piece -> 36.132000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1346
+[LOG : Piece -> 37.289001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1341
+[LOG : Piece -> 36.209999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1345
+[LOG : Piece -> 36.298000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1344
+[LOG : Piece -> 37.355000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1340
+[LOG : Piece -> 36.358002]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1343
+[LOG : Piece -> 37.431000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1339
+[LOG : Piece -> 36.426998]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1342
+[LOG : Piece -> 37.463001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1338
+[LOG : Piece -> 36.474998]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1341
+[LOG : Piece -> 37.500999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1337
+[LOG : Piece -> 36.532001]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1340
+[LOG : Piece -> 37.556000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1336
+[LOG : Piece -> 37.611000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1335
+[LOG : Piece -> 36.561001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1339
+[LOG : Piece -> 37.681000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1334
+[LOG : Piece -> 36.626999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1338
+[LOG : Piece -> 36.672001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1337
+[LOG : Piece -> 37.742001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1333
+[LOG : Piece -> 36.751999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1336
+[LOG : Piece -> 37.845001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1332
+[LOG : Piece -> 37.912998]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1331
+[LOG : Piece -> 36.846001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1335
+[LOG : Piece -> 36.932999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1334
+[LOG : Piece -> 37.974998]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1330
+[LOG : Piece -> 36.976002]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1333
+[LOG : Piece -> 38.014000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1329
+[LOG : Piece -> 37.016998]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1332
+[LOG : Piece -> 38.050999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1328
+[LOG : Piece -> 37.040001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1331
+[LOG : Piece -> 38.094002]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1327
+[LOG : Piece -> 37.077000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1330
+[LOG : Piece -> 38.137001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1326
+[LOG : Piece -> 37.103001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1329
+[LOG : Piece -> 38.181000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1325
+[LOG : Piece -> 37.167000]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1328
+[LOG : Piece -> 38.228001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1324
+[LOG : Piece -> 37.209000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1327
+[LOG : Piece -> 38.271999]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1323
+[LOG : Piece -> 37.248001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1326
+[LOG : Piece -> 38.311001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1322
+[LOG : Piece -> 37.289001]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1325
+[LOG : Piece -> 38.352001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1321
+[LOG : Piece -> 37.333000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1324
+[LOG : Piece -> 38.391998]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1320
+[LOG : Piece -> 37.375999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1323
+[LOG : Piece -> 38.446999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1319
+[LOG : Piece -> 37.422001]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1322
+[LOG : Piece -> 38.493999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1318
+[LOG : Piece -> 37.469002]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1321
+[LOG : Piece -> 38.540001]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1317
+[LOG : Piece -> 37.514999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1320
+[LOG : Piece -> 38.571999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1316
+[LOG : Piece -> 37.560001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1319
+[LOG : Piece -> 38.634998]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1315
+[LOG : Piece -> 37.641998]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1318
+[LOG : Piece -> 38.698002]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1314
+[LOG : Piece -> 37.709999]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1317
+[LOG : Piece -> 37.765999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1316
+[LOG : Piece -> 38.792000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1313
+[LOG : Piece -> 37.813000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1315
+[LOG : Piece -> 38.848999]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1312
+[LOG : Piece -> 37.848999]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1314
+[LOG : Piece -> 38.884998]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1311
+[LOG : Piece -> 38.964001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1310
+[LOG : Piece -> 37.911999]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1313
+[LOG : Piece -> 38.007999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1312
+[LOG : Piece -> 39.041000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1309
+[LOG : Piece -> 39.078999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1308
+[LOG : Piece -> 38.074001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1311
+[LOG : Piece -> 38.160999]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1310
+[LOG : Piece -> 39.174000]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1307
+[LOG : Piece -> 38.235001]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1309
+[LOG : Piece -> 39.251999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1306
+[LOG : Piece -> 39.324001]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1305
+[LOG : Piece -> 38.294998]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1308
+[LOG : Piece -> 39.404999]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1304
+[LOG : Piece -> 38.368000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1307
+[LOG : Piece -> 38.449001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1306
+[LOG : Piece -> 39.483002]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1303
+[LOG : Piece -> 39.570000]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1302
+[LOG : Piece -> 38.515999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1305
+[LOG : Piece -> 38.561001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1304
+[LOG : Piece -> 39.612999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1301
+[LOG : Piece -> 38.629002]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1303
+[LOG : Piece -> 39.657001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1300
+[LOG : Piece -> 38.659000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1302
+[LOG : Piece -> 38.692001]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1301
+[LOG : Piece -> 39.688000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1299
+[LOG : Piece -> 39.741001]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1298
+[LOG : Piece -> 38.740002]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1300
+[LOG : Piece -> 39.786999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1297
+[LOG : Piece -> 38.785999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1299
+[LOG : Piece -> 39.833000]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1296
+[LOG : Piece -> 38.851002]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1298
+[LOG : Piece -> 39.877998]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1295
+[LOG : Piece -> 38.896000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1297
+[LOG : Piece -> 39.981998]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1294
+[LOG : Piece -> 38.963001]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1296
+[LOG : Piece -> 40.012001]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1293
+[LOG : Piece -> 39.028000]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1295
+[LOG : Piece -> 40.058998]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1292
+[LOG : Piece -> 39.067001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1294
+[LOG : Piece -> 40.123001]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1291
+[LOG : Piece -> 39.146000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1293
+[LOG : Piece -> 40.199001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1290
+[LOG : Piece -> 39.202000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1292
+[LOG : Piece -> 39.294998]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1291
+[LOG : Piece -> 40.298000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1289
+[LOG : Piece -> 39.388000]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1290
+[LOG : Piece -> 40.368999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1288
+[LOG : Piece -> 40.446999]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1287
+[LOG : Piece -> 39.465000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1289
+[LOG : Piece -> 40.484001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1286
+[LOG : Piece -> 39.508999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1288
+[LOG : Piece -> 39.549000]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1287
+[LOG : Piece -> 40.528000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1285
+[LOG : Piece -> 40.566002]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1284
+[LOG : Piece -> 39.598000]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1286
+[LOG : Piece -> 39.632999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1285
+[LOG : Piece -> 40.611000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1283
+[LOG : Piece -> 39.695000]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1284
+[LOG : Piece -> 40.657001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1282
+[LOG : Piece -> 39.776001]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1283
+[LOG : Piece -> 40.754002]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1281
+[LOG : Piece -> 39.840000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1282
+[LOG : Piece -> 40.798000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1280
+[LOG : Piece -> 39.918999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1281
+[LOG : Piece -> 39.948002]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1280
+[LOG : Piece -> 40.845001]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1279
+[LOG : Piece -> 40.925999]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1278
+[LOG : Piece -> 39.994999]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1279
+[LOG : Piece -> 41.002998]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1277
+[LOG : Piece -> 41.029999]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1276
+[LOG : Piece -> 40.049999]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1278
+[LOG : Piece -> 41.083000]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1275
+[LOG : Piece -> 40.094002]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1277
+[LOG : Piece -> 41.152000]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1274
+[LOG : Piece -> 40.161999]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1276
+[LOG : Piece -> 41.223000]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1273
+[LOG : Piece -> 41.311001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1272
+[LOG : Piece -> 40.226002]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1275
+[LOG : Piece -> 40.269001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1274
+[LOG : Piece -> 41.356998]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1271
+[LOG : Piece -> 41.387001]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1270
+[LOG : Piece -> 40.312000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1273
+[LOG : Piece -> 40.376999]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1272
+[LOG : Piece -> 41.430000]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1269
+[LOG : Piece -> 40.445999]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1271
+[LOG : Piece -> 41.479000]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1268
+[LOG : Piece -> 40.516998]Moving piece 0 of player A to X:33 Y:27, Remaining Moves: 1270
+[LOG : Piece -> 41.551998]Moving piece 0 of player C to X:30 Y:26, Remaining Moves: 1267
+[LOG : Piece -> 41.595001]Moving piece 0 of player C to X:31 Y:26, Remaining Moves: 1266
+[LOG : Piece -> 40.562000]Moving piece 0 of player A to X:33 Y:28, Remaining Moves: 1269
+[LOG : Piece -> 40.617001]Moving piece 0 of player A to X:32 Y:28, Remaining Moves: 1268
+[LOG : Piece -> 41.654999]Moving piece 0 of player C to X:32 Y:26, Remaining Moves: 1265
+[LOG : Piece -> 41.699001]Moving piece 0 of player C to X:33 Y:26, Remaining Moves: 1264
+[LOG : Piece -> 40.665001]Moving piece 0 of player A to X:31 Y:28, Remaining Moves: 1267
+[LOG : Piece -> 41.754002]Moving piece 0 of player C to X:33 Y:27, Remaining Moves: 1263
+[LOG : Piece -> 40.724998]Moving piece 0 of player A to X:30 Y:28, Remaining Moves: 1266
+[LOG : Piece -> 41.803001]Moving piece 0 of player C to X:33 Y:28, Remaining Moves: 1262
+[LOG : Piece -> 40.765999]Moving piece 0 of player A to X:30 Y:27, Remaining Moves: 1265
+[LOG : Piece -> 40.803001]Moving piece 0 of player A to X:30 Y:26, Remaining Moves: 1264
+[LOG : Piece -> 41.848999]Moving piece 0 of player C to X:32 Y:28, Remaining Moves: 1261
+[LOG : Piece -> 40.847000]Moving piece 0 of player A to X:31 Y:26, Remaining Moves: 1263
+[LOG : Piece -> 41.888000]Moving piece 0 of player C to X:31 Y:28, Remaining Moves: 1260
+[LOG : Piece -> 40.889000]Moving piece 0 of player A to X:32 Y:26, Remaining Moves: 1262
+[LOG : Piece -> 41.925999]Moving piece 0 of player C to X:30 Y:28, Remaining Moves: 1259
+[LOG : Piece -> 42.009998]Moving piece 0 of player C to X:30 Y:27, Remaining Moves: 1258
+[LOG : Piece -> 40.959000]Moving piece 0 of player A to X:33 Y:26, Remaining Moves: 1261
+[LOG : Piece -> 2.318000]cleaning and go
+[LOG : Piece -> 42.111000]cleaning and go
+[LOG : Players -> 0.881000]PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Players -> 1.021000]PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Players -> 1.056000]PLAYER_CLEANER:Interruzione esecuzione in corso
+[LOG : Players -> 0.907000]PLAYER_CLEANER:Interruzione esecuzione in corso
+Round: 2
+PLAYER         SCORE
+PLAYER A   |   0  
+PLAYER B   |   100  
+PLAYER C   |   100  
+PLAYER D   |   0  
+[LOG : Master -> 39.070000]Ricevuto Segnale SIGINT
+[LOG : Piece -> 1764.936035]cleaning and go
+[LOG : Master -> 39.078999]Killing process 12790
+[LOG : Piece -> 41.006001]cleaning and go
+[LOG : Master -> 39.092999]Process 12790 exited with status (null)
+[LOG : Master -> 39.103001]Killing process 12791
+[LOG : Master -> 39.109001]Process 12791 exited with status (null)
+[LOG : Master -> 39.112000]Killing process 12793
+[LOG : Master -> 39.116001]Process 12793 exited with status (null)
+[LOG : Master -> 39.118999]Killing process 12794
+[LOG : Master -> 39.138000]Process 12794 exited with status (null)
+[LOG : Master -> 39.144001]MASTER_CLEANER_LAUNCHED
+[LOG : Master -> 39.164001]Cleaning ids
+[LOG : Master -> 39.169998]All done BBYEEE

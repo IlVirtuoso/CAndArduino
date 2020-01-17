@@ -69,7 +69,6 @@ int player()
     sigprocmask(SIG_BLOCK, &player_mask, NULL);
     player_signal.sa_mask = player_mask;
     player_signal.sa_flags = SA_NODEFER;
-    player_signal.sa_flags = SA_RESTART;
     sigaction(SIGINT, &player_signal, NULL);
     sigaction(SIGUSR1, &player_signal, NULL);
     sigaction(SIGUSR2, &player_signal, NULL);
@@ -226,7 +225,7 @@ void phase(int phase)
 
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        while (!override)
+        while (override == 0)
         {
             debug("Waiting piece");
             msgrcv(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
@@ -235,7 +234,7 @@ void phase(int phase)
             temp.ask = playernum;
             temp.type = MASTERCHANNEL;
             msgsnd(master_msgqueue, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            debug("sended message to master");
+            debug("sended message to master: X:%d Y:%d ID:%d", temp.x, temp.y, temp.id);
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
             temp.type = pieces[i].piecepid;
             debug("Send message to piece %d", temp.type);
@@ -299,6 +298,8 @@ void player_handler(int signum)
 
     case SIGROUND:
         phase(ROUND_STOP);
+        while (1)
+            stand();
         break;
 
     case SIGTACTIC:

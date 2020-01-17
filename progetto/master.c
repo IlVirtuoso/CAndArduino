@@ -558,7 +558,7 @@ void phase2()
         master.phase = 2;
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 }
 
@@ -581,11 +581,13 @@ void phase3()
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
+
     while (numf > 0)
     {
         /**
          * implementare controllo su bandiere già catturate
          */
+        debug("Waiting for players message");
         bzero(&captured, sizeof(msg_cnt));
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
