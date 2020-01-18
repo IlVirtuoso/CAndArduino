@@ -101,7 +101,9 @@ void stand()
 {
     msg_cnt command;
     command.phase = 0;
+    command.type = MASTERCHANNEL;
     debug("Player %c In Attesa di comandi", player_id);
+    msgsnd(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
     msgrcv(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
     debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
@@ -131,6 +133,7 @@ void phase(int phase)
         {
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
             srand(clock());
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_NOERROR);
             captured.x = rand() % SO_ALTEZZA;
             captured.y = rand() % SO_BASE;
             captured.type = pieces[i].piecepid;
@@ -187,6 +190,7 @@ void phase(int phase)
             /* One flag for one piece*/
             for (i = 0; i < SO_NUM_P; i++)
             {
+                msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_NOERROR);
                 pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG, 1);
                 if (pos.x != pieces[i].x && pos.y != pieces[i].y)
                     debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
@@ -211,7 +215,7 @@ void phase(int phase)
 
         for (i = 0; i < SO_NUM_P; i++)
         {
-
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_NOERROR);
             captured.pednum = i;
             captured.phase = 3;
             captured.type = pieces[i].piecepid;
@@ -224,6 +228,7 @@ void phase(int phase)
 
     case RESTARTED:
     for(i = 0; i < SO_NUM_P; i++){
+        msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_NOERROR);
         captured.type = pieces[i].piecepid;
         captured.phase = RESTARTED;
         msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);

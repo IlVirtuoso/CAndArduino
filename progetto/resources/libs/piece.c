@@ -84,7 +84,9 @@ int piece()
 void getplay()
 {
     order.phase = 0;
+    order.type = getppid() * 10;
     debug("Waiting message from Player");
+    msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
     msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);

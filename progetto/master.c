@@ -193,6 +193,7 @@ int main(int argc, char *argv[])
         case 'v':
             verbosity = 1;
             break;
+        
 
         case 'd':
             isDebug = 1;
@@ -278,7 +279,6 @@ void clean()
     }
     logg("Cleaning ids");
     msgctl(master_msgqueue, IPC_RMID, NULL);
-    msgctl(player_msgqueue, IPC_RMID, NULL);
     free(st);
     free(vex);
 
@@ -305,6 +305,7 @@ void stamp_score(score_table *t)
 {
     int i;
     printf("Round: %d\n", st->rounds);
+    printf("Flags Remains: %d\n",numf);
     printf("PLAYER         SCORE\n");
     for (i = 0; i < SO_NUM_G; i++)
     {
@@ -521,6 +522,7 @@ void phase1()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
         master.phase = 1;
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
@@ -552,6 +554,7 @@ void phase2()
     /*Region Phase-2:Indication*/
     for (i = 0; i < SO_NUM_G; i++)
     {
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
         master.phase = 2;
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
@@ -574,6 +577,7 @@ void phase3()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
         master.phase = 3;
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
