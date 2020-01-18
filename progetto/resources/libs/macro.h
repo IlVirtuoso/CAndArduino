@@ -34,8 +34,12 @@
 #define REQUEST_SEM 5
 #endif
 
-#ifndef ROUND_STOP
-#define ROUND_STOP 42 /*la risposta a tutto quanto*/
+#ifndef RESTARTED
+#define RESTARTED 42 /*la risposta a tutto quanto*/
+#endif
+
+#ifndef NORMAL
+#define NORMAL 1
 #endif
 
 #ifndef SIGROUND

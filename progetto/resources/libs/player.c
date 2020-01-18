@@ -111,7 +111,6 @@ int override;
 void phase(int phase)
 {
     msg_cnt captured;
-    msg_cnt temp;
     msg_cnt master;
     int i, j, z, itera = 1;
 
@@ -208,10 +207,6 @@ void phase(int phase)
         break;
 
     case 3:
-        /**
-         * movimento
-         * cattura bandiera action to do 
-         */
         override = 0;
 
         for (i = 0; i < SO_NUM_P; i++)
@@ -225,37 +220,20 @@ void phase(int phase)
 
         master.type = MASTERCHANNEL;
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        while (override == 0)
-        {
-            debug("Waiting piece");
-            msgrcv(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
-            i = temp.id;
-            temp.id = player_id;
-            temp.ask = playernum;
-            temp.type = MASTERCHANNEL;
-            msgsnd(master_msgqueue, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            debug("sended message to master: X:%d Y:%d ID:%d", temp.x, temp.y, temp.id);
-            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
-            temp.type = pieces[i].piecepid;
-            debug("Send message to piece %d", temp.type);
-            msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        }
         break;
 
-    case ROUND_STOP:
-        debug("Restarting For finished Round");
-        for (i = 0; i < SO_NUM_P; i++)
-        {
-            kill(pieces[i].piecepid, SIGROUND);
-            msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
-        }
-        captured.type = MASTERCHANNEL;
-        override = 1;
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+    case RESTARTED:
+    for(i = 0; i < SO_NUM_P; i++){
+        captured.type = pieces[i].piecepid;
+        captured.phase = RESTARTED;
+        msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+        msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_INFO);
+    }
+    captured.type = MASTERCHANNEL;
+    msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
         break;
 
     default:
-        stand();
         break;
     }
 }
@@ -296,11 +274,6 @@ void player_handler(int signum)
         player_clean();
         break;
 
-    case SIGROUND:
-        phase(ROUND_STOP);
-        while (1)
-            stand();
-        break;
 
     case SIGTACTIC:
         /*dare tattica alla pedina che la richiede*/

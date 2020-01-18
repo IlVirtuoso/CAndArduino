@@ -1,7 +1,6 @@
 #ifndef TABLE_H
 #include "table.h"
 #endif
- 
 
 char getid(cell *shared_table, int x, int y)
 {
@@ -33,7 +32,7 @@ void table_start()
 {
     int i, j;
     sem_table_key = ftok("./makefile", 'a');
-    if ((table = shmget(IPC_PRIVATE, sizeof(cell) * SO_BASE * SO_ALTEZZA, IPC_CREAT | 0666)) > 0)
+    if ((table = shmget(IPC_PRIVATE, sizeof(cell) * ((SO_BASE * SO_ALTEZZA) + 1), IPC_CREAT | 0666)) > 0)
     {
         debug("Memoria Condivisa Inizializzata");
     }
@@ -148,4 +147,11 @@ int reachable(int moves, int x, int y, int x_targ, int y_targ)
     }
 }
 
+void setRestartCell(cell * shared_table, int id){
+    (&(*(shared_table + SO_BASE * SO_ALTEZZA + 1)))->id = id;
+}
+
+char getRestartCell(cell* shared_table){
+    return (&(*(shared_table + SO_BASE * SO_ALTEZZA + 1)))->id;
+}
 /*End Of Life*/

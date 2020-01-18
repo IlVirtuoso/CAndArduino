@@ -140,11 +140,7 @@ void round(int phase);
 void phase1();
 void phase2();
 void phase3();
-enum
-{
-    NORMAL,
-    RESTARTED
-};
+
 /*puntatore alla struttura vexillum per le bandiere*/
 vexillum *vex;
 
@@ -568,6 +564,7 @@ void phase3()
     msg_cnt captured;
     msg_cnt master;
     int i, k;
+    setRestartCell(master_shared_table, NORMAL);
     if (!alarmset)
     {
         alarm(SO_MAX_TIME);
@@ -587,7 +584,7 @@ void phase3()
         /**
          * implementare controllo su bandiere già catturate
          */
-        debug("Waiting for players message");
+        debug("Waiting for piece message");
         bzero(&captured, sizeof(msg_cnt));
         msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
@@ -606,12 +603,14 @@ void phase3()
                     tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numf--;
+                    if (numf == 0)
+                        setRestartCell(master_shared_table, RESTARTED);
                     debug("Success");
                 }
             }
         }
-        debug("Send message to player %d", st->pid[captured.ask]);
-        captured.type = st->pid[captured.ask];
+        debug("Send message to piece %d", captured.pednum);
+        captured.type = captured.pednum;
         msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     restart();
@@ -619,6 +618,7 @@ void phase3()
 
 void restart()
 {
+    msg_cnt restart;
     int i;
     display(master_shared_table);
     for (i = 0; i < numf; i++)
@@ -633,9 +633,13 @@ void restart()
     numf = numflag;
     getVex(numflag);
     stamp_score(st);
+    alarm(0);
+    alarmset = 0;
     for (i = 0; i < SO_NUM_G; i++)
     {
-        kill(st->pid[i], SIGROUND);
+        restart.phase = RESTARTED;
+        restart.type = st->pid[i];
+        msgsnd(master_msgqueue, &restart, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
     round(RESTARTED);

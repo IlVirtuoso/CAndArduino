@@ -53,22 +53,24 @@
 #define TABLE_H
 
 /* Valore assoluto di x */
-#define ABSOLUTE(x) ((x) >= 0 ? (x) : (x)*(-1))	
+#define ABSOLUTE(x) ((x) >= 0 ? (x) : (x) * (-1))
 
 /*definizione della struttura della cella della tabella*/
-typedef struct{
+typedef struct
+{
     char id;
     int isFull;
     int flag;
-}cell;
+} cell;
 
-typedef struct{
+typedef struct
+{
     int x;
     int y;
-}position;
+} position;
 
 /*metodo per muoversi nella tabella*/
-cell * tab(cell * table, int x, int y);
+cell *tab(cell *table, int x, int y);
 
 /**
  * metodo che cerca la posizione di un target all'interno di una tabella
@@ -77,7 +79,7 @@ cell * tab(cell * table, int x, int y);
  * @param target: target cercato sulla tabella
  * @param moves: numero di iterazioni di ricerca
  * */
-position search(cell * shared_table, int b, int h, char target, int itera);
+position search(cell *shared_table, int b, int h, char target, int itera);
 
 /* Ritorna la distanza tra il punto (x,y) ed il punto (x_targ, y_targ)*/
 int getDistance(int x, int y, int x_targ, int y_targ);
@@ -89,7 +91,7 @@ int getDistance(int x, int y, int x_targ, int y_targ);
  * @return -1: se il numero di mosse non è sufficiente a raggiungere la cella target
  * @return n_moves: se il numero di mosse è sufficiente a raggiungere target
  */
-int reachable(int moves,int x, int y, int x_targ, int y_targ);
+int reachable(int moves, int x, int y, int x_targ, int y_targ);
 
 /*id della table*/
 int table;
@@ -103,7 +105,7 @@ key_t sem_table_key;
 void table_start();
 
 /*metodo usato per leggere l'id' di una cella*/
-char getid(cell * shared_table, int x, int y);
+char getid(cell *shared_table, int x, int y);
 
 /**
  * Metodo usato dalle pedine per controllare lo stato di una cella, utile per il metodo move() 
@@ -119,18 +121,23 @@ char getid(cell * shared_table, int x, int y);
  */
 
 /*metodo usato dal master per piazzare le bandiere*/
-void placeflag(cell * shared_table, int x, int y);
+void placeflag(cell *shared_table, int x, int y);
 
 /*metodo usato dal master per rimuovere le bandiere*/
-void removeflag(cell * shared_table, int x, int y);
+void removeflag(cell *shared_table, int x, int y);
 
-void capture(cell * shared_table,int x, int y);
+/**
+ * Metodo usato dal master per settare il valore dell'ultima cella dell'array, nascosta al resto 
+ * del gioco, che serve per far ripartire i ROUNDS
+ */
+void setRestartCell(cell *shared_table, int id);
+
+char getRestartCell(cell *shared_table);
 
 int semglobal;
 
 int semplayer;
 
 struct sembuf sem_t;
-
 
 #endif

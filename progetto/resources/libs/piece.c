@@ -66,7 +66,6 @@ int piece()
     piece_signal.sa_mask = piece_mask;
     piece_signal.sa_flags = SA_NODEFER;
     sigaction(SIGINT, &piece_signal, NULL);
-    sigaction(SIGROUND, &piece_signal, NULL);
     sigset(SIGINT, piece_handler);
     sigset(SIGROUND, piece_handler);
     if ((piece_shared_table = (cell *)shmat(table, NULL, 0)) == (void *)-1)
@@ -130,6 +129,11 @@ void play(int command)
         tactic();
         break;
 
+    case RESTARTED:
+        debug("Restarting Round");
+        temp.type = getppid() * 10;
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        break;
     default:
 
         break;
@@ -139,7 +143,6 @@ void play(int command)
 int override;
 void tactic()
 {
-
     int result;
     char strategy = order.strategy;
     old_x = -1;
@@ -148,11 +151,21 @@ void tactic()
     /* posizione provvisoria */ srand(clock() + getpid());
     while (piece_attr.n_moves > 0 && override == 0)
     {
-
+        if (getRestartCell(piece_shared_table) == RESTARTED)
+        {
+            debug("Restarting ROund");
+            getplay();
+            break;
+        }
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
             debug("Piece %d changing target", piece_attr.piece_id);
             target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG, 1);
+            if (target.x == piece_attr.x && target.y == piece_attr.y)
+            {
+                debug("No Target Found");
+                getplay();
+            }
             if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
             {
                 debug("Insufficent moves for piece %d", piece_attr.piece_id);
@@ -180,20 +193,10 @@ void tactic()
 
 void piece_handler(int signum)
 {
-    msg_cnt temp;
     switch (signum)
     {
     case SIGINT:
         piece_cleaner();
-        break;
-
-    case SIGROUND:
-        debug("Restart Execution");
-        temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        piece_attr.n_moves = SO_N_MOVES;
-        while (1)
-            getplay();
         break;
 
     case SIGUSR2:
@@ -501,8 +504,7 @@ int move(int x, int y)
         {
             if (reserveSemNoWait(sem_table, x * SO_BASE + y))
             {
-                if (errno == EAGAIN)
-                    return 0;
+                return -2;
             }
             nanosleep(&moved, &remain);
 
@@ -522,13 +524,15 @@ int move(int x, int y)
                 debug("Capturing x:%d, y:%d", x, y);
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
-                captured.type = getppid() * 10;
+                captured.type = MASTERCHANNEL;
                 captured.x = x;
                 captured.y = y;
-                captured.id = piece_attr.piece_id;
-                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-                debug("Sended message to player");
-                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+                captured.id = player_id;
+                captured.pednum = getpid();
+                captured.ask = player_id - 'A';
+                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                debug("Sended message to master");
+                msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
