@@ -2,6 +2,8 @@
 #include "piece.h"
 #endif
 
+#define TRY_MAX 3 
+
 int pos_set = 0;
 
 /* Coordinata x dell'ultima cella visitata dalla pedina; aggiorna in move */
@@ -175,6 +177,10 @@ void tactic()
         result = goto_loc(target.x, target.y, strategy);
         switch (result)
         {
+        case -1:
+            target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG, 2);
+            if((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
+                getplay();
         case 0:
             strategy = order.strategy;
             break;
@@ -273,6 +279,8 @@ int goto_loc(int target_x, int target_y, char strategy)
 
             if (check == 0)
                 method = EVASION_Y;
+            else if(check == -2)
+                return -1;
             else if (changeT > 0 && strategy == DIAGONAL)
                 method = DIAGONAL;
             else if (changeT > 0 && strategy == CHAOS_THEORY)
@@ -299,6 +307,8 @@ int goto_loc(int target_x, int target_y, char strategy)
 
             if (check == 0)
                 method = EVASION_X;
+            else if(check == -2)
+                return -1;
             else if (changeT > 0 && strategy == DIAGONAL)
                 method = DIAGONAL;
             else if (changeT > 0 && strategy == CHAOS_THEORY)
@@ -493,7 +503,7 @@ int move(int x, int y)
 {
     msg_cnt captured;
     struct timespec moved, remain;
-    int isValid = 0;
+    int isValid = 0, i = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
     moved.tv_sec = 0;
     logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, player_id, x, y, piece_attr.n_moves);
@@ -502,9 +512,9 @@ int move(int x, int y)
     {
         if (isValid && pos_set)
         {
-            if (reserveSemNoWait(sem_table, x * SO_BASE + y))
+            if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
             {
-                return -2;
+                return 0;
             }
             nanosleep(&moved, &remain);
 
@@ -521,6 +531,11 @@ int move(int x, int y)
             }
             else if (getid(piece_shared_table, x, y) == FLAG)
             {
+                while(i < TRY_MAX){    
+                    if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
+                        i++;
+                }
+                if(i == TRY_MAX) return -2;
                 debug("Capturing x:%d, y:%d", x, y);
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
