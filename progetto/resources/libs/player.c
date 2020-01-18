@@ -102,7 +102,7 @@ void stand()
     msg_cnt command;
     command.phase = 0;
     debug("Player %c In Attesa di comandi", player_id);
-    msgrcv(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+    msgrcv(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
     debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
 }
@@ -126,22 +126,22 @@ void phase(int phase)
     {
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
         master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         for (i = 0; i < SO_NUM_P; i++)
         {
-            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
             srand(clock());
             captured.x = rand() % SO_ALTEZZA;
             captured.y = rand() % SO_BASE;
             captured.type = pieces[i].piecepid;
             captured.phase = 1;
             captured.pednum = i;
-            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+            msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_NOERROR);
             pieces[i].x = captured.x;
             pieces[i].y = captured.y;
             master.type = MASTERCHANNEL;
-            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         }
 
         break;
@@ -171,8 +171,8 @@ void phase(int phase)
                                 captured.strategy = rand() % 4;
                                 captured.x = i;
                                 captured.y = j;
-                                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-                                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+                                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+                                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_NOERROR);
                             }
                             else
                             {
@@ -198,12 +198,12 @@ void phase(int phase)
                 captured.strategy = rand() % 4;
                 captured.x = pos.x;
                 captured.y = pos.y;
-                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+                msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_NOERROR);
             }
         }
         master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         break;
 
     case 3:
@@ -215,22 +215,23 @@ void phase(int phase)
             captured.pednum = i;
             captured.phase = 3;
             captured.type = pieces[i].piecepid;
-            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         }
 
         master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         break;
 
     case RESTARTED:
     for(i = 0; i < SO_NUM_P; i++){
         captured.type = pieces[i].piecepid;
         captured.phase = RESTARTED;
-        msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
-        msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_INFO);
+        msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);
+        msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_NOERROR);
     }
     captured.type = MASTERCHANNEL;
-    msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+    debug("Sended master message, returning");
+    msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);
         break;
 
     default:

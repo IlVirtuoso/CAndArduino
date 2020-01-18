@@ -227,7 +227,8 @@ int main(int argc, char *argv[])
     st->rounds = 0;
     playergen(SO_NUM_G);
     round(NORMAL);
-
+    while (1)
+        round(RESTARTED);
     logg("End Of Execution");
     logg("Stopped at %s", __TIME__);
     cleaner();
@@ -522,8 +523,8 @@ void phase1()
     {
         master.phase = 1;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
     }
 
     for (i = 0; i < SO_NUM_P; i++)
@@ -531,8 +532,8 @@ void phase1()
         for (k = 0; k < SO_NUM_G; k++)
         {
             master.type = st->pid[k];
-            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
         }
     }
     numflag = getNumflag();
@@ -553,8 +554,8 @@ void phase2()
     {
         master.phase = 2;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
     }
 }
 
@@ -575,8 +576,8 @@ void phase3()
     {
         master.phase = 3;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
     }
 
     while (numf > 0)
@@ -586,7 +587,7 @@ void phase3()
          */
         debug("Waiting for piece message");
         bzero(&captured, sizeof(msg_cnt));
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         debug("Bandiere Rimaste %d", numf);
         if (captured.x != -1 && captured.y != -1)
@@ -611,7 +612,7 @@ void phase3()
         }
         debug("Send message to piece %d", captured.pednum);
         captured.type = captured.pednum;
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
     }
     restart();
 }
@@ -639,10 +640,9 @@ void restart()
     {
         restart.phase = RESTARTED;
         restart.type = st->pid[i];
-        msgsnd(master_msgqueue, &restart, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        msgsnd(master_msgqueue, &restart, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
     }
-    round(RESTARTED);
 }
 
 void manual()

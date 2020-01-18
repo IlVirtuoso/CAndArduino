@@ -85,7 +85,7 @@ void getplay()
 {
     order.phase = 0;
     debug("Waiting message from Player");
-    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
 }
@@ -107,21 +107,21 @@ void play(int command)
         }
         logg("Pezzo %d del player %c in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
         pos_set = 1;
-        piece_attr.n_moves = SO_N_MOVES;
         temp.x = piece_attr.x;
         temp.y = piece_attr.y;
         temp.type = getppid() * 10;
         temp.pednum = piece_attr.piece_id;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         break;
 
     case 2:
+        piece_attr.n_moves = SO_N_MOVES;
         target.x = order.x;
         target.y = order.y;
         piece_attr.strategy = order.strategy;
         debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
         temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         break;
 
     case 3:
@@ -132,7 +132,7 @@ void play(int command)
     case RESTARTED:
         debug("Restarting Round");
         temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
         break;
     default:
 
@@ -177,7 +177,7 @@ void tactic()
         {
         case -1:
             target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG, 2);
-            if((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
+            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
                 getplay();
         case 0:
             strategy = order.strategy;
@@ -192,7 +192,8 @@ void tactic()
             break;
         }
     }
-    debug("Moves Finished for piece %d", piece_attr.piece_id);
+    if (piece_attr.n_moves == 0)
+        debug("Moves Finished for piece %d", piece_attr.piece_id);
 }
 
 void piece_handler(int signum)
@@ -277,7 +278,7 @@ int goto_loc(int target_x, int target_y, char strategy)
 
             if (check == 0)
                 method = EVASION_Y;
-            else if(check == -2)
+            else if (check == -2)
                 return -1;
             else if (changeT > 0 && strategy == DIAGONAL)
                 method = DIAGONAL;
@@ -305,7 +306,7 @@ int goto_loc(int target_x, int target_y, char strategy)
 
             if (check == 0)
                 method = EVASION_X;
-            else if(check == -2)
+            else if (check == -2)
                 return -1;
             else if (changeT > 0 && strategy == DIAGONAL)
                 method = DIAGONAL;
@@ -501,7 +502,7 @@ int move(int x, int y)
 {
     msg_cnt captured;
     struct timespec moved, remain;
-    int isValid = 0, i = 0;
+    int isValid = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
     moved.tv_sec = 0;
     logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, player_id, x, y, piece_attr.n_moves);
@@ -512,10 +513,12 @@ int move(int x, int y)
         {
             if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
             {
-                if(getid(piece_shared_table, x, y) == FLAG){
+                if (getid(piece_shared_table, x, y) == FLAG)
+                {
                     return -2;
                 }
-                else return 0;
+                else
+                    return 0;
             }
             nanosleep(&moved, &remain);
 
@@ -541,9 +544,9 @@ int move(int x, int y)
                 captured.id = player_id;
                 captured.pednum = getpid();
                 captured.ask = player_id - 'A';
-                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
                 debug("Sended message to master");
-                msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
+                msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
