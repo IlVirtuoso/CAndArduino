@@ -534,6 +534,8 @@ int move(int x, int y)
                 while(i < TRY_MAX){    
                     if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
                         i++;
+                    else
+                        break;
                 }
                 if(i == TRY_MAX) return -2;
                 debug("Capturing x:%d, y:%d", x, y);
