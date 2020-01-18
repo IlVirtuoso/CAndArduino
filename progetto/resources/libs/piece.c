@@ -2,8 +2,6 @@
 #include "piece.h"
 #endif
 
-#define TRY_MAX 3 
-
 int pos_set = 0;
 
 /* Coordinata x dell'ultima cella visitata dalla pedina; aggiorna in move */
@@ -514,7 +512,10 @@ int move(int x, int y)
         {
             if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
             {
-                return 0;
+                if(getid(piece_shared_table, x, y) == FLAG){
+                    return -2;
+                }
+                else return 0;
             }
             nanosleep(&moved, &remain);
 
@@ -531,13 +532,6 @@ int move(int x, int y)
             }
             else if (getid(piece_shared_table, x, y) == FLAG)
             {
-                while(i < TRY_MAX){    
-                    if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
-                        i++;
-                    else
-                        break;
-                }
-                if(i == TRY_MAX) return -2;
                 debug("Capturing x:%d, y:%d", x, y);
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
