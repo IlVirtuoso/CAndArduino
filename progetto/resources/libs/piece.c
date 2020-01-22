@@ -109,6 +109,7 @@ void play(int command)
         }
         logg("Pezzo %d del player %c in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
         pos_set = 1;
+        piece_attr.n_moves = SO_N_MOVES;
         temp.x = piece_attr.x;
         temp.y = piece_attr.y;
         temp.type = getppid() * 10;
@@ -117,7 +118,6 @@ void play(int command)
         break;
 
     case 2:
-        piece_attr.n_moves = SO_N_MOVES;
         target.x = order.x;
         target.y = order.y;
         piece_attr.strategy = order.strategy;
