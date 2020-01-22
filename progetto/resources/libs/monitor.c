@@ -6,6 +6,7 @@
 void display(cell *shared_table)
 {
     int i, j;
+    printf("  ");
     for (i = 0; i < SO_ALTEZZA; i++)
     {
         if (i < 10 && SO_ALTEZZA < 100 && SO_BASE < 100)
