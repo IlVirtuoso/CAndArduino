@@ -163,8 +163,7 @@ void phase(int phase)
                         do
                         {
                             pos = search(player_shared_table, i, j, player_id, itera);
-                            for (z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++)
-                                ;
+                            for (z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++);
                             if (reachable(SO_N_MOVES, i, j, pos.x, pos.y) > 0)
                             {
                                 itera = 0;
@@ -227,16 +226,16 @@ void phase(int phase)
         break;
 
     case RESTARTED:
-    for(i = 0; i < SO_NUM_P; i++){
-        msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_NOERROR);
-        captured.type = pieces[i].piecepid;
-        captured.phase = RESTARTED;
-        msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);
-        msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_NOERROR);
-    }
-    captured.type = MASTERCHANNEL;
-    debug("Sended master message, returning");
-    msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);
+        for(i = 0; i < SO_NUM_P; i++){
+            msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_NOERROR);
+            captured.type = pieces[i].piecepid;
+            captured.phase = RESTARTED;
+            msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);
+            msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_NOERROR);
+        }
+        captured.type = MASTERCHANNEL;
+        debug("Sended master message, returning");
+        msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_NOERROR);
         break;
 
     default:

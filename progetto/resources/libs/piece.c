@@ -72,6 +72,7 @@ int piece()
     {
         error("Errore nell'inizializzare la table per il pezzo", EKEYREJECTED);
     }
+    piece_attr.n_moves = SO_N_MOVES;
     while (1)
     {
         getplay();
@@ -117,7 +118,6 @@ void play(int command)
         break;
 
     case 2:
-        piece_attr.n_moves = SO_N_MOVES;
         target.x = order.x;
         target.y = order.y;
         piece_attr.strategy = order.strategy;

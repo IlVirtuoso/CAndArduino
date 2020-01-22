@@ -23,8 +23,6 @@
 /*funzione che inizializza la pedina*/
 int piece();
 
-
-
 struct{
     int piece_id; /*id del pezzo, tipicamente è la sua posizione nell'array dei pezzi*/
     int x;
