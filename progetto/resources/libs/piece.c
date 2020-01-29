@@ -87,8 +87,8 @@ void getplay()
     order.phase = 0;
     order.type = getppid() * 10;
     debug("Waiting message from Player");
-    msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
+    msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+    msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
 }
@@ -115,7 +115,7 @@ void play(int command)
         temp.y = piece_attr.y;
         temp.type = getppid() * 10;
         temp.pednum = piece_attr.piece_id;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case 2:
@@ -124,10 +124,15 @@ void play(int command)
         piece_attr.strategy = order.strategy;
         debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
         temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case 3:
+        if (order.strategy < 0)
+        {
+            srand(clock());
+            order.strategy = rand() % 4;
+        }
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
@@ -135,7 +140,7 @@ void play(int command)
     case RESTARTED:
         debug("Restarting Round");
         temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
     default:
 
@@ -505,6 +510,7 @@ int move(int x, int y)
 {
     msg_cnt captured;
     struct timespec moved, remain;
+    int maxTries;
     int isValid = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
     moved.tv_sec = 0;
@@ -514,17 +520,24 @@ int move(int x, int y)
     {
         if (isValid && pos_set)
         {
-            if (reserveSemNoWait(sem_table, x * SO_BASE + y) == -1)
+            for (maxTries = rand() % 90 + 2; maxTries > 0; maxTries--)
             {
-                if (getid(piece_shared_table, x, y) == FLAG)
+                if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
                 {
-                    return -2;
+                    break;
                 }
                 else
-                    return 0;
+                {
+                    nanosleep(&moved, &remain);
+                }
+                if (maxTries == 1)
+                {
+                    debug("NO chance are remained");
+                    return 2;
+                }
+                debug("Max Tries remained for piece %d are : %d", piece_attr.piece_id, maxTries);
             }
             nanosleep(&moved, &remain);
-
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
                 tab(piece_shared_table, x, y)->id = player_id;
@@ -547,9 +560,9 @@ int move(int x, int y)
                 captured.id = player_id;
                 captured.pednum = getpid();
                 captured.ask = player_id - 'A';
-                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 debug("Sended message to master");
-                msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_NOERROR);
+                msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
