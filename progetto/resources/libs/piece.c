@@ -516,7 +516,7 @@ int move(int x, int y)
     {
         if (isValid && pos_set)
         {
-            for (maxTries = rand() % 3 + 1; maxTries > 0; maxTries--)
+            for (maxTries = (rand() % 3) + 1; maxTries > 0; maxTries--)
             {
                 if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
                 {
@@ -526,16 +526,17 @@ int move(int x, int y)
                 {
                     nanosleep(&moved, &remain);
                 }
-                if (maxTries == 1)
+                if (maxTries == 0)
                 {
                     debug("NO chance are remained");
-                    return 2;
+                    return -2;
                 }
                 debug("Max Tries remained for piece %d are : %d", piece_attr.piece_id, maxTries);
             }
-            nanosleep(&moved, &remain);
+
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
+                nanosleep(&moved, &remain);
                 tab(piece_shared_table, x, y)->id = player_id;
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
@@ -563,7 +564,7 @@ int move(int x, int y)
                 piece_attr.y = y;
                 piece_attr.n_moves--;
                 tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
-                tab(piece_shared_table,x,y)->id = player_id;
+                tab(piece_shared_table, x, y)->id = player_id;
                 releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
                 debug("Restart");
             }
