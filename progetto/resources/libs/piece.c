@@ -128,11 +128,7 @@ void play(int command)
         break;
 
     case 3:
-        if (order.strategy < 0)
-        {
-            srand(clock());
-            order.strategy = rand() % 4;
-        }
+
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
@@ -520,7 +516,7 @@ int move(int x, int y)
     {
         if (isValid && pos_set)
         {
-            for (maxTries = rand() % 90 + 2; maxTries > 0; maxTries--)
+            for (maxTries = rand() % 3 + 1; maxTries > 0; maxTries--)
             {
                 if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
                 {
@@ -567,6 +563,7 @@ int move(int x, int y)
                 piece_attr.y = y;
                 piece_attr.n_moves--;
                 tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
+                tab(piece_shared_table,x,y)->id = player_id;
                 releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
                 debug("Restart");
             }

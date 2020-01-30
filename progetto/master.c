@@ -193,7 +193,6 @@ int main(int argc, char *argv[])
         case 'v':
             verbosity = 1;
             break;
-        
 
         case 'd':
             isDebug = 1;
@@ -271,8 +270,11 @@ void clean()
     }
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
+    shmdt(masterStruct);
     shmctl(table, IPC_RMID, NULL);
+    shmctl(masterKey, IPC_RMID, NULL);
     semctl(semglobal, 0, IPC_RMID);
+
     for (i = 0; i < sem_num; i++)
     {
         semctl(semglobal, i, IPC_RMID);
@@ -281,7 +283,6 @@ void clean()
     msgctl(master_msgqueue, IPC_RMID, NULL);
     free(st);
     free(vex);
-
     logg("All done BBYEEE");
     exit(0);
 }
@@ -305,7 +306,7 @@ void stamp_score(score_table *t)
 {
     int i;
     printf("Round: %d\n", st->rounds);
-    printf("Flags Remains: %d\n",numf);
+    printf("Flags Remains: %d\n", numf);
     printf("PLAYER         SCORE\n");
     for (i = 0; i < SO_NUM_G; i++)
     {
@@ -367,8 +368,9 @@ void sem_init()
     }
 }
 
+int masterKey;
+mastermem *masterStruct;
 int master_msgqueue;
-
 void shared_table_init()
 {
     int x, y;
@@ -391,7 +393,6 @@ void shared_table_init()
     {
         error("Errore nella creazione della msgqueue master", errno);
     }
-
     logg("Memoria Condivisa Inizializzata");
 }
 
@@ -522,11 +523,11 @@ void phase1()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 1;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
     for (i = 0; i < SO_NUM_P; i++)
@@ -534,8 +535,8 @@ void phase1()
         for (k = 0; k < SO_NUM_G; k++)
         {
             master.type = st->pid[k];
-            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
     }
     numflag = getNumflag();
@@ -554,11 +555,11 @@ void phase2()
     /*Region Phase-2:Indication*/
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 2;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 }
 
@@ -577,11 +578,11 @@ void phase3()
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 3;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
     while (numf > 0)
@@ -589,15 +590,16 @@ void phase3()
         /**
          * implementare controllo su bandiere già catturate
          */
-        debug("Waiting for piece message");
+        debug("Waiting for flag to be captured");
         bzero(&captured, sizeof(msg_cnt));
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         debug("Bandiere Rimaste %d", numf);
         if (captured.x != -1 && captured.y != -1)
         {
-            for (k = 0; k < numf; k++)
+            for (k = 0; k < numflag; k++)
             {
+
                 if (captured.x == vex[k].x && captured.y == vex[k].y)
                 {
                     /***
@@ -605,7 +607,6 @@ void phase3()
                      */
                     debug("Bandiera %d rimossa", k);
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
-                    tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
                     numf--;
                     if (numf == 0)
@@ -616,7 +617,7 @@ void phase3()
         }
         debug("Send message to piece %d", captured.pednum);
         captured.type = captured.pednum;
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
+        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     restart();
 }
@@ -644,8 +645,8 @@ void restart()
     {
         restart.phase = RESTARTED;
         restart.type = st->pid[i];
-        msgsnd(master_msgqueue, &restart, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgsnd(master_msgqueue, &restart, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 }
 
