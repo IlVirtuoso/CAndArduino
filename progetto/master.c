@@ -582,7 +582,6 @@ void phase3()
         master.phase = 3;
         master.type = st->pid[i];
         msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
     while (numf > 0)
@@ -605,10 +604,10 @@ void phase3()
                     /***
                      * Le Pedine non catturano tutte le bandiere
                      */
+                    numf--;
                     debug("Bandiera %d rimossa", k);
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
-                    numf--;
                     if (numf == 0)
                         setRestartCell(master_shared_table, RESTARTED);
                     debug("Success");
@@ -626,8 +625,10 @@ void restart()
 {
     msg_cnt restart;
     int i;
+    printf("\n\n\n");
     display(master_shared_table);
-    for (i = 0; i < numf; i++)
+    stamp_score(st);
+    for (i = 0; i < numflag; i++)
     {
         vex[i].score = -1;
         vex[i].x = -1;
@@ -638,7 +639,6 @@ void restart()
     numflag = getNumflag();
     numf = numflag;
     getVex(numflag);
-    stamp_score(st);
     alarm(0);
     alarmset = 0;
     for (i = 0; i < SO_NUM_G; i++)

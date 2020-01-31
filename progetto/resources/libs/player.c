@@ -220,19 +220,10 @@ void phase(int phase)
             captured.type = pieces[i].piecepid;
             msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         }
-
-        master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
         break;
 
     case RESTARTED:
-        for(i = 0; i < SO_NUM_P; i++){
-            msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_INFO);
-            captured.type = pieces[i].piecepid;
-            captured.phase = RESTARTED;
-            msgsnd(key_MO,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
-            msgrcv(key_MO,NULL,sizeof(msg_cnt) - sizeof(long),getpid()*10,MSG_INFO);
-        }
+
         captured.type = MASTERCHANNEL;
         debug("Sended master message, returning");
         msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);

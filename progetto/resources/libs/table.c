@@ -22,10 +22,7 @@ void placeflag(cell *shared_table, int x, int y)
 
 void removeflag(cell *shared_table, int x, int y)
 {
-    if (strcmp(processSign, "Master"))
-    {
-        tab(shared_table, x, y)->id = EMPTY;
-    }
+    tab(shared_table, x, y)->id = EMPTY;
 }
 
 void table_start()

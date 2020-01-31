@@ -128,16 +128,11 @@ void play(int command)
         break;
 
     case 3:
-
+        order.strategy = ABSOLUTE(order.strategy);
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
-
-    case RESTARTED:
-        debug("Restarting Round");
-        temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        break;
+        
     default:
 
         break;
@@ -506,7 +501,6 @@ int move(int x, int y)
 {
     msg_cnt captured;
     struct timespec moved, remain;
-    int maxTries;
     int isValid = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
     moved.tv_sec = 0;
@@ -516,22 +510,16 @@ int move(int x, int y)
     {
         if (isValid && pos_set)
         {
-            for (maxTries = (rand() % 3) + 1; maxTries > 0; maxTries--)
+
+            if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
             {
-                if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
-                {
-                    break;
-                }
-                else
-                {
-                    nanosleep(&moved, &remain);
-                }
-                if (maxTries == 0)
-                {
-                    debug("NO chance are remained");
+            }
+            else
+            {
+                if (getid(piece_shared_table, x, y) == FLAG)
                     return -2;
-                }
-                debug("Max Tries remained for piece %d are : %d", piece_attr.piece_id, maxTries);
+                else
+                    return 0;
             }
 
             if (getid(piece_shared_table, x, y) == EMPTY)
