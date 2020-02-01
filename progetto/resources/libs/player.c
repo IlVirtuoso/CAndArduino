@@ -106,9 +106,11 @@ void stand()
     captured.id = player_id;
     command.type = MASTERCHANNEL;
     debug("Player %c In Attesa di comandi", player_id);
-    if (!override)
+    if (override == 0)
+    {
         if (msgsnd(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
             error("Error in message send To Master", errno);
+    }
     msgrcv(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
@@ -128,7 +130,6 @@ void phase(int phase)
      */
     char mode = 2 /* ((1 + rand()) % ((2)) + 1) */;
     position pos;
-    override = 0;
     switch (phase)
     {
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
@@ -200,6 +201,7 @@ void phase(int phase)
         case 2:
             /* One flag for one piece*/
             bzero(&captured, sizeof(msg_cnt));
+            override = 1;
             for (i = 0; i < SO_NUM_P; i++)
             {
                 if (msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO) == -1)
@@ -220,11 +222,7 @@ void phase(int phase)
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             }
         }
-        master.type = MASTERCHANNEL;
-        master.id = player_id;
-        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
-            error("Error in message send", errno);
-        override = 1;
+        
         break;
 
     case 3:
@@ -241,12 +239,9 @@ void phase(int phase)
         break;
 
     case RESTARTED:
-        override = 0;
-        captured.id = player_id;
-        captured.type = MASTERCHANNEL;
-        debug("Sended master message, returning");
-        if (msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
-            error("Error in message send", errno);
+    override = 0;
+    debug("Restarting execution");
+    releaseSem(semglobal,PLAYER_SEM);
         break;
 
     default:
