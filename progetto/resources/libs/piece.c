@@ -130,7 +130,7 @@ void play(int command)
         break;
 
     case 3:
-        order.strategy = rand()%4;
+        order.strategy = rand() % 4;
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
@@ -150,7 +150,7 @@ void tactic()
     old_y = -1;
     override = 0;
     /* posizione provvisoria */ srand(clock() + getpid());
-    waitzeroSem(semglobal,MASTER_SEM); /*I pezzi partono solo dopo che il master ha azzerato quel semaforo*/
+    waitzeroSem(semglobal, MASTER_SEM); /*I pezzi partono solo dopo che il master ha azzerato quel semaforo*/
     while (piece_attr.n_moves > 0 && override == 0)
     {
         if (getRestartCell(piece_shared_table) == RESTARTED)
@@ -502,7 +502,7 @@ char cond(int x, int y)
 msg_cnt pappa_pia;
 int move(int x, int y)
 {
-    
+
     struct timespec moved, remain;
     int isValid = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
@@ -524,10 +524,10 @@ int move(int x, int y)
                 else
                     return 0;
             }
-
+            nanosleep(&moved, &remain);
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
-                nanosleep(&moved, &remain);
+
                 tab(piece_shared_table, x, y)->id = player_id;
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
@@ -539,7 +539,7 @@ int move(int x, int y)
             }
             else if (getid(piece_shared_table, x, y) == FLAG)
             {
-                
+
                 debug("Capturing x:%d, y:%d", x, y);
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
@@ -558,7 +558,7 @@ int move(int x, int y)
                 piece_attr.n_moves--;
                 tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
                 releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
-                bzero(&pappa_pia,sizeof(msg_cnt));
+                bzero(&pappa_pia, sizeof(msg_cnt));
                 debug("Restart");
             }
             return 1;

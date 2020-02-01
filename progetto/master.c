@@ -600,11 +600,11 @@ void phase3()
         alarm(SO_MAX_TIME);
         alarmset = 1;
     }
-    semctl(semglobal, MASTER_SEM, SETVAL, 0);
     while (numf > 0)
     {
 
         debug("Waiting for flag to be captured");
+        semctl(semglobal, MASTER_SEM, SETVAL, 0);
         if ((i = msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO)) == -1 || (i != (sizeof(msg_cnt) - sizeof(long))))
             error("Error in msgrcv for flags", errno);
         while (((captured.x < 0 || captured.x > SO_BASE) && (captured.y < 0 || captured.y > SO_ALTEZZA)) || captured.id < 'A' || captured.id > 'Z')
