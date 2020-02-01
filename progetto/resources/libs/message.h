@@ -66,8 +66,13 @@ typedef struct{
     int phase;
 }msg_cnt;
 
+typedef struct{
+    int playernum;
+    int phase;
+}mastermem;
+
 /*msgqueue globale*/
-int master_msgqueue;
+mastermem * masterStruct;
 
 /*chiave message queue*/
 int key_MO;

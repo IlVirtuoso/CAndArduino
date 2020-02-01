@@ -84,10 +84,10 @@ int piece()
 
 void getplay()
 {
-    order.phase = 0;
     order.type = getppid() * 10;
     debug("Waiting message from Player");
-    msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+    if (msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+        error("Error in message send", errno);
     msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
@@ -115,33 +115,26 @@ void play(int command)
         temp.y = piece_attr.y;
         temp.type = getppid() * 10;
         temp.pednum = piece_attr.piece_id;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
         break;
 
     case 2:
         target.x = order.x;
         target.y = order.y;
-        piece_attr.strategy = order.strategy;
+        piece_attr.strategy = rand() % 4;
         debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
         temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
         break;
 
     case 3:
-        if (order.strategy < 0)
-        {
-            srand(clock());
-            order.strategy = rand() % 4;
-        }
+        order.strategy = rand() % 4;
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
 
-    case RESTARTED:
-        debug("Restarting Round");
-        temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
-        break;
     default:
 
         break;
@@ -157,11 +150,12 @@ void tactic()
     old_y = -1;
     override = 0;
     /* posizione provvisoria */ srand(clock() + getpid());
+    waitzeroSem(semglobal, MASTER_SEM); /*I pezzi partono solo dopo che il master ha azzerato quel semaforo*/
     while (piece_attr.n_moves > 0 && override == 0)
     {
         if (getRestartCell(piece_shared_table) == RESTARTED)
         {
-            debug("Restarting ROund");
+            debug("Restarting Round");
             getplay();
             break;
         }
@@ -263,7 +257,6 @@ int goto_loc(int target_x, int target_y, char strategy)
     {
         if (getid(piece_shared_table, target_x, target_y) != FLAG)
             return 0;
-        ;
         switch (method)
         {
         /* Precedenza all'asse orizzontale */
@@ -506,11 +499,11 @@ char cond(int x, int y)
     return cond_free(x, y) && !cond_old(x, y);
 }
 
+msg_cnt pappa_pia;
 int move(int x, int y)
 {
-    msg_cnt captured;
+
     struct timespec moved, remain;
-    int maxTries;
     int isValid = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
     moved.tv_sec = 0;
@@ -520,26 +513,21 @@ int move(int x, int y)
     {
         if (isValid && pos_set)
         {
-            for (maxTries = rand() % 90 + 2; maxTries > 0; maxTries--)
+
+            if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
             {
-                if (reserveSemNoWait(sem_table, x * SO_BASE + y) == 0)
-                {
-                    break;
-                }
+            }
+            else
+            {
+                if (getid(piece_shared_table, x, y) == FLAG)
+                    return -2;
                 else
-                {
-                    nanosleep(&moved, &remain);
-                }
-                if (maxTries == 1)
-                {
-                    debug("NO chance are remained");
-                    return 2;
-                }
-                debug("Max Tries remained for piece %d are : %d", piece_attr.piece_id, maxTries);
+                    return 0;
             }
             nanosleep(&moved, &remain);
             if (getid(piece_shared_table, x, y) == EMPTY)
             {
+
                 tab(piece_shared_table, x, y)->id = player_id;
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
@@ -551,23 +539,26 @@ int move(int x, int y)
             }
             else if (getid(piece_shared_table, x, y) == FLAG)
             {
+
                 debug("Capturing x:%d, y:%d", x, y);
                 tmp_old_x = old_x = piece_attr.x;
                 tmp_old_y = old_y = piece_attr.y;
-                captured.type = MASTERCHANNEL;
-                captured.x = x;
-                captured.y = y;
-                captured.id = player_id;
-                captured.pednum = getpid();
-                captured.ask = player_id - 'A';
-                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                pappa_pia.type = MASTERCHANNEL;
+                pappa_pia.x = x;
+                pappa_pia.y = y;
+                pappa_pia.id = player_id;
+                pappa_pia.pednum = getpid();
+                pappa_pia.ask = player_id - 'A';
                 debug("Sended message to master");
+                if (msgsnd(master_msgqueue, &pappa_pia, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                    error("Error in message send", errno);
                 msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
                 piece_attr.x = x;
                 piece_attr.y = y;
                 piece_attr.n_moves--;
                 tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
                 releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
+                bzero(&pappa_pia, sizeof(msg_cnt));
                 debug("Restart");
             }
             return 1;

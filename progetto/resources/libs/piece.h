@@ -43,6 +43,8 @@ void piece_cleaner();
 /*variabile di controllo, dice se ha o meno accesso a una cella della tabella*/
 int hasaccess;
 
+int master_msgqueue;
+
 /*segmento di memoria condivisa della table*/
 cell * piece_shared_table;
 

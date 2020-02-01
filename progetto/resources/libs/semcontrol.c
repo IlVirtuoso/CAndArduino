@@ -51,12 +51,9 @@ int initsemAvailable(int semId, int semNum)
 int reserveSemNoWait(int semId, int semNum)
 {
     struct sembuf sops;
-    struct timespec moved, remain;
-    moved.tv_nsec = 10;
-    moved.tv_sec = 0;
-    nanosleep(&moved,&remain);
+    struct timespec timeout;
+    timeout.tv_nsec = 10000000;
     sops.sem_num = semNum;
     sops.sem_op = -1;
-    sops.sem_flg = IPC_NOWAIT;
-    return semop(semId, &sops, 1);
+    return semtimedop(semId,&sops,1,&timeout);
 }

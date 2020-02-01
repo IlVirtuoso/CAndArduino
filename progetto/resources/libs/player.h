@@ -75,6 +75,7 @@
 typedef struct{
     pid_t piecepid;
     int piece_id;
+    int moves;
     int x;
     int y;
 }piece_type;
@@ -130,6 +131,8 @@ int master_msgqueue;
 int playernum;
 
 int semglobal;
+
+int masterKey;
 
 int semplayer;
 

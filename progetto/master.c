@@ -146,6 +146,7 @@ vexillum *vex;
 
 /* stampa la tabella del punteggio */
 void stamp_score(score_table *t);
+void stamp_remained(vexillum *vex);
 
 /* Genera il numero di bandierine*/
 int getNumflag();
@@ -159,7 +160,7 @@ int flagcreated = 0;
 struct sembuf sem;
 
 /*specifica i round da fare*/
-int rounds;
+int rounds = 1;
 
 int actual_round;
 
@@ -169,6 +170,7 @@ int numf;
 
 FILE *cfg;
 
+int override;
 int main(int argc, char *argv[])
 {
     int opt = 0;
@@ -177,6 +179,7 @@ int main(int argc, char *argv[])
     processSign = "Master";
     cleaner = clean;
     placed = 0;
+    override = 0;
 
     /*Region: inizializzazione e rilevamento argomenti*/
     while ((opt = getopt(argc, argv, ":if:chvdw")) != -1)
@@ -193,7 +196,6 @@ int main(int argc, char *argv[])
         case 'v':
             verbosity = 1;
             break;
-        
 
         case 'd':
             isDebug = 1;
@@ -228,8 +230,6 @@ int main(int argc, char *argv[])
     st->rounds = 0;
     playergen(SO_NUM_G);
     round(NORMAL);
-    while (1)
-        round(RESTARTED);
     logg("End Of Execution");
     logg("Stopped at %s", __TIME__);
     cleaner();
@@ -254,6 +254,7 @@ void handler(int signum)
         logg("Tempo Esaurito, chiusura");
         display(master_shared_table);
         stamp_score(st);
+        stamp_remained(vex);
         clean();
         break;
 
@@ -271,8 +272,11 @@ void clean()
     }
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
+    shmdt(masterStruct);
     shmctl(table, IPC_RMID, NULL);
+    shmctl(masterKey, IPC_RMID, NULL);
     semctl(semglobal, 0, IPC_RMID);
+
     for (i = 0; i < sem_num; i++)
     {
         semctl(semglobal, i, IPC_RMID);
@@ -281,7 +285,6 @@ void clean()
     msgctl(master_msgqueue, IPC_RMID, NULL);
     free(st);
     free(vex);
-
     logg("All done BBYEEE");
     exit(0);
 }
@@ -305,7 +308,7 @@ void stamp_score(score_table *t)
 {
     int i;
     printf("Round: %d\n", st->rounds);
-    printf("Flags Remains: %d\n",numf);
+    printf("Flags Remains: %d\n", numf);
     printf("PLAYER         SCORE\n");
     for (i = 0; i < SO_NUM_G; i++)
     {
@@ -367,8 +370,9 @@ void sem_init()
     }
 }
 
+int masterKey;
+mastermem *masterStruct;
 int master_msgqueue;
-
 void shared_table_init()
 {
     int x, y;
@@ -391,7 +395,6 @@ void shared_table_init()
     {
         error("Errore nella creazione della msgqueue master", errno);
     }
-
     logg("Memoria Condivisa Inizializzata");
 }
 
@@ -497,12 +500,14 @@ void round(int phase)
     switch (phase)
     {
     case NORMAL:
+        semctl(semglobal, MASTER_SEM, SETVAL, 1);
         phase1();
         phase2();
         phase3();
         break;
 
     case RESTARTED:
+        semctl(semglobal, MASTER_SEM, SETVAL, 1);
         phase2();
         phase3();
         break;
@@ -511,22 +516,26 @@ void round(int phase)
         break;
     }
 }
+msg_cnt captured;
+msg_cnt master;
 
 void phase1()
 {
+
     int i, k;
     /*msg_cnt captured;*/
     msg_cnt master;
     /*Region Phase-1:flag*/
-    rounds++;
+    printf("Phase 1");
 
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 1;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Failed to 1 send message", errno);
+        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
     for (i = 0; i < SO_NUM_P; i++)
@@ -534,8 +543,9 @@ void phase1()
         for (k = 0; k < SO_NUM_G; k++)
         {
             master.type = st->pid[k];
-            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+            if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                error("Failed to 2 send message", errno);
+            msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
     }
     numflag = getNumflag();
@@ -548,104 +558,122 @@ void phase1()
 
 void phase2()
 {
+
     int i;
+    printf("Phase 2");
     /*msg_cnt captured;*/
-    msg_cnt master;
+
     /*Region Phase-2:Indication*/
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        if (!override)
+            msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 2;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+        {
+            debug("Size: %d", sizeof(master));
+            error("Failed message 3 send", errno);
+        }
     }
 }
 
 int alarmset;
 void phase3()
 {
-    msg_cnt captured;
-    msg_cnt master;
     int i, k;
-    setRestartCell(master_shared_table, NORMAL);
+    printf("Phase 3\n");
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        master.phase = 3;
+        master.ask = 1;
+        master.id = st->pid[i];
+        master.type = st->pid[i];
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+        {
+            debug("Size: %d", sizeof(master));
+            error("Error in message  4 send", errno);
+        }
+    }
     if (!alarmset)
     {
         alarm(SO_MAX_TIME);
         alarmset = 1;
     }
-
-    for (i = 0; i < SO_NUM_G; i++)
-    {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
-        master.phase = 3;
-        master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
-    }
-
     while (numf > 0)
     {
-        /**
-         * implementare controllo su bandiere già catturate
-         */
-        debug("Waiting for piece message");
-        bzero(&captured, sizeof(msg_cnt));
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+
+        debug("Waiting for flag to be captured");
+        semctl(semglobal, MASTER_SEM, SETVAL, 0);
+        if ((i = msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO)) == -1 || (i != (sizeof(msg_cnt) - sizeof(long))))
+            error("Error in msgrcv for flags", errno);
+        while (((captured.x < 0 || captured.x > SO_BASE) && (captured.y < 0 || captured.y > SO_ALTEZZA)) || captured.id < 'A' || captured.id > 'Z')
+        {
+            logg("Bad message send from %d %d %d %d %d %d %d %d", captured.pednum, captured.id, captured.ask, captured.phase, captured.x, captured.y, captured.strategy);
+            error("Bad message Flag", errno);
+        }
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         debug("Bandiere Rimaste %d", numf);
         if (captured.x != -1 && captured.y != -1)
         {
-            for (k = 0; k < numf; k++)
+            for (k = 0; k < numflag; k++)
             {
-                if (captured.x == vex[k].x && captured.y == vex[k].y)
+
+                if (captured.x == vex[k].x && captured.y == vex[k].y && vex[k].taken == 0)
                 {
                     /***
                      * Le Pedine non catturano tutte le bandiere
                      */
+                    vex[k].taken = 1;
+                    numf--;
                     debug("Bandiera %d rimossa", k);
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
-                    tab(master_shared_table, captured.x, captured.y)->id = captured.id;
                     st->score[captured.ask] = st->score[captured.ask] + vex[k].score;
-                    numf--;
                     if (numf == 0)
                         setRestartCell(master_shared_table, RESTARTED);
                     debug("Success");
+                    debug("Send message to piece %d", captured.pednum);
+                    tab(master_shared_table, captured.x, captured.y)->id = captured.id;
+                    captured.type = captured.pednum;
+                    if (msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                        error("Error in message 5 send", errno);
                 }
             }
         }
-        debug("Send message to piece %d", captured.pednum);
-        captured.type = captured.pednum;
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
     }
     restart();
 }
 
 void restart()
 {
-    msg_cnt restart;
-    int i;
-    display(master_shared_table);
-    for (i = 0; i < numf; i++)
-    {
-        vex[i].score = -1;
-        vex[i].x = -1;
-        vex[i].y = -1;
-    }
+    debug("Restarting Tha Game");
     st->rounds++;
-    debug("Restarting");
+    alarm(0);
+    alarmset = 0;
+    while (msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, IPC_NOWAIT) != -1)
+    {
+    }
+    display(master_shared_table);
+    stamp_score(st);
     numflag = getNumflag();
     numf = numflag;
     getVex(numflag);
-    stamp_score(st);
-    alarm(0);
-    alarmset = 0;
-    for (i = 0; i < SO_NUM_G; i++)
-    {
-        restart.phase = RESTARTED;
-        restart.type = st->pid[i];
-        msgsnd(master_msgqueue, &restart, sizeof(msg_cnt) - sizeof(long), MSG_NOERROR);
-        msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_NOERROR);
+    display(master_shared_table);
+    override = 1;
+    setRestartCell(master_shared_table, NORMAL);
+    semctl(semglobal, MASTER_SEM, SETVAL, 1);
+    round(RESTARTED);
+}
+
+void stamp_remained(vexillum *vex)
+{
+    int i;
+    if(numf > 0){
+        printf("Flag left; \n");
+        for(i = 0; i < numflag; i++){
+            if(vex[i].taken == 0)
+            printf("X:%d, Y:%d  left\n",vex[i].x,vex[i].y);
+        }
     }
 }
 

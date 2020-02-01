@@ -22,10 +22,7 @@ void placeflag(cell *shared_table, int x, int y)
 
 void removeflag(cell *shared_table, int x, int y)
 {
-    if (strcmp(processSign, "Master"))
-    {
-        tab(shared_table, x, y)->id = EMPTY;
-    }
+    tab(shared_table, x, y)->id = EMPTY;
 }
 
 void table_start()
@@ -70,6 +67,8 @@ position search(cell *shared_table, int b, int h, char target, int itera)
     pos.y = h;
     while (n < (SO_BASE * SO_ALTEZZA))
     {
+        if (getRestartCell(shared_table) == RESTARTED)
+            break;
         if (z == 0 && sign)
         {
             b++;
@@ -147,11 +146,13 @@ int reachable(int moves, int x, int y, int x_targ, int y_targ)
     }
 }
 
-void setRestartCell(cell * shared_table, int id){
+void setRestartCell(cell *shared_table, int id)
+{
     (&(*(shared_table + SO_BASE * SO_ALTEZZA + 1)))->id = id;
 }
 
-char getRestartCell(cell* shared_table){
+char getRestartCell(cell *shared_table)
+{
     return (&(*(shared_table + SO_BASE * SO_ALTEZZA + 1)))->id;
 }
 /*End Of Life*/
