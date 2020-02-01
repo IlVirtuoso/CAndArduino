@@ -679,7 +679,7 @@ void stamp_remained(vexillum *vex)
 
 void manual()
 {
-    printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master  -c <config.sc> -v -d \ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n-r int round, specifica quanti round si vuole che il gioco faccia\n");
+    printf("Gioco A pedine IDLE sviluppato da Mattia Borrelli e Ielacqua Matteo(DEV_SANS):\n\nEsecuzione: $master  -c <conf.config> -v -d \ncommand:\n-d attiva i messaggi di DEBUG\n-v attiva modalità verbosa !!! Rischio di console flooding\n");
 }
 
 /*End Region*/
