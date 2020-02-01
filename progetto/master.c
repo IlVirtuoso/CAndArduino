@@ -182,13 +182,13 @@ int main(int argc, char *argv[])
     override = 0;
 
     /*Region: inizializzazione e rilevamento argomenti*/
-    while ((opt = getopt(argc, argv, ":if:chvdw")) != -1)
+    while ((opt = getopt(argc, argv, ":if:c:hvdw")) != -1)
     {
         switch (opt)
         {
         case 'c':
             /*cambia conf.config con optarg nella versione definitiva*/
-            cfg = fopen("conf.config", "r+");
+            cfg = fopen(optarg, "r+");
             ParseFile(cfg);
             fclose(cfg);
             break;
