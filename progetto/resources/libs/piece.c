@@ -84,10 +84,10 @@ int piece()
 
 void getplay()
 {
-    order.phase = 0;
     order.type = getppid() * 10;
     debug("Waiting message from Player");
-    msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+    if (msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+        error("Error in message send", errno);
     msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
     play(order.phase);
@@ -115,7 +115,8 @@ void play(int command)
         temp.y = piece_attr.y;
         temp.type = getppid() * 10;
         temp.pednum = piece_attr.piece_id;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
         break;
 
     case 2:
@@ -124,7 +125,8 @@ void play(int command)
         piece_attr.strategy = order.strategy;
         debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
         temp.type = getppid() * 10;
-        msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
         break;
 
     case 3:
@@ -132,7 +134,7 @@ void play(int command)
         debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
         tactic();
         break;
-        
+
     default:
 
         break;
@@ -545,8 +547,9 @@ int move(int x, int y)
                 captured.id = player_id;
                 captured.pednum = getpid();
                 captured.ask = player_id - 'A';
-                msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
                 debug("Sended message to master");
+                if (msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                    error("Error in message send", errno);
                 msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
                 piece_attr.x = x;
                 piece_attr.y = y;

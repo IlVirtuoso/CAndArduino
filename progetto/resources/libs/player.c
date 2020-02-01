@@ -26,6 +26,7 @@ int piececreated = 0;
 struct sembuf sem;
 
 msg_cnt master;
+msg_cnt captured;
 int player()
 {
     int i;
@@ -97,24 +98,28 @@ int player()
     return 0;
 }
 
+int override;
 void stand()
 {
     msg_cnt command;
     command.phase = 0;
+    captured.id = player_id;
     command.type = MASTERCHANNEL;
     debug("Player %c In Attesa di comandi", player_id);
-    msgsnd(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+    if (!override)
+        if (msgsnd(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send To Master", errno);
     msgrcv(master_msgqueue, &command, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
     debug("Comando ricevuto: Fase %d iniziata dal Player %c", command.phase, player_id);
     phase(command.phase);
 }
 
-int override;
 void phase(int phase)
 {
-    msg_cnt captured;
+
     msg_cnt master;
-    int i, j, z, itera = 1;
+    int i;
+    /**int j, z, itera = 1;*/
 
     /**
      * la modalità 1 per qualche ragione manda tutto in palla
@@ -128,7 +133,8 @@ void phase(int phase)
     {
     case 1: /*dice ad ogni pezzo di posizionarsi sulla scacchiera*/
         master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
         for (i = 0; i < SO_NUM_P; i++)
         {
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
@@ -139,12 +145,14 @@ void phase(int phase)
             captured.type = pieces[i].piecepid;
             captured.phase = 1;
             captured.pednum = i;
-            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            if (msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                error("Error in message send", errno);
             msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             pieces[i].x = captured.x;
             pieces[i].y = captured.y;
             master.type = MASTERCHANNEL;
-            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                error("Error in message send", errno);
         }
 
         break;
@@ -152,8 +160,9 @@ void phase(int phase)
     case 2:
         switch (mode)
         {
+        /*
         case 1:
-            /* One piece for one flag */
+             One piece for one flag 
             for (i = 0; i < SO_BASE; i++)
             {
                 for (j = 0; j < SO_ALTEZZA; j++)
@@ -163,7 +172,8 @@ void phase(int phase)
                         do
                         {
                             pos = search(player_shared_table, i, j, player_id, itera);
-                            for (z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++);
+                            for (z = 0; z < SO_NUM_P && (pieces[z].x != pos.x && pieces[z].y != pos.y); z++)
+                                ;
                             if (reachable(SO_N_MOVES, i, j, pos.x, pos.y) > 0)
                             {
                                 itera = 0;
@@ -173,7 +183,8 @@ void phase(int phase)
                                 captured.strategy = rand() % 4;
                                 captured.x = i;
                                 captured.y = j;
-                                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                                if (msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                                    error("Error in message send", errno);
                                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
                             }
                             else
@@ -185,11 +196,14 @@ void phase(int phase)
                 }
             }
             break;
+        */
         case 2:
             /* One flag for one piece*/
+            bzero(&captured, sizeof(msg_cnt));
             for (i = 0; i < SO_NUM_P; i++)
             {
-                msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
+                if (msgrcv(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO) == -1)
+                    error("Error in message rcv", errno);
                 pos = search(player_shared_table, pieces[i].x, pieces[i].y, FLAG, 1);
                 if (pos.x != pieces[i].x && pos.y != pieces[i].y)
                     debug("Flag Found for piece: %d, at X:%d Y:%d", i, pos.x, pos.y);
@@ -201,16 +215,19 @@ void phase(int phase)
                 captured.strategy = rand() % 4;
                 captured.x = pos.x;
                 captured.y = pos.y;
-                msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+                if (msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                    error("Error in message send", errno);
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             }
         }
         master.type = MASTERCHANNEL;
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        master.id = player_id;
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
+        override = 1;
         break;
 
     case 3:
-        override = 0;
 
         for (i = 0; i < SO_NUM_P; i++)
         {
@@ -218,15 +235,18 @@ void phase(int phase)
             captured.pednum = i;
             captured.phase = 3;
             captured.type = pieces[i].piecepid;
-            msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            if (msgsnd(key_MO, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                error("Error in message send", errno);
         }
         break;
 
     case RESTARTED:
-
+        override = 0;
+        captured.id = player_id;
         captured.type = MASTERCHANNEL;
         debug("Sended master message, returning");
-        msgsnd(master_msgqueue,&captured,sizeof(msg_cnt) - sizeof(long),MSG_INFO);
+        if (msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
         break;
 
     default:
@@ -269,7 +289,6 @@ void player_handler(int signum)
     case SIGINT:
         player_clean();
         break;
-
 
     case SIGTACTIC:
         /*dare tattica alla pedina che la richiede*/

@@ -504,6 +504,7 @@ void round(int phase)
         break;
 
     case RESTARTED:
+        setRestartCell(master_shared_table, NORMAL);
         phase2();
         phase3();
         break;
@@ -526,7 +527,8 @@ void phase1()
         msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 1;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Failed to send message", errno);
         msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 
@@ -535,7 +537,8 @@ void phase1()
         for (k = 0; k < SO_NUM_G; k++)
         {
             master.type = st->pid[k];
-            msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+            if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                error("Failed to send message", errno);
             msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         }
     }
@@ -558,7 +561,8 @@ void phase2()
         msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 2;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Failed message send", errno);
         msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
     }
 }
@@ -569,19 +573,20 @@ void phase3()
     msg_cnt captured;
     msg_cnt master;
     int i, k;
-    setRestartCell(master_shared_table, NORMAL);
     if (!alarmset)
     {
         alarm(SO_MAX_TIME);
         alarmset = 1;
     }
 
+
+
     for (i = 0; i < SO_NUM_G; i++)
     {
-        msgrcv(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
         master.phase = 3;
         master.type = st->pid[i];
-        msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
+        if (msgsnd(master_msgqueue, &master, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+            error("Error in message send", errno);
     }
 
     while (numf > 0)
@@ -591,7 +596,13 @@ void phase3()
          */
         debug("Waiting for flag to be captured");
         bzero(&captured, sizeof(msg_cnt));
-        msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO);
+        if ((i = msgrcv(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, MSG_INFO)) == -1 || (i != (sizeof(msg_cnt) - sizeof(long))))
+            error("Error in msgrcv for flags", errno);
+        while (((captured.x < 0 || captured.x > SO_BASE) && (captured.y < 0 || captured.y > SO_ALTEZZA)) || captured.id < 'A' || captured.id > 'Z')
+        {
+            logg("Bad message send from %d %d %d %d %d %d %d %d", captured.pednum,captured.id, captured.ask, captured.phase, captured.x, captured.y, captured.strategy);
+            error("Bad message",errno);
+        }
         debug("Bandiera Catturata da %c X:%d Y:%d", captured.id, captured.x, captured.y);
         debug("Bandiere Rimaste %d", numf);
         if (captured.x != -1 && captured.y != -1)
@@ -599,11 +610,12 @@ void phase3()
             for (k = 0; k < numflag; k++)
             {
 
-                if (captured.x == vex[k].x && captured.y == vex[k].y)
+                if (captured.x == vex[k].x && captured.y == vex[k].y && vex[k].taken == 0)
                 {
                     /***
                      * Le Pedine non catturano tutte le bandiere
                      */
+                    vex[k].taken = 1;
                     numf--;
                     debug("Bandiera %d rimossa", k);
                     removeflag(master_shared_table, vex[k].x, vex[k].y);
@@ -611,12 +623,13 @@ void phase3()
                     if (numf == 0)
                         setRestartCell(master_shared_table, RESTARTED);
                     debug("Success");
+                    debug("Send message to piece %d", captured.pednum);
+                    captured.type = captured.pednum;
+                    if (msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
+                        error("Error in message send", errno);
                 }
             }
         }
-        debug("Send message to piece %d", captured.pednum);
-        captured.type = captured.pednum;
-        msgsnd(master_msgqueue, &captured, sizeof(msg_cnt) - sizeof(long), MSG_INFO);
     }
     restart();
 }
@@ -625,6 +638,7 @@ void restart()
 {
     msg_cnt restart;
     int i;
+    alarm(0);
     printf("\n\n\n");
     display(master_shared_table);
     stamp_score(st);
@@ -633,13 +647,13 @@ void restart()
         vex[i].score = -1;
         vex[i].x = -1;
         vex[i].y = -1;
+        vex[i].taken = 0;
     }
     st->rounds++;
     debug("Restarting");
     numflag = getNumflag();
     numf = numflag;
     getVex(numflag);
-    alarm(0);
     alarmset = 0;
     for (i = 0; i < SO_NUM_G; i++)
     {
