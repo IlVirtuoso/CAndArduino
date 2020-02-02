@@ -175,15 +175,6 @@ void tactic()
                 getplay();
             }
         }
-        /* Valutazione per risparmio mosse */
-        if (piece_attr.n_moves > (SO_N_MOVES / 2))
-        {
-            if (reachable((piece_attr.n_moves / 2), piece_attr.x, piece_attr.y, target.x, target.y) <= 0)
-            {
-                debug("Warning too many moves will be used for taking this flag, stop");
-                getplay();
-            }
-        }
 
         result = goto_loc(target.x, target.y, strategy);
         switch (result)
@@ -496,7 +487,7 @@ char cond_old(int x, int y)
 /* Verifica se la cella bersaglio non eccede i limiti della tabella */
 char cond_valid(int x, int y)
 {
-    return (x > -1 && x < SO_BASE) && (y > -1 && y < SO_ALTEZZA);
+    return (y > -1 && y < SO_BASE) && (x > -1 && x < SO_ALTEZZA);
 }
 
 /* Verifica che la cella bersaglio sia ottimale per lo spostamento */

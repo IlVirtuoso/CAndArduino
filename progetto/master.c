@@ -481,8 +481,8 @@ void getVex(int numFlag)
         }
         while (!positionComplete)
         {
-            x = (0 + rand()) % (SO_BASE);
-            y = (0 + rand()) % (SO_ALTEZZA);
+            x = (0 + rand()) % (SO_ALTEZZA);
+            y = (0 + rand()) % (SO_BASE);
             if ((getid(master_shared_table, x, y)) == EMPTY)
             {
                 vex[i].x = x;

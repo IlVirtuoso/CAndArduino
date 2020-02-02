@@ -68,7 +68,7 @@ position search(cell *shared_table, int b, int h, char target, int itera)
     while (n < (SO_BASE * SO_ALTEZZA))
     {
         if (getRestartCell(shared_table) == RESTARTED)
-            break;
+            return pos;
         if (z == 0 && sign)
         {
             b++;
@@ -104,9 +104,9 @@ position search(cell *shared_table, int b, int h, char target, int itera)
             y = 0;
         }
 
-        if (b >= 0 && b < SO_BASE)
+        if (b >= 0 && b < SO_ALTEZZA)
         {
-            if (h >= 0 && h < SO_ALTEZZA)
+            if (h >= 0 && h < SO_BASE)
             {
                 if (getid(shared_table, b, h) == target)
                 {
