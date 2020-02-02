@@ -27,15 +27,33 @@ struct sembuf sem;
 
 msg_cnt master;
 msg_cnt captured;
+
+int sharedStats;
+void stamp_metrics();
 int player()
 {
     int i;
     processSign = "Players";
-    pieces = (piece_type *)malloc(sizeof(piece_type) * SO_NUM_P);
     cleaner = player_clean;
     playernum = player_id - 65;
     sprintf(filename, "Player %c.log", player_id);
     logg("Player Started At %s", __TIME__);
+    if ((sharedStats = shmget(getpid(), sizeof(attributes) * SO_NUM_P, IPC_CREAT | 0666)) > 0)
+    {
+        debug("Shared attributes getted");
+    }
+    else
+    {
+        error("Error while getting shared attributes", errno);
+    }
+    if ((pieces = (attributes *)shmat(sharedStats, NULL, 0)) != (void *)-1)
+    {
+        debug("Inizializzazione completata");
+    }
+    else
+    {
+        error("Error while attaching shard memory", errno);
+    }
     if ((semglobal = semget(getppid(), semnum, 0600)) == -1)
     {
         error("errore nel get del semaforo master", errno);
@@ -222,7 +240,7 @@ void phase(int phase)
                 msgrcv(key_MO, NULL, sizeof(msg_cnt) - sizeof(long), getpid() * 10, MSG_INFO);
             }
         }
-        
+
         break;
 
     case 3:
@@ -239,9 +257,9 @@ void phase(int phase)
         break;
 
     case RESTARTED:
-    override = 0;
-    debug("Restarting execution");
-    releaseSem(semglobal,PLAYER_SEM);
+        override = 0;
+        debug("Restarting execution");
+        releaseSem(semglobal, PLAYER_SEM);
         break;
 
     default:
@@ -266,7 +284,7 @@ int piecegen(int numpieces)
         else
         {
             /*pieces*/
-            piece_attr.piece_id = i;
+            piece_id = i;
             if (piece() == -1)
             {
                 return -1;
@@ -282,6 +300,7 @@ void player_handler(int signum)
     switch (signum)
     {
     case SIGINT:
+        stamp_metrics();
         player_clean();
         break;
 
@@ -312,4 +331,16 @@ void player_clean()
     shmdt(player_shared_table);
     msgctl(key_MO, IPC_RMID, NULL);
     exit(0);
+}
+
+long int utilized_moves;
+
+void stamp_metrics()
+{
+    int i;
+    for (i = 0; i < SO_NUM_P; i++)
+    {
+        utilized_moves = utilized_moves + (SO_N_MOVES - pieces[i].n_moves);
+    }
+    tab(player_shared_table, 0, playernum)->player_n_moves = utilized_moves;
 }

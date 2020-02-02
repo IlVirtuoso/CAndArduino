@@ -61,6 +61,7 @@ typedef struct
     char id;
     int isFull;
     int flag;
+    long  int player_n_moves;
 } cell;
 
 typedef struct

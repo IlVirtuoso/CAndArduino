@@ -72,15 +72,8 @@
 /* Lunghezza dei messaggi per controllo pedine*/
 #define CONTROL_SIZE 10
 
-typedef struct{
-    pid_t piecepid;
-    int piece_id;
-    int moves;
-    int x;
-    int y;
-}piece_type;
 
-piece_type * pieces;
+attributes * pieces;
 
 /*struttura dei segnali del player*/
 struct sigaction player_signal;

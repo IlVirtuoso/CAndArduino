@@ -23,15 +23,23 @@
 /*funzione che inizializza la pedina*/
 int piece();
 
-struct{
+typedef struct{
     int piece_id; /*id del pezzo, tipicamente è la sua posizione nell'array dei pezzi*/
     int x;
     int y; /*posizione della pedina*/ 
     long n_moves; /* numero mosse disponibili*/
     int strategy;
-}piece_attr;
+    pid_t piecepid;
+}attributes;
 
+int sharedStats;
+
+
+attributes * piece_attr;
+attributes * all_pieces;
 char player_id;
+
+int piece_id;
 
 /*messagequeue con il player*/
 int player_msgqueue;

@@ -144,9 +144,10 @@ void phase3();
 /*puntatore alla struttura vexillum per le bandiere*/
 vexillum *vex;
 
-/* stampa la tabella del punteggio */
+/* stampa la tabella del punteggio, le bandiere rimaste e le statistiche */
 void stamp_score(score_table *t);
 void stamp_remained(vexillum *vex);
+void stamp_statistics(score_table *t);
 
 /* Genera il numero di bandierine*/
 int getNumflag();
@@ -161,8 +162,6 @@ struct sembuf sem;
 
 /*specifica i round da fare*/
 int rounds = 1;
-
-int actual_round;
 
 int numflag;
 
@@ -187,8 +186,7 @@ int main(int argc, char *argv[])
         switch (opt)
         {
         case 'c':
-            /*cambia conf.config con optarg nella versione definitiva*/
-            
+
             cfg = fopen(optarg, "r+");
             ParseFile(cfg);
             fclose(cfg);
@@ -221,10 +219,6 @@ int main(int argc, char *argv[])
     init();
 
     logg("Inizializzazione Memoria Condivisa");
-    /**
-     * Region: Shared Memory Set & semaphores
-     * TODO: c'è un problema con segmenti di shared memory che rimangono attivi, bisogna capire perchè
-    */
     sem_init();
     table_start();
     shared_table_init();
@@ -271,6 +265,7 @@ void clean()
     {
         clean_process();
     }
+    stamp_statistics(st);
     logg("MASTER_CLEANER_LAUNCHED");
     shmdt(master_shared_table);
     shmdt(masterStruct);
@@ -317,8 +312,6 @@ void stamp_score(score_table *t)
     }
 }
 
-/*Master methods*/
-
 void init()
 {
     int i;
@@ -350,6 +343,7 @@ void init()
     /*End-Region*/
 }
 
+/*Identificatori per gli array di semafori*/
 int semglobal;
 int semnum;
 
@@ -371,8 +365,6 @@ void sem_init()
     }
 }
 
-int masterKey;
-mastermem *masterStruct;
 int master_msgqueue;
 void shared_table_init()
 {
@@ -517,6 +509,8 @@ void round(int phase)
         break;
     }
 }
+
+/*Strutture per memorizzare messaggi provenienti dai processi player */
 msg_cnt captured;
 msg_cnt master;
 
@@ -579,6 +573,7 @@ void phase2()
     }
 }
 
+/*variabile che dice dichiara il set dell'allarme*/
 int alarmset;
 void phase3()
 {
@@ -667,14 +662,37 @@ void restart()
     round(RESTARTED);
 }
 
+double r_mosserem_mosseut;
+double r_mosse_punti;
+double punti_totaltime;
+long int total_moves;
+void stamp_statistics(score_table * t)
+{
+    int i;
+    total_moves = SO_N_MOVES*SO_NUM_P;
+    printf("Mosse Totali Disponibili: %ld \n",total_moves);
+    for (i = 0; i < SO_NUM_G; i++)
+    {
+        r_mosserem_mosseut = tab(master_shared_table,0,i)->player_n_moves / total_moves;
+        r_mosse_punti = tab(master_shared_table,0,i)->player_n_moves  / t->score[i];
+        printf("Player: %c \n",i + 'A');
+        printf("Mosse Utilizzate : %ld \n", tab(master_shared_table,0,i)->player_n_moves);
+        printf("Mosse Utilizzate / Mosse Totali: %4.10f \n",r_mosserem_mosseut);
+        printf("Mosse Utilizzate / Punti: %4.2f \n",r_mosse_punti);
+
+    }
+}
+
 void stamp_remained(vexillum *vex)
 {
     int i;
-    if(numf > 0){
+    if (numf > 0)
+    {
         printf("Flag left: \n");
-        for(i = 0; i < numflag; i++){
-            if(vex[i].taken == 0)
-            printf("X:%d, Y:%d  left\n",vex[i].x,vex[i].y);
+        for (i = 0; i < numflag; i++)
+        {
+            if (vex[i].taken == 0)
+                printf("X:%d, Y:%d  left\n", vex[i].x, vex[i].y);
         }
     }
 }

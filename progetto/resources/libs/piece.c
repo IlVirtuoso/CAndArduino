@@ -40,6 +40,14 @@ int piece()
     {
         error("errore nel semaforo", ECONNABORTED);
     }
+    if ((all_pieces = (attributes *)shmat(sharedStats, NULL, 0)) != (void *)-1)
+    {
+        debug("Pieces ready to fly");
+    }
+    else
+    {
+        error("Unexpected smash while getting my attributes",errno);
+    }
     if ((sem_table = semget(sem_table_key, SO_BASE * SO_ALTEZZA, 0600)) == -1)
     {
         error("Error nella creazione della tabella dei semafori", errno);
@@ -52,7 +60,8 @@ int piece()
     {
         logg("Tabella semafori iniziata");
     }
-    logg("Piece %d of player %c Started At %s", piece_attr.piece_id, player_id, __TIME__);
+    piece_attr = &(*(all_pieces + piece_id));
+    logg("Piece %d of player %c Started At %s", piece_attr->piece_id, player_id, __TIME__);
     cleaner = piece_cleaner;
     logg("Setup Struttura dei segnali");
     bzero(&piece_mask, sizeof(piece_mask));
@@ -72,7 +81,7 @@ int piece()
     {
         error("Errore nell'inizializzare la table per il pezzo", EKEYREJECTED);
     }
-    piece_attr.n_moves = SO_N_MOVES;
+    piece_attr->n_moves = SO_N_MOVES;
     while (1)
     {
         getplay();
@@ -89,7 +98,7 @@ void getplay()
     if (msgsnd(key_MO, &order, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
         error("Error in message send", errno);
     msgrcv(key_MO, &order, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
-    debug("orders received piece %d phase %d", piece_attr.piece_id, order.phase);
+    debug("orders received piece %d phase %d", piece_attr->piece_id, order.phase);
     play(order.phase);
 }
 
@@ -108,13 +117,13 @@ void play(int command)
             order.x = rand() % SO_ALTEZZA;
             order.y = rand() % SO_BASE;
         }
-        logg("Pezzo %d del player %c in X:%d Y:%d", piece_attr.piece_id, player_id, piece_attr.x, piece_attr.y);
+        logg("Pezzo %d del player %c in X:%d Y:%d", piece_attr->piece_id, player_id, piece_attr->x, piece_attr->y);
         pos_set = 1;
-        piece_attr.n_moves = SO_N_MOVES;
-        temp.x = piece_attr.x;
-        temp.y = piece_attr.y;
+        piece_attr->n_moves = SO_N_MOVES;
+        temp.x = piece_attr->x;
+        temp.y = piece_attr->y;
         temp.type = getppid() * 10;
-        temp.pednum = piece_attr.piece_id;
+        temp.pednum = piece_attr->piece_id;
         if (msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
             error("Error in message send", errno);
         break;
@@ -122,8 +131,8 @@ void play(int command)
     case 2:
         target.x = order.x;
         target.y = order.y;
-        piece_attr.strategy = rand() % 4;
-        debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr.piece_id, target.x, target.y);
+        piece_attr->strategy = rand() % 4;
+        debug("Target Acquired, Piece %d To X:%d Y:%d", piece_attr->piece_id, target.x, target.y);
         temp.type = getppid() * 10;
         if (msgsnd(key_MO, &temp, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
             error("Error in message send", errno);
@@ -131,7 +140,7 @@ void play(int command)
 
     case 3:
         order.strategy = rand() % 4;
-        debug("Piece %d Start moving, with tactic %d", piece_attr.piece_id, order.strategy);
+        debug("Piece %d Start moving, with tactic %d", piece_attr->piece_id, order.strategy);
         tactic();
         break;
 
@@ -151,7 +160,7 @@ void tactic()
     override = 0;
     /* posizione provvisoria */ srand(clock() + getpid());
     waitzeroSem(semglobal, MASTER_SEM); /*I pezzi partono solo dopo che il master ha azzerato quel semaforo*/
-    while (piece_attr.n_moves > 0 && override == 0)
+    while (piece_attr->n_moves > 0 && override == 0)
     {
         if (getRestartCell(piece_shared_table) == RESTARTED)
         {
@@ -162,16 +171,16 @@ void tactic()
         /* Controllo della presenza (ed eventuale sostituzione) del target attuale */
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
-            debug("Piece %d changing target", piece_attr.piece_id);
-            target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG, 1);
-            if (target.x == piece_attr.x && target.y == piece_attr.y)
+            debug("Piece %d changing target", piece_attr->piece_id);
+            target = search(piece_shared_table, piece_attr->x, piece_attr->y, FLAG, 1);
+            if (target.x == piece_attr->x && target.y == piece_attr->y)
             {
                 debug("No Target Found");
                 getplay();
             }
-            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
+            if ((reachable(piece_attr->n_moves, piece_attr->x, piece_attr->y, target.x, target.y) <= 0))
             {
-                debug("Insufficent moves for piece %d", piece_attr.piece_id);
+                debug("Insufficent moves for piece %d", piece_attr->piece_id);
                 getplay();
             }
         }
@@ -180,8 +189,8 @@ void tactic()
         switch (result)
         {
         case -1:
-            target = search(piece_shared_table, piece_attr.x, piece_attr.y, FLAG, 2);
-            if ((reachable(piece_attr.n_moves, piece_attr.x, piece_attr.y, target.x, target.y) <= 0))
+            target = search(piece_shared_table, piece_attr->x, piece_attr->y, FLAG, 2);
+            if ((reachable(piece_attr->n_moves, piece_attr->x, piece_attr->y, target.x, target.y) <= 0))
                 getplay();
         case 0:
             strategy = order.strategy;
@@ -196,8 +205,8 @@ void tactic()
             break;
         }
     }
-    if (piece_attr.n_moves == 0)
-        debug("Moves Finished for piece %d", piece_attr.piece_id);
+    if (piece_attr->n_moves == 0)
+        debug("Moves Finished for piece %d", piece_attr->piece_id);
 }
 
 void piece_handler(int signum)
@@ -205,6 +214,7 @@ void piece_handler(int signum)
     switch (signum)
     {
     case SIGINT:
+
         piece_cleaner();
         break;
 
@@ -237,8 +247,8 @@ int setpos(int x, int y)
             error("error in acquiring pos cell", errno);
         }
         tab(piece_shared_table, x, y)->id = player_id;
-        piece_attr.x = x;
-        piece_attr.y = y;
+        piece_attr->x = x;
+        piece_attr->y = y;
         return 1;
     }
     else
@@ -251,7 +261,7 @@ int goto_loc(int target_x, int target_y, char strategy)
 {
     int x = target_x, y = target_y, check;
     char left, right, down, up, result = 0, method = strategy, changeT = (char)((1 + rand()) % ((2)) + 1);
-    for (; piece_attr.n_moves > 0 && (piece_attr.x != x || piece_attr.y != y);)
+    for (; piece_attr->n_moves > 0 && (piece_attr->x != x || piece_attr->y != y);)
     {
         if (getid(piece_shared_table, target_x, target_y) != FLAG)
             return 0;
@@ -259,18 +269,18 @@ int goto_loc(int target_x, int target_y, char strategy)
         {
         /* Precedenza all'asse orizzontale */
         case Y_BEFORE:
-            if (y != piece_attr.y)
+            if (y != piece_attr->y)
             {
-                if (piece_attr.y > y && (check = cond_free(piece_attr.x, piece_attr.y - 1)))
+                if (piece_attr->y > y && (check = cond_free(piece_attr->x, piece_attr->y - 1)))
                 {
-                    check = move(piece_attr.x, piece_attr.y - 1);
+                    check = move(piece_attr->x, piece_attr->y - 1);
                 }
-                else if (piece_attr.y < y && (check = cond_free(piece_attr.x, piece_attr.y + 1)))
+                else if (piece_attr->y < y && (check = cond_free(piece_attr->x, piece_attr->y + 1)))
                 {
-                    check = move(piece_attr.x, piece_attr.y + 1);
+                    check = move(piece_attr->x, piece_attr->y + 1);
                 }
             }
-            else if (x != piece_attr.x)
+            else if (x != piece_attr->x)
             {
                 method = X_BEFORE;
             }
@@ -287,18 +297,18 @@ int goto_loc(int target_x, int target_y, char strategy)
 
         /* Precedenza all'asse verticale*/
         case X_BEFORE:
-            if (x != piece_attr.x)
+            if (x != piece_attr->x)
             {
-                if (piece_attr.x > x && (check = cond_free(piece_attr.x - 1, piece_attr.y)))
+                if (piece_attr->x > x && (check = cond_free(piece_attr->x - 1, piece_attr->y)))
                 {
-                    check = move(piece_attr.x - 1, piece_attr.y);
+                    check = move(piece_attr->x - 1, piece_attr->y);
                 }
-                else if (piece_attr.x < x && (check = cond_free(piece_attr.x + 1, piece_attr.y)))
+                else if (piece_attr->x < x && (check = cond_free(piece_attr->x + 1, piece_attr->y)))
                 {
-                    check = move(piece_attr.x + 1, piece_attr.y);
+                    check = move(piece_attr->x + 1, piece_attr->y);
                 }
             }
-            else if (y != piece_attr.y)
+            else if (y != piece_attr->y)
             {
                 method = Y_BEFORE;
             }
@@ -318,51 +328,51 @@ int goto_loc(int target_x, int target_y, char strategy)
             changeT = 0;
             right = 0;
             left = 0;
-            if (piece_attr.x >= x)
+            if (piece_attr->x >= x)
                 left = 1;
-            if (piece_attr.x <= x)
+            if (piece_attr->x <= x)
                 right = 1;
-            up = piece_attr.y > y ? 0 : 1;
+            up = piece_attr->y > y ? 0 : 1;
 
             /* Schiva in basso*/
-            if (cond(piece_attr.x - 1, piece_attr.y) && left)
+            if (cond(piece_attr->x - 1, piece_attr->y) && left)
             {
-                x = piece_attr.x - 1;
-                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                x = piece_attr->x - 1;
+                y = (piece_attr->y > y ? (piece_attr->y - 1) : (piece_attr->y + 1));
                 method = X_BEFORE;
             }
             /* Schiva in alto perchè in basso è occupato*/
-            else if (left && cond(piece_attr.x + 1, piece_attr.y))
+            else if (left && cond(piece_attr->x + 1, piece_attr->y))
             {
-                x = piece_attr.x + 1;
-                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                x = piece_attr->x + 1;
+                y = (piece_attr->y > y ? (piece_attr->y - 1) : (piece_attr->y + 1));
                 method = X_BEFORE;
             }
             /* Schiva in alto */
-            else if (cond(piece_attr.x + 1, piece_attr.y) && right)
+            else if (cond(piece_attr->x + 1, piece_attr->y) && right)
             {
-                x = piece_attr.x + 1;
-                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                x = piece_attr->x + 1;
+                y = (piece_attr->y > y ? (piece_attr->y - 1) : (piece_attr->y + 1));
                 method = X_BEFORE;
             }
             /* Schiva in basso perchè in alto è occupato*/
-            else if (right && cond(piece_attr.x - 1, piece_attr.y))
+            else if (right && cond(piece_attr->x - 1, piece_attr->y))
             {
-                x = piece_attr.x - 1;
-                y = (piece_attr.y > y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                x = piece_attr->x - 1;
+                y = (piece_attr->y > y ? (piece_attr->y - 1) : (piece_attr->y + 1));
                 method = X_BEFORE;
             }
             /* Schiva verso sinistra (torna indietro) */
-            else if (up && cond(piece_attr.x, piece_attr.y - 1))
+            else if (up && cond(piece_attr->x, piece_attr->y - 1))
             {
-                y = piece_attr.y - 1;
-                x = (piece_attr.x <= tmp_old_x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                y = piece_attr->y - 1;
+                x = (piece_attr->x <= tmp_old_x ? (piece_attr->x - 1) : (piece_attr->x + 1));
             }
             /* Schiva verso destra (torna indietro) */
-            else if (!up && cond(piece_attr.x, piece_attr.y + 1))
+            else if (!up && cond(piece_attr->x, piece_attr->y + 1))
             {
-                y = piece_attr.y + 1;
-                x = (piece_attr.x >= tmp_old_x ? (piece_attr.x + 1) : (piece_attr.x - 1));
+                y = piece_attr->y + 1;
+                x = (piece_attr->x >= tmp_old_x ? (piece_attr->x + 1) : (piece_attr->x - 1));
                 result = 2;
             }
             /*Nessuna tattica trovata: disattiva blocco per movimento all'indietro */
@@ -378,53 +388,53 @@ int goto_loc(int target_x, int target_y, char strategy)
             changeT = 0;
             down = 0;
             up = 0;
-            if (piece_attr.y >= y)
+            if (piece_attr->y >= y)
                 down = 1;
-            if (piece_attr.y <= y)
+            if (piece_attr->y <= y)
                 up = 1;
-            right = piece_attr.x > x ? 0 : 1;
+            right = piece_attr->x > x ? 0 : 1;
 
             /* Schiva verso sinistra */
-            if (cond(piece_attr.x, piece_attr.y - 1) && down)
+            if (cond(piece_attr->x, piece_attr->y - 1) && down)
             {
-                y = piece_attr.y - 1;
-                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                y = piece_attr->y - 1;
+                x = (piece_attr->x > x ? (piece_attr->x - 1) : (piece_attr->x + 1));
                 method = Y_BEFORE;
             }
             /* Schiva verso destra perchè a sinistra è occupato */
-            else if (down && cond(piece_attr.x, piece_attr.y + 1))
+            else if (down && cond(piece_attr->x, piece_attr->y + 1))
             {
-                y = piece_attr.y + 1;
-                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                y = piece_attr->y + 1;
+                x = (piece_attr->x > x ? (piece_attr->x - 1) : (piece_attr->x + 1));
                 method = Y_BEFORE;
             }
             /* Schiva verso destra */
-            else if (cond(piece_attr.x, piece_attr.y + 1) && up)
+            else if (cond(piece_attr->x, piece_attr->y + 1) && up)
             {
-                y = piece_attr.y + 1;
-                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                y = piece_attr->y + 1;
+                x = (piece_attr->x > x ? (piece_attr->x - 1) : (piece_attr->x + 1));
                 method = Y_BEFORE;
             }
             /* Schiva verso sinistra perchè a destra è occupato */
-            else if (up && cond(piece_attr.x, piece_attr.y - 1))
+            else if (up && cond(piece_attr->x, piece_attr->y - 1))
             {
-                y = piece_attr.y - 1;
-                x = (piece_attr.x > x ? (piece_attr.x - 1) : (piece_attr.x + 1));
+                y = piece_attr->y - 1;
+                x = (piece_attr->x > x ? (piece_attr->x - 1) : (piece_attr->x + 1));
                 method = Y_BEFORE;
             }
             /* Schiva verso il basso (torna indietro) */
-            else if (right && cond(piece_attr.x - 1, piece_attr.y))
+            else if (right && cond(piece_attr->x - 1, piece_attr->y))
             {
-                x = piece_attr.x - 1;
-                y = (piece_attr.y >= tmp_old_y ? (piece_attr.y + 1) : (piece_attr.y - 1));
+                x = piece_attr->x - 1;
+                y = (piece_attr->y >= tmp_old_y ? (piece_attr->y + 1) : (piece_attr->y - 1));
                 result = 1;
                 method = X_BEFORE;
             }
             /*Schiva verso l'alto (torna indietro) */
-            else if (!right && cond(piece_attr.x + 1, piece_attr.y))
+            else if (!right && cond(piece_attr->x + 1, piece_attr->y))
             {
-                x = piece_attr.x + 1;
-                y = (piece_attr.y <= tmp_old_y ? (piece_attr.y - 1) : (piece_attr.y + 1));
+                x = piece_attr->x + 1;
+                y = (piece_attr->y <= tmp_old_y ? (piece_attr->y - 1) : (piece_attr->y + 1));
                 result = 1;
                 method = X_BEFORE;
             }
@@ -505,9 +515,9 @@ int move(int x, int y)
     int isValid = 0;
     moved.tv_nsec = SO_MIN_HOLD_NSEC;
     moved.tv_sec = 0;
-    logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr.piece_id, player_id, x, y, piece_attr.n_moves);
-    isValid = ((piece_attr.x - x) <= 1 && ((piece_attr.x - x) >= -1) && ((piece_attr.y - y) <= 1 && (piece_attr.y - y) >= -1));
-    if (isValid && piece_attr.n_moves >= 0)
+    logg("Moving piece %d of player %c to X:%d Y:%d, Remaining Moves: %d", piece_attr->piece_id, player_id, x, y, piece_attr->n_moves);
+    isValid = ((piece_attr->x - x) <= 1 && ((piece_attr->x - x) >= -1) && ((piece_attr->y - y) <= 1 && (piece_attr->y - y) >= -1));
+    if (isValid && piece_attr->n_moves >= 0)
     {
         if (isValid && pos_set)
         {
@@ -527,11 +537,11 @@ int move(int x, int y)
             {
 
                 tab(piece_shared_table, x, y)->id = player_id;
-                tmp_old_x = old_x = piece_attr.x;
-                tmp_old_y = old_y = piece_attr.y;
-                piece_attr.x = x;
-                piece_attr.y = y;
-                piece_attr.n_moves--;
+                tmp_old_x = old_x = piece_attr->x;
+                tmp_old_y = old_y = piece_attr->y;
+                piece_attr->x = x;
+                piece_attr->y = y;
+                piece_attr->n_moves--;
                 tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
                 releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
             }
@@ -539,8 +549,8 @@ int move(int x, int y)
             {
 
                 debug("Capturing x:%d, y:%d", x, y);
-                tmp_old_x = old_x = piece_attr.x;
-                tmp_old_y = old_y = piece_attr.y;
+                tmp_old_x = old_x = piece_attr->x;
+                tmp_old_y = old_y = piece_attr->y;
                 pappa_pia.type = MASTERCHANNEL;
                 pappa_pia.x = x;
                 pappa_pia.y = y;
@@ -551,9 +561,9 @@ int move(int x, int y)
                 if (msgsnd(master_msgqueue, &pappa_pia, sizeof(msg_cnt) - sizeof(long), MSG_INFO))
                     error("Error in message send", errno);
                 msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), getpid(), MSG_INFO);
-                piece_attr.x = x;
-                piece_attr.y = y;
-                piece_attr.n_moves--;
+                piece_attr->x = x;
+                piece_attr->y = y;
+                piece_attr->n_moves--;
                 tab(piece_shared_table, tmp_old_x, tmp_old_y)->id = EMPTY;
                 releaseSem(sem_table, tmp_old_x * SO_BASE + tmp_old_y);
                 bzero(&pappa_pia, sizeof(msg_cnt));
@@ -567,7 +577,7 @@ int move(int x, int y)
             return 0;
         }
     }
-    else if (piece_attr.n_moves == 0)
+    else if (piece_attr->n_moves == 0)
         logg("Questa pedina ha finito le mosse");
     else
     {
