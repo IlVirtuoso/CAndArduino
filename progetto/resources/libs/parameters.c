@@ -4,9 +4,9 @@
 
 int equals(char *string, char *tocompare);
 
-char options[128][128];
-char buffer[100];
-char token[28];
+char options[512][512];
+char buffer[512];
+char token[512];
 void ParseFile(FILE *config)
 {
   char c;
@@ -30,9 +30,9 @@ void ParseFile(FILE *config)
       i++;
       b = 0;
     }
-    else if (i > 127)
+    else if (i > 512)
       error("Too many Arguments", E2BIG);
-    else if (b > 127)
+    else if (b > 512)
       error("Config buffer Too Big", E2BIG);
     else
     {

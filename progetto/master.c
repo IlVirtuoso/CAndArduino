@@ -671,7 +671,7 @@ void stamp_remained(vexillum *vex)
 {
     int i;
     if(numf > 0){
-        printf("Flag left; \n");
+        printf("Flag left: \n");
         for(i = 0; i < numflag; i++){
             if(vex[i].taken == 0)
             printf("X:%d, Y:%d  left\n",vex[i].x,vex[i].y);
