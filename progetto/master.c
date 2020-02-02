@@ -188,6 +188,7 @@ int main(int argc, char *argv[])
         {
         case 'c':
             /*cambia conf.config con optarg nella versione definitiva*/
+            
             cfg = fopen(optarg, "r+");
             ParseFile(cfg);
             fclose(cfg);
@@ -480,8 +481,8 @@ void getVex(int numFlag)
         }
         while (!positionComplete)
         {
-            x = (0 + rand()) % ((SO_BASE - 1) + 1 - 0) + 0;
-            y = (0 + rand()) % ((SO_ALTEZZA - 1) + 1 - 0) + 0;
+            x = (0 + rand()) % (SO_BASE);
+            y = (0 + rand()) % (SO_ALTEZZA);
             if ((getid(master_shared_table, x, y)) == EMPTY)
             {
                 vex[i].x = x;
@@ -653,6 +654,7 @@ void restart()
     while (msgrcv(master_msgqueue, NULL, sizeof(msg_cnt) - sizeof(long), MASTERCHANNEL, IPC_NOWAIT) != -1)
     {
     }
+    free(vex);
     display(master_shared_table);
     stamp_score(st);
     numflag = getNumflag();

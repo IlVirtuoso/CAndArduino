@@ -136,7 +136,7 @@ int getDistance(int x, int y, int x_targ, int y_targ)
 int reachable(int moves, int x, int y, int x_targ, int y_targ)
 {
     int res;
-    if ((res = getDistance(x, y, x_targ, y_targ)) <= moves)
+    if ((res = getDistance(x, y, x_targ, y_targ)) <= (moves))
     {
         return res;
     }

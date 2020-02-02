@@ -159,6 +159,7 @@ void tactic()
             getplay();
             break;
         }
+        /* Controllo della presenza (ed eventuale sostituzione) del target attuale */
         if (getid(piece_shared_table, target.x, target.y) != FLAG)
         {
             debug("Piece %d changing target", piece_attr.piece_id);
@@ -174,6 +175,16 @@ void tactic()
                 getplay();
             }
         }
+        /* Valutazione per risparmio mosse */
+        if (piece_attr.n_moves > (SO_N_MOVES / 2))
+        {
+            if (reachable((piece_attr.n_moves / 2), piece_attr.x, piece_attr.y, target.x, target.y) <= 0)
+            {
+                debug("Warning too many moves will be used for taking this flag, stop");
+                getplay();
+            }
+        }
+
         result = goto_loc(target.x, target.y, strategy);
         switch (result)
         {
@@ -228,10 +239,6 @@ void piece_cleaner()
 
 int setpos(int x, int y)
 {
-    if (x < 0)
-        x = x * -1;
-    if (y < 0)
-        y = y * -1;
     if (getid(piece_shared_table, x, y) == EMPTY && semctl(sem_table, x * SO_ALTEZZA + y, GETVAL) == 1)
     {
         if (reserveSem(sem_table, x * SO_BASE + y))
