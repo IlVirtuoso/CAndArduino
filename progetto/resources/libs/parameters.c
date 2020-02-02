@@ -30,9 +30,9 @@ void ParseFile(FILE *config)
       i++;
       b = 0;
     }
-    else if (i > 512)
+    else if (i > 127)
       error("Too many Arguments", E2BIG);
-    else if (b > 512)
+    else if (b > 127)
       error("Config buffer Too Big", E2BIG);
     else
     {
