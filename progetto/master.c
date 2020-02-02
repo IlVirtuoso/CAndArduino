@@ -669,6 +669,7 @@ long int total_moves;
 void stamp_statistics(score_table * t)
 {
     int i;
+    if(rounds == 0) rounds++;
     total_moves = SO_N_MOVES*SO_NUM_P;
     printf("Mosse Totali Disponibili: %ld \n",total_moves);
     for (i = 0; i < SO_NUM_G; i++)
